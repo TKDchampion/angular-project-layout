@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -6,7 +6,7 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './home-item.component.html',
   styleUrls: ['./home-item.component.scss'],
 })
-export class HomeItemComponent implements OnInit {
+export class HomeItemComponent {
   constructor(private metaTagService: Meta, private titleService: Title) {
     this.metaTagService.addTags([
       {
@@ -17,6 +17,4 @@ export class HomeItemComponent implements OnInit {
 
     this.titleService.setTitle('DKSH test');
   }
-
-  ngOnInit(): void {}
 }
