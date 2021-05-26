@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { GlobalStateService } from 'src/app/core/services/global-state.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 })
 export class HomeComponent implements OnInit {
   public Editor = ClassicEditor;
-  constructor() {
-    // lint
-  }
+  constructor(private state: GlobalStateService) {}
 
   ngOnInit(): void {
     this.Editor.create(document.querySelector('#editor'), {
@@ -25,5 +24,13 @@ export class HomeComponent implements OnInit {
       .catch((error: unknown) => {
         console.log(error);
       });
+  }
+
+  click(): void {
+    this.state.notifyDataChanged('test', Math.random());
+  }
+
+  click2(): void {
+    this.state.notifyDataChanged('test2', Math.random());
   }
 }
