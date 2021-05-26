@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { GlobalStateConstant } from 'src/app/core/constant/global-state.constant';
 import { GlobalStateService } from 'src/app/core/services/global-state.service';
 
 @Component({
@@ -27,10 +28,10 @@ export class HomeComponent implements OnInit {
   }
 
   click(): void {
-    this.state.notifyDataChanged('test', Math.random());
+    this.state.notifyDataChanged(GlobalStateConstant.test1.cmd, Math.random());
   }
 
   click2(): void {
-    this.state.notifyDataChanged('test2', Math.random());
+    this.state.notifyDataChanged(GlobalStateConstant.test2.cmd, Math.random());
   }
 }

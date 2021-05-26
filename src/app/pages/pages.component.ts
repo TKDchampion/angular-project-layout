@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalStateConstant } from '../core/constant/global-state.constant';
 import { GlobalStateService } from '../core/services/global-state.service';
 
 @Component({
@@ -8,12 +9,12 @@ import { GlobalStateService } from '../core/services/global-state.service';
 })
 export class PagesComponent {
   constructor(private state: GlobalStateService) {
-    this.state.subscribe('test', (item) => {
+    this.state.subscribe(GlobalStateConstant.test1.cmd, (item) => {
       console.log(item);
       // this.state.unsubscribe('test');
     });
 
-    this.state.subscribe('test2', (item) => {
+    this.state.subscribe(GlobalStateConstant.test2.cmd, (item) => {
       console.log(item);
       // this.state.unsubscribe('test');
     });
