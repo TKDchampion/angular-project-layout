@@ -12,19 +12,20 @@ export class HomeComponent implements OnInit {
   public Editor = ClassicEditor;
   constructor(private state: GlobalStateService) {}
 
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
-    this.Editor.create(document.querySelector('#editor'), {
-      cloudServices: {
-        tokenUrl: 'https://example.com/cs-token-endpoint',
-        uploadUrl: 'https://your-organization-id.cke-cs.com/easyimage/upload/',
-      },
-    })
-      .then((resp: unknown) => {
-        console.log(resp);
-      })
-      .catch((error: unknown) => {
-        console.log(error);
-      });
+    // this.Editor.create(document.querySelector('#editor'), {
+    //   cloudServices: {
+    //     tokenUrl: 'https://example.com/cs-token-endpoint',
+    //     uploadUrl: 'https://your-organization-id.cke-cs.com/easyimage/upload/',
+    //   },
+    // })
+    //   .then((resp: unknown) => {
+    //     console.log(resp);
+    //   })
+    //   .catch((error: unknown) => {
+    //     console.log(error);
+    //   });
   }
 
   click(): void {
