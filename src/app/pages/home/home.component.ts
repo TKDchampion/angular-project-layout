@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { GlobalStateConstant } from 'src/app/core/constant/global-state.constant';
-import { GlobalStateService } from 'src/app/core/services/global-state.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { open, close } from 'src/app/core/store/flag/flag.actions';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,17 @@ import { GlobalStateService } from 'src/app/core/services/global-state.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  constructor(private state: GlobalStateService) {}
-  click(): void {
-    this.state.notifyDataChanged(GlobalStateConstant.test1.cmd, Math.random());
+  flag$: Observable<boolean>;
+
+  constructor(private store: Store<{ flag: boolean }>) {
+    this.flag$ = store.select('flag');
   }
-  click2(): void {
-    this.state.notifyDataChanged(GlobalStateConstant.test2.cmd, Math.random());
+
+  open(): void {
+    this.store.dispatch(open());
+  }
+
+  close(): void {
+    this.store.dispatch(close());
   }
 }
