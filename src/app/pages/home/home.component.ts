@@ -11,11 +11,15 @@ import { setValue } from 'src/app/core/store/setValue/set-value.actions';
 })
 export class HomeComponent {
   flag$: Observable<boolean>;
-  getValue$: Observable<{ value: string }>;
+  // getValue$: Observable<{ value: string }>;
+  getdata: Record<string, unknown> | undefined;
 
   constructor(private store: Store<{ flag: boolean }>, private storeValue: Store<{ setValue: { value: string } }>) {
     this.flag$ = store.select('flag');
-    this.getValue$ = storeValue.select('setValue');
+    storeValue.select('setValue').subscribe((resp) => {
+      console.log(resp);
+      this.getdata = resp;
+    });
   }
 
   open(): void {
@@ -27,6 +31,7 @@ export class HomeComponent {
   }
 
   set(): void {
-    this.storeValue.dispatch(setValue({ value: 'test' }));
+    const radom = Math.random().toString();
+    this.storeValue.dispatch(setValue({ value: radom }));
   }
 }

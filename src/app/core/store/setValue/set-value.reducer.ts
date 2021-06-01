@@ -8,14 +8,9 @@ export const initialState = {
   value: '123',
 };
 
-const _setValueReducer = createReducer(
+export const _setValueReducer = createReducer(
   initialState,
-  on(setValue, (state, { value }) => {
-    return {
-      ...state,
-      value,
-    };
-  }),
+  on(setValue, (state, { value }) => ({ ...state, value })),
 );
 
 export function setValueReducer(state: { value: string } | undefined, action: Action) {
