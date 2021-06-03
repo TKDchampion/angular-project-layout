@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { AfterViewInit, Component, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, Inject, PLATFORM_ID, ViewChildren } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { open, close } from 'src/app/core/store/flag/flag.actions';
 import { setValue } from 'src/app/core/store/setValue/set-value.actions';
 import Player from '@vimeo/player';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,12 @@ export class HomeComponent implements AfterViewInit {
   flag$: Observable<boolean>;
   getdata: Record<string, unknown> | undefined;
 
-  constructor(private store: Store<{ flag: boolean }>, private storeValue: Store<{ setValue: { value: string } }>) {
+  constructor(
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    @Inject(PLATFORM_ID) private platformId: any,
+    private store: Store<{ flag: boolean }>,
+    private storeValue: Store<{ setValue: { value: string } }>,
+  ) {
     this.flag$ = store.select('flag');
     storeValue.select('setValue').subscribe((resp) => {
       console.log(resp);
@@ -25,13 +31,15 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const player = new Player('handstick', {
-      id: 19231868,
-      width: 640,
-    });
-    player.on('play', function () {
-      console.log('played the video!');
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      const player = new Player('handstick', {
+        id: 19231868,
+        width: 640,
+      });
+      player.on('play', function () {
+        console.log('played the video!');
+      });
+    }
   }
 
   open(): void {
