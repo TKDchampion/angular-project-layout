@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { AfterViewInit, Component, Inject, PLATFORM_ID, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, Inject, InjectionToken, PLATFORM_ID, ViewChildren } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { open, close } from 'src/app/core/store/flag/flag.actions';
 import { setValue } from 'src/app/core/store/setValue/set-value.actions';
 import Player from '@vimeo/player';
 import { isPlatformBrowser } from '@angular/common';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -18,16 +19,23 @@ export class HomeComponent implements AfterViewInit {
   getdata: Record<string, unknown> | undefined;
 
   constructor(
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    @Inject(PLATFORM_ID) private platformId: any,
+    @Inject(PLATFORM_ID) private platformId: InjectionToken<Record<string, unknown>>,
     private store: Store<{ flag: boolean }>,
     private storeValue: Store<{ setValue: { value: string } }>,
+    private metaTagService: Meta,
   ) {
     this.flag$ = store.select('flag');
     storeValue.select('setValue').subscribe((resp) => {
       console.log(resp);
       this.getdata = resp;
     });
+
+    this.metaTagService.addTags([
+      {
+        name: 'keywords test',
+        content: 'Angular SEO Integration, Music CRUD, Angular Universal',
+      },
+    ]);
   }
 
   ngAfterViewInit(): void {
