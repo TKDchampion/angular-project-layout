@@ -41,13 +41,58 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       const player = new Player('handstick', {
-        id: 19231868,
         width: 640,
       });
-      player.on('play', function () {
-        console.log('played the video!');
-      });
+      const onPlay = (data: unknown) => {
+        console.log(data);
+        console.log('pause the video!');
+      };
+      player.on('pause', onPlay);
+      this.setVideoTime(player);
+      this.getVideoDuration(player);
+      this.getVideoTime(player);
     }
+  }
+
+  private getVideoTime(player: Player) {
+    player
+      .getCurrentTime()
+      .then(function (seconds) {
+        // seconds = the current playback position
+        console.log(seconds);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  private getVideoDuration(player: Player) {
+    player
+      .getDuration()
+      .then(function (duration) {
+        console.log(duration);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  private setVideoTime(player: Player) {
+    player
+      .setCurrentTime(30.456)
+      .then(function (seconds) {
+        console.log(seconds);
+      })
+      .catch(function (error) {
+        switch (error.name) {
+          case 'RangeError':
+            // the time was less than 0 or greater than the video’s duration
+            break;
+          default:
+            // some other error occurred
+            break;
+        }
+      });
   }
 
   open(): void {
