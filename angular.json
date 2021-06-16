@@ -141,6 +141,7 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
+            "serverTarget": "dksh:server:production",
             "routes": ["/"]
           },
           "configurations": {
