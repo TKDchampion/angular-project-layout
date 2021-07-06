@@ -3,7 +3,7 @@ version: "1"
 services:
   ssr:
     image: dksh_ssr_img
-    container_name: dksh_ssr_container
+    # container_name: dksh_ssr_container
     build:
       context: .
       dockerfile: Dockerfile.ssr
