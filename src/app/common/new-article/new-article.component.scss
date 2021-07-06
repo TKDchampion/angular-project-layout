@@ -1,0 +1,29 @@
+.new-article {
+  width: 586px;
+  height: 180px;
+}
+
+.article-img, .article-img img{
+  width: 266px;
+  height: 180px;
+  float: left;
+}
+
+.article-context {
+  width: 300px;
+  height: 168px;
+  float: right;
+}
+
+.article-context-title {
+  height: 56px;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.article-context-subtitle {
+  height: 40px;
+  font-size: 14px;
+  line-height: 20px;
+}
