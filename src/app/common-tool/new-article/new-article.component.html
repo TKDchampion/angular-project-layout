@@ -1,12 +1,22 @@
 <div class="new-article container">
-  <div class="row">
-    <div class="article-img col">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREDZ1z72Yr9jEYTzDcxQO606b0Tf-3RwKe9TXqvtjxAg0NTwzzVdttfHuLEhjU01V_xIw&usqp=CAU" alt="" class="w-100 h-100">
+  <div class="row h-100">
+    <div class="article-img col-12 col-xl-6 col-md-4">
+      <img src="{{newArticle.articleImg}}" alt="" class="h-100 w-100">
     </div>
-    <div class="article-context col">
-      <div class="article-context-title col w-100">加護病房靜脈同時給予多種藥品之型態與風險</div>
-      <div class="w-100"></div>
-      <div class="article-context-subtitle col w-100">對某醫學中心11個加護病房的護理師問券調查，以了解同時竟賣給多種藥的型態與風險。</div>
+    <div class="article-context col-12 col-xl-6 col-md-8">
+      <div class="article-context-title col">{{ newArticle.articleTitle }}</div>
+      <div class="article-context-subtitle col">{{ newArticle.articleSubtitle }}</div>
+      <div class="article-context-author col">
+        <div class="row">
+          <div class="article-context-author-icon col-xl-2 col-1">
+            <img src="{{newArticle.authorImg}}" alt="">
+          </div>
+          <div class="article-context-author-name col-xl-10 col-11">
+            {{newArticle.author}} 教授
+          </div>
+        </div>
+      </div>
+      <div class="article-context-viewer col">{{newArticle.viewer}} 已閱讀</div>
     </div>
   </div>
 </div>
