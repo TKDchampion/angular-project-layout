@@ -1,29 +1,87 @@
 .new-article {
-  width: 586px;
-  height: 180px;
+  width: 623px;
+  height: 210px;
+  .article-context-viewer,
+  .article-context-author-name,
+  .article-context-subtitle,
+  .article-context-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #444749;
+    letter-spacing: 0px;
+  }
 }
 
 .article-img, .article-img img{
-  width: 266px;
-  height: 180px;
-  float: left;
+  // width: 306px;
+  // height: 210px;
+  // float: left;
+  img {
+    // height: 210px;
+    border-radius: 14px;
+    background: #C4C4C4;
+  }
 }
 
 .article-context {
-  width: 300px;
-  height: 168px;
-  float: right;
+  // width: 293px;
+  // height: 170px;
+  // float: right;
 }
 
 .article-context-title {
-  height: 56px;
-  font-size: 20px;
-  line-height: 20px;
+  // width: 293px;
+  // height: 44px;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  // line-height: 22px;
   margin-bottom: 8px;
+  // letter-spacing: 0px;
 }
 
 .article-context-subtitle {
-  height: 40px;
-  font-size: 14px;
-  line-height: 20px;
+  // width: 293px;
+  // height: 44px;
+  // font-size: 14px;
+  // font-weight: 400;
+  // line-height: 22px;
+  margin-bottom: 20px;
+  // letter-spacing: 0px;
+}
+
+.article-context-author {
+  // width: 293px;
+  // height: 24px;
+  margin-bottom: 9px;
+}
+
+.article-context-author-icon {
+  height: 24px;
+  img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+}
+
+.article-context-author-name {
+  // height: 24px;
+  // font-style: normal;
+  // font-weight: normal;
+  // font-size: 14px;
+  line-height: 24px !important;
+  // color: #444749;
+  // letter-spacing: 0px;
+}
+
+.article-context-viewer {
+  // height: 22px;
+  // font-style: normal;
+  // font-weight: normal;
+  // font-size: 14px;
+  // line-height: 22px;
+  // color: #444749;
+  // letter-spacing: 0px;
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NewArticle } from './new-article.modal';
 
 @Component({
   selector: 'app-new-article',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-article.component.scss'],
 })
 export class NewArticleComponent implements OnInit {
-  constructor() {}
+  @Input() newArticle!: NewArticle;
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
