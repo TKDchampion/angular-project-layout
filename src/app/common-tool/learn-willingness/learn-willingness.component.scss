@@ -1,0 +1,38 @@
+.learn-willingness {
+  width: 296px;
+  height: 278px;
+  border-radius: 14px;
+}
+
+.learn-item {
+  padding: 32px 32px 0 32px;
+  .learn-title,
+  .learn-subtitle {
+    color: #FFFFFF;
+    letter-spacing: 0px;
+  }
+}
+
+.learn-title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 41px;
+  margin-bottom: 4px;
+  height: 41px;
+}
+
+.learn-subtitle {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 24px;
+  height: 44px;
+}
+
+.btn-check-all {
+  background: #FFFFFF;
+  border: 1px solid #9DACC7;
+  border-radius: 100px;
+  color: #3B5A90;
+  font-weight: 500;
+}
