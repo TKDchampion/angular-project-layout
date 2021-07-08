@@ -1,0 +1,10 @@
+<div class="learn-willingness"
+  [ngStyle]="{'background-color': (learnWillingness.learnBackgroundColor) ? learnWillingness.learnBackgroundColor : ''}">
+  <div class="learn-item h-100"
+    [ngStyle]="{'background': (learnWillingness.learnImg) ? 'url('+learnWillingness.learnImg+') no-repeat scroll right 96%' : ''}">
+    <div class="learn-title">{{learnWillingness.learnTitle}}</div>
+    <div class="learn-subtitle">{{learnWillingness.learnSubTitle}}</div>
+    <div class="learn-button"><button type="button" class="btn btn-check-all"
+        [routerLink]="learnWillingness.lookMoreUrl" routerLinkActive="active">查看全部</button></div>
+  </div>
+</div>
