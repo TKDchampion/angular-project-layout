@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +17,7 @@ export class DKSHJWTOptions extends JWTOptions {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule, BrowserAnimationsModule],
   providers: [
     { provide: HttpDefaultOptions, useClass: DKSHitHttpDefaultOptions },
     { provide: JWTOptions, useClass: DKSHJWTOptions },
