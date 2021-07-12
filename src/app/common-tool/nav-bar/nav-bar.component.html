@@ -1,0 +1,58 @@
+<nav class="navbar-div navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">
+    <img src="../../../assets/img/DKSH.png" width="97" height="30" alt="">
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-ul navbar-nav mr-auto">
+      <li dropdown class="nav-item dropdown nav-category">
+        <div class="nav-item-img">
+          <img class="float-right" src="../../../assets/img/category.png" width="24" height="24" alt="">
+        </div>
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" dropdownToggle role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          課程影片
+        </a>
+        <div *dropdownMenu role="menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a role="menuitem" class="dropdown-item" href="#">全部</a>
+          <a role="menuitem" class="dropdown-item" href="#">醫藥管理</a>
+          <a role="menuitem" class="dropdown-item" href="#">臨床醫學</a>
+          <a role="menuitem" class="dropdown-item" href="#">臨床護理</a>
+          <a role="menuitem" class="dropdown-item" href="#">保健營養</a>
+          <a role="menuitem" class="dropdown-item" href="#">醫療法務</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown nav-article">
+        <div class="nav-item-img">
+          <img src="../../../assets/img/document.png" width="24" height="24" alt="">
+        </div>
+        <a class="nav-link" href="#">專題文章</a>
+      </li>
+      <li class="nav-item dropdown nav-event">
+        <div class="nav-item-img">
+          <img src="../../../assets/img/activity.png" width="24" height="24" alt="">
+        </div>
+        <a class="nav-link" href="#">活動消息</a>
+      </li>
+      <li class="nav-item dropdown nav-filedownload">
+        <div class="nav-item-img">
+          <img src="../../../assets/img/download.png" width="24" height="24" alt="">
+        </div>
+        <a class="nav-link" href="#">檔案下載</a>
+      </li>
+
+    </ul>
+    <div class="event-group">
+      <div class="search" *ngIf="!showSearchInput" (click)="showSearchInput = !showSearchInput">
+        <img src="../../../assets/img/search.png" width="14" height="14" alt="">
+        <span class="text-search">搜尋</span>
+      </div>
+      <div class="search-context" *ngIf="showSearchInput">
+        <img src="../../../assets/img/search.png" width="20" height="18" alt="">
+        <input type="text" class="input-search" placeholder="搜尋">
+      </div>
+      <button type="button" class="btn btn-login">登入</button>
+      <button type="button" class="btn btn-register">免費加入</button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,150 @@
+.navbar-div {
+  height: 76px;
+}
+
+
+
+.navbar-brand {
+  width: 97px;
+  height: 30px;
+  margin-left: 48px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-collapse {
+  margin-left: 40px;
+}
+
+.navbar-ul {
+  height: 40px;
+}
+
+.nav-category {
+  width: 126px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  a {
+    padding-left: 4px;
+  }
+}
+
+.nav-category.open.show {
+  background: #FDF4F5;
+  border-radius: 100px;
+}
+
+.category-div {
+  align-items: center;
+  a {
+    padding-left: 4px;
+  }
+}
+
+.dropdown-menu {
+  width: 200px;
+  height: 228px;
+  overflow-y: auto;
+  a {
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: normal;
+    height: 32px;
+    line-height: 24px;
+  }
+}
+
+.dropdown-item {
+  a {
+    padding-left: 12px;
+  }
+}
+
+.nav-item-img {
+  display: flex;
+  width: 36px;
+  flex-flow: row-reverse;
+}
+
+.nav-article,
+.nav-event,
+.nav-filedownload {
+  font-size: 14px;
+  width: 108px;
+  display: flex;
+  align-items: center;
+  a {
+    padding-left: 4px;
+  }
+}
+
+.btn-login {
+  width: 92px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #9DACC7;
+  border-radius: 100px;
+  color: #3B5A90;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.btn-register {
+  width: 92px;
+  height: 40px;
+  background: #D42335;
+  border-radius: 100px;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.event-group {
+  position: absolute;
+  display: flex;
+  right: 45px;
+}
+
+.search {
+  width: 92px;
+  height: 40px;
+  display: flex;
+  line-height: 40px;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.search-context {
+  width: 280px;
+  height: 40px;
+  display: flex;
+  line-height: 40px;
+  align-items: center;
+  margin-right: 12px;
+  background: #F5F7F9;
+  border-radius: 8px;
+  img {
+    margin-left: 16px;
+  }
+}
+
+.input-search {
+  margin-left: 8px;
+  background: unset;
+  border: 0;
+  height: 40px;
+  width: 235px;
+}
+
+.input-search:focus {
+  outline:0px;
+}
+
+.text-search {
+  margin-left: 6px;
+}
+
+.btn-register {
+  margin-left: 12px;
+}
