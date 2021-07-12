@@ -93,7 +93,7 @@
 .btn-register {
   width: 92px;
   height: 40px;
-  background: #D42335;
+  background: #3B5A90;
   border-radius: 100px;
   color: #FFFFFF;
   font-weight: 500;
@@ -147,4 +147,48 @@
 
 .btn-register {
   margin-left: 12px;
+}
+
+
+@media (max-width: 576px) {
+  .new-article {
+    width: 335px;
+  }
+  .article-context-title {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 576px) {
+  .navbar-collapse {
+    margin-left: 24px;
+  }
+
+  .nav-category {
+    width: 106px;
+    a.nav-link {
+      width: 100%;
+      text-align: center;
+      padding-left: 8px;
+    }
+  }
+
+  .nav-article,
+  .nav-event,
+  .nav-filedownload {
+    width: 84px;
+    a {
+      width: 100%;
+      text-align: center;
+      padding-left: 8px;
+    }
+  }
+
+  .search-context {
+    width: 200px;
+  }
+
+  .nav-item-img {
+    display: none;
+  }
 }
