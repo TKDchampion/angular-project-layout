@@ -8,11 +8,13 @@ import { HomeItemComponent } from './home-item/home-item.component';
 import { StoreModule } from '@ngrx/store';
 import * as flagReducer from 'src/app/core/store/flag/flag.reducer';
 import * as setValueReducer from 'src/app/core/store/setValue/set-value.reducer';
+import { CommonToolModule } from 'src/app/common-tool/common-tool.module';
 
 @NgModule({
   declarations: [HomeComponent, HomeItemComponent],
   imports: [
     CommonModule,
+    CommonToolModule,
     HomeRoutingModule,
     StoreModule.forFeature(flagReducer.flagKey, flagReducer.flagReducer),
     StoreModule.forFeature(setValueReducer.setValueKey, setValueReducer.setValueReducer),
