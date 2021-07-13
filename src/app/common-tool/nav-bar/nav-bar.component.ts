@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   showSearchInput = false;
+  isCollapsed = true;
   constructor() { }
 
   ngOnInit(): void {
