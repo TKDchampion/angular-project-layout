@@ -11,7 +11,7 @@ import { HotSubjectComponent } from './hot-subject/hot-subject.component';
 
 @NgModule({
   declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent],
-  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot()],
+  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent],
 })
 export class CommonToolModule {}
