@@ -6,10 +6,11 @@ import { NewArticleComponent } from './new-article/new-article.component';
 import { LearnWillingnessComponent } from './learn-willingness/learn-willingness.component';
 import { RouterModule } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NewVideoComponent } from './new-video/new-video.component';
 
 @NgModule({
-  declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent],
-  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
-  exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent],
+  declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent],
+  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot()],
+  exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent],
 })
 export class CommonToolModule {}

@@ -1,0 +1,34 @@
+@import '../../../styles/variables.scss';
+
+.new_video_box {
+  width: 306px;
+  height: 278px;
+  .new_video_box_header {
+    border-radius: 14px;
+    height: 210px;
+  }
+  .new_video_box_time {
+    background-color: $black;
+    width: 58px;
+    height: 24px;
+    opacity: 0.8;
+    border-radius: 100px;
+    color: $white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 24px;
+    position: absolute;
+    margin-top: 174px;
+    margin-left: 230px;
+  }
+}
+
+.new_video_box_content {
+  .new_video_box_content_title {
+    margin: 8px 0;
+  }
+  .new_video_box_content_text {
+    font-size: $font-size-14;
+    color: $grey;
+  }
+}
