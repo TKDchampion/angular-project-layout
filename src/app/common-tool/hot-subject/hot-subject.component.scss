@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+
+.hot_subject_box {
+  width: 307px;
+  height: 130px;
+  background-color: $light_light_grey;
+  border-radius: 14px;
+  justify-content: space-around;
+  padding-top: 24px;
+}
+
+.hot_subject_right {
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 100px;
+}
+
+.hot_subject_left_title {
+  color: $black;
+  font-weight: bold;
+  font-size: $font-size-20;
+}
+
+.hot_subject_left_titleSub {
+  color: $light_grey;
+  font-size: $font-size-14;
+  margin-top: 8px;
+}
