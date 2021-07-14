@@ -7,10 +7,11 @@ import { LearnWillingnessComponent } from './learn-willingness/learn-willingness
 import { RouterModule } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NewVideoComponent } from './new-video/new-video.component';
+import { HotSubjectComponent } from './hot-subject/hot-subject.component';
 
 @NgModule({
-  declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent],
+  declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
-  exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent],
+  exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent],
 })
 export class CommonToolModule {}
