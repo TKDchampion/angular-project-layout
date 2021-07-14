@@ -7,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   showSearchInput = false;
+  showSearchInputMobile = false;
   isCollapsed = true;
   constructor() { }
 
@@ -16,5 +17,11 @@ export class NavBarComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(_: any) {
     this.isCollapsed = true;
+    this.showSearchInputMobile = false;
+  }
+
+  collapsedStatus() {
+    this.isCollapsed = !this.isCollapsed;
+    this.showSearchInputMobile = false;
   }
 }

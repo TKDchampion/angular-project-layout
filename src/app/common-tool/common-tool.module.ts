@@ -10,7 +10,7 @@ import { NewVideoComponent } from './new-video/new-video.component';
 
 @NgModule({
   declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent],
-  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot()],
+  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent],
 })
 export class CommonToolModule {}
