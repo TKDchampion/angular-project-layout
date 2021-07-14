@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   showSearchInput = false;
+  isCollapsed = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(_: any) {
+    this.isCollapsed = true;
+  }
 }
