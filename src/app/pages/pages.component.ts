@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LearnWillingness } from '../common-tool/learn-willingness/learn-willingness.modal';
 import { NewArticle } from '../common-tool/new-article/new-article.modal';
+import { NewVideoItemInfo } from '../common-tool/new-video/new-video.model';
 
 @Component({
   selector: 'app-pages',
@@ -25,5 +26,13 @@ export class PagesComponent {
     lookMoreUrl: '/pages/home/1',
     learnImg: '../../../assets/img/pill.svg',
     learnBackgroundColor: '#3B5A90',
+  };
+
+  newVideoItem: NewVideoItemInfo = {
+    time: '32:24',
+    headUrl: '../../../assets/img/fakeImge/new_video_fake_img.png',
+    headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
+    title: '從小實施衛教的重要性',
+    text: '歐朔銘 醫師•4,567 已觀看',
   };
 }
