@@ -1,4 +1,5 @@
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewArticleComponent } from './new-article/new-article.component';
