@@ -2,6 +2,11 @@
   display: none;
 }
 
+.nav-bar-title {
+  display: flex;
+  align-items: center;
+}
+
 @media (min-width: 1024px) {
   .navbar-div {
     height: 76px;
@@ -185,9 +190,6 @@
   }
   .event-group {
     display: none;
-    // position: absolute;
-    // display: flex;
-    // right:20px;
   }
   .btn-login-mobile {
     width: 92px;
@@ -203,12 +205,51 @@
     display: unset;
   }
 
-  .navbarSupportedContent {
-    background: #FFFFFF;
-  }
   .DKSH-icon {
     width: 78px;
     height: 24px;
+  }
+
+  #navbarSupportedContent {
+    margin-top: 40px;
+    li.nav-item {
+      margin-bottom: 28px;
+      .nav-bar-title {
+        .nav-item-img {
+          height: 20px;
+          margin-left: 32px;
+          margin-right: 16px;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        a {
+          padding-top: 0px;
+          padding-bottom: 0px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 16px;
+          color: #15191C;
+        }
+        .dropdown-toggle::after {
+          margin-left: 185px;
+        }
+      }
+      .dropdown-menu.show {
+        border: unset;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        .dropdown-item {
+          padding-left: 68px;
+          font-size: 14px;
+          font-weight: 500;
+          padding-top: 24px;
+          line-height: 14px;
+          color: #15191C;
+        }
+      }
+    }
   }
 }
 
@@ -224,6 +265,9 @@
       text-align: center;
       padding-left: 8px;
     }
+    .nav-bar-title {
+      width: 106px;
+    }
   }
 
   .nav-article,
@@ -234,6 +278,9 @@
       width: 100%;
       text-align: center;
       padding-left: 8px;
+    }
+    .nav-bar-title {
+      width: 84px;
     }
   }
 

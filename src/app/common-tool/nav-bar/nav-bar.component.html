@@ -17,13 +17,15 @@
   <div [collapse]="isCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-ul navbar-nav mr-auto">
       <li dropdown class="nav-item dropdown nav-category">
-        <div class="nav-item-img">
-          <img class="float-right" src="../../../assets/img/category.png" width="24" height="24" alt="">
+        <div class="nav-bar-title">
+          <div class="nav-item-img">
+            <img class="float-right" src="../../../assets/img/category.png" width="24" height="24" alt="">
+          </div>
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" dropdownToggle role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            課程影片
+          </a>
         </div>
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" dropdownToggle role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          課程影片
-        </a>
         <div *dropdownMenu role="menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a role="menuitem" class="dropdown-item" href="#">全部</a>
           <a role="menuitem" class="dropdown-item" href="#">醫藥管理</a>
@@ -34,22 +36,28 @@
         </div>
       </li>
       <li class="nav-item dropdown nav-article">
-        <div class="nav-item-img">
-          <img src="../../../assets/img/document.png" width="24" height="24" alt="">
+        <div class="nav-bar-title">
+          <div class="nav-item-img">
+            <img src="../../../assets/img/document.png" width="24" height="24" alt="">
+          </div>
+          <a class="nav-link" href="#">專題文章</a>
         </div>
-        <a class="nav-link" href="#">專題文章</a>
       </li>
       <li class="nav-item dropdown nav-event">
-        <div class="nav-item-img">
-          <img src="../../../assets/img/activity.png" width="24" height="24" alt="">
+        <div class="nav-bar-title">
+          <div class="nav-item-img">
+            <img src="../../../assets/img/activity.png" width="24" height="24" alt="">
+          </div>
+          <a class="nav-link" href="#">活動消息</a>
         </div>
-        <a class="nav-link" href="#">活動消息</a>
       </li>
       <li class="nav-item dropdown nav-filedownload">
-        <div class="nav-item-img">
-          <img src="../../../assets/img/download.png" width="24" height="24" alt="">
+        <div class="nav-bar-title">
+          <div class="nav-item-img">
+            <img src="../../../assets/img/download.png" width="24" height="24" alt="">
+          </div>
+          <a class="nav-link" href="#">檔案下載</a>
         </div>
-        <a class="nav-link" href="#">檔案下載</a>
       </li>
     </ul>
   </div>
