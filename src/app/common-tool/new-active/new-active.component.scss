@@ -1,0 +1,44 @@
+@import '../../../styles/variables.scss';
+
+.new_active_box {
+  width: 623px;
+  height: 230px;
+}
+
+.new_active_left {
+  width: 335px;
+  height: 230px;
+  margin-right: 16px;
+  img {
+    border-radius: 14px;
+  }
+}
+
+.new_active_right {
+  width: 268px;
+}
+
+.new_active_right_content {
+  margin-top: 8px;
+}
+
+.new_active_right_content_subTitle {
+  color: $grey;
+  font-size: $font-size-14;
+}
+
+.new_active_right_tags_item {
+  height: 32px;
+  background-color: $pink;
+  color: $red;
+  border-radius: 100px;
+  font-size: $font-size-16;
+  line-height: 32px;
+  padding: 0 14px;
+  margin-right: 8px;
+}
+
+.new_active_right_footer {
+  color: $grey;
+  font-size: $font-size-14;
+}
