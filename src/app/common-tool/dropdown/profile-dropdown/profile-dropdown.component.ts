@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-profile-dropdown',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-dropdown.component.scss']
 })
 export class ProfileDropdownComponent implements OnInit {
-
+  @Input() identity!: any;
   constructor() { }
 
   ngOnInit(): void {

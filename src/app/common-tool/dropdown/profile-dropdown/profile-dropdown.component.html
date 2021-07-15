@@ -5,8 +5,8 @@
     <p class="profile_username">陳薰依</p>
   </li>
   <li class="text-center profile_viewbtn"><button type="button" class="btn btn_profile">瀏覽會員資料</button></li>
-  <li class="divider dropdown-divider"></li>
-  <li class="text-center profile_viewverify"><button type="button" class="btn btn_verify">驗證身份</button></li>
+  <li *ngIf="identity === 2" class="divider dropdown-divider"></li>
+  <li *ngIf="identity === 2" class="text-center profile_viewverify"><button type="button" class="btn btn_verify">驗證身份</button></li>
   <li class="divider dropdown-divider"></li>
   <li class="profile_record"><a class="dropdown-item profile_item" href="#">
       <div class="profile_a_img">
