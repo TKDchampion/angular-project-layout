@@ -10,6 +10,7 @@ import { NewVideoComponent } from './new-video/new-video.component';
 import { HotSubjectComponent } from './hot-subject/hot-subject.component';
 import { NewActiveComponent } from './new-active/new-active.component';
 import { ProfileDropdownComponent } from './dropdown/profile-dropdown/profile-dropdown.component';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,17 @@ import { ProfileDropdownComponent } from './dropdown/profile-dropdown/profile-dr
     HotSubjectComponent,
     NewActiveComponent,
     ProfileDropdownComponent,
+    BannerComponent,
   ],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
-  exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent, NewActiveComponent],
+  exports: [
+    NewArticleComponent,
+    LearnWillingnessComponent,
+    NavBarComponent,
+    NewVideoComponent,
+    HotSubjectComponent,
+    NewActiveComponent,
+    BannerComponent,
+  ],
 })
 export class CommonToolModule {}
