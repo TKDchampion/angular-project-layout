@@ -9,9 +9,18 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NewVideoComponent } from './new-video/new-video.component';
 import { HotSubjectComponent } from './hot-subject/hot-subject.component';
 import { NewActiveComponent } from './new-active/new-active.component';
+import { ProfileDropdownComponent } from './dropdown/profile-dropdown/profile-dropdown.component';
 
 @NgModule({
-  declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent, NewActiveComponent],
+  declarations: [
+    NewArticleComponent,
+    LearnWillingnessComponent,
+    NavBarComponent,
+    NewVideoComponent,
+    HotSubjectComponent,
+    NewActiveComponent,
+    ProfileDropdownComponent,
+  ],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent, NewActiveComponent],
 })
