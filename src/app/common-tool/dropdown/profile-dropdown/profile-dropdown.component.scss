@@ -1,0 +1,76 @@
+#profile {
+  inset: unset !important;
+  right: 0px !important;
+  width: 320px;
+  .profile_headshot {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    height: 80px;
+  }
+  .profile_username {
+    font-weight: 500;
+    font-size: 20px;
+    color: #333333;
+    height: 29px;
+  }
+  .btn_profile {
+    width: 112px;
+    height: 38px;
+    background: #FFFFFF;
+    border: 1px solid #9DACC7;
+    box-sizing: border-box;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    color: #3B5A90;
+  }
+  .profile_viewbtn {
+    margin-top: 10px;
+    margin-bottom: 24px;
+  }
+  .btn_verify {
+    width: 256px;
+    height: 40px;
+    background: #3B5A90;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+  }
+  .profile_viewverify {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .profile_record {
+    margin-top: 24px;
+  }
+  .profile_favorite {
+    margin-top: 24px;
+  }
+  .profile_learn {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .profile_logout {
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+  .profile_item {
+    display: flex;
+    height: 24px;
+    text-align: center;
+    padding: unset;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #15191C;
+    .profile_a_img {
+      height: 20px;
+      margin-left: 32px;
+      margin-right: 16px;
+    }
+  }
+}
