@@ -12,16 +12,20 @@
       <img src="../../../assets/img/DKSH-white.png" width="90" height="26" alt="">
     </a>
     <ng-container *ngIf="isCollapsed">
-      <!-- 未登入 -->
-      <!-- <button type="button" class="btn btn-login-mobile">登入</button> -->
+      <!-- 未登入mobile -->
+      <button *ngIf="identity === 1" type="button" class="btn btn-login-mobile">登入</button>
       <!-- 未登入 End -->
-      <!-- 已登入 -->
-      <div class="nav_bar_search_mobile">
-        <img (click)="showSearchInputMobile = true" src="../../../assets/img/search_mobile.png" width="20" height="20" alt="">
-      </div>
-      <div class="nav_bar_headshot_mobile">
-        <img src="../../../assets/img/fakeImge/header_fake_headshot.png" width="40" height="40" alt="">
-      </div>
+      <!-- 已登入mobile -->
+      <ng-container *ngIf="identity !== 1">
+        <div class="nav_bar_search_mobile">
+          <img (click)="showSearchInputMobile = true" src="../../../assets/img/search_mobile.png" width="20" height="20"
+            alt="">
+        </div>
+        <div class="nav_bar_headshot_mobile" dropdown>
+          <img dropdownToggle src="../../../assets/img/fakeImge/header_fake_headshot.png" width="40" height="40" alt="">
+          <app-profile-dropdown [identity]="identity"></app-profile-dropdown>
+        </div>
+      </ng-container>
       <!-- 已登入 End -->
     </ng-container>
   </div>
@@ -82,21 +86,29 @@
       <img src="../../../assets/img/search.png" width="20" height="18" alt="">
       <input type="text" class="input-search" placeholder="搜尋">
     </div>
-    <!-- 已登入 -->
-    <div class="nav_bar_headshot">
-      <img src="../../../assets/img/fakeImge/header_fake_headshot.png" width="40" height="40" alt="">
-    </div>
-    <!-- 已登入 End -->
-    <!-- 未登入 -->
-    <!-- <button type="button" class="btn btn-login">登入</button>
-    <button type="button" class="btn btn-register">免費加入</button> -->
+    <!-- 未登入desktop -->
+    <ng-container *ngIf="identity === 1">
+      <button type="button" class="btn btn-login">登入</button>
+      <button type="button" class="btn btn-register">免費加入</button>
+    </ng-container>
     <!-- 未登入 End -->
+    <!-- 已登入desktop -->
+    <ng-container *ngIf="identity !== 1">
+      <div class="nav_bar_headshot" dropdown>
+        <img dropdownToggle src="../../../assets/img/fakeImge/header_fake_headshot.png" width="40" height="40" alt="">
+        <app-profile-dropdown [identity]="identity"></app-profile-dropdown>
+      </div>
+    </ng-container>
+    <!-- 已登入 End -->
   </div>
+  <!-- 搜尋列Moble -->
   <div *ngIf="showSearchInputMobile" class="search_panel_mobile">
     <div class="search_context_mobile">
       <img class="search_icon_mobile" src="../../../assets/img/search.png" width="20" height="18" alt="">
       <input type="text" class="input_search_mobile" placeholder="搜尋">
-      <img (click)="showSearchInputMobile = false" class="search_cancelicon_mobile" src="../../../assets/img/close_circle.png" width="18" height="18" alt="">
+      <img (click)="showSearchInputMobile = false" class="search_cancelicon_mobile"
+        src="../../../assets/img/close_circle.png" width="18" height="18" alt="">
     </div>
   </div>
+  <!-- 搜尋列Moble End -->
 </nav>

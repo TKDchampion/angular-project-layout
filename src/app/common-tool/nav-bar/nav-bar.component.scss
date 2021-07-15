@@ -58,17 +58,18 @@
       padding-left: 4px;
     }
   }
-
-  .dropdown-menu {
-    width: 200px;
-    height: 228px;
-    overflow-y: auto;
-    a {
-      padding-left: 12px;
-      font-size: 14px;
-      font-weight: normal;
-      height: 32px;
-      line-height: 24px;
+  #navbarSupportedContent {
+    .dropdown-menu {
+      width: 200px;
+      height: 228px;
+      overflow-y: auto;
+      a {
+        padding-left: 12px;
+        font-size: 14px;
+        font-weight: normal;
+        height: 32px;
+        line-height: 24px;
+      }
     }
   }
 
