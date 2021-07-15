@@ -1,20 +1,20 @@
-<div class="new-article container">
+<div class="new-article">
   <div class="row h-100">
-    <div class="article-img col-12 col-xl-6 col-md-4">
+    <div class="article-img col-xl-6 col-md-6">
       <img src="{{ newArticle.articleImg }}" alt="" class="h-100 w-100" />
     </div>
-    <div class="article-context col-12 col-xl-6 col-md-8">
-      <div class="article-context-title col">{{ newArticle.articleTitle }}</div>
-      <div class="article-context-subtitle col">{{ newArticle.articleSubtitle }}</div>
-      <div class="article-context-author col">
+    <div class="article-context col-xl-6 col-md-6">
+      <h3 class="article-context-title">{{ newArticle.articleTitle }}</h3>
+      <div class="article-context-subtitle">{{ newArticle.articleSubtitle }}</div>
+      <div class="article-context-author">
         <div class="row">
-          <div class="article-context-author-icon col-xl-2 col-1">
+          <div class="article-context-author-icon">
             <img class="headshot_sm" src="{{ newArticle.authorImg }}" alt="" />
           </div>
-          <div class="article-context-author-name col-xl-10 col-11">{{ newArticle.author }} 教授</div>
+          <div class="article-context-author-name">{{ newArticle.author }} 教授</div>
         </div>
       </div>
-      <div class="article-context-viewer col">{{ newArticle.viewer }} 已閱讀</div>
+      <div class="article-context-viewer">{{ newArticle.viewer }} 已閱讀</div>
     </div>
   </div>
 </div>
