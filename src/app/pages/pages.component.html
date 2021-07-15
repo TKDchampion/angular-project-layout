@@ -1,13 +1,17 @@
 <app-nav-bar></app-nav-bar>
-<div style="margin-left: 20px">
-  <!--
+<!--
 <button type="button" class="btn btn-primary">Single Button</button>
 <a routerLink="/pages/home/1" routerLinkActive="active">go</a>
 <app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness>
 <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
 <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-<app-new-article [newArticle]="newArticle"></app-new-article>
+<app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
 <router-outlet></router-outlet>
 <app-new-active></app-new-active>
 -->
+<div class="container">
+  <div class="row">
+    <app-new-article class="col-xl-6" [newArticle]="newArticle"></app-new-article>
+    <app-new-article class="col-xl-6" [newArticle]="newArticle"></app-new-article>
+  </div>
 </div>
