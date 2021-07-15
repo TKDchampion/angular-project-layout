@@ -8,10 +8,11 @@ import { RouterModule } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NewVideoComponent } from './new-video/new-video.component';
 import { HotSubjectComponent } from './hot-subject/hot-subject.component';
+import { NewActiveComponent } from './new-active/new-active.component';
 
 @NgModule({
-  declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent],
+  declarations: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent, NewActiveComponent],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
-  exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent],
+  exports: [NewArticleComponent, LearnWillingnessComponent, NavBarComponent, NewVideoComponent, HotSubjectComponent, NewActiveComponent],
 })
 export class CommonToolModule {}
