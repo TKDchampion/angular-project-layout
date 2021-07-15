@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NewArticle } from './new-article.modal';
 
 @Component({
@@ -6,9 +6,6 @@ import { NewArticle } from './new-article.modal';
   templateUrl: './new-article.component.html',
   styleUrls: ['./new-article.component.scss'],
 })
-export class NewArticleComponent implements OnInit {
+export class NewArticleComponent {
   @Input() newArticle!: NewArticle;
-  constructor() { }
-
-  ngOnInit(): void { }
 }
