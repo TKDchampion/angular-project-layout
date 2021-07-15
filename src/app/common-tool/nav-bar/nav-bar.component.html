@@ -17,7 +17,8 @@
       <!-- 未登入 End -->
       <!-- 已登入 -->
       <div class="nav_bar_search_mobile">
-        <img (click)="showSearchInputMobile = true" src="../../../assets/img/search_mobile.png" width="20" height="20" alt="">
+        <img (click)="showSearchInputMobile = true" src="../../../assets/img/search_mobile.png" width="20" height="20"
+          alt="">
       </div>
       <div class="nav_bar_headshot_mobile">
         <img src="../../../assets/img/fakeImge/header_fake_headshot.png" width="40" height="40" alt="">
@@ -83,8 +84,42 @@
       <input type="text" class="input-search" placeholder="搜尋">
     </div>
     <!-- 已登入 -->
-    <div class="nav_bar_headshot">
-      <img src="../../../assets/img/fakeImge/header_fake_headshot.png" width="40" height="40" alt="">
+    <div class="nav_bar_headshot" dropdown>
+      <img dropdownToggle src="../../../assets/img/fakeImge/header_fake_headshot.png" width="40" height="40" alt="">
+      <ul id="profile" *dropdownMenu class="dropdown-menu" role="menu">
+        <li class="text-center profile_headshot"><img src="../../../assets/img/fakeImge/header_fake_bigheadshot.png"
+            width="80" height="80" alt=""></li>
+        <li class="text-center">
+          <p class="profile_username">陳薰依</p>
+        </li>
+        <li class="text-center profile_viewbtn"><button type="button" class="btn btn_profile">瀏覽會員資料</button></li>
+        <li class="divider dropdown-divider"></li>
+        <li class="text-center profile_viewverify"><button type="button" class="btn btn_verify">驗證身份</button></li>
+        <li class="divider dropdown-divider"></li>
+        <li class="profile_record"><a class="dropdown-item profile_item" href="#">
+            <div class="profile_a_img">
+              <img src="../../../assets/img/time_circle.png" width="20" height="20" alt="">
+            </div>
+            瀏覽紀錄
+          </a></li>
+        <li class="profile_favorite"><a class="dropdown-item profile_item" href="#">
+            <div class="profile_a_img">
+              <img src="../../../assets/img/bookmark.png" width="20" height="20" alt="">
+            </div>我的收藏
+          </a></li>
+        <li class="profile_learn"><a class="dropdown-item profile_item" href="#">
+            <div class="profile_a_img">
+              <img src="../../../assets/img/star.png" width="20" height="20" alt="">
+            </div>學習意願
+          </a></li>
+        <li class="divider dropdown-divider"></li>
+        <li class="profile_logout"><a class="dropdown-item profile_item" href="#">
+            <div class="profile_a_img">
+              <img src="../../../assets/img/login.png" width="20" height="20" alt="">
+            </div>登出
+          </a>
+        </li>
+      </ul>
     </div>
     <!-- 已登入 End -->
     <!-- 未登入 -->
@@ -96,7 +131,8 @@
     <div class="search_context_mobile">
       <img class="search_icon_mobile" src="../../../assets/img/search.png" width="20" height="18" alt="">
       <input type="text" class="input_search_mobile" placeholder="搜尋">
-      <img (click)="showSearchInputMobile = false" class="search_cancelicon_mobile" src="../../../assets/img/close_circle.png" width="18" height="18" alt="">
+      <img (click)="showSearchInputMobile = false" class="search_cancelicon_mobile"
+        src="../../../assets/img/close_circle.png" width="18" height="18" alt="">
     </div>
   </div>
 </nav>
