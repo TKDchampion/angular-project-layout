@@ -1,7 +1,7 @@
 <div class="new-article container">
   <div class="row h-100">
     <div class="article-img col-12 col-xl-6 col-md-4">
-      <img src="{{newArticle.articleImg}}" alt="" class="h-100 w-100">
+      <img src="{{ newArticle.articleImg }}" alt="" class="h-100 w-100" />
     </div>
     <div class="article-context col-12 col-xl-6 col-md-8">
       <div class="article-context-title col">{{ newArticle.articleTitle }}</div>
@@ -9,14 +9,12 @@
       <div class="article-context-author col">
         <div class="row">
           <div class="article-context-author-icon col-xl-2 col-1">
-            <img src="{{newArticle.authorImg}}" alt="">
+            <img class="headshot_sm" src="{{ newArticle.authorImg }}" alt="" />
           </div>
-          <div class="article-context-author-name col-xl-10 col-11">
-            {{newArticle.author}} 教授
-          </div>
+          <div class="article-context-author-name col-xl-10 col-11">{{ newArticle.author }} 教授</div>
         </div>
       </div>
-      <div class="article-context-viewer col">{{newArticle.viewer}} 已閱讀</div>
+      <div class="article-context-viewer col">{{ newArticle.viewer }} 已閱讀</div>
     </div>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { identity } from 'rxjs';
 import { HotSubjectItemInfo } from '../common-tool/hot-subject/hot-subject.model';
 import { LearnWillingness } from '../common-tool/learn-willingness/learn-willingness.modal';
+import { NewActiveItemInfo } from '../common-tool/new-active/new-active.model';
 import { NewArticle } from '../common-tool/new-article/new-article.modal';
 import { NewVideoItemInfo } from '../common-tool/new-video/new-video.model';
 import { EveService } from '../services/env.service';
@@ -46,5 +47,15 @@ export class PagesComponent {
     title: '眼科',
     subTitle: '121相關課程',
     svgClass: 'eyeIcon',
+  };
+
+  newActiveItemInfo: NewActiveItemInfo = {
+    img: '../../../assets/img/fakeImge/new_active_fake_img.png',
+    tag: ['線上研討會', '系列講座'],
+    title: '110年安泰醫療社團法人安泰醫院辦理醫護人員教育訓練計畫',
+    subTitle: '地點：安泰醫院',
+    headShot: '../../../assets/img/fakeImge/new_active_fake_headshot.png',
+    name: '黃織芬 教授',
+    time: '2021/05/11 19:00-2021/05/13 17:00',
   };
 }
