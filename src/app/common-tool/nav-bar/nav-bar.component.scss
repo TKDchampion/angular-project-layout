@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .btn-login-mobile,
 .nav_bar_headshot_mobile,
 .nav_bar_search_mobile {
@@ -10,7 +12,7 @@
 }
 
 .nav_bar_headshot {
-  background: #9DACC7;
+  background: $light_blue;
   border-radius: 100px;
   width: 40px;
   height: 40px;
@@ -48,7 +50,7 @@
   }
 
   .nav-category.open.show {
-    background: #FDF4F5;
+    background: $light_light_light_light_grey;
     border-radius: 100px;
   }
 
@@ -100,10 +102,10 @@
   .btn-login {
     width: 92px;
     height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #9DACC7;
+    background: $white;
+    border: 1px solid $light_blue;
     border-radius: 100px;
-    color: #3B5A90;
+    color: $blue;
     font-weight: 500;
     font-size: 16px;
   }
@@ -111,9 +113,9 @@
   .btn-register {
     width: 92px;
     height: 40px;
-    background: #3B5A90;
+    background: $blue;
     border-radius: 100px;
-    color: #FFFFFF;
+    color: $white;
     font-weight: 500;
     font-size: 16px;
   }
@@ -140,7 +142,7 @@
     line-height: 40px;
     align-items: center;
     margin-right: 12px;
-    background: #F5F7F9;
+    background: $light_light_light_grey;
     border-radius: 8px;
     img {
       margin-left: 16px;
@@ -162,7 +164,7 @@
   .text-search {
     margin-left: 6px;
     font-size: 14px;
-    color: #3B5A90;
+    color: $blue;
   }
 
   .btn-register {
@@ -196,6 +198,11 @@
     border: unset;
     padding-left: 20px;
   }
+  .navbar-brand-center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
   .navbar-brand {
     line-height: 42px;
     height: 42px;
@@ -206,10 +213,10 @@
   .btn-login-mobile {
     width: 92px;
     height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #9DACC7;
+    background: $white;
+    border: 1px solid $light_blue;
     border-radius: 100px;
-    color: #3B5A90;
+    color: $blue;
     font-weight: 500;
     font-size: 16px;
     position: absolute;
@@ -218,7 +225,7 @@
   }
 
   .nav_bar_headshot_mobile {
-    background: #9DACC7;
+    background: $light_blue;
     border-radius: 100px;
     width: 40px;
     height: 40px;
@@ -259,7 +266,7 @@
           font-weight: 500;
           font-size: 16px;
           line-height: 16px;
-          color: #15191C;
+          color: $black;
         }
         .dropdown-toggle::after {
           margin-left: 185px;
@@ -275,7 +282,7 @@
           font-weight: 500;
           padding-top: 24px;
           line-height: 14px;
-          color: #15191C;
+          color: $black;
         }
       }
     }
@@ -283,7 +290,7 @@
   .search_panel_mobile {
     width: 100%;
     height: 48px;
-    background: #F5F7F9;
+    background: $light_light_light_grey;
     .search_context_mobile {
       width: 100%;
       height: 40px;
