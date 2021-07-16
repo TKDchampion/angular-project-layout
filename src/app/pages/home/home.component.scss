@@ -1,0 +1,7 @@
+@import '../../../styles/bootstrap.scss';
+
+@include media-breakpoint-down(xxl) {
+  .new_article {
+    margin-top: 20px;
+  }
+}

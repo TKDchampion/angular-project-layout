@@ -10,6 +10,7 @@ import { NewVideoComponent } from './new-video/new-video.component';
 import { HotSubjectComponent } from './hot-subject/hot-subject.component';
 import { NewActiveComponent } from './new-active/new-active.component';
 import { ProfileDropdownComponent } from './dropdown/profile-dropdown/profile-dropdown.component';
+import { ScopeTitleComponent } from './scope-title/scope-title.component';
 import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { BannerComponent } from './banner/banner.component';
     HotSubjectComponent,
     NewActiveComponent,
     ProfileDropdownComponent,
+    ScopeTitleComponent,
     BannerComponent,
   ],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
@@ -31,6 +33,7 @@ import { BannerComponent } from './banner/banner.component';
     NewVideoComponent,
     HotSubjectComponent,
     NewActiveComponent,
+    ScopeTitleComponent,
     BannerComponent,
   ],
 })
