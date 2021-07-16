@@ -1,8 +1,8 @@
 @import '../../../styles/variables.scss';
 
 .banner {
-  background-image: url("https://www.thestatesman.com/wp-content/uploads/2020/02/doctor.jpg");
-  background-size:100% 100%;
+  background-image: url('https://www.thestatesman.com/wp-content/uploads/2020/02/doctor.jpg');
+  background-size: 100% 100%;
   height: 600px;
   width: 100%;
   .banner_content {
@@ -53,10 +53,10 @@
         margin-right: 12px;
       }
       .input_search:focus {
-        outline:0px;
+        outline: 0px;
       }
       .input_search::placeholder {
-        color:$border_grey;
+        color: $border_grey;
       }
     }
     .banner_tags_item {
@@ -72,7 +72,7 @@
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .banner-outside {
     padding: 0 32px;
     .banner {

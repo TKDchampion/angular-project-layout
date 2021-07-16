@@ -3,7 +3,7 @@
     <img [src]="newActiveItemInfo.img" alt="" />
   </div>
   <div class="new_active_right">
-    <div class="new_active_right_tags d-flex">
+    <div class="new_active_right_tags d-flex flex-wrap">
       <p class="new_active_right_tags_item" *ngFor="let tag of newActiveItemInfo.tag">{{ tag }}</p>
     </div>
     <div class="new_active_right_content">
