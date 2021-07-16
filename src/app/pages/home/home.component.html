@@ -1,8 +1,19 @@
-<p>home works!</p>
+<!-- <p>home works!</p>
 <button (click)="open()">open</button>
 <button (click)="close()">close</button>
 <p>{{ flag$ | async }}</p>
 
 <button (click)="set()">test</button>
 <p>{{ getdata?.value }}</p>
-<div data-vimeo-url="https://player.vimeo.com/video/559876766" id="handstick"></div>
+<div data-vimeo-url="https://player.vimeo.com/video/559876766" id="handstick"></div> -->
+<div class="container-fluid">
+  <app-scope-title [title]="'最新影片'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <div class="row">
+    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
+    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
+  </div>
+  <!-- <app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness>
+  <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
+  <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+  <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active> -->
+</div>
