@@ -11,6 +11,7 @@ import { HotSubjectComponent } from './hot-subject/hot-subject.component';
 import { NewActiveComponent } from './new-active/new-active.component';
 import { ProfileDropdownComponent } from './dropdown/profile-dropdown/profile-dropdown.component';
 import { ScopeTitleComponent } from './scope-title/scope-title.component';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ScopeTitleComponent } from './scope-title/scope-title.component';
     NewActiveComponent,
     ProfileDropdownComponent,
     ScopeTitleComponent,
+    BannerComponent,
   ],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -32,6 +34,7 @@ import { ScopeTitleComponent } from './scope-title/scope-title.component';
     HotSubjectComponent,
     NewActiveComponent,
     ScopeTitleComponent,
+    BannerComponent,
   ],
 })
 export class CommonToolModule {}
