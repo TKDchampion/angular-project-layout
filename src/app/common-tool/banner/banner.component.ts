@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EveService } from 'src/app/services/env.service';
 
 @Component({
   selector: 'app-banner',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-
-  constructor() { }
+  // identity = this.envService.getEnv('identity');
+  identity = 2;
+  constructor(private envService: EveService) {}
 
   ngOnInit(): void {
   }

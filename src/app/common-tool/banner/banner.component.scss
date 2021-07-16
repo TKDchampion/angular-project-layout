@@ -7,7 +7,7 @@
   width: 100%;
   .banner_content {
     width: 620px;
-    height: 243px;
+    min-height: 189px;
     position: relative;
     top: 50%;
     transform: translate(0, -50%);
@@ -18,13 +18,14 @@
       line-height: 70px;
       letter-spacing: 0.04em;
       color: $black;
+      display: flex;
+      align-items: center;
     }
     .banner_subTitle {
       font-size: 24px;
       line-height: 38px;
       letter-spacing: 0.02em;
       color: $grey;
-      height: 71px;
       margin-top: 8px;
       margin-bottom: 40px;
     }
@@ -37,6 +38,45 @@
       font-size: 18px;
       line-height: 18px;
       color: $white;
+    }
+    .banner_search_panel {
+      margin-bottom: 12px;
+      .input_search {
+        border-radius: 100px;
+        height: 54px;
+        width: 420px;
+        background: $white;
+        border: 1px solid $border_grey;
+        font-size: 16px;
+        line-height: 24px;
+        padding-left: 16px;
+        margin-right: 12px;
+      }
+      .input_search:focus {
+        outline:0px;
+      }
+      .input_search::placeholder {
+        color:$border_grey;
+      }
+    }
+    .banner_tags_item {
+      height: 40px;
+      background-color: $pink;
+      color: $red;
+      border-radius: 100px;
+      font-size: $font-size-16;
+      line-height: 40px;
+      padding: 0 16px;
+      margin-right: 12px;
+    }
+  }
+}
+
+@media (min-width:1200px) {
+  .banner-outside {
+    padding: 0 32px;
+    .banner {
+      border-radius: 40px;
     }
   }
 }
@@ -54,18 +94,34 @@
       .banner_title {
         font-size: 28px;
         line-height: 32px;
-        height: 73px;
+        width: 320px;
+        min-height: 41px;
+        .dksh_icon {
+          width: 82px;
+          height: 26px;
+        }
       }
       .banner_subTitle {
+        width: 327px;
+        min-height: 20px;
         font-size: 14px;
         line-height: 22px;
-        height: 44px;
         margin-bottom: 24px;
       }
       .btn_banner_register {
         width: 112px;
         height: 40px;
         color: $white;
+      }
+      .banner_search_panel {
+        .input_search {
+          width: 240px;
+        }
+      }
+      .banner_tags_item {
+        height: 32px;
+        line-height: 32px;
+        margin-right: 12px;
       }
     }
   }
