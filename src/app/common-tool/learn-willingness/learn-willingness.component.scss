@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .learn-willingness {
   width: 296px;
   height: 278px;
@@ -8,7 +10,7 @@
   padding: 32px 32px 0 32px;
   .learn-title,
   .learn-subtitle {
-    color: #FFFFFF;
+    color: $white;
     letter-spacing: 0px;
   }
 }
@@ -30,9 +32,9 @@
 }
 
 .btn-check-all {
-  background: #FFFFFF;
-  border: 1px solid #9DACC7;
+  background: $white;
+  border: 1px solid $light_blue;
   border-radius: 100px;
-  color: #3B5A90;
+  color: $blue;
   font-weight: 500;
 }
