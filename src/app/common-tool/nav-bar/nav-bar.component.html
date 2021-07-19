@@ -1,4 +1,4 @@
-<nav class="navbar-div navbar navbar-expand-lg navbar-light">
+<nav class="navbar-div fixed-top navbar navbar-expand-lg navbar-light" [ngClass]="{'nav_bar_mobile_collapsed': !isCollapsed}">
   <div class="navbar-icon" [ngStyle]="{'background': isCollapsed ? '':'#D42335'}">
     <a class="navbar-toggler" (click)="collapsedStatus()" [attr.aria-expanded]="!isCollapsed">
       <img [src]="isCollapsed ? '../../../assets/img/menu.png': '../../../assets/img/close.png'" width="24" height="24"
@@ -75,6 +75,7 @@
         </div>
       </li>
     </ul>
+    <hr class="nav_bar_hr">
   </div>
   <div class="event-group">
     <div class="search" *ngIf="!showSearchInput" (click)="showSearchInput = !showSearchInput">

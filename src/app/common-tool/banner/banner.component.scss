@@ -1,5 +1,8 @@
 @import '../../../styles/variables.scss';
-
+@import '../../../styles/bootstrap.scss';
+.banner-outside {
+  margin-top: 76px;
+}
 .banner {
   background-image: url('https://www.thestatesman.com/wp-content/uploads/2020/02/doctor.jpg');
   background-size: 100% 100%;
@@ -75,7 +78,13 @@
   }
 }
 
-@media (min-width: 1200px) {
+@include media-breakpoint-down(lg) {
+  .banner-outside {
+    margin-top: 64px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
   .banner-outside {
     padding: 0 32px;
     .banner {
@@ -84,7 +93,8 @@
   }
 }
 
-@media (max-width: 576px) {
+
+@include media-breakpoint-down(sm) {
   .banner {
     display: flex;
     flex-wrap: wrap;
