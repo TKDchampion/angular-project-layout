@@ -1,0 +1,34 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/bootstrap.scss';
+#substie {
+  inset: 100% auto auto -30px !important;
+  right: 0px !important;
+  width: 200px;
+}
+.nav_bar_subsite {
+  margin-right: 12px;
+}
+.btn_subsite {
+  background: $light_light_blue;
+  border: 1px solid $light_blue;
+  box-sizing: border-box;
+  border-radius: 100px;
+  color: $blue;
+  font-weight: 500;
+}
+
+@include media-breakpoint-down(lg) {
+  #substie {
+    inset: unset !important;
+    right: unset !important;
+  }
+  .nav_bar_subsite {
+    margin-top: 24px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .nav_bar_subsite {
+    margin-left: 32px;
+  }
+}
