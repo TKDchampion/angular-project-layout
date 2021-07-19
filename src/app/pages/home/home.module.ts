@@ -9,6 +9,8 @@ import { StoreModule } from '@ngrx/store';
 import * as flagReducer from 'src/app/core/store/flag/flag.reducer';
 import * as setValueReducer from 'src/app/core/store/setValue/set-value.reducer';
 import { CommonToolModule } from 'src/app/common-tool/common-tool.module';
+import { SwiperModule } from 'swiper/angular';
+import { ResizeService } from 'src/app/services/resize.service';
 
 @NgModule({
   declarations: [HomeComponent, HomeItemComponent],
@@ -16,9 +18,11 @@ import { CommonToolModule } from 'src/app/common-tool/common-tool.module';
     CommonModule,
     CommonToolModule,
     HomeRoutingModule,
+    SwiperModule,
     StoreModule.forFeature(flagReducer.flagKey, flagReducer.flagReducer),
     StoreModule.forFeature(setValueReducer.setValueKey, setValueReducer.setValueReducer),
   ],
+  providers: [ResizeService],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class HomeModule {}
