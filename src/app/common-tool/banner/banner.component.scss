@@ -70,6 +70,9 @@
       margin-right: 12px;
     }
   }
+  .banner_img_mobile {
+    display: none;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -83,13 +86,17 @@
 
 @media (max-width: 576px) {
   .banner {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: unset;
+    background-color: $light_light_light_light_light_grey;
     height: 500px;
+    overflow: hidden;
     .banner_content {
       width: 327px;
-      height: 189px;
-      position: relative;
-      top: 32px;
-      left: 24px;
+      position: unset;
+      margin-left: 24px;
+      margin-top: 32px;
       transform: unset;
       .banner_title {
         font-size: 28px;
@@ -122,6 +129,14 @@
         height: 32px;
         line-height: 32px;
         margin-right: 12px;
+        margin-bottom: 8px;
+      }
+    }
+    .banner_img_mobile {
+      display: unset;
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
   }
