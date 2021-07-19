@@ -76,6 +76,9 @@
       </li>
     </ul>
     <hr class="nav_bar_hr">
+    <ng-container *ngIf="identity === 4">
+      <app-subsite-dropdown *ngIf="!isCollapsed"></app-subsite-dropdown>
+    </ng-container>
   </div>
   <div class="event-group">
     <div class="search" *ngIf="!showSearchInput" (click)="showSearchInput = !showSearchInput">
@@ -86,6 +89,9 @@
       <img src="../../../assets/img/search.png" width="20" height="18" alt="">
       <input type="text" class="input-search" placeholder="搜尋">
     </div>
+    <ng-container *ngIf="identity === 4">
+      <app-subsite-dropdown></app-subsite-dropdown>
+    </ng-container>
     <!-- 未登入desktop -->
     <ng-container *ngIf="identity === 1">
       <button type="button" class="btn btn-login">登入</button>

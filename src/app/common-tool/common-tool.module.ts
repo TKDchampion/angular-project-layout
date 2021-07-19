@@ -12,6 +12,7 @@ import { NewActiveComponent } from './new-active/new-active.component';
 import { ProfileDropdownComponent } from './dropdown/profile-dropdown/profile-dropdown.component';
 import { ScopeTitleComponent } from './scope-title/scope-title.component';
 import { BannerComponent } from './banner/banner.component';
+import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BannerComponent } from './banner/banner.component';
     ProfileDropdownComponent,
     ScopeTitleComponent,
     BannerComponent,
+    SubsiteDropdownComponent,
   ],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
