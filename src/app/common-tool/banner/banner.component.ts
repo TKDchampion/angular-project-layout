@@ -7,8 +7,7 @@ import { EveService } from 'src/app/services/env.service';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent implements OnInit {
-  // identity = this.envService.getEnv('identity');
-  identity = 2;
+  identity = this.envService.getEnv('identity');
   constructor(private envService: EveService) {}
 
   ngOnInit(): void {}
