@@ -1,3 +1,4 @@
+import { ResizeService } from './../services/resize.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { ScopeTitleComponent } from './scope-title/scope-title.component';
 import { BannerComponent } from './banner/banner.component';
 import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dropdown.component';
 import { FooterComponent } from './footer/footer.component';
+import { LanguageDropdownComponent } from './dropdown/language-dropdown/language-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { FooterComponent } from './footer/footer.component';
     BannerComponent,
     SubsiteDropdownComponent,
     FooterComponent,
+    LanguageDropdownComponent,
   ],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -41,5 +44,6 @@ import { FooterComponent } from './footer/footer.component';
     BannerComponent,
     FooterComponent,
   ],
+  providers: [ResizeService],
 })
 export class CommonToolModule {}

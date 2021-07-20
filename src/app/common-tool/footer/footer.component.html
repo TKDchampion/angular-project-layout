@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer" *ngIf="!isMobile; else mobile_footer">
   <hr class="footer_hr">
   <div class="footer_content d-flex">
     <div class="footer_content_logo">
@@ -28,26 +28,32 @@
         Powered by Dr. Talk.</div>
       <div class="footer_copyright_chinese">使用條款•隱私權政策</div>
     </div>
-    <div class="btn-group footer_language" dropdown [dropup]="true">
-      <button id="button-dropup" dropdownToggle type="button" class="btn btn_language dropdown-toggle"
-        aria-controls="dropdown-dropup">
-        繁體中文 <span class="caret"></span>
-      </button>
-      <ul id="language" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-dropup">
-        <li role="menuitem"><a class="dropdown-item" href="#">繁體中文</a></li>
-        <li role="menuitem"><a class="dropdown-item" href="#">English</a>
-        </li>
-      </ul>
-    </div>
-    <!-- <div class="footer_language" dropdown [dropup]="true">
-      <button dropdownToggle type="button" class="btn btn_language dropdown-toggle" aria-controls="dropdown-basic">
-        繁體中文 <span class="caret"></span>
-      </button>
-      <ul id="language" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-        <li role="menuitem"><a class="dropdown-item" href="#">繁體中文</a></li>
-        <li role="menuitem"><a class="dropdown-item" href="#">English</a></li>
-      </ul>
-    </div> -->
-
+    <app-language-dropdown></app-language-dropdown>
   </div>
 </div>
+
+
+<ng-template #mobile_footer>
+  <div class="footer_mobile">
+    <div class="footer_content_mobile">
+      <div class="footer_content_mobile_logo">
+        <img class="DKSH-icon" src="../../../assets/img/DKSH_big.png" width="103" height="32" alt="">
+      </div>
+      <div class="footer_content_mobile_text">
+        <div>contact.us@dksh.com</div>
+      </div>
+    </div>
+    <hr class="footer_hr_mobile">
+    <div class="footer_copyright_mobile">
+      <div class="footer_copyright_english_mobile">
+        Copyright @ 2021 Good Health Solutions International All rights reserved. Powered by Dr. Talk.
+      </div>
+      <div class="footer_copyright_content_mobile d-flex">
+        <div class="footer_copyright_content_text_mobile">使用條款•隱私權政策</div>
+        <div>
+          <app-language-dropdown></app-language-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
