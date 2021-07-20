@@ -8,12 +8,27 @@
 <div data-vimeo-url="https://player.vimeo.com/video/559876766" id="handstick"></div> -->
 <div class="container-fluid">
   <app-scope-title [title]="'最新影片'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
-  <div class="row">
+  <!-- <div class="d-flex">
+    <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
+    <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
+    <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
+    <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
+  </div> -->
+  <!-- <div class="row">
     <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
     <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
-  </div>
+  </div> -->
   <!-- <app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness>
-  <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
   <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
   <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active> -->
+  <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="50" [navigation]="true">
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+  </swiper>
 </div>
