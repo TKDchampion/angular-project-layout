@@ -1,0 +1,107 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/bootstrap.scss';
+
+.footer_hr{
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  color: $light_blue;
+}
+
+.footer_content {
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.footer_content_contact {
+  margin-right: 159px;
+}
+
+.footer_content_link {
+  margin-right: 64px;
+}
+
+.footer_content_contact_title {
+  line-height: 20px;
+  color: $light_grey;
+  margin-bottom: 24px;
+}
+
+.footer_content_contact_text {
+  line-height: 16px;
+  color: $grey;
+  margin-bottom: 26px;
+}
+
+.footer_copyright {
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 16px;
+  .footer_copyright_text {
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: 36px;
+    .footer_copyright_english {
+      line-height: 16px;
+      font-size: $font-size-12;
+      color: $light_grey;
+      margin-right: 48px;
+      letter-spacing: 0px;
+    }
+    .footer_copyright_chinese {
+      line-height: 14px;
+      font-size: $font-size-14;
+      color: $grey;
+      letter-spacing: 0px;
+    }
+  }
+}
+
+.footer_mobile {
+  background: $white;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  padding-top: 24px;
+  box-shadow: 0px -3px 6px rgb(21 25 28 / 10%);
+  .footer_content_mobile {
+    text-align: center;
+    .footer_content_mobile_logo {
+      margin-bottom: 24px;
+    }
+    .footer_content_mobile_text {
+      font-size: $font-size-16;
+      line-height: 16px;
+      color: $grey;
+    }
+  }
+  .footer_hr_mobile {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+  }
+  .footer_copyright_mobile {
+    width: 90%;
+    margin: auto;
+    margin-top: 16px;
+    .footer_copyright_english_mobile {
+      color: $light_grey;
+      letter-spacing: 0px;
+      line-height: 16px;
+      font-size: $font-size-12;
+    }
+    .footer_copyright_content_mobile {
+      margin-top: 16px;
+      justify-content: space-between;
+      align-items: center;
+      .footer_copyright_content_text_mobile {
+        line-height: 14px;
+        font-size: $font-size-14;
+        color: $grey;
+        letter-spacing: 0px;
+      }
+    }
+  }
+}
