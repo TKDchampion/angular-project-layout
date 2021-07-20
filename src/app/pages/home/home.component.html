@@ -1,4 +1,4 @@
-<!-- <p>home works!</p>
+<!--
 <button (click)="open()">open</button>
 <button (click)="close()">close</button>
 <p>{{ flag$ | async }}</p>
@@ -6,21 +6,10 @@
 <button (click)="set()">test</button>
 <p>{{ getdata?.value }}</p>
 <div data-vimeo-url="https://player.vimeo.com/video/559876766" id="handstick"></div> -->
+
 <div class="container-fluid">
+  <!-- New video -->
   <app-scope-title [title]="'最新影片'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
-  <!-- <div class="d-flex">
-    <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
-    <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
-    <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
-    <app-new-video [newVideoItem]="newVideoItem"></app-new-video>
-  </div> -->
-  <!-- <div class="row">
-    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
-    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
-  </div> -->
-  <!-- <app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness>
-  <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-  <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active> -->
   <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="50" [navigation]="true">
     <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
     <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
@@ -31,4 +20,54 @@
     <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
     <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
   </swiper>
+
+  <!-- According to learn -->
+  <!-- <app-scope-title [title]="'影片推薦'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness> -->
+
+  <!-- Recommend video -->
+  <app-scope-title [title]="'影片推薦'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="50" [navigation]="true">
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+  </swiper>
+
+  <!-- Hot subject -->
+  <app-scope-title [title]="'熱門學科'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <div class="d-flex">
+    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+  </div>
+  <div class="d-flex">
+    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+  </div>
+
+  <!-- New active -->
+  <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <div class="d-flex">
+    <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
+    <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
+  </div>
+
+  <!-- New article -->
+  <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <div class="row">
+    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
+    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
+  </div>
+  <div class="row">
+    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
+    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
+  </div>
 </div>
