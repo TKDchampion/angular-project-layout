@@ -13,6 +13,7 @@ import { ProfileDropdownComponent } from './dropdown/profile-dropdown/profile-dr
 import { ScopeTitleComponent } from './scope-title/scope-title.component';
 import { BannerComponent } from './banner/banner.component';
 import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dropdown.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dr
     ScopeTitleComponent,
     BannerComponent,
     SubsiteDropdownComponent,
+    FooterComponent,
   ],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -37,6 +39,7 @@ import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dr
     NewActiveComponent,
     ScopeTitleComponent,
     BannerComponent,
+    FooterComponent,
   ],
 })
 export class CommonToolModule {}
