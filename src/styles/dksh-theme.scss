@@ -21,7 +21,6 @@ body swiper .swiper-button-prev {
   width: 44px;
   height: 44px;
   border-radius: 100px;
-  color: red;
   background: #ffffff;
   border: 2px solid #e8e8e8;
   &.swiper-button-disabled {
@@ -29,7 +28,21 @@ body swiper .swiper-button-prev {
   }
   &::after {
     font-size: 20px;
-    font-weight: 500;
+  }
+}
+
+body swiper .swiper-button-next {
+  right: 0;
+  &::after {
+    content: url(../assets/icon/arrow-right.svg);
+    margin-right: -4px;
+  }
+}
+body swiper .swiper-button-prev {
+  left: 0;
+  &::after {
+    content: url(../assets/icon/arrow-left.svg);
+    margin-left: -4px;
   }
 }
 
