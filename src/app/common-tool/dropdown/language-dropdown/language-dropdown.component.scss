@@ -1,0 +1,13 @@
+@import '../../../../styles/variables.scss';
+
+.footer_language {
+  .btn_language {
+    height: 40px;
+    background: $white;
+    border: 1px solid $light_blue;
+    box-sizing: border-box;
+    border-radius: 100px;
+    color: $blue;
+    font-weight: 500;
+  }
+}
