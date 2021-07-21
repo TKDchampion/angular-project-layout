@@ -193,9 +193,6 @@
 }
 
 @include media-breakpoint-down(xl) {
-  .navbar-nav {
-    margin-left: 32px;
-  }
 
   .nav-category {
     width: 106px;
