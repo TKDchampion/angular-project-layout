@@ -93,6 +93,18 @@
   }
 }
 
+@include media-breakpoint-up(xxl) {
+  .banner-outside {
+    padding: unset;
+    .banner {
+      border-radius: unset;
+      .banner_content {
+        left: calc((100% - 1366px) /2 + 60px);
+      }
+    }
+  }
+}
+
 
 @include media-breakpoint-down(sm) {
   .banner {

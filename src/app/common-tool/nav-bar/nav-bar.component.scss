@@ -1,6 +1,11 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/bootstrap.scss';
 
+.navbar-div {
+  max-width: 1366px;
+  margin: auto;
+}
+
 .btn-login-mobile,
 .nav_bar_headshot_mobile,
 .nav_bar_search_mobile {

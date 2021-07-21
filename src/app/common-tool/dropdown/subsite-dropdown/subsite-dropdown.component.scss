@@ -1,8 +1,7 @@
 @import '../../../../styles/variables.scss';
 @import '../../../../styles/bootstrap.scss';
 #substie {
-  inset: 100% auto auto -30px !important;
-  right: 0px !important;
+  inset: unset !important;
   width: 200px;
 }
 .nav_bar_subsite {
