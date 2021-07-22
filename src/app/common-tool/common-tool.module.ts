@@ -16,6 +16,7 @@ import { BannerComponent } from './banner/banner.component';
 import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dropdown.component';
 import { FooterComponent } from './footer/footer.component';
 import { LanguageDropdownComponent } from './dropdown/language-dropdown/language-dropdown.component';
+import { VerifyKanbanComponent } from './verify-kanban/verify-kanban.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LanguageDropdownComponent } from './dropdown/language-dropdown/language
     SubsiteDropdownComponent,
     FooterComponent,
     LanguageDropdownComponent,
+    VerifyKanbanComponent,
   ],
   imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -43,6 +45,7 @@ import { LanguageDropdownComponent } from './dropdown/language-dropdown/language
     ScopeTitleComponent,
     BannerComponent,
     FooterComponent,
+    VerifyKanbanComponent,
   ],
   providers: [ResizeService],
 })

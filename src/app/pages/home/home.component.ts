@@ -14,6 +14,7 @@ import { NewVideoItemInfo } from 'src/app/common-tool/new-video/new-video.model'
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper/core';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
+import { EveService } from 'src/app/services/env.service';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -78,6 +79,7 @@ export class HomeComponent implements AfterViewInit {
 
   resizeObservable$: Observable<Event> | undefined;
   resizeSubscription$: Subscription | undefined;
+  identity = this.envService.getEnv('identity');
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: InjectionToken<Record<string, unknown>>,
@@ -85,6 +87,7 @@ export class HomeComponent implements AfterViewInit {
     private storeValue: Store<{ setValue: { value: string } }>,
     private metaTagService: Meta,
     private resizeService: ResizeService,
+    private envService: EveService,
   ) {
     const size = this.resizeService.default();
     this.showNewVideoIndex = this.detectNewVideoIndex(size);

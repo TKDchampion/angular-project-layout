@@ -15,6 +15,12 @@
   margin-right: 16px;
 }
 
+// limit width 1366px
+.width_limit {
+  max-width: 1366px;
+  margin: auto
+}
+
 // swiper
 body swiper .swiper-button-next,
 body swiper .swiper-button-prev {
