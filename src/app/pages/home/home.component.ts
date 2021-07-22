@@ -98,19 +98,19 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   onSlideChange(event: unknown, elIndex: number): void {
     const index = (event as { realIndex: number }).realIndex;
-    this.swiperSlideTransform = index * -328;
+    this.swiperSlideTransform = index * -325;
     this.setSwiperTransformStylele(this.swiperSlideTransform, elIndex);
     this.changeDetectorRef.detectChanges();
     console.log(this.swiperSlideTransform);
   }
 
   prev(elIndex: number): void {
-    this.swiperSlideTransform = this.swiperSlideTransform + 328;
+    this.swiperSlideTransform = this.swiperSlideTransform + 325;
     this.setSwiperTransformStylele(this.swiperSlideTransform, elIndex);
   }
 
   next(elIndex: number): void {
-    this.swiperSlideTransform = this.swiperSlideTransform - 328;
+    this.swiperSlideTransform = this.swiperSlideTransform - 325;
     this.setSwiperTransformStylele(this.swiperSlideTransform, elIndex);
   }
 
