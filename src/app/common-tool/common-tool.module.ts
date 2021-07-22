@@ -17,6 +17,7 @@ import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dr
 import { FooterComponent } from './footer/footer.component';
 import { LanguageDropdownComponent } from './dropdown/language-dropdown/language-dropdown.component';
 import { BrandComponent } from './brand/brand.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { BrandComponent } from './brand/brand.component';
     LanguageDropdownComponent,
     BrandComponent,
   ],
-  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
+  imports: [CommonModule, RouterModule, SwiperModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
     NewArticleComponent,
     LearnWillingnessComponent,

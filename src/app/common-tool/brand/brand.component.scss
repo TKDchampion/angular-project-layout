@@ -26,6 +26,55 @@
       }
     }
   }
+  .partner {
+    padding: 100px 0 50px 0;
+    text-align: center;
+    .partner_title {
+      .partner_title_text {
+        font-size: $font-size-24;
+        color: $grey;
+      }
+      .partner_mark {
+        margin: auto;
+        background: #D42335;
+        border-radius: 100px;
+        transform: rotate(90deg);
+        width: 4px;
+        height: 32px;
+      }
+    }
+    .partner_img {
+      max-width: 813px;
+      max-height: 140px;
+      margin: auto;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      ::ng-deep .mySwiper {
+        height: 120px;
+        .swiper-wrapper {
+          .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .swiper-pagination {
+          bottom: 0px;
+          .swiper-pagination-bullet {
+            width: 40px;
+            height: 4px;
+            opacity: 0.5;
+            border-radius: 100px;
+            background: $light_light_light_blue;
+          }
+          .swiper-pagination-bullet-active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(lg) {
@@ -43,6 +92,24 @@
           .brand_subtitle {
             font-size: $font-size-14;
           }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .brand{
+    .partner {
+      padding-top: 65px;
+      .partner_title {
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: flex-end;
+        .partner_mark {
+          margin-left: 20px;
+          margin-right: 8px;
+          transform: unset;
         }
       }
     }

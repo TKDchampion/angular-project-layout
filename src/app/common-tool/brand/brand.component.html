@@ -25,5 +25,23 @@
       </div>
     </div>
   </div>
-  <div class="partner"></div>
+  <div class="partner">
+    <div class="partner_title">
+      <div class="partner_title_text">合作廠商與醫院</div>
+      <div class="partner_mark"></div>
+    </div>
+    <div class="partner_img">
+      <swiper [slidesPerView]="brandCount" [slidesPerGroup]="brandCount" [pagination]="{
+        clickable: true
+      }"
+        class="mySwiper">
+        <ng-template swiperSlide><img src="../../../assets/img/fakeImge/fakevendor-1.png" alt=""></ng-template>
+        <ng-template swiperSlide><img src="../../../assets/img/fakeImge/fakevendor-4.png" alt=""></ng-template>
+        <ng-template swiperSlide><img src="../../../assets/img/fakeImge/fakevendor-2.png" alt=""></ng-template>
+        <ng-template swiperSlide><img src="../../../assets/img/fakeImge/fakevendor-3.png" alt=""></ng-template>
+        <ng-template swiperSlide><img src="../../../assets/img/fakeImge/fakevendor-1.png" alt=""></ng-template>
+        <ng-template swiperSlide><img src="../../../assets/img/fakeImge/fakevendor-4.png" alt=""></ng-template>
+      </swiper>
+    </div>
+  </div>
 </div>

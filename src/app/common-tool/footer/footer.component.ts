@@ -1,6 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
-// import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 
 @Component({
   selector: 'app-footer',
@@ -23,6 +22,6 @@ export class FooterComponent implements OnInit {
 
   private detectWindowSize(size: string): boolean {
     const mobileSize = ['md', 'sm', 'xs'];
-    return !!mobileSize.find(i => i === size) ? true : false;
+    return mobileSize.find((i) => i === size) ? true : false;
   }
 }
