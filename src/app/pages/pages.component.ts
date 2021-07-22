@@ -7,6 +7,7 @@ import { EveService } from '../services/env.service';
   styleUrls: ['./pages.component.scss'],
 })
 export class PagesComponent {
+  identity = this.envService.getEnv('identity');
   constructor(private envService: EveService) {
     console.log('identity', this.envService.getEnv('identity'));
   }

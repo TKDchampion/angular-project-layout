@@ -16,6 +16,8 @@ import { BannerComponent } from './banner/banner.component';
 import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dropdown.component';
 import { FooterComponent } from './footer/footer.component';
 import { LanguageDropdownComponent } from './dropdown/language-dropdown/language-dropdown.component';
+import { BrandComponent } from './brand/brand.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,9 @@ import { LanguageDropdownComponent } from './dropdown/language-dropdown/language
     SubsiteDropdownComponent,
     FooterComponent,
     LanguageDropdownComponent,
+    BrandComponent,
   ],
-  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
+  imports: [CommonModule, RouterModule, SwiperModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
     NewArticleComponent,
     LearnWillingnessComponent,
@@ -43,6 +46,7 @@ import { LanguageDropdownComponent } from './dropdown/language-dropdown/language
     ScopeTitleComponent,
     BannerComponent,
     FooterComponent,
+    BrandComponent,
   ],
   providers: [ResizeService],
 })
