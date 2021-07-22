@@ -1,0 +1,84 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/bootstrap.scss';
+
+.verify_kanban {
+  width: 100%;
+  height: 314px;
+  margin-top: 50px;
+  align-items: center;
+  background: $light_light_light_light_light_grey;
+  background-image: url('../../../assets/img/verify_doctor.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  .verify_kanban_text {
+    margin-left: 48px;
+    .verify_kanban_img {
+      display: none;
+    }
+    .verify_kanban_title {
+      font-size: 48px;
+      letter-spacing: 0.004em;
+      color: $black;
+      line-height: 70px;
+    }
+    .verify_kanban_subtitle {
+      font-size: $font-size-24;
+      letter-spacing: 0.002em;
+      color: $grey;
+      line-height: 38px;
+    }
+    .verify_kanban_button {
+      margin-top: 40px;
+      .btn_verify {
+        width: 160px;
+        height: 54px;
+        font-size: $font-size-18;
+        color: $white;
+        border-radius: 100px;
+        background: $red;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .verify_kanban {
+    .verify_kanban_text {
+      position: relative;
+      left: calc((100% - 1366px) /2 + 48px);
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .verify_kanban {
+    margin-top: 32px;
+    height: 430px;
+    justify-content: center;
+    background-image: unset;
+    .verify_kanban_text {
+      text-align: center;
+      margin-left: unset;
+      .verify_kanban_img {
+        display: unset;
+      }
+      .verify_kanban_title {
+        margin-top: 30px;
+        font-size: $font-size-28;
+        line-height: 32px;
+      }
+      .verify_kanban_subtitle {
+        margin-top: 8px;
+        font-size: $font-size-14;
+        line-height: 22px;
+      }
+      .verify_kanban_button {
+        margin-top: 24px;
+        .btn_verify {
+          width: 112px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}

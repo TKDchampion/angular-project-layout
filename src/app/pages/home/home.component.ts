@@ -12,6 +12,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper/core
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { HotSubjectItemInfo, LearnWillingness, NewActiveItemInfo, NewArticle, NewVideoItem } from './home.model';
+import { EveService } from 'src/app/services/env.service';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -42,6 +43,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   newVideoItem = NewVideoItem;
   hotSubjectItemInfo = HotSubjectItemInfo;
   newActiveItemInfo = NewActiveItemInfo;
+  identity = this.envService.getEnv('identity');
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: InjectionToken<Record<string, unknown>>,
@@ -50,6 +52,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     private metaTagService: Meta,
     private resizeService: ResizeService,
     private changeDetectorRef: ChangeDetectorRef,
+    private envService: EveService,
   ) {
     const size = this.resizeService.default();
     this.showNewVideoIndex = this.detectNewVideoIndex(size);
