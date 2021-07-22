@@ -21,7 +21,7 @@
     >
       <svg class="swiper_next"></svg>
     </button>
-    <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 0)">
+    <swiper class="video_swiper" [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 0)">
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
@@ -52,7 +52,7 @@
     >
       <svg class="swiper_next"></svg>
     </button>
-    <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 1)">
+    <swiper class="video_swiper" [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 1)">
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>

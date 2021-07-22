@@ -9,9 +9,7 @@
 <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
 <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
 -->
-<div>
-  <router-outlet></router-outlet>
-  <app-brand *ngIf="identity === 1"></app-brand>
-  <app-footer></app-footer>
-</div>
+<router-outlet></router-outlet>
+<app-brand *ngIf="identity === 1"></app-brand>
+<app-footer></app-footer>
 <!-- </div> -->
