@@ -22,34 +22,30 @@
 }
 
 // swiper
-body swiper .swiper-button-next,
-body swiper .swiper-button-prev {
+body swiper .swiper-wrapper .swiper-slide {
+  width: 328px !important;
+}
+.swiper_button_next,
+.swiper_button_prev {
   width: 44px;
   height: 44px;
   border-radius: 100px;
   background: #ffffff;
   border: 2px solid #e8e8e8;
-  &.swiper-button-disabled {
+  position: absolute;
+  z-index: 11;
+  margin-top: 115px;
+  &.disabled {
     display: none;
-  }
-  &::after {
-    font-size: 20px;
   }
 }
 
-body swiper .swiper-button-next {
-  right: 0;
-  &::after {
-    content: url(../assets/icon/arrow-right.svg);
-    margin-right: -4px;
-  }
+.swiper_button_next {
+  right: -10px;
 }
-body swiper .swiper-button-prev {
-  left: 0;
-  &::after {
-    content: url(../assets/icon/arrow-left.svg);
-    margin-left: -4px;
-  }
+
+.swiper_button_prev {
+  left: -20px;
 }
 
 // icon
@@ -57,4 +53,16 @@ body swiper .swiper-button-prev {
   background-image: url('../assets/icon/eye.svg');
   width: 52px;
   height: 34px;
+}
+
+.swiper_prev {
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icon/arrow-left.svg);
+}
+
+.swiper_next {
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icon/arrow-right.svg);
 }
