@@ -7,7 +7,7 @@
 <p>{{ getdata?.value }}</p>
 <div data-vimeo-url="https://player.vimeo.com/video/559876766" id="handstick"></div> -->
 
-<div class="home_box">
+<div class="home_box width_limit">
   <!-- New video -->
   <app-scope-title [title]="'最新影片'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
   <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="true">
@@ -20,7 +20,9 @@
     <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
     <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
   </swiper>
-
+</div>
+  <app-verify-kanban *ngIf="identity === 2"></app-verify-kanban>
+<div class="home_box width_limit">
   <!-- According to learn -->
   <!-- <app-scope-title [title]="'影片推薦'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
   <app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness> -->
@@ -61,7 +63,7 @@
   </div>
 
   <!-- New article -->
-  <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <app-scope-title [title]="'最新文章'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
   <div class="row">
     <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
     <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>

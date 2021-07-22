@@ -16,6 +16,7 @@ import { BannerComponent } from './banner/banner.component';
 import { SubsiteDropdownComponent } from './dropdown/subsite-dropdown/subsite-dropdown.component';
 import { FooterComponent } from './footer/footer.component';
 import { LanguageDropdownComponent } from './dropdown/language-dropdown/language-dropdown.component';
+import { VerifyKanbanComponent } from './verify-kanban/verify-kanban.component';
 import { BrandComponent } from './brand/brand.component';
 import { SwiperModule } from 'swiper/angular';
 
@@ -33,6 +34,7 @@ import { SwiperModule } from 'swiper/angular';
     SubsiteDropdownComponent,
     FooterComponent,
     LanguageDropdownComponent,
+    VerifyKanbanComponent,
     BrandComponent,
   ],
   imports: [CommonModule, RouterModule, SwiperModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
@@ -46,6 +48,7 @@ import { SwiperModule } from 'swiper/angular';
     ScopeTitleComponent,
     BannerComponent,
     FooterComponent,
+    VerifyKanbanComponent,
     BrandComponent,
   ],
   providers: [ResizeService],
