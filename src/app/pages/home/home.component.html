@@ -10,16 +10,28 @@
 <div class="home_box">
   <!-- New video -->
   <app-scope-title [title]="'最新影片'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
-  <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="true">
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-  </swiper>
+  <div class="swiper_box">
+    <button (click)="prev(0)" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform === 0 }">
+      <svg class="swiper_prev"></svg>
+    </button>
+    <button
+      (click)="next(0)"
+      class="swiper_button_next"
+      [ngClass]="{ disabled: swiperSlideTransform === (showNewVideoIndex && showNewVideoIndex * -328) }"
+    >
+      <svg class="swiper_next"></svg>
+    </button>
+    <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 0)">
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide>1<app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    </swiper>
+  </div>
 
   <!-- According to learn -->
   <!-- <app-scope-title [title]="'影片推薦'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
@@ -27,16 +39,28 @@
 
   <!-- Recommend video -->
   <app-scope-title [title]="'影片推薦'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
-  <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="true">
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-    <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-  </swiper>
+  <div class="swiper_box">
+    <button (click)="prev(1)" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform === 0 }">
+      <svg class="swiper_prev"></svg>
+    </button>
+    <button
+      (click)="next(1)"
+      class="swiper_button_next"
+      [ngClass]="{ disabled: swiperSlideTransform === (showNewVideoIndex && showNewVideoIndex * -328) }"
+    >
+      <svg class="swiper_next"></svg>
+    </button>
+    <swiper [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 1)">
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide>1<app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+    </swiper>
+  </div>
 
   <!-- Hot subject -->
   <app-scope-title [title]="'熱門學科'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
@@ -61,7 +85,7 @@
   </div>
 
   <!-- New article -->
-  <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <app-scope-title [title]="'最新文章'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
   <div class="row">
     <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
     <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
