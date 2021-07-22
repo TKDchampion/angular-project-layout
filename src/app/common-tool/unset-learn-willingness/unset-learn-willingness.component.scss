@@ -1,0 +1,41 @@
+@import '../../../styles/variables.scss';
+
+.unset_learn {
+  background: $light_light_light_light_light_grey;
+  border-radius: 14px;
+  height: 394px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .unset_learn_content {
+    .unset_learn_title {
+      font-size: $font-size-20;
+      line-height: 24px;
+      color: $light_grey;
+      margin-top: 8px;
+    }
+    .unset_learn_subtitle {
+      font-size: $font-size-12;
+      line-height: 18px;
+      color: $border_grey;
+      margin-top: 2px;
+    }
+    .unset_learn_button {
+      margin-top: 24px;
+      .btn_learn {
+        width: 146px;
+        height: 40px;
+        background: $white;
+        border: 1px solid $light_blue;
+        border-radius: 100px;
+        font-size: $font-size-16;
+        color: $blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+    }
+  }
+}

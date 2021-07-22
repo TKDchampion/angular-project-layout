@@ -29,9 +29,39 @@
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide>1<app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
     </swiper>
   </div>
+
+  <!-- learn willingness -->
+  <ng-container *ngIf="identity !== 1">
+    <app-scope-title [title]="'根據您的學習意願'" [tag]="'驗證後即可解鎖專業性醫學內容'"></app-scope-title>
+    <!-- 已設定學習意願 -->
+    <div class="swiper_box">
+      <button (click)="prev(1)" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform === 0 }">
+        <svg class="swiper_prev"></svg>
+      </button>
+      <button
+        (click)="next(1)"
+        class="swiper_button_next"
+        [ngClass]="{ disabled: swiperSlideTransform === (showNewVideoIndex && showNewVideoIndex * -325) }"
+      >
+        <svg class="swiper_next"></svg>
+      </button>
+      <swiper class="video_swiper" [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 0)">
+        <ng-template swiperSlide><app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness></ng-template>
+        <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+        <ng-template swiperSlide> <app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      </swiper>
+    </div>
+    <!-- 未設定學習意願 -->
+    <!-- <app-unset-learn-willingness></app-unset-learn-willingness> -->
+  </ng-container>
 </div>
 <app-verify-kanban *ngIf="identity === 2"></app-verify-kanban>
 <div class="home_box width_limit">
@@ -42,11 +72,11 @@
   <!-- Recommend video -->
   <app-scope-title [title]="'影片推薦'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
   <div class="swiper_box">
-    <button (click)="prev(1)" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform === 0 }">
+    <button (click)="prev(2)" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform === 0 }">
       <svg class="swiper_prev"></svg>
     </button>
     <button
-      (click)="next(1)"
+      (click)="next(2)"
       class="swiper_button_next"
       [ngClass]="{ disabled: swiperSlideTransform === (showNewVideoIndex && showNewVideoIndex * -325) }"
     >
