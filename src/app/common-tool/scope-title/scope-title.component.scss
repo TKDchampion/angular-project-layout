@@ -31,7 +31,21 @@
   margin-left: 8px;
 }
 
-@include media-breakpoint-down(sm) {
+.btn-check-all {
+  width: 112px;
+  height: 40x;
+  background: $white;
+  border: 1px solid $light_blue;
+  border-radius: 100px;
+  color: $blue;
+  font-weight: 500;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@include media-breakpoint-down(md) {
   .scope_title_box {
     flex-wrap: wrap;
     width: 230px;
@@ -44,5 +58,8 @@
   .scope_title_box_tag {
     margin-top: 8px;
     margin-left: unset;
+  }
+  .btn-check-all {
+    display: none;
   }
 }

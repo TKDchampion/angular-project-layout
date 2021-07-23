@@ -8,6 +8,7 @@ import { EveService } from 'src/app/services/env.service';
 })
 export class ScopeTitleComponent {
   @Input() title!: string;
+  @Input() showMoreBtn = true;
   tag: string | undefined;
   tags = [
     { id: 1, text: '登入後即可瀏覽內容' },
