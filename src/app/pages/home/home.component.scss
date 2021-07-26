@@ -1,4 +1,5 @@
 @import '../../../styles/bootstrap.scss';
+@import '../../../styles/variables.scss';
 
 .home_box {
   padding: 0 32px;
@@ -8,14 +9,28 @@
   position: relative;
 }
 
-// @include media-breakpoint-down(xxl) {
-//   .new_article {
-//     margin-top: 20px;
-//   }
-// }
-
 @include media-breakpoint-down(sm) {
   .home_box {
     padding: 0 24px;
+  }
+}
+.btn-check-all {
+  display: none;
+}
+
+@include media-breakpoint-down(md) {
+  .btn-check-all {
+    display: unset;
+    width: 112px;
+    height: 40x;
+    background: $white;
+    border: 1px solid $light_blue;
+    border-radius: 100px;
+    color: $blue;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
   }
 }

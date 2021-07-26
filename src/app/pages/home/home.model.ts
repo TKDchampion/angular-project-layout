@@ -17,7 +17,6 @@ export const NewArticle: NewArticleModel = {
 
 export const LearnWillingness: LearnWillingnessNewArticleModel = {
   learnTitle: '全人健康',
-  learnSubTitle: '除了沒有患病之外，生理、心理和社交方面也需處於安舒的狀況。',
   lookMoreUrl: '/pages/home/1',
   learnImg: '../../../assets/img/pill.svg',
   learnBackgroundColor: '#3B5A90',
