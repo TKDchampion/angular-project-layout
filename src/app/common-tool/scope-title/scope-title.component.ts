@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { EveService } from 'src/app/services/env.service';
 
 @Component({
   selector: 'app-scope-title',
@@ -7,5 +8,14 @@ import { Component, Input } from '@angular/core';
 })
 export class ScopeTitleComponent {
   @Input() title!: string;
-  @Input() tag!: string;
+  @Input() showMoreBtn = true;
+  tag: string | undefined;
+  tags = [
+    { id: 1, text: '登入後即可瀏覽內容' },
+    { id: 2, text: '驗證後即可解鎖專業性醫學內容' },
+  ];
+  identity = this.envService.getEnv('identity');
+  constructor(private envService: EveService) {
+    this.tag = this.tags.find((i) => i.id === this.identity)?.text;
+  }
 }

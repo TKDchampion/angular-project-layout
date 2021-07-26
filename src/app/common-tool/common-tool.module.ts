@@ -19,6 +19,7 @@ import { LanguageDropdownComponent } from './dropdown/language-dropdown/language
 import { VerifyKanbanComponent } from './verify-kanban/verify-kanban.component';
 import { BrandComponent } from './brand/brand.component';
 import { SwiperModule } from 'swiper/angular';
+import { UnsetLearnWillingnessComponent } from './unset-learn-willingness/unset-learn-willingness.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SwiperModule } from 'swiper/angular';
     LanguageDropdownComponent,
     VerifyKanbanComponent,
     BrandComponent,
+    UnsetLearnWillingnessComponent,
   ],
   imports: [CommonModule, RouterModule, SwiperModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -50,6 +52,7 @@ import { SwiperModule } from 'swiper/angular';
     FooterComponent,
     VerifyKanbanComponent,
     BrandComponent,
+    UnsetLearnWillingnessComponent,
   ],
   providers: [ResizeService],
 })
