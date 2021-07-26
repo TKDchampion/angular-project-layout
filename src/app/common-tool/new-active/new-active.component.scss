@@ -1,21 +1,24 @@
 @import '../../../styles/variables.scss';
 
 .new_active_box {
-  width: 623px;
-  height: 230px;
+  min-width: 335px;
+  max-width: 928px;
+  min-height: 230px;
+  margin-bottom: 20px;
 }
 
 .new_active_left {
   width: 335px;
   height: 230px;
-  margin-right: 16px;
+  margin-right: 20px;
+  margin-bottom: 16px;
   img {
     border-radius: 14px;
   }
 }
 
 .new_active_right {
-  width: 268px;
+  // min-width: 268px;
 }
 
 .new_active_right_content {

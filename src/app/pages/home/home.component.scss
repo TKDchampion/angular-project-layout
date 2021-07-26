@@ -1,15 +1,21 @@
 @import '../../../styles/bootstrap.scss';
 
-@include media-breakpoint-down(xxl) {
-  .new_article {
-    margin-top: 20px;
-  }
-}
-
 .home_box {
   padding: 0 32px;
 }
 
 .swiper_box {
   position: relative;
+}
+
+// @include media-breakpoint-down(xxl) {
+//   .new_article {
+//     margin-top: 20px;
+//   }
+// }
+
+@include media-breakpoint-down(sm) {
+  .home_box {
+    padding: 0 24px;
+  }
 }

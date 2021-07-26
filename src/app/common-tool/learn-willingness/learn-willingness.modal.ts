@@ -1,5 +1,5 @@
 /**學習意願 */
-export interface LearnWillingness {
+export interface LearnWillingnessNewArticleModel {
   learnTitle: string;
   learnSubTitle: string;
   lookMoreUrl: string;

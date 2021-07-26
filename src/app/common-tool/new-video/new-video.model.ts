@@ -1,4 +1,4 @@
-export interface NewVideoItemInfo {
+export interface NewVideoItemInfoNewArticleModel {
   time: string;
   headUrl: string;
   headShotUrl: string;

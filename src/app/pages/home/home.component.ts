@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, Inject, InjectionToken, OnInit, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Inject, InjectionToken, PLATFORM_ID } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { open, close } from 'src/app/core/store/flag/flag.actions';
@@ -13,6 +13,7 @@ import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { HotSubjectItemInfo, LearnWillingness, NewActiveItemInfo, NewArticle, NewVideoItem } from './home.model';
 import { EveService } from 'src/app/services/env.service';
+import { HotSubjectItemInfoNewArticleModel } from 'src/app/common-tool/hot-subject/hot-subject.model';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -22,20 +23,22 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements AfterViewInit, OnInit {
+export class HomeComponent implements AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: ResizeEvent): void {
     const size = this.resizeService.detectSize(event.target.innerWidth);
     this.showNewVideoIndex = this.detectNewVideoIndex(size);
+    this.renderingHotSubjet(size);
     this.setSwiperTransformStylele(0, 0);
   }
   flag$: Observable<boolean>;
   getdata: Record<string, unknown> | undefined;
   showNewVideoIndex: number | undefined;
+  showHotSubjectCounts: number | undefined;
   resizeObservable$: Observable<Event> | undefined;
   resizeSubscription$: Subscription | undefined;
   swiperSlideTransform = 0;
-  hotSubjectArray: unknown[] = [];
+  hotSubjectArray: HotSubjectItemInfoNewArticleModel[] = [];
 
   // fake data
   newArticle = NewArticle;
@@ -56,6 +59,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   ) {
     const size = this.resizeService.default();
     this.showNewVideoIndex = this.detectNewVideoIndex(size);
+    this.renderingHotSubjet(size);
 
     this.flag$ = store.select('flag');
     storeValue.select('setValue').subscribe((resp) => {
@@ -70,13 +74,6 @@ export class HomeComponent implements AfterViewInit, OnInit {
       },
     ]);
   }
-
-  ngOnInit(): void {
-    for (let i = 0; i < 4; i++) {
-      this.hotSubjectArray.push(this.hotSubjectItemInfo);
-    }
-  }
-
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // SSR video
@@ -144,6 +141,14 @@ export class HomeComponent implements AfterViewInit, OnInit {
       wrapper.style.transitionDuration = '300ms';
     }
   }
+  private renderingHotSubjet(size: string) {
+    this.showHotSubjectCounts = this.detectHotSubjectCounts(size);
+    const array = [];
+    for (let i = 0; i < this.showHotSubjectCounts; i++) {
+      array.push(this.hotSubjectItemInfo);
+    }
+    this.hotSubjectArray = array;
+  }
 
   private setVideoTime(player: Player) {
     player
@@ -173,6 +178,22 @@ export class HomeComponent implements AfterViewInit, OnInit {
       case size === 'lg':
       case size === 'xl':
         return 5;
+      case size === 'xxl':
+        return 4;
+      default:
+        return 4;
+    }
+  }
+
+  private detectHotSubjectCounts(size: string): number {
+    switch (!!size) {
+      case size === 'xs':
+      case size === 'sm':
+      case size === 'md':
+        return 2;
+      case size === 'lg':
+        return 3;
+      case size === 'xl':
       case size === 'xxl':
         return 4;
       default:

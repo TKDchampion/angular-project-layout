@@ -1,4 +1,4 @@
-export interface NewActiveItemInfo {
+export interface NewActiveItemInfoNewArticleModel {
   img: string;
   tag: string[];
   title: string;

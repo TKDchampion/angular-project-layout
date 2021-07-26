@@ -1,8 +1,8 @@
-import { HotSubjectItemInfo as HotSubjectItemInfoNewArticleModel } from 'src/app/common-tool/hot-subject/hot-subject.model';
-import { LearnWillingness as LearnWillingnessNewArticleModel } from 'src/app/common-tool/learn-willingness/learn-willingness.modal';
-import { NewActiveItemInfo as NewActiveItemInfoNewArticleModel } from 'src/app/common-tool/new-active/new-active.model';
-import { NewArticle as NewArticleModel } from 'src/app/common-tool/new-article/new-article.modal';
-import { NewVideoItemInfo as NewVideoItemInfoNewArticleModel } from 'src/app/common-tool/new-video/new-video.model';
+import { HotSubjectItemInfoNewArticleModel } from 'src/app/common-tool/hot-subject/hot-subject.model';
+import { LearnWillingnessNewArticleModel } from 'src/app/common-tool/learn-willingness/learn-willingness.modal';
+import { NewActiveItemInfoNewArticleModel } from 'src/app/common-tool/new-active/new-active.model';
+import { NewArticleModel } from 'src/app/common-tool/new-article/new-article.modal';
+import { NewVideoItemInfoNewArticleModel } from 'src/app/common-tool/new-video/new-video.model';
 
 export const NewArticle: NewArticleModel = {
   articleImg:

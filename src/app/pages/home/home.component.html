@@ -67,23 +67,17 @@
   <!-- Hot subject -->
   <app-scope-title [title]="'熱門學科'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
   <div class="d-flex">
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject *ngFor="let subject of hotSubjectArray" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
   <div class="d-flex">
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject *ngFor="let subject of hotSubjectArray" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
 
   <!-- New active -->
   <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
-  <div class="d-flex">
-    <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
-    <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
+  <div class="row">
+    <app-new-active class="col-xxl-6" [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
+    <app-new-active class="col-xxl-6" [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
   </div>
 
   <!-- New article -->
