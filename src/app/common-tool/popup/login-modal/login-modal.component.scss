@@ -2,7 +2,6 @@
 @import '../../../../styles/bootstrap.scss';
 
 ::ng-deep .modal-dialog {
-  width: 416px;
   .modal-content {
     border-radius: 14px;
   }
@@ -148,9 +147,6 @@
 }
 
 .verify_modal {
-  .modal-dialog {
-    padding-top: 5%;
-  }
   .modal_verify {
     text-align: left;
     .modal_verify_title {
@@ -199,5 +195,25 @@
   }
 }
 
+::ng-deep .verify_modal.in.show ~ ::ng-deep .modal_body_login {
+  opacity: 0.5;
+}
+
 @include media-breakpoint-down(sm) {
+  .modal-body {
+    .modal_body_mail {
+      .modal_body_loginerror {
+        .login_error_text {
+          font-size: $font-size-12;
+        }
+      }
+    }
+  }
+
+  .verify_modal {
+    .modal-dialog {
+      margin: auto;
+      width: 300px;
+    }
+  }
 }
