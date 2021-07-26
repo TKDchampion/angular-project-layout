@@ -1,5 +1,5 @@
 /**最新文章 */
-export interface NewArticle {
+export interface NewArticleModel {
   articleImg: string;
   articleTitle: string;
   articleSubtitle: string;

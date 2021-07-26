@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NewArticle } from './new-article.modal';
+import { NewArticleModel } from './new-article.modal';
 
 @Component({
   selector: 'app-new-article',
@@ -7,5 +7,5 @@ import { NewArticle } from './new-article.modal';
   styleUrls: ['./new-article.component.scss'],
 })
 export class NewArticleComponent {
-  @Input() newArticle!: NewArticle;
+  @Input() newArticle!: NewArticleModel;
 }

@@ -1,21 +1,23 @@
-<div class="new_active_box d-flex">
-  <div class="new_active_left">
-    <img [src]="newActiveItemInfo.img" alt="" />
-  </div>
-  <div class="new_active_right">
-    <div class="new_active_right_tags d-flex flex-wrap">
-      <p class="new_active_right_tags_item" *ngFor="let tag of newActiveItemInfo.tag">{{ tag }}</p>
+<div class="new_active_box">
+  <div class="d-flex" [ngClass]="{ 'flex-wrap': breakpointSize }">
+    <div class="new_active_left">
+      <img [src]="newActiveItemInfo.img" alt="" />
     </div>
-    <div class="new_active_right_content">
-      <h3>{{ newActiveItemInfo.title }}</h3>
-      <div class="new_active_right_content_subTitle">{{ newActiveItemInfo.subTitle }}</div>
-    </div>
-    <div class="new_active_right_footer">
-      <div class="new_active_right_footer_people d-flex">
-        <img class="headshot_sm" [src]="newActiveItemInfo.headShot" alt="" />
-        <p>{{ newActiveItemInfo.name }}</p>
+    <div class="new_active_right">
+      <div class="new_active_right_tags d-flex flex-wrap">
+        <p class="new_active_right_tags_item" *ngFor="let tag of newActiveItemInfo.tag">{{ tag }}</p>
       </div>
-      <div>{{ newActiveItemInfo.time }}</div>
+      <div class="new_active_right_content">
+        <h3>{{ newActiveItemInfo.title }}</h3>
+        <div class="new_active_right_content_subTitle">{{ newActiveItemInfo.subTitle }}</div>
+      </div>
+      <div class="new_active_right_footer">
+        <div class="new_active_right_footer_people d-flex">
+          <img class="headshot_sm" [src]="newActiveItemInfo.headShot" alt="" />
+          <p>{{ newActiveItemInfo.name }}</p>
+        </div>
+        <div>{{ newActiveItemInfo.time }}</div>
+      </div>
     </div>
   </div>
 </div>

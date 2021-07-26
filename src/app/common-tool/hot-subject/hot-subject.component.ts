@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { HotSubjectItemInfo } from './hot-subject.model';
+import { Component, HostListener, Input } from '@angular/core';
+import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
+import { HotSubjectItemInfoNewArticleModel } from './hot-subject.model';
 
 @Component({
   selector: 'app-hot-subject',
@@ -7,5 +8,14 @@ import { HotSubjectItemInfo } from './hot-subject.model';
   styleUrls: ['./hot-subject.component.scss'],
 })
 export class HotSubjectComponent {
-  @Input() hotSubjectItemInfo!: HotSubjectItemInfo;
+  @HostListener('window:resize', ['$event'])
+  onResize(event: ResizeEvent): void {
+    this.breakpointSize = this.resizeService.detectSize(event.target.innerWidth);
+  }
+  @Input() hotSubjectItemInfo!: HotSubjectItemInfoNewArticleModel;
+  breakpointSize: string | undefined;
+
+  constructor(private resizeService: ResizeService) {
+    this.breakpointSize = this.resizeService.default();
+  }
 }

@@ -1,9 +1,12 @@
-<div class="hot_subject_box d-flex">
+<div class="hot_subject_box">
+  <div *ngIf="breakpointSize === 'xs'" class="hot_subject_top">
+    <svg class="hot_subject_top_icon" [class]="hotSubjectItemInfo.svgClass + 'Sm'"></svg>
+  </div>
   <div class="hot_subject_left">
     <div class="hot_subject_left_title">{{ hotSubjectItemInfo.title }}</div>
     <div class="hot_subject_left_titleSub">{{ hotSubjectItemInfo.subTitle }}</div>
   </div>
-  <div class="hot_subject_right">
-    <svg [class]="hotSubjectItemInfo.svgClass"></svg>
+  <div *ngIf="breakpointSize !== 'xs'" class="hot_subject_right">
+    <svg class="hot_subject_right_icon" [class]="hotSubjectItemInfo.svgClass"></svg>
   </div>
 </div>
