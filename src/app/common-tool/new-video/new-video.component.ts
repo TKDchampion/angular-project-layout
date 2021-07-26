@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NewVideoItemInfo } from './new-video.model';
+import { NewVideoItemInfoNewArticleModel } from './new-video.model';
 
 @Component({
   selector: 'app-new-video',
@@ -7,5 +7,5 @@ import { NewVideoItemInfo } from './new-video.model';
   styleUrls: ['./new-video.component.scss'],
 })
 export class NewVideoComponent {
-  @Input() newVideoItem!: NewVideoItemInfo;
+  @Input() newVideoItem!: NewVideoItemInfoNewArticleModel;
 }

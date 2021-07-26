@@ -1,4 +1,5 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/bootstrap.scss';
 
 .hot_subject_box {
   width: 307px;
@@ -9,6 +10,19 @@
   padding-top: 24px;
   margin-right: 20px;
   margin-bottom: 20px;
+  display: flex;
+}
+
+.hot_subject_top {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 100px;
+  margin: 0px 20px;
+  .hot_subject_top_icon {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
 }
 
 .hot_subject_right {
@@ -16,7 +30,7 @@
   height: 80px;
   background: #ffffff;
   border-radius: 100px;
-  .eyeIcon {
+  .hot_subject_right_icon {
     margin-top: 23px;
     margin-left: 14px;
   }
@@ -32,4 +46,19 @@
   color: $light_grey;
   font-size: $font-size-14;
   margin-top: 8px;
+}
+
+@include media-breakpoint-down(sm) {
+  .hot_subject_box {
+    width: 160px;
+    height: 160px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .hot_subject_left {
+    margin-left: 20px;
+    margin-top: 14px;
+  }
 }

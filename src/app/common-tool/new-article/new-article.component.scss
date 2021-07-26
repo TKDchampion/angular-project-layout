@@ -4,6 +4,7 @@
 .new-article {
   min-width: 335px;
   min-height: 210px;
+  margin-bottom: 20px;
   .article-context-viewer,
   .article-context-author-name,
   .article-context-subtitle {
@@ -21,6 +22,7 @@
   min-height: 210px;
   max-width: 375px;
   max-height: 230px;
+  margin-bottom: 16px;
   img {
     border-radius: 14px;
   }

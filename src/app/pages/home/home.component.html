@@ -21,7 +21,13 @@
     >
       <svg class="swiper_next"></svg>
     </button>
-    <swiper class="video_swiper" [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 0)">
+    <swiper
+      class="video_swiper"
+      [slidesPerView]="showNewVideoIndex"
+      [spaceBetween]="0"
+      [navigation]="false"
+      (transitionStart)="onSlideChange($event, 0)"
+    >
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
@@ -32,7 +38,7 @@
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
     </swiper>
   </div>
-  <button type="button" class="btn btn-check-all" >查看更多 <img src="../../../assets/icon/right.png" alt=""></button>
+  <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
 
   <!-- learn willingness -->
   <ng-container *ngIf="identity !== 1">
@@ -49,7 +55,13 @@
       >
         <svg class="swiper_next"></svg>
       </button>
-      <swiper class="video_swiper" [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 0)">
+      <swiper
+        class="video_swiper"
+        [slidesPerView]="showNewVideoIndex"
+        [spaceBetween]="0"
+        [navigation]="false"
+        (transitionStart)="onSlideChange($event, 0)"
+      >
         <ng-template swiperSlide><app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness></ng-template>
         <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
         <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
@@ -60,7 +72,7 @@
         <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       </swiper>
     </div>
-    <button type="button" class="btn btn-check-all" >查看全部 <img src="../../../assets/icon/right.png" alt=""></button>
+    <button type="button" class="btn btn-check-all">查看全部 <img src="../../../assets/icon/right.png" alt="" /></button>
     <!-- 未設定學習意願 -->
     <!-- <app-unset-learn-willingness></app-unset-learn-willingness> -->
   </ng-container>
@@ -84,7 +96,13 @@
     >
       <svg class="swiper_next"></svg>
     </button>
-    <swiper class="video_swiper" [slidesPerView]="showNewVideoIndex" [spaceBetween]="0" [navigation]="false" (transitionStart)="onSlideChange($event, 1)">
+    <swiper
+      class="video_swiper"
+      [slidesPerView]="showNewVideoIndex"
+      [spaceBetween]="0"
+      [navigation]="false"
+      (transitionStart)="onSlideChange($event, 1)"
+    >
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
@@ -95,31 +113,25 @@
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
     </swiper>
   </div>
-  <button type="button" class="btn btn-check-all" >查看更多 <img src="../../../assets/icon/right.png" alt=""></button>
+  <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
 
   <!-- Hot subject -->
   <app-scope-title [title]="'熱門學科'" [showMoreBtn]="false"></app-scope-title>
   <div class="d-flex">
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject *ngFor="let subject of hotSubjectArray" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
   <div class="d-flex">
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
-    <app-hot-subject [hotSubjectItemInfo]="hotSubjectItemInfo"></app-hot-subject>
+    <app-hot-subject *ngFor="let subject of hotSubjectArray" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
-  <button type="button" class="btn btn-check-all w-100" >查看全部</button>
+  <button type="button" class="btn btn-check-all w-100">查看全部</button>
 
   <!-- New active -->
-  <app-scope-title [title]="'最新活動'"></app-scope-title>
-  <div class="d-flex">
-    <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
-    <app-new-active [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
+  <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <div class="row">
+    <app-new-active class="col-xxl-6" [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
+    <app-new-active class="col-xxl-6" [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
   </div>
-  <button type="button" class="btn btn-check-all w-100" >查看更多</button>
+  <button type="button" class="btn btn-check-all w-100">查看更多</button>
 
   <!-- New article -->
   <app-scope-title [title]="'最新文章'"></app-scope-title>
@@ -131,5 +143,5 @@
     <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
     <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
   </div>
-  <button type="button" class="btn btn-check-all w-100" >查看更多</button>
+  <button type="button" class="btn btn-check-all w-100">查看更多</button>
 </div>
