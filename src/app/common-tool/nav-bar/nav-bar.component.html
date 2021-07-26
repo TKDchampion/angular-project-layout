@@ -14,7 +14,7 @@
       </a>
       <ng-container *ngIf="isCollapsed">
         <!-- 未登入mobile -->
-        <button *ngIf="identity === 1" type="button" class="btn btn-login-mobile">登入</button>
+        <button *ngIf="identity === 1" type="button" class="btn btn-login-mobile" (click)="login()">登入</button>
         <!-- 未登入 End -->
         <!-- 已登入mobile -->
         <ng-container *ngIf="identity !== 1">
@@ -97,7 +97,7 @@
       </ng-container>
       <!-- 未登入desktop -->
       <ng-container *ngIf="identity === 1">
-        <button type="button" class="btn btn-login">登入</button>
+        <button type="button" class="btn btn-login" (click)="login()">登入</button>
         <button type="button" class="btn btn-register">免費加入</button>
       </ng-container>
       <!-- 未登入 End -->
