@@ -1,5 +1,6 @@
 import { ResizeService } from './../services/resize.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,6 +21,8 @@ import { VerifyKanbanComponent } from './verify-kanban/verify-kanban.component';
 import { BrandComponent } from './brand/brand.component';
 import { SwiperModule } from 'swiper/angular';
 import { UnsetLearnWillingnessComponent } from './unset-learn-willingness/unset-learn-willingness.component';
+import { LoginModalComponent } from './popup/login-modal/login-modal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,8 +41,9 @@ import { UnsetLearnWillingnessComponent } from './unset-learn-willingness/unset-
     VerifyKanbanComponent,
     BrandComponent,
     UnsetLearnWillingnessComponent,
+    LoginModalComponent,
   ],
-  imports: [CommonModule, RouterModule, SwiperModule, BsDropdownModule.forRoot(), CollapseModule.forRoot()],
+  imports: [FormsModule, CommonModule, RouterModule, SwiperModule, ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
     NewArticleComponent,
     LearnWillingnessComponent,

@@ -1,0 +1,71 @@
+<!-- verify templete -->
+<div class="modal fade verify_modal" bsModal #childModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-nested-name2">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-nested-name2" class="modal-title pull-left"></h4>
+        <img class="modal_close cursor_pointer" src="../../../../assets/img/modal_close.png" alt="" (click)="childModal.hide()">
+      </div>
+      <div class="modal-body">
+        <div class="modal_verify">
+          <div class="modal_verify_title">輸入驗證碼</div>
+          <div class="modal_verify_content">已寄送驗證碼至您的信箱，若有任何問題請聯絡我們 <br>contact.us@dksh.com</div>
+          <div class="modal_body_mailinput">
+            <img src="../../../../assets/icon/password.png" alt="">
+            <input type="text" class="mail_input" placeholder="請輸入驗證碼">
+          </div>
+          <button type="button" class="modal_verify_submit">送出</button>
+          <div class="separator">等 60 秒後可再次寄送驗證碼</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- verify templete end -->
+
+<!-- login templete -->
+<div class="modal-header">
+  <h4 class="modal-title pull-left"></h4>
+  <img class="modal_close cursor_pointer" src="../../../../assets/img/modal_close.png" alt="" (click)="modalRef.hide()">
+</div>
+<div class="modal-body modal_body_login">
+  <div class="modal_body_line">
+    <div class="modeal_body_title">登入</div>
+    <div class="modal_body_subtitle">登入後即可瀏覽影片與文章</div>
+    <button type="button" class="modal_line_login"><img src="../../../../assets/img/line.png" alt=""> 使用 LINE 登入</button>
+  </div>
+  <div class="separator">或使用信箱登入</div>
+  <div class="modal_body_mail">
+    <!-- login error content 暫時隱藏 -->
+    <!-- <div class="modal_body_loginerror">
+      <img src="../../../../assets/icon/warning.png" alt="">
+      <div class="login_error_text">電子郵件或密碼輸入錯誤，請再嘗試一次</div>
+    </div> -->
+    <!-- login error content end -->
+    <div class="modal_body_mailinput" [ngClass]="{'input_error': mail.invalid && (mail.dirty || mail.touched)}">
+      <img src="../../../../assets/icon/mail.png" alt="">
+      <input id="mail" name="mail" required type="text" class="mail_input" placeholder="請輸入電子信箱" [(ngModel)]="login.mail" #mail="ngModel">
+    </div>
+    <div class="verify_text" *ngIf="mail.invalid && (mail.dirty || mail.touched)">
+      <div *ngIf="mail.errors?.required">
+        必填欄位
+      </div>
+    </div>
+    <div class="modal_body_mailinput" [ngClass]="{'input_error': password.invalid && (password.dirty || password.touched)}">
+      <img src="../../../../assets/icon/password.png" alt="">
+      <input id="password" name="password" required type="password" class="mail_input" placeholder="請輸入密碼" [(ngModel)]="login.password" #password="ngModel">
+    </div>
+    <div class="verify_text" *ngIf="password.invalid && (password.dirty || password.touched)">
+      <div *ngIf="password.errors?.required">
+        必填欄位
+      </div>
+    </div>
+    <button type="button" class="modal_mail_login" (click)="childModal.show()">登入</button>
+  </div>
+  <div class="modal_body_clicktext d-flex">
+    <div class="modal_body_clicktext_forget cursor_pointer">忘記密碼 </div>
+    •
+    <div class="modal_body_clicktext_register cursor_pointer"> 開始註冊</div>
+  </div>
+</div>
+<!-- login templete end -->

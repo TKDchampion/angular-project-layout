@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { EveService } from 'src/app/services/env.service';
+import { LoginModalComponent } from '../popup/login-modal/login-modal.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,7 +13,8 @@ export class NavBarComponent implements OnInit {
   showSearchInputMobile = false;
   isCollapsed = true;
   identity = this.envService.getEnv('identity');
-  constructor(private envService: EveService) {}
+  modalRef!: BsModalRef;
+  constructor(private envService: EveService, private modalService: BsModalService) { }
 
   ngOnInit(): void {
     console.log('identity', this.envService.getEnv('identity'));
@@ -26,5 +29,12 @@ export class NavBarComponent implements OnInit {
   collapsedStatus() {
     this.isCollapsed = !this.isCollapsed;
     this.showSearchInputMobile = false;
+  }
+
+  login() {
+    this.modalRef = this.modalService.show(LoginModalComponent, {
+      class: 'modal-dialog-centered',
+    });
+    this.modalRef.content.modalRef = this.modalRef;
   }
 }
