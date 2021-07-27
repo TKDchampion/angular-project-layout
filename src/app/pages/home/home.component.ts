@@ -33,7 +33,10 @@ export class HomeComponent implements AfterViewInit {
   onResize(event: ResizeEvent): void {
     const size = this.resizeService.detectSize(event.target.innerWidth);
     this.showNewVideoIndex = this.detectNewVideoIndex(size);
+    this.newVideoColumn = this.detectNewVideoColumn(size);
     this.renderingHotSubjet(size);
+    console.log('this.newVideoColumn :>> ', this.newVideoColumn);
+
     this.setSwiperTransformStylele(0, 'swiperRef1');
     this.setSwiperTransformStylele(0, 'swiperRef1');
     this.setSwiperTransformStylele(0, 'swiperRef1');
@@ -41,6 +44,7 @@ export class HomeComponent implements AfterViewInit {
   flag$: Observable<boolean>;
   getdata: Record<string, unknown> | undefined;
   showNewVideoIndex: number | undefined;
+  newVideoColumn = 4;
   showHotSubjectCounts: number | undefined;
   resizeObservable$: Observable<Event> | undefined;
   resizeSubscription$: Subscription | undefined;
@@ -73,7 +77,9 @@ export class HomeComponent implements AfterViewInit {
   ) {
     const size = this.resizeService.default();
     this.showNewVideoIndex = this.detectNewVideoIndex(size);
+    this.newVideoColumn = this.detectNewVideoColumn(size);
     this.renderingHotSubjet(size);
+    console.log('this.newVideoColumn :>> ', this.newVideoColumn);
 
     this.flag$ = store.select('flag');
     storeValue.select('setValue').subscribe((resp) => {
@@ -109,10 +115,11 @@ export class HomeComponent implements AfterViewInit {
   }
 
   onSlideChange(event: unknown, elIndex: string): void {
-    // const index = (event as { realIndex: number }).realIndex;
-    // this.swiperSlideTransform = index * -325;
-    // this.setSwiperTransformStylele(this.swiperSlideTransform, elIndex);
-    // this.changeDetectorRef.detectChanges();
+    const index = (event as { realIndex: number }).realIndex;
+    this.swiperSlideTransform[elIndex] = index * -325;
+    this.setSwiperTransformStylele(this.swiperSlideTransform[elIndex], elIndex);
+    this.changeDetectorRef.detectChanges();
+    console.log('this.swiperRef1 :>> ', this.swiperRef1.swiperRef);
   }
 
   prev(elIndex: string): void {
@@ -210,6 +217,23 @@ export class HomeComponent implements AfterViewInit {
     }
   }
 
+  private detectNewVideoColumn(size: string): number {
+    switch (!!size) {
+      case size === 'xs':
+        return 1;
+      case size === 'sm':
+      case size === 'md':
+        return 2;
+      case size === 'lg':
+      case size === 'xl':
+        return 3;
+      case size === 'xxl':
+        return 4;
+      default:
+        return 4;
+    }
+  }
+
   private detectHotSubjectCounts(size: string): number {
     switch (!!size) {
       case size === 'xs':
@@ -225,7 +249,7 @@ export class HomeComponent implements AfterViewInit {
         return 4;
     }
   }
-  // xs:0 | sm:576px | md:768px | lg:992px | xl:1200px | xxl:1400px
+  // xs:0 | sm:576px | md:768px | lg:992px | xl:1200px | xxl:1366px
 
   open(): void {
     this.store.dispatch(open());

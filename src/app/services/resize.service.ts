@@ -14,9 +14,9 @@ export class ResizeService {
         return 'md';
       case 991 < width && width < 1200:
         return 'lg';
-      case 1199 < width && width < 1400:
+      case 1199 < width && width < 1366:
         return 'xl';
-      case 1399 < width:
+      case 1365 < width:
         return 'xxl';
     }
 

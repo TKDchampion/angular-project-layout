@@ -26,6 +26,7 @@
       [slidesPerView]="showNewVideoIndex"
       [spaceBetween]="0"
       [navigation]="false"
+      [slidesPerView]="newVideoColumn"
       (transitionStart)="onSlideChange($event, 'swiperRef1')"
       #swiperRef1
     >
@@ -64,6 +65,7 @@
         [spaceBetween]="0"
         [navigation]="false"
         (transitionStart)="onSlideChange($event, 'swiperRef2')"
+        [slidesPerView]="newVideoColumn"
         #swiperRef2
       >
         <ng-container *ngFor="let item of learnWillingness">
@@ -113,6 +115,7 @@
       [spaceBetween]="0"
       [navigation]="false"
       (transitionStart)="onSlideChange($event, 'swiperRef3')"
+      [slidesPerView]="newVideoColumn"
       #swiperRef3
     >
     <ng-template swiperSlide *ngFor="let item of videoRecommendItem">
