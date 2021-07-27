@@ -12,7 +12,16 @@ import { Meta } from '@angular/platform-browser';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper/core';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 import { ChangeDetectorRef } from '@angular/core';
-import { HotSubjectItemInfo, LearnWillingness, NewActiveItemInfo, NewArticle, NewArticle2, NewVideoItem, VideoRecommendItem } from './home.model';
+import {
+  HotSubjectItemInfo,
+  LearnWillingness,
+  LearnWillingness2,
+  NewActiveItemInfo,
+  NewArticle,
+  NewArticle2,
+  NewVideoItem,
+  VideoRecommendItem,
+} from './home.model';
 import { EveService } from 'src/app/services/env.service';
 import { HotSubjectItemInfoNewArticleModel } from 'src/app/common-tool/hot-subject/hot-subject.model';
 
@@ -28,6 +37,7 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('swiperRef1', { static: false }) swiperRef1: any;
   @ViewChild('swiperRef2', { static: false }) swiperRef2: any;
   @ViewChild('swiperRef3', { static: false }) swiperRef3: any;
+  @ViewChild('swiperRef4', { static: false }) swiperRef4: any;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: ResizeEvent): void {
@@ -52,6 +62,7 @@ export class HomeComponent implements AfterViewInit {
     swiperRef1: 0,
     swiperRef2: 0,
     swiperRef3: 0,
+    swiperRef4: 0,
   };
   hotSubjectArray: HotSubjectItemInfoNewArticleModel[] = [];
 
@@ -60,6 +71,7 @@ export class HomeComponent implements AfterViewInit {
   newArticle1 = NewArticle;
   newArticle2 = NewArticle2;
   learnWillingness = LearnWillingness;
+  learnWillingness2 = LearnWillingness2;
   newVideoItem = NewVideoItem;
   videoRecommendItem = VideoRecommendItem;
   hotSubjectItemInfo = HotSubjectItemInfo;
@@ -112,6 +124,7 @@ export class HomeComponent implements AfterViewInit {
     this.setSwiperTransformStylele(this.swiperSlideTransform.swiperRef1, 'swiperRef1');
     this.setSwiperTransformStylele(this.swiperSlideTransform.swiperRef2, 'swiperRef2');
     this.setSwiperTransformStylele(this.swiperSlideTransform.swiperRef3, 'swiperRef3');
+    this.setSwiperTransformStylele(this.swiperSlideTransform.swiperRef4, 'swiperRef4');
   }
 
   onSlideChange(event: unknown, elIndex: string): void {
@@ -166,6 +179,9 @@ export class HomeComponent implements AfterViewInit {
         break;
       case elIndex === 'swiperRef3':
         wrapper = this.swiperRef3?.swiperRef.$wrapperEl[0];
+        break;
+      case elIndex === 'swiperRef4':
+        wrapper = this.swiperRef4?.swiperRef.$wrapperEl[0];
         break;
     }
     if (wrapper) {

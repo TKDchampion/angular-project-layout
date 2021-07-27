@@ -132,22 +132,20 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
   },
 ];
 
-export const LearnWillingness: LearnWillingnessNewArticleModel[] = [
-  {
-    learnTitle: '全人健康',
-    lookMoreUrl: '/pages/home/1',
-    learnImg: '../../../assets/img/pill.svg',
-    learnBackgroundColor: '#3B5A90',
-    videoItem: NewVideoItem,
-  },
-  {
-    learnTitle: '疾病防治',
-    lookMoreUrl: '/pages/home/1',
-    learnImg: '../../../assets/img/heart.svg',
-    learnBackgroundColor: '#D42335',
-    videoItem: VideoRecommendItem,
-  },
-];
+export const LearnWillingness: LearnWillingnessNewArticleModel = {
+  learnTitle: '全人健康',
+  lookMoreUrl: '/pages/home/1',
+  learnImg: '../../../assets/img/pill.svg',
+  learnBackgroundColor: '#3B5A90',
+};
+
+export const LearnWillingness2: LearnWillingnessNewArticleModel = {
+  learnTitle: '疾病防治',
+  lookMoreUrl: '/pages/home/1',
+  learnImg: '../../../assets/img/heart.svg',
+  learnBackgroundColor: '#D42335',
+};
+
 export const HotSubjectItemInfo: HotSubjectItemInfoNewArticleModel = {
   title: '眼科',
   subTitle: '121相關課程',
