@@ -12,7 +12,7 @@ import { Meta } from '@angular/platform-browser';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper/core';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 import { ChangeDetectorRef } from '@angular/core';
-import { HotSubjectItemInfo, LearnWillingness, NewActiveItemInfo, NewArticle, NewVideoItem } from './home.model';
+import { HotSubjectItemInfo, LearnWillingness, NewActiveItemInfo, NewArticle, NewArticle2, NewVideoItem, VideoRecommendItem } from './home.model';
 import { EveService } from 'src/app/services/env.service';
 import { HotSubjectItemInfoNewArticleModel } from 'src/app/common-tool/hot-subject/hot-subject.model';
 
@@ -56,9 +56,12 @@ export class HomeComponent implements AfterViewInit {
   hotSubjectArray: HotSubjectItemInfoNewArticleModel[] = [];
 
   // fake data
-  newArticle = NewArticle;
+  // newArticle = NewArticle;
+  newArticle1 = NewArticle;
+  newArticle2 = NewArticle2;
   learnWillingness = LearnWillingness;
   newVideoItem = NewVideoItem;
+  videoRecommendItem = VideoRecommendItem;
   hotSubjectItemInfo = HotSubjectItemInfo;
   newActiveItemInfo = NewActiveItemInfo;
   identity = this.envService.getEnv('identity');

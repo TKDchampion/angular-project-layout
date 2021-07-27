@@ -30,14 +30,16 @@
       (transitionStart)="onSlideChange($event, 'swiperRef1')"
       #swiperRef1
     >
+      <ng-template swiperSlide *ngFor="let item of newVideoItem">
+        <app-new-video [newVideoItem]="item"></app-new-video>
+      </ng-template>
+      <!-- <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template> -->
     </swiper>
   </div>
   <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
@@ -66,14 +68,24 @@
         [slidesPerView]="newVideoColumn"
         #swiperRef2
       >
-        <ng-template swiperSlide><app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness></ng-template>
+        <ng-container *ngFor="let item of learnWillingness">
+          <ng-template swiperSlide><app-learn-willingness [learnWillingness]="item"></app-learn-willingness></ng-template>
+          <ng-template swiperSlide *ngFor="let video of item.videoItem">
+            <app-new-video [newVideoItem]="video"></app-new-video>
+          </ng-template>
+        </ng-container>
+
+        <!-- <ng-template swiperSlide><app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness></ng-template>
+        <ng-template swiperSlide *ngFor="let item of newVideoItem">
+          <app-new-video [newVideoItem]="item"></app-new-video>
+        </ng-template> -->
+        <!-- <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
         <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
         <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
         <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
         <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
         <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template> -->
       </swiper>
     </div>
     <button type="button" class="btn btn-check-all">查看全部 <img src="../../../assets/icon/right.png" alt="" /></button>
@@ -106,14 +118,17 @@
       [slidesPerView]="newVideoColumn"
       #swiperRef3
     >
+    <ng-template swiperSlide *ngFor="let item of videoRecommendItem">
+      <app-new-video [newVideoItem]="item"></app-new-video>
+    </ng-template>
+      <!-- <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
+      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template> -->
     </swiper>
   </div>
   <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
@@ -131,20 +146,26 @@
   <!-- New active -->
   <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
   <div class="row">
-    <app-new-active class="col-xxl-6" [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
-    <app-new-active class="col-xxl-6" [newActiveItemInfo]="newActiveItemInfo"></app-new-active>
+    <ng-container *ngFor="let item of newActiveItemInfo">
+      <app-new-active class="col-xxl-6" [newActiveItemInfo]="item"></app-new-active>
+      <!-- <app-new-active class="col-xxl-6" [newActiveItemInfo]="item"></app-new-active> -->
+    </ng-container>
   </div>
   <button type="button" class="btn btn-check-all w-100">查看更多</button>
 
   <!-- New article -->
   <app-scope-title [title]="'最新文章'"></app-scope-title>
   <div class="row">
-    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
-    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
+    <ng-container *ngFor="let item of newArticle1">
+      <app-new-article class="col-xxl-6 new_article" [newArticle]="item"></app-new-article>
+      <!-- <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article> -->
+    </ng-container>
   </div>
   <div class="row">
-    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
-    <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article>
+    <ng-container *ngFor="let item of newArticle2">
+      <app-new-article class="col-xxl-6 new_article" [newArticle]="item"></app-new-article>
+      <!-- <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article> -->
+    </ng-container>
   </div>
   <button type="button" class="btn btn-check-all w-100">查看更多</button>
 </div>
