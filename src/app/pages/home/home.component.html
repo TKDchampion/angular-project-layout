@@ -26,6 +26,7 @@
       [slidesPerView]="showNewVideoIndex"
       [spaceBetween]="0"
       [navigation]="false"
+      [slidesPerView]="newVideoColumn"
       (transitionStart)="onSlideChange($event, 'swiperRef1')"
       #swiperRef1
     >
@@ -62,6 +63,7 @@
         [spaceBetween]="0"
         [navigation]="false"
         (transitionStart)="onSlideChange($event, 'swiperRef2')"
+        [slidesPerView]="newVideoColumn"
         #swiperRef2
       >
         <ng-template swiperSlide><app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness></ng-template>
@@ -101,6 +103,7 @@
       [spaceBetween]="0"
       [navigation]="false"
       (transitionStart)="onSlideChange($event, 'swiperRef3')"
+      [slidesPerView]="newVideoColumn"
       #swiperRef3
     >
       <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
