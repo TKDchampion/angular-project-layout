@@ -23,7 +23,6 @@ export class NewActiveComponent {
   }
 
   private delectbreakpoint(size: string): boolean {
-    console.log('size :>> ', size);
     return size === 'xs' || size === 'sm';
   }
 }
