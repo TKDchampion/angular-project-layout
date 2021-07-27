@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, HostListener, Inject, InjectionToken, PLATFORM_ID } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { AfterViewInit, Component, HostListener, Inject, InjectionToken, PLATFORM_ID, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { open, close } from 'src/app/core/store/flag/flag.actions';
@@ -24,12 +25,18 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements AfterViewInit {
+  @ViewChild('swiperRef1', { static: false }) swiperRef1: any;
+  @ViewChild('swiperRef2', { static: false }) swiperRef2: any;
+  @ViewChild('swiperRef3', { static: false }) swiperRef3: any;
+
   @HostListener('window:resize', ['$event'])
   onResize(event: ResizeEvent): void {
     const size = this.resizeService.detectSize(event.target.innerWidth);
     this.showNewVideoIndex = this.detectNewVideoIndex(size);
     this.renderingHotSubjet(size);
-    this.setSwiperTransformStylele(0, 0);
+    this.setSwiperTransformStylele(0, 'swiperRef1');
+    this.setSwiperTransformStylele(0, 'swiperRef1');
+    this.setSwiperTransformStylele(0, 'swiperRef1');
   }
   flag$: Observable<boolean>;
   getdata: Record<string, unknown> | undefined;
@@ -37,7 +44,11 @@ export class HomeComponent implements AfterViewInit {
   showHotSubjectCounts: number | undefined;
   resizeObservable$: Observable<Event> | undefined;
   resizeSubscription$: Subscription | undefined;
-  swiperSlideTransform = 0;
+  swiperSlideTransform: any = {
+    swiperRef1: 0,
+    swiperRef2: 0,
+    swiperRef3: 0,
+  };
   hotSubjectArray: HotSubjectItemInfoNewArticleModel[] = [];
 
   // fake data
@@ -89,26 +100,26 @@ export class HomeComponent implements AfterViewInit {
       // this.getVideoDuration(player);
       // this.getVideoTime(player);
     }
-    this.setSwiperTransformStylele(this.swiperSlideTransform, 0);
-    this.setSwiperTransformStylele(this.swiperSlideTransform, 1);
+    this.setSwiperTransformStylele(this.swiperSlideTransform.swiperRef1, 'swiperRef1');
+    this.setSwiperTransformStylele(this.swiperSlideTransform.swiperRef2, 'swiperRef2');
+    this.setSwiperTransformStylele(this.swiperSlideTransform.swiperRef3, 'swiperRef3');
   }
 
-  onSlideChange(event: unknown, elIndex: number): void {
-    const index = (event as { realIndex: number }).realIndex;
-    this.swiperSlideTransform = index * -325;
-    this.setSwiperTransformStylele(this.swiperSlideTransform, elIndex);
-    this.changeDetectorRef.detectChanges();
-    console.log(this.swiperSlideTransform);
+  onSlideChange(event: unknown, elIndex: string): void {
+    // const index = (event as { realIndex: number }).realIndex;
+    // this.swiperSlideTransform = index * -325;
+    // this.setSwiperTransformStylele(this.swiperSlideTransform, elIndex);
+    // this.changeDetectorRef.detectChanges();
   }
 
-  prev(elIndex: number): void {
-    this.swiperSlideTransform = this.swiperSlideTransform + 325;
-    this.setSwiperTransformStylele(this.swiperSlideTransform, elIndex);
+  prev(elIndex: string): void {
+    this.swiperSlideTransform[elIndex] = this.swiperSlideTransform[elIndex] + 325;
+    this.setSwiperTransformStylele(this.swiperSlideTransform[elIndex], elIndex);
   }
 
-  next(elIndex: number): void {
-    this.swiperSlideTransform = this.swiperSlideTransform - 325;
-    this.setSwiperTransformStylele(this.swiperSlideTransform, elIndex);
+  next(elIndex: string): void {
+    this.swiperSlideTransform[elIndex] = this.swiperSlideTransform[elIndex] - 325;
+    this.setSwiperTransformStylele(this.swiperSlideTransform[elIndex], elIndex);
   }
 
   private getVideoTime(player: Player) {
@@ -134,8 +145,19 @@ export class HomeComponent implements AfterViewInit {
       });
   }
 
-  private setSwiperTransformStylele(swiperSlideTransform: number, elIndex: number) {
-    const wrapper = document.getElementsByClassName('swiper-wrapper')[elIndex] as HTMLElement;
+  private setSwiperTransformStylele(swiperSlideTransform: number, elIndex: string) {
+    let wrapper: HTMLElement | undefined;
+    switch (!!elIndex) {
+      case elIndex === 'swiperRef1':
+        wrapper = this.swiperRef1?.swiperRef.$wrapperEl[0];
+        break;
+      case elIndex === 'swiperRef2':
+        wrapper = this.swiperRef2?.swiperRef.$wrapperEl[0];
+        break;
+      case elIndex === 'swiperRef3':
+        wrapper = this.swiperRef3?.swiperRef.$wrapperEl[0];
+        break;
+    }
     if (wrapper) {
       wrapper.style.transform = `translate3d(${swiperSlideTransform}px, 0px, 0px)`;
       wrapper.style.transitionDuration = '300ms';
