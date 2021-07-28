@@ -25,10 +25,26 @@
 }
 
 .nav_bar_headshot {
-  background: $light_blue;
+  // background: $light_blue;
   border-radius: 100px;
   width: 40px;
   height: 40px;
+  img {
+    border: 3px solid transparent;
+    border-radius: 100px;
+  }
+}
+
+.nav_bar_headshot:hover {
+  img {
+    border: 3px solid rgba(21, 25, 28, 0.08);
+  }
+}
+
+.nav_bar_headshot.open.show {
+  img {
+    border: 3px solid rgba(21, 25, 28, 0.16);
+  }
 }
 
 .nav_bar_hr {
@@ -256,7 +272,8 @@
   .navbar {
     padding-top: 0px;
     padding-bottom: 0px;
-    justify-content:unset
+    justify-content:unset;
+    box-shadow: 0px 2px 6px rgb(21 25 28 / 10%);
   }
   .navbar-toggler {
     border: unset;
@@ -289,13 +306,29 @@
   }
 
   .nav_bar_headshot_mobile {
-    background: $light_blue;
+    // background: $light_blue;
     border-radius: 100px;
     width: 40px;
     height: 40px;
     position: absolute;
     right: 20px;
     display: unset;
+    img {
+      border: 3px solid transparent;
+      border-radius: 100px;
+    }
+  }
+
+  .nav_bar_headshot_mobile:hover {
+    img {
+      border: 3px solid rgba(21, 25, 28, 0.08);
+    }
+  }
+
+  .nav_bar_headshot_mobile.open.show {
+    img {
+      border: 3px solid rgba(21, 25, 28, 0.16);
+    }
   }
 
   .nav_bar_search_mobile {
