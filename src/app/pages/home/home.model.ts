@@ -135,7 +135,7 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
 export const LearnWillingness: LearnWillingnessNewArticleModel = {
   learnTitle: '全人健康',
   lookMoreUrl: '/pages/home/1',
-  learnImg: '../../../assets/img/pill.svg',
+  learnImg: '../../../assets/img/book.svg',
   learnBackgroundColor: '#3B5A90',
 };
 
