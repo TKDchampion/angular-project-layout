@@ -55,7 +55,7 @@ export class HomeComponent implements AfterViewInit {
   getdata: Record<string, unknown> | undefined;
   showNewVideoIndex: number | undefined;
   newVideoColumn = 4;
-  showHotSubjectCounts: number | undefined;
+  showHotSubjectCounts = 4;
   resizeObservable$: Observable<Event> | undefined;
   resizeSubscription$: Subscription | undefined;
   swiperSlideTransform: any = {
@@ -65,7 +65,7 @@ export class HomeComponent implements AfterViewInit {
     swiperRef4: 0,
   };
   hotSubjectArray: HotSubjectItemInfoNewArticleModel[] = [];
-
+  hotSubjectArray2: HotSubjectItemInfoNewArticleModel[] = [];
   // fake data
   // newArticle = NewArticle;
   newArticle1 = NewArticle;
@@ -191,11 +191,15 @@ export class HomeComponent implements AfterViewInit {
   }
   private renderingHotSubjet(size: string) {
     this.showHotSubjectCounts = this.detectHotSubjectCounts(size);
+    const nextCounts = this.hotSubjectItemInfo.slice(this.showHotSubjectCounts);
     const array = [];
+    const nextArray = [];
     for (let i = 0; i < this.showHotSubjectCounts; i++) {
-      array.push(this.hotSubjectItemInfo);
+      array.push(this.hotSubjectItemInfo[i]);
+      nextArray.push(nextCounts[i]);
     }
     this.hotSubjectArray = array;
+    this.hotSubjectArray2 = nextArray;
   }
 
   private setVideoTime(player: Player) {
