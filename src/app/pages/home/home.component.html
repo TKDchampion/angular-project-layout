@@ -68,24 +68,50 @@
         [slidesPerView]="newVideoColumn"
         #swiperRef2
       >
-        <ng-container *ngFor="let item of learnWillingness">
+        <!-- <ng-container *ngFor="let item of learnWillingness">
           <ng-template swiperSlide><app-learn-willingness [learnWillingness]="item"></app-learn-willingness></ng-template>
           <ng-template swiperSlide *ngFor="let video of item.videoItem">
             <app-new-video [newVideoItem]="video"></app-new-video>
           </ng-template>
-        </ng-container>
+        </ng-container> -->
 
-        <!-- <ng-template swiperSlide><app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness></ng-template>
+        <ng-template swiperSlide><app-learn-willingness [learnWillingness]="learnWillingness"></app-learn-willingness></ng-template>
         <ng-template swiperSlide *ngFor="let item of newVideoItem">
           <app-new-video [newVideoItem]="item"></app-new-video>
-        </ng-template> -->
-        <!-- <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-        <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template> -->
+        </ng-template>
+      </swiper>
+    </div>
+    <div class="swiper_box" style="margin-top: 24px;">
+      <button (click)="prev('swiperRef3')" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform['swiperRef3'] === 0 }">
+        <svg class="swiper_prev"></svg>
+      </button>
+      <button
+        (click)="next('swiperRef3')"
+        class="swiper_button_next"
+        [ngClass]="{ disabled: swiperSlideTransform['swiperRef3'] === (showNewVideoIndex && showNewVideoIndex * -325) }"
+      >
+        <svg class="swiper_next"></svg>
+      </button>
+      <swiper
+        class="video_swiper"
+        [slidesPerView]="showNewVideoIndex"
+        [spaceBetween]="0"
+        [navigation]="false"
+        (transitionStart)="onSlideChange($event, 'swiperRef3')"
+        [slidesPerView]="newVideoColumn"
+        #swiperRef3
+      >
+        <!-- <ng-container *ngFor="let item of learnWillingness">
+          <ng-template swiperSlide><app-learn-willingness [learnWillingness]="item"></app-learn-willingness></ng-template>
+          <ng-template swiperSlide *ngFor="let video of item.videoItem">
+            <app-new-video [newVideoItem]="video"></app-new-video>
+          </ng-template>
+        </ng-container> -->
+
+        <ng-template swiperSlide><app-learn-willingness [learnWillingness]="learnWillingness2"></app-learn-willingness></ng-template>
+        <ng-template swiperSlide *ngFor="let item of videoRecommendItem">
+          <app-new-video [newVideoItem]="item"></app-new-video>
+        </ng-template>
       </swiper>
     </div>
     <button type="button" class="btn btn-check-all">查看全部 <img src="../../../assets/icon/right.png" alt="" /></button>
@@ -99,13 +125,13 @@
   <!-- Recommend video -->
   <app-scope-title [title]="'影片推薦'"></app-scope-title>
   <div class="swiper_box">
-    <button (click)="prev('swiperRef3')" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform['swiperRef3'] === 0 }">
+    <button (click)="prev('swiperRef4')" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform['swiperRef4'] === 0 }">
       <svg class="swiper_prev"></svg>
     </button>
     <button
-      (click)="next('swiperRef3')"
+      (click)="next('swiperRef4')"
       class="swiper_button_next"
-      [ngClass]="{ disabled: swiperSlideTransform['swiperRef3'] === (showNewVideoIndex && showNewVideoIndex * -325) }"
+      [ngClass]="{ disabled: swiperSlideTransform['swiperRef4'] === (showNewVideoIndex && showNewVideoIndex * -325) }"
     >
       <svg class="swiper_next"></svg>
     </button>
@@ -114,9 +140,9 @@
       [slidesPerView]="showNewVideoIndex"
       [spaceBetween]="0"
       [navigation]="false"
-      (transitionStart)="onSlideChange($event, 'swiperRef3')"
+      (transitionStart)="onSlideChange($event, 'swiperRef4')"
       [slidesPerView]="newVideoColumn"
-      #swiperRef3
+      #swiperRef4
     >
     <ng-template swiperSlide *ngFor="let item of videoRecommendItem">
       <app-new-video [newVideoItem]="item"></app-new-video>
@@ -139,7 +165,7 @@
     <app-hot-subject *ngFor="let subject of hotSubjectArray" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
   <div class="d-flex">
-    <app-hot-subject *ngFor="let subject of hotSubjectArray" [hotSubjectItemInfo]="subject"></app-hot-subject>
+    <app-hot-subject *ngFor="let subject of hotSubjectArray2" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
   <button type="button" class="btn btn-check-all w-100">查看全部</button>
 

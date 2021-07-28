@@ -4,5 +4,4 @@ export interface LearnWillingnessNewArticleModel {
   lookMoreUrl: string;
   learnImg: string;
   learnBackgroundColor: string;
-  videoItem: any[];
 }
