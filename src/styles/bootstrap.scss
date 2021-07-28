@@ -10,3 +10,9 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1366px,
 );
+
+@include media-breakpoint-down(sm) {
+  .row {
+    --bs-gutter-x: 0;
+  }
+}

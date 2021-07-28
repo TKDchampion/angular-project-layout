@@ -1,4 +1,5 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/bootstrap.scss';
 
 .new_active_box {
   min-width: 335px;
@@ -15,10 +16,6 @@
   img {
     border-radius: 14px;
   }
-}
-
-.new_active_right {
-  // min-width: 268px;
 }
 
 .new_active_right_content {
@@ -50,4 +47,10 @@
 
 .new_active_right_footer_people {
   margin: 8px 0;
+}
+
+@include media-breakpoint-down(sm) {
+  .new_active_box {
+    padding-right: 20px;
+  }
 }

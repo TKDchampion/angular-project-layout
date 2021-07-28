@@ -2,20 +2,21 @@
 @import '../../../styles/variables.scss';
 
 .home_box {
-  padding: 0 32px;
+  padding: 0 40px;
 }
 
 .swiper_box {
   position: relative;
 }
 
-@include media-breakpoint-down(sm) {
-  .home_box {
-    padding: 0 24px;
-  }
-}
 .btn-check-all {
   display: none;
+}
+
+@include media-breakpoint-down(xl) {
+  .home_box {
+    padding: 0 30px;
+  }
 }
 
 @include media-breakpoint-down(md) {
@@ -32,5 +33,15 @@
     align-items: center;
     justify-content: center;
     margin-top: 24px;
+  }
+  .subject_btn-check-all {
+    margin-right: 20px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .home_box {
+    padding: 0 20px;
+    padding-right: 0px;
   }
 }

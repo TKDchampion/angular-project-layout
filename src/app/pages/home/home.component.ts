@@ -41,19 +41,21 @@ export class HomeComponent implements AfterViewInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: ResizeEvent): void {
-    const size = this.resizeService.detectSize(event.target.innerWidth);
-    this.showNewVideoIndex = this.detectNewVideoIndex(size);
-    this.newVideoColumn = this.detectNewVideoColumn(size);
-    this.renderingHotSubjet(size);
-    console.log('this.newVideoColumn :>> ', this.newVideoColumn);
-
+    this.size = this.resizeService.detectSize(event.target.innerWidth);
+    this.swiperSlideCounts = {
+      swiperRef1: this.detectSwiperCounts(this.size, this.newVideoItem.length),
+      swiperRef2: this.detectSwiperCounts(this.size, this.newVideoItem.length),
+      swiperRef3: this.detectSwiperCounts(this.size, this.videoRecommendItem.length),
+      swiperRef4: this.detectSwiperCounts(this.size, this.videoRecommendItem.length),
+    };
+    this.newVideoColumn = this.detectNewVideoColumn(this.size);
+    this.renderingHotSubjet(this.size);
     this.setSwiperTransformStylele(0, 'swiperRef1');
     this.setSwiperTransformStylele(0, 'swiperRef1');
     this.setSwiperTransformStylele(0, 'swiperRef1');
   }
   flag$: Observable<boolean>;
   getdata: Record<string, unknown> | undefined;
-  showNewVideoIndex: number | undefined;
   newVideoColumn = 4;
   showHotSubjectCounts = 4;
   resizeObservable$: Observable<Event> | undefined;
@@ -63,6 +65,12 @@ export class HomeComponent implements AfterViewInit {
     swiperRef2: 0,
     swiperRef3: 0,
     swiperRef4: 0,
+  };
+  swiperSlideCounts: any = {
+    swiperRef1: 8,
+    swiperRef2: 8,
+    swiperRef3: 8,
+    swiperRef4: 8,
   };
   hotSubjectArray: HotSubjectItemInfoNewArticleModel[] = [];
   hotSubjectArray2: HotSubjectItemInfoNewArticleModel[] = [];
@@ -76,6 +84,8 @@ export class HomeComponent implements AfterViewInit {
   videoRecommendItem = VideoRecommendItem;
   hotSubjectItemInfo = HotSubjectItemInfo;
   newActiveItemInfo = NewActiveItemInfo;
+  //
+  size = 'xxl';
   identity = this.envService.getEnv('identity');
 
   constructor(
@@ -87,12 +97,15 @@ export class HomeComponent implements AfterViewInit {
     private changeDetectorRef: ChangeDetectorRef,
     private envService: EveService,
   ) {
-    const size = this.resizeService.default();
-    this.showNewVideoIndex = this.detectNewVideoIndex(size);
-    this.newVideoColumn = this.detectNewVideoColumn(size);
-    this.renderingHotSubjet(size);
-    console.log('this.newVideoColumn :>> ', this.newVideoColumn);
-
+    this.size = this.resizeService.default();
+    this.swiperSlideCounts = {
+      swiperRef1: this.detectSwiperCounts(this.size, this.newVideoItem.length),
+      swiperRef2: this.detectSwiperCounts(this.size, this.newVideoItem.length),
+      swiperRef3: this.detectSwiperCounts(this.size, this.videoRecommendItem.length),
+      swiperRef4: this.detectSwiperCounts(this.size, this.videoRecommendItem.length),
+    };
+    this.newVideoColumn = this.detectNewVideoColumn(this.size);
+    this.renderingHotSubjet(this.size);
     this.flag$ = store.select('flag');
     storeValue.select('setValue').subscribe((resp) => {
       console.log(resp);
@@ -129,19 +142,18 @@ export class HomeComponent implements AfterViewInit {
 
   onSlideChange(event: unknown, elIndex: string): void {
     const index = (event as { realIndex: number }).realIndex;
-    this.swiperSlideTransform[elIndex] = index * -325;
+    this.swiperSlideTransform[elIndex] = index * -321;
     this.setSwiperTransformStylele(this.swiperSlideTransform[elIndex], elIndex);
     this.changeDetectorRef.detectChanges();
-    console.log('this.swiperRef1 :>> ', this.swiperRef1.swiperRef);
   }
 
   prev(elIndex: string): void {
-    this.swiperSlideTransform[elIndex] = this.swiperSlideTransform[elIndex] + 325;
+    this.swiperSlideTransform[elIndex] = this.swiperSlideTransform[elIndex] + 321;
     this.setSwiperTransformStylele(this.swiperSlideTransform[elIndex], elIndex);
   }
 
   next(elIndex: string): void {
-    this.swiperSlideTransform[elIndex] = this.swiperSlideTransform[elIndex] - 325;
+    this.swiperSlideTransform[elIndex] = this.swiperSlideTransform[elIndex] - 321;
     this.setSwiperTransformStylele(this.swiperSlideTransform[elIndex], elIndex);
   }
 
@@ -220,21 +232,25 @@ export class HomeComponent implements AfterViewInit {
       });
   }
 
-  private detectNewVideoIndex(size: string): number {
+  private detectSwiperCounts(size: string, allCounts: number): number {
+    let sizeCounts = 4;
     switch (!!size) {
       case size === 'xs':
-        return 7;
+        sizeCounts = 1;
+        break;
       case size === 'sm':
       case size === 'md':
-        return 6;
+        sizeCounts = 2;
+        break;
       case size === 'lg':
       case size === 'xl':
-        return 5;
+        sizeCounts = 3;
+        break;
       case size === 'xxl':
-        return 4;
-      default:
-        return 4;
+        sizeCounts = 4;
+        break;
     }
+    return allCounts - sizeCounts;
   }
 
   private detectNewVideoColumn(size: string): number {

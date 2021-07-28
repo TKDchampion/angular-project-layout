@@ -9,59 +9,60 @@
 
 <div class="home_box width_limit">
   <!-- New video -->
-  <app-scope-title [title]="'最新影片'"></app-scope-title>
-  <div class="swiper_box">
-    <button (click)="prev('swiperRef1')" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform['swiperRef1'] === 0 }">
-      <svg class="swiper_prev"></svg>
-    </button>
-    <button
-      (click)="next('swiperRef1')"
-      class="swiper_button_next"
-      [ngClass]="{ disabled: swiperSlideTransform['swiperRef1'] === (showNewVideoIndex && showNewVideoIndex * -325) }"
-    >
-      <svg class="swiper_next"></svg>
-    </button>
-    <swiper
-      class="video_swiper"
-      [slidesPerView]="showNewVideoIndex"
-      [spaceBetween]="0"
-      [navigation]="false"
-      [slidesPerView]="newVideoColumn"
-      (transitionStart)="onSlideChange($event, 'swiperRef1')"
-      #swiperRef1
-    >
-      <ng-template swiperSlide *ngFor="let item of newVideoItem">
-        <app-new-video [newVideoItem]="item"></app-new-video>
-      </ng-template>
-      <!-- <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template> -->
-    </swiper>
+  <div>
+    <app-scope-title [title]="'最新影片'"></app-scope-title>
+    <div class="swiper_box">
+      <button
+        (click)="prev('swiperRef1')"
+        class="swiper_button_prev"
+        [ngClass]="{ disabled: swiperSlideTransform['swiperRef1'] === 0 || size === 'xs' || size === 'sm' }"
+      >
+        <svg class="swiper_prev"></svg>
+      </button>
+      <button
+        (click)="next('swiperRef1')"
+        class="swiper_button_next"
+        [ngClass]="{ disabled: swiperSlideTransform['swiperRef1'] === swiperSlideCounts['swiperRef1'] * -321 || size === 'xs' || size === 'sm' }"
+      >
+        <svg class="swiper_next"></svg>
+      </button>
+      <swiper
+        class="video_swiper"
+        [spaceBetween]="0"
+        [navigation]="false"
+        [slidesPerView]="newVideoColumn"
+        (transitionStart)="onSlideChange($event, 'swiperRef1')"
+        #swiperRef1
+      >
+        <ng-template swiperSlide *ngFor="let item of newVideoItem">
+          <app-new-video [newVideoItem]="item"></app-new-video>
+        </ng-template>
+      </swiper>
+    </div>
+    <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
   </div>
-  <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
 
   <!-- learn willingness -->
   <ng-container *ngIf="identity !== 1">
     <app-scope-title [title]="'根據您的學習意願'"></app-scope-title>
     <!-- 已設定學習意願 -->
     <div class="swiper_box">
-      <button (click)="prev('swiperRef2')" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform['swiperRef2'] === 0 }">
+      <button
+        (click)="prev('swiperRef2')"
+        class="swiper_button_prev"
+        [ngClass]="{ disabled: swiperSlideTransform['swiperRef2'] === 0 || size === 'xs' || size === 'sm' }"
+      >
         <svg class="swiper_prev"></svg>
       </button>
       <button
         (click)="next('swiperRef2')"
         class="swiper_button_next"
-        [ngClass]="{ disabled: swiperSlideTransform['swiperRef2'] === (showNewVideoIndex && showNewVideoIndex * -325) }"
+        [ngClass]="{ disabled: swiperSlideTransform['swiperRef2'] === swiperSlideCounts['swiperRef2'] * -321 || size === 'xs' || size === 'sm' }"
       >
         <svg class="swiper_next"></svg>
       </button>
       <swiper
         class="video_swiper"
-        [slidesPerView]="showNewVideoIndex"
         [spaceBetween]="0"
         [navigation]="false"
         (transitionStart)="onSlideChange($event, 'swiperRef2')"
@@ -81,20 +82,23 @@
         </ng-template>
       </swiper>
     </div>
-    <div class="swiper_box" style="margin-top: 24px;">
-      <button (click)="prev('swiperRef3')" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform['swiperRef3'] === 0 }">
+    <div class="swiper_box" style="margin-top: 24px">
+      <button
+        (click)="prev('swiperRef3')"
+        class="swiper_button_prev"
+        [ngClass]="{ disabled: swiperSlideTransform['swiperRef3'] === 0 || size === 'xs' || size === 'sm' }"
+      >
         <svg class="swiper_prev"></svg>
       </button>
       <button
         (click)="next('swiperRef3')"
         class="swiper_button_next"
-        [ngClass]="{ disabled: swiperSlideTransform['swiperRef3'] === (showNewVideoIndex && showNewVideoIndex * -325) }"
+        [ngClass]="{ disabled: swiperSlideTransform['swiperRef3'] === swiperSlideCounts['swiperRef3'] * -321 || size === 'xs' || size === 'sm' }"
       >
         <svg class="swiper_next"></svg>
       </button>
       <swiper
         class="video_swiper"
-        [slidesPerView]="showNewVideoIndex"
         [spaceBetween]="0"
         [navigation]="false"
         (transitionStart)="onSlideChange($event, 'swiperRef3')"
@@ -125,36 +129,31 @@
   <!-- Recommend video -->
   <app-scope-title [title]="'影片推薦'"></app-scope-title>
   <div class="swiper_box">
-    <button (click)="prev('swiperRef4')" class="swiper_button_prev" [ngClass]="{ disabled: swiperSlideTransform['swiperRef4'] === 0 }">
+    <button
+      (click)="prev('swiperRef4')"
+      class="swiper_button_prev"
+      [ngClass]="{ disabled: swiperSlideTransform['swiperRef4'] === 0 || size === 'xs' || size === 'sm' }"
+    >
       <svg class="swiper_prev"></svg>
     </button>
     <button
       (click)="next('swiperRef4')"
       class="swiper_button_next"
-      [ngClass]="{ disabled: swiperSlideTransform['swiperRef4'] === (showNewVideoIndex && showNewVideoIndex * -325) }"
+      [ngClass]="{ disabled: swiperSlideTransform['swiperRef4'] === swiperSlideCounts['swiperRef4'] * -321 || size === 'xs' || size === 'sm' }"
     >
       <svg class="swiper_next"></svg>
     </button>
     <swiper
       class="video_swiper"
-      [slidesPerView]="showNewVideoIndex"
       [spaceBetween]="0"
       [navigation]="false"
       (transitionStart)="onSlideChange($event, 'swiperRef4')"
       [slidesPerView]="newVideoColumn"
       #swiperRef4
     >
-    <ng-template swiperSlide *ngFor="let item of videoRecommendItem">
-      <app-new-video [newVideoItem]="item"></app-new-video>
-    </ng-template>
-      <!-- <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template>
-      <ng-template swiperSlide><app-new-video [newVideoItem]="newVideoItem"></app-new-video></ng-template> -->
+      <ng-template swiperSlide *ngFor="let item of videoRecommendItem">
+        <app-new-video [newVideoItem]="item"></app-new-video>
+      </ng-template>
     </swiper>
   </div>
   <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
@@ -167,7 +166,9 @@
   <div class="d-flex">
     <app-hot-subject *ngFor="let subject of hotSubjectArray2" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
-  <button type="button" class="btn btn-check-all w-100">查看全部</button>
+  <div class="subject_btn-check-all">
+    <button type="button" class="btn btn-check-all w-100">查看全部</button>
+  </div>
 
   <!-- New active -->
   <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
@@ -177,7 +178,9 @@
       <!-- <app-new-active class="col-xxl-6" [newActiveItemInfo]="item"></app-new-active> -->
     </ng-container>
   </div>
-  <button type="button" class="btn btn-check-all w-100">查看更多</button>
+  <div class="subject_btn-check-all">
+    <button type="button" class="btn btn-check-all w-100">查看更多</button>
+  </div>
 
   <!-- New article -->
   <app-scope-title [title]="'最新文章'"></app-scope-title>
@@ -193,5 +196,7 @@
       <!-- <app-new-article class="col-xxl-6 new_article" [newArticle]="newArticle"></app-new-article> -->
     </ng-container>
   </div>
-  <button type="button" class="btn btn-check-all w-100">查看更多</button>
+  <div class="subject_btn-check-all">
+    <button type="button" class="btn btn-check-all w-100">查看更多</button>
+  </div>
 </div>
