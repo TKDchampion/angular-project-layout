@@ -45,6 +45,16 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   }
 }
 
+.arrow_down {
+  background-image: url('../assets/icon/arrow_down.png');
+  background-repeat: no-repeat;
+}
+
+.arrow_up {
+  background-image: url('../assets/icon/arrow_up.png');
+  background-repeat: no-repeat;
+}
+
 .swiper_button_next {
   right: -10px;
 }

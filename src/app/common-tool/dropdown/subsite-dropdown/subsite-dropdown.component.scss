@@ -2,18 +2,53 @@
 @import '../../../../styles/bootstrap.scss';
 #substie {
   inset: unset !important;
+  transform: translateY(8px) !important;
+  box-shadow: rgb(59 90 144 / 10%) 0px 0.4px 0.8px, rgb(59 90 144 / 40%) 0px 3px 6px;
+  border-radius: 8px;
+  border: unset;
   width: 200px;
 }
 .nav_bar_subsite {
   margin-right: 12px;
 }
+.btn_subsite::after {
+  display: none;
+}
 .btn_subsite {
-  background: $light_light_blue;
   border: 1px solid $light_blue;
   box-sizing: border-box;
   border-radius: 100px;
   color: $blue;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  .arrow_up {
+    display: none;
+  }
+  .arrow_down {
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+    background-size: 14px;
+    filter: invert(34%) sepia(6%) saturate(4278%) hue-rotate(180deg) brightness(93%) contrast(91%);
+  }
+}
+
+.nav_bar_subsite.open.show {
+  .btn_subsite {
+    background-color: $light_light_blue;
+    .arrow_up {
+      display: unset;
+      width: 14px;
+      height: 14px;
+      margin-left: 6px;
+      background-size: 14px;
+      filter: invert(34%) sepia(6%) saturate(4278%) hue-rotate(180deg) brightness(93%) contrast(91%);
+    }
+    .arrow_down {
+      display: none;
+    }
+  }
 }
 
 @include media-breakpoint-down(lg) {
