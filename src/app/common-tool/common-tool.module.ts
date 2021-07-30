@@ -23,6 +23,7 @@ import { SwiperModule } from 'swiper/angular';
 import { UnsetLearnWillingnessComponent } from './unset-learn-willingness/unset-learn-willingness.component';
 import { LoginModalComponent } from './popup/login-modal/login-modal.component';
 import { FormsModule } from '@angular/forms';
+import { DefaultModalComponent } from './popup/default-modal/default-modal.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FormsModule } from '@angular/forms';
     BrandComponent,
     UnsetLearnWillingnessComponent,
     LoginModalComponent,
+    DefaultModalComponent,
   ],
   imports: [FormsModule, CommonModule, RouterModule, SwiperModule, ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -57,6 +59,7 @@ import { FormsModule } from '@angular/forms';
     VerifyKanbanComponent,
     BrandComponent,
     UnsetLearnWillingnessComponent,
+    DefaultModalComponent,
   ],
   providers: [ResizeService],
 })
