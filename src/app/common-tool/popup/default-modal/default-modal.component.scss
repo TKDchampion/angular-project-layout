@@ -1,0 +1,34 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/bootstrap.scss';
+
+
+.modal-header {
+  display: block !important;
+  border-bottom: unset;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+.modal_close_icon {
+  text-align: right;
+}
+
+.modal_title_panel {
+  padding-top: 0px;
+  text-align: center;
+  .modeal_body_title {
+    font-size: $font-size-28;
+    color: $black;
+    margin-bottom: 8px;
+  }
+  .modal_body_subtitle {
+    font-size: $font-size-14;
+    color: $light_grey;
+    line-height: 18x;
+  }
+}
+
+.modal-body {
+  padding-top: 0px;
+  text-align: center;
+}
