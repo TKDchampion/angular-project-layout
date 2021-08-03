@@ -1,13 +1,10 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/bootstrap.scss';
-.banner-outside {
-  margin-top: 76px;
-}
+
 .banner {
   background: $light_light_light_light_light_grey;
-  background-image:
-  linear-gradient(90deg, $light_light_light_light_light_grey 40%, rgba(250, 249, 249, 0) 100%),
-  url('../../../assets/img/banner_1.png');
+  background-image: linear-gradient(90deg, $light_light_light_light_light_grey 40%, rgba(250, 249, 249, 0) 100%),
+    url('../../../assets/img/banner_1.png');
   background-position: right;
   background-repeat: no-repeat;
   height: 600px;
@@ -83,15 +80,8 @@
 }
 
 .login_banner {
-  background-image:
-  linear-gradient(90deg, $light_light_light_light_light_grey 40%, rgba(250, 249, 249, 0) 100%),
-  url('../../../assets/img/banner_2.png');
-}
-
-@include media-breakpoint-down(lg) {
-  .banner-outside {
-    margin-top: 64px;
-  }
+  background-image: linear-gradient(90deg, $light_light_light_light_light_grey 40%, rgba(250, 249, 249, 0) 100%),
+    url('../../../assets/img/banner_2.png');
 }
 
 @include media-breakpoint-up(xl) {
@@ -109,19 +99,17 @@
     .banner {
       border-radius: unset;
       .banner_content {
-        left: calc((100% - 1366px) /2 + 60px);
+        left: calc((100% - 1366px) / 2 + 60px);
       }
     }
   }
 }
 
-
 @include media-breakpoint-down(sm) {
   .banner {
     display: flex;
     flex-wrap: wrap;
-    background-image:
-      linear-gradient(180deg, $light_light_light_light_light_grey 20%, rgba(250, 249, 249, 0) 100%),
+    background-image: linear-gradient(180deg, $light_light_light_light_light_grey 20%, rgba(250, 249, 249, 0) 100%),
       url('../../../assets/img/banner_1.png');
     background-color: $light_light_light_light_light_grey;
     background-position: bottom;
@@ -170,8 +158,7 @@
     }
   }
   .login_banner {
-    background-image:
-    linear-gradient(180deg, $light_light_light_light_light_grey 20%, rgba(250, 249, 249, 0) 100%),
-    url('../../../assets/img/banner_2.png');
+    background-image: linear-gradient(180deg, $light_light_light_light_light_grey 20%, rgba(250, 249, 249, 0) 100%),
+      url('../../../assets/img/banner_2.png');
   }
 }

@@ -41,12 +41,6 @@
     width: 300px;
     margin-left: 48px;
   }
-  .member_edit_box_menu_item {
-    &.active::before {
-      width: calc(calc(100vw - 1366px) + 48px);
-      left: calc(0px - calc(calc(100vw - 1366px) + 48px));
-    }
-  }
 }
 @include media-breakpoint-down(xl) {
   .member_edit_box_menu {
@@ -60,11 +54,12 @@
 }
 
 .member_edit_box_content {
-  padding: 0px 48px;
+  margin: auto;
+  max-width: 970px;
 }
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(xxl) {
   .member_edit_box_content {
-    padding: 0px 20px;
+    margin: auto 32px;
   }
 }
 
@@ -86,7 +81,8 @@
 }
 
 .member_edit_box_content_scope {
-  border: 1px solid #e8e8e8;
+  border: 1px solid;
+  border-color: $hr_grey;
   box-sizing: border-box;
   border-radius: 8px;
   margin-top: 20px;
@@ -116,7 +112,7 @@
     }
   }
   .member_edit_box_content_scope_item_headshot {
-    background: #3b5a90;
+    background: $blue;
     width: 100px;
     height: 100px;
     border-radius: 100px;
@@ -125,6 +121,11 @@
     color: $white;
     text-align: center;
     line-height: 100px;
+  }
+  .member_edit_box_content_scope_item_title {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 38px 32px;
   }
 }
 
@@ -144,6 +145,8 @@
   height: 180px;
   margin-top: 16px;
   border-radius: 8px;
+  border: 1px solid;
+  border-color: $hr_grey;
   .member_edit_box_content_kanban_text {
     margin-left: 32px;
     .member_edit_box_content_kanban_title {
@@ -156,7 +159,41 @@
       color: $light_grey;
     }
     .member_edit_box_content_kanban_button {
-      margin-top: 24px;
+      margin-top: 20px;
+      background-color: $blue;
+      color: $white;
+      border-radius: 100px;
+      width: 92px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+    .member_edit_box_content_kanban_img {
+      display: none;
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .member_edit_box_content_kanban {
+    background: $light_light_light_light_light_grey;
+    height: 404px;
+    .member_edit_box_content_kanban_text {
+      text-align: center;
+      margin: auto;
+      .member_edit_box_content_kanban_title {
+        margin-top: 20px;
+      }
+      .member_edit_box_content_kanban_button {
+        margin: 20px auto;
+        margin-bottom: 30px;
+      }
+      .member_edit_box_content_kanban_img {
+        display: block;
+        .member_edit_box_content_img_icon {
+          position: absolute;
+        }
+      }
     }
   }
 }
