@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { RegisterJobModal } from './register.modal';
+import { DemoLearnType, LearnType, RegisterJobModal } from './register.modal';
 
 @Component({
   selector: 'app-register-modal',
@@ -15,6 +15,7 @@ export class RegisterModalComponent implements OnInit {
   registerThirdStepModalRef!: BsModalRef;
   registerLearnCheckModalRef!: BsModalRef;
   registerIdentity!: boolean;
+  registerLearnCount = 0;
   registerJob: RegisterJobModal = {
     job: '',
     jobCompany: '',
@@ -22,6 +23,7 @@ export class RegisterModalComponent implements OnInit {
     jobType: ''
   };
   verifyEmailStatus!: boolean;
+  demoLearnType = DemoLearnType;
 
   constructor(private modalService: BsModalService) { }
 
@@ -83,5 +85,15 @@ export class RegisterModalComponent implements OnInit {
 
   getVerifyStatus($event: boolean) {
     this.verifyEmailStatus = $event;
+  }
+
+  changeLearnType(type: LearnType) {
+    type.isChecked = !type.isChecked;
+    this.registerLearnCount = 0;
+    this.demoLearnType.filter((i: LearnType) => {
+      if (i.isChecked) {
+        this.registerLearnCount ++;
+      }
+    });
   }
 }

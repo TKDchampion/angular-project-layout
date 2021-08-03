@@ -84,8 +84,8 @@
       <div class="check_radiobutton d-flex">
         <div class="radio_panel d-flex">
           <div class="check_panel">
-            <input class="form-check-input" [(ngModel)]="registerIdentity"
-              [value]="false" type="radio" name="check_doctor" id="radio_no">
+            <input class="form-check-input" [(ngModel)]="registerIdentity" [value]="false" type="radio"
+              name="check_doctor" id="radio_no">
             <label class="form-check-label" for="radio_no">
               否
             </label>
@@ -94,8 +94,8 @@
         </div>
         <div class="radio_panel d-flex">
           <div class="check_panel">
-            <input class="form-check-input" [(ngModel)]="registerIdentity"
-              [value]="true" type="radio" name="check_doctor" id="radio_yes">
+            <input class="form-check-input" [(ngModel)]="registerIdentity" [value]="true" type="radio"
+              name="check_doctor" id="radio_yes">
             <label class="form-check-label" for="radio_yes">
               是
             </label>
@@ -195,7 +195,8 @@
 </ng-template>
 
 <ng-template #verifyEmailModal>
-  <app-verify-modal [modalRef]="verifyEmailModalRef" [title]="'驗證信箱'" [subTitle]="'註冊後即可瀏覽影片與文章'" (verifyStatus)="getVerifyStatus($event)">
+  <app-verify-modal [modalRef]="verifyEmailModalRef" [title]="'驗證信箱'" [subTitle]="'註冊後即可瀏覽影片與文章'"
+    (verifyStatus)="getVerifyStatus($event)">
   </app-verify-modal>
 </ng-template>
 
@@ -232,7 +233,8 @@
         <input required type="text" class="account_input" placeholder="請輸入帳號">
         <div class="nickname_tips">此電子信箱將是您未來登入的帳號</div>
       </div>
-      <div *ngIf="!verifyEmailStatus" class="verify_email d-flex cursor_pointer" (click)="verifyEmail(verifyEmailModal)">
+      <div *ngIf="!verifyEmailStatus" class="verify_email d-flex cursor_pointer"
+        (click)="verifyEmail(verifyEmailModal)">
         驗證信箱<img width="14" height="14" src="../../../../assets/icon/right.png" alt="">
       </div>
       <div class="register_password">
@@ -244,7 +246,8 @@
         確認密碼
         <input required type="password" class="checkpassword_input" placeholder="請輸入密碼">
       </div>
-      <div class="privacy">點擊「註冊」表示您已閱讀且同意本網站的<span class="cursor_pointer privacy_text">使用條款</span>以及<span class="cursor_pointer privacy_text"> 隱私權政策</span>。</div>
+      <div class="privacy">點擊「註冊」表示您已閱讀且同意本網站的<span class="cursor_pointer privacy_text">使用條款</span>以及<span
+          class="cursor_pointer privacy_text"> 隱私權政策</span>。</div>
     </div>
     <div class="register_identity_button isdoctor d-flex">
       <button type="button" class="modal_btn_laststep" (click)="backSecondStep(registerSecend)">上一步</button>
@@ -254,7 +257,25 @@
 </ng-template>
 
 <ng-template #registerLearn>
-  <app-default-modal [modalRef]="registerLearnCheckModalRef" [title]="'設定學習意願'" [subTitle]="'我們將會依照您的意願提供專屬內容'" [showCancelIcon]="false">
-
+  <app-default-modal [modalRef]="registerLearnCheckModalRef" [title]="'設定學習意願'" [subTitle]="'我們將會依照您的意願提供專屬內容'"
+    [showCancelIcon]="false">
+    <div class="search-context">
+      <img src="../../../../assets/img/thin_search.png" width="20" height="18" alt="">
+      <input type="text" class="input-search" placeholder="請輸入關鍵字">
+    </div>
+    <div class="learn_panel">
+      <div class="learn_item" *ngFor="let type of demoLearnType;let i = index;" [ngClass]="{'checked': type.isChecked}">
+        <input class="form-check-input" type="checkbox" value="" (change)="changeLearnType(type)" id="learn_{{i}}">
+        <label class="form-check-label" for="learn_{{i}}">
+          {{type.name}}
+        </label>
+      </div>
+    </div>
+    <div class="register_identity_button d-flex isdoctor">
+      <button type="button" class="modal_btn_laststep">略過</button>
+      <button type="button" class="modal_btn_nextstep" [ngClass]="{'disabled': registerLearnCount === 0}"
+        [disabled]="registerLearnCount === 0">完成 <span *ngIf="registerLearnCount > 0">({{registerLearnCount}})</span></button>
+    </div>
+    <div class="separator">您隨時都可以調整學習意願的項目</div>
   </app-default-modal>
 </ng-template>
