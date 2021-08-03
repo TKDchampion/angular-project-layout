@@ -1,6 +1,14 @@
 @import '../../../../styles/variables.scss';
 @import '../../../../styles/bootstrap.scss';
 
+.verify_text {
+  color: $light_red;
+  text-align: left;
+  margin-top: 6px;
+  font-size: $font-size-14;
+  line-height: 22px;
+}
+
 .modal_body_line {
   display: flex;
   justify-content: center;
@@ -132,7 +140,7 @@
       filter: invert(92%) sepia(0%) saturate(0%) hue-rotate(300deg) brightness(84%) contrast(83%);
     }
   }
-  .job_select.open.show{
+  .job_select.open.show {
     .arrow_up {
       display: unset;
       width: 18px;
@@ -145,7 +153,11 @@
       display: none;
     }
   }
+  .input_error {
+    border: 1px solid $light_red !important;
+  }
   .verify_email {
+    width: 100px;
     margin-top: 6px;
     margin-bottom: 10px;
     font-size: $font-size-14;
@@ -356,10 +368,29 @@
   margin-left: .5em;
 }
 
+.qrcode_img {
+  margin: 16px 0 8px 0;
+}
+
 @include media-breakpoint-down(sm) {
   .divider {
     .line {
       width: 27.5px;
+    }
+  }
+  .check_radiobutton {
+    .radio_panel {
+      .check_panel {
+        margin-left: 3px;
+        input {
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+  .learn_panel {
+    .learn_item {
+      width: 100%;
     }
   }
 }

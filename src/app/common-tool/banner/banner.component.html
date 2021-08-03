@@ -3,7 +3,7 @@
     <div class="banner_content" *ngIf="identity === 1; else login_content">
       <div class="banner_title">專業、多元的醫學相關課程</div>
       <div class="banner_subTitle">與眾多醫學廠商與醫院診所合作，分享產品經驗、實際案例，讓您輕鬆獲取專業知識。</div>
-      <button type="button" class="btn btn_banner_register">開始註冊</button>
+      <button type="button" class="btn btn_banner_register" (click)="register()">開始註冊</button>
     </div>
   </div>
 </div>

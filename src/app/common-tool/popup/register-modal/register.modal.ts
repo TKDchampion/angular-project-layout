@@ -7,6 +7,19 @@ export interface RegisterJobModal {
   doctorId?: string;
 }
 
+export interface RegisterUserInfoModal {
+  nickname: string;
+  firstname: string;
+  lastname: string;
+  phone: string;
+}
+
+export interface RegisterAccountModal {
+  account: string;
+  password: string;
+  confirmPassword: string;
+}
+
 export interface LearnType {
   id: number;
   name: string;
