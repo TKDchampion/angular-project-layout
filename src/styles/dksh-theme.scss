@@ -78,6 +78,16 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   background-size: 30px 20px;
 }
 
+.arrow_down {
+  background-image: url('../assets/icon/arrow_down.png');
+  background-repeat: no-repeat;
+}
+
+.arrow_up {
+  background-image: url('../assets/icon/arrow_up.png');
+  background-repeat: no-repeat;
+}
+
 .swiper_prev {
   width: 24px;
   height: 24px;
@@ -94,4 +104,14 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   width: 16px;
   height: 16px;
   background-image: url(../assets/icon/exclamation.svg);
+}
+
+// modal style
+body .modal-content {
+  border-radius: 14px;
+}
+
+body app-login-modal .verify_modal.in.show ~ app-default-modal .default_modal_header,
+body app-login-modal .verify_modal.in.show ~ app-default-modal .default_modal_body {
+  opacity: 0.5;
 }
