@@ -55,6 +55,15 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   left: -20px;
 }
 
+// line
+.line {
+  border-bottom: 1px solid #e8e8e8;
+  &.short {
+    width: calc(100% - 32px);
+    margin-left: 32px;
+  }
+}
+
 // icon
 .eyeIcon {
   background-image: url('../assets/icon/eye.svg');
@@ -79,4 +88,10 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   width: 24px;
   height: 24px;
   background-image: url(../assets/icon/arrow-right.svg);
+}
+
+.exclamation {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/icon/exclamation.svg);
 }
