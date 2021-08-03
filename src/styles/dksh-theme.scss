@@ -90,12 +90,20 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
 }
 
 // modal style
+.modal_max_width {
+  max-width: 416px;
+}
+
 body .modal-content {
     border-radius: 14px;
 }
 
-body app-login-modal .verify_modal.in.show ~ app-default-modal .default_modal_header,
-body app-login-modal .verify_modal.in.show ~ app-default-modal .default_modal_body
-{
-  opacity: 0.5;
+// body app-login-modal .verify_modal.in.show ~ app-default-modal .default_modal_header,
+// body app-login-modal .verify_modal.in.show ~ app-default-modal .default_modal_body
+// {
+//   opacity: 0.5;
+// }
+
+body .modal.fade.show {
+  background: rgba(0, 0, 0, .3);
 }

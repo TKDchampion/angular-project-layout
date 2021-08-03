@@ -11,6 +11,7 @@ export class DefaultModalComponent implements OnInit {
   @Input() modalRef!: BsModalRef;
   @Input() title!: string;
   @Input() subTitle!: string;
+  @Input() showCancelIcon = true;
   constructor() { }
 
   ngOnInit(): void {

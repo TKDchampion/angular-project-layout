@@ -1,6 +1,7 @@
 import { ResizeService } from './../services/resize.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -24,6 +25,8 @@ import { UnsetLearnWillingnessComponent } from './unset-learn-willingness/unset-
 import { LoginModalComponent } from './popup/login-modal/login-modal.component';
 import { FormsModule } from '@angular/forms';
 import { DefaultModalComponent } from './popup/default-modal/default-modal.component';
+import { RegisterModalComponent } from './popup/register-modal/register-modal.component';
+import { VerifyModalComponent } from './popup/verify-modal/verify-modal.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +47,10 @@ import { DefaultModalComponent } from './popup/default-modal/default-modal.compo
     UnsetLearnWillingnessComponent,
     LoginModalComponent,
     DefaultModalComponent,
+    RegisterModalComponent,
+    VerifyModalComponent,
   ],
-  imports: [FormsModule, CommonModule, RouterModule, SwiperModule, ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
+  imports: [FormsModule, CommonModule, RouterModule, SwiperModule,TooltipModule.forRoot(), ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
     NewArticleComponent,
     LearnWillingnessComponent,
@@ -60,6 +65,7 @@ import { DefaultModalComponent } from './popup/default-modal/default-modal.compo
     BrandComponent,
     UnsetLearnWillingnessComponent,
     DefaultModalComponent,
+    VerifyModalComponent
   ],
   providers: [ResizeService],
 })

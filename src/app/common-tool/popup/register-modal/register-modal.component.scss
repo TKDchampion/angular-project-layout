@@ -1,0 +1,278 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/bootstrap.scss';
+
+.modal_body_line {
+  display: flex;
+  justify-content: center;
+  .modal_line_login {
+    img {
+      margin-right: 10px;
+    }
+    margin-top: 32px;
+    width: 280px;
+    height: 54px;
+    background: $green;
+    font-size: $font-size-16;
+    color: $white;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: unset;
+  }
+}
+
+.modal_email_register {
+  width: 280px;
+  height: 54px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+  background: $blue;
+  color: $white;
+  border-radius: 100px;
+  border: unset;
+}
+
+.register_status {
+  margin-top: 24px;
+  justify-content: space-around;
+}
+
+.register_select {
+  font-size: $font-size-14;
+  color: $blue;
+}
+.register_unselect {
+  font-size: $font-size-14;
+  color: $light_light_light_light_light_light_grey;
+}
+
+.divider {
+  height: 32px;
+  margin: auto 0;
+  .line {
+    width: 64px;
+    height: 2px;
+    background-color: $light_light_light_light_light_light_grey;
+  }
+}
+
+.register_information {
+  margin-top: 30px;
+  text-align: left;
+  font-size: $font-size-14;
+  input {
+    width: 100%;
+    background: $white;
+    border: 1px solid $hr_grey;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 40px;
+    padding-left: 16px;
+    margin-top: 6px;
+  }
+  input::placeholder {
+    color: $border_grey
+  }
+  .nickname_tips {
+    margin-top: 6px;
+    color: $light_grey;
+  }
+  .register_firstname,
+  .register_lastname,
+  .register_phone,
+  .register_jobname,
+  .register_jobcity,
+  .register_jobtype,
+  .register_doctorid,
+  .register_account,
+  .register_password,
+  .register_checkpassword,
+  .privacy {
+    margin-top: 16px;
+  }
+  .job_select {
+    width: 100%;
+    height: 40px;
+    background: $white;
+    border: 1px solid $hr_grey;
+    border-radius: 8px;
+    margin-top: 6px;
+    button {
+      text-align: left;
+      color: $border_grey;
+      font-size: $font-size-14;
+      display: flex;
+      align-items: center;
+    }
+    button::after {
+      display: none;
+    }
+    button.select {
+      color: $black;
+    }
+    ul {
+      width: 100%;
+      font-size: $font-size-14;
+      border: 1px solid $hr_grey;
+      border-radius: 8px;
+    }
+    .arrow_up {
+      display: none;
+    }
+    .arrow_down {
+      width: 18px;
+      height: 18px;
+      background-size: 18px;
+      position: absolute;
+      right: 16px;
+    }
+    .arrow_up.unselect,
+    .arrow_down.unselect {
+      filter: invert(92%) sepia(0%) saturate(0%) hue-rotate(300deg) brightness(84%) contrast(83%);
+    }
+  }
+  .job_select.open.show{
+    .arrow_up {
+      display: unset;
+      width: 18px;
+      height: 18px;
+      background-size: 18px;
+      position: absolute;
+      right: 16px;
+    }
+    .arrow_down {
+      display: none;
+    }
+  }
+  .verify_email {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    font-size: $font-size-14;
+    font-weight: 500;
+    color: $blue;
+    align-items: center;
+    img {
+      margin-left: 6px;
+    }
+  }
+  .privacy_text {
+    text-decoration: underline;
+    color: $blue;
+  }
+  .account {
+    justify-content: space-between;
+    .account_verify {
+      height: 22px;
+      width: 77px;
+      background: $light_green;
+      border-radius: 100px;
+      font-size: $font-size-12;
+      color: $dark_green;
+      align-items: center;
+      justify-content: center;
+      img {
+        margin-right: 6px;
+      }
+    }
+  }
+
+}
+
+.register_job_information {
+  margin-top: 16px;
+}
+
+.modal_btn_bignextstep {
+  width: 100%;
+  height: 54px;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  background: $blue;
+  color: $white;
+  border-radius: 100px;
+  border: unset;
+}
+
+.check_text {
+  margin-top: 30px;
+  align-items: center;
+  .check_text_text {
+    color: $grey;
+    font-size: $font-size-14;
+    margin-right: 8px;
+  }
+}
+
+.check_radiobutton {
+  height: 116px;
+  margin-top: 6px;
+  justify-content: space-between;
+  .radio_panel {
+    width: 49%;
+    justify-content: space-between;
+    background: $white;
+    border: 1px solid $light_light_light_light_light_light_grey;
+    border-radius: 14px;
+    .check_panel {
+      margin-top: 8px;
+      margin-left: 8px;
+      input {
+        margin-right: 8px;
+      }
+      label {
+        color: $grey;
+        font-size: $font-size-14;
+      }
+    }
+    img {
+      margin: auto 0;
+      margin-right: 12px;
+    }
+  }
+}
+
+.register_identity_button {
+  margin-top: 72px;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
+
+.register_identity_button.isdoctor{
+  margin-top: 32px;
+}
+
+.modal_btn_laststep {
+  width: 49%;
+  height: 54px;
+  background: $white;
+  border: 1px solid $light_blue;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: $font-size-18;
+  color: $blue;
+}
+
+.modal_btn_nextstep {
+  width: 49%;
+  height: 54px;
+  background: $blue;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: $font-size-18;
+  color: $white;
+  border: unset;
+}
+
+.modal_btn_nextstep.disabled {
+  background: $light_light_light_grey;
+  color: $light_blue;
+}
+
+@include media-breakpoint-down(sm) {
+  .divider {
+    .line {
+      width: 27.5px;
+    }
+  }
+}
