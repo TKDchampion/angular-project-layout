@@ -1,0 +1,10 @@
+FROM node:14.15 AS build
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
+RUN npm cache clean --force
+RUN npm i
+COPY . .
+
+RUN npm run build:ssr:prod
+
+CMD [ "node", "dist/dksh/server/main.js" ]
