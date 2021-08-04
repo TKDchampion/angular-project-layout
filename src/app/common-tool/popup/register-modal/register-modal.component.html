@@ -236,7 +236,7 @@
 </ng-template>
 
 <ng-template #verifyEmailModal>
-  <app-verify-modal [modalRef]="verifyEmailModalRef" [title]="'驗證信箱'" [subTitle]="'註冊後即可瀏覽影片與文章'"
+  <app-verify-modal [modalRef]="verifyEmailModalRef" [title]="'驗證信箱'" [subTitle]="'已寄送驗證碼至您的信箱，若有任何問題請聯絡我們'"
     (verifyStatus)="getVerifyStatus($event)">
   </app-verify-modal>
 </ng-template>
@@ -347,8 +347,7 @@
 </ng-template>
 
 <ng-template #registerSuccess>
-  <app-default-modal [modalRef]="registerSuccessModalRef" [title]="'您已註冊完成！'"
+  <app-success-modal [modalRef]="registerSuccessModalRef" [title]="'您已註冊完成！'"
     [subTitle]="'您可以掃描 Qrcode 進入我們的 Line 官方帳號後，即可將您的帳號與個人 Line 帳號綁定'">
-    <img class="qrcode_img" src="../../../../assets/img/fakeImge/fake_qrcode.png" alt="" width="100" height="100">
-  </app-default-modal>
+  </app-success-modal>
 </ng-template>

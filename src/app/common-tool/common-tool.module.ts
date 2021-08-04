@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { DefaultModalComponent } from './popup/default-modal/default-modal.component';
 import { RegisterModalComponent } from './popup/register-modal/register-modal.component';
 import { VerifyModalComponent } from './popup/verify-modal/verify-modal.component';
+import { SuccessModalComponent } from './popup/success-modal/success-modal.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { VerifyModalComponent } from './popup/verify-modal/verify-modal.componen
     DefaultModalComponent,
     RegisterModalComponent,
     VerifyModalComponent,
+    SuccessModalComponent,
   ],
   imports: [FormsModule, CommonModule, RouterModule, SwiperModule,TooltipModule.forRoot(), ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -65,7 +67,8 @@ import { VerifyModalComponent } from './popup/verify-modal/verify-modal.componen
     BrandComponent,
     UnsetLearnWillingnessComponent,
     DefaultModalComponent,
-    VerifyModalComponent
+    VerifyModalComponent,
+    SuccessModalComponent,
   ],
   providers: [ResizeService],
 })

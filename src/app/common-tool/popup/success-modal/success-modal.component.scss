@@ -1,0 +1,57 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/bootstrap.scss';
+
+.modal-header {
+  display: block !important;
+  border-bottom: unset;
+  padding: 0px 0 8px 0;
+}
+
+.modal-header-padding {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.modal_close_icon {
+  position: absolute;
+  top: -32px;
+  right: 0;
+}
+
+.success_doctor_img {
+  position: absolute;
+  left: 30%;
+  width: 187px;
+  height: 200px;
+  top: -20px;
+}
+
+.success_header_img {
+  width: 100%;
+  height: 180px;
+}
+
+.modal_title_panel {
+  padding-top: 0px;
+  text-align: center;
+  .modeal_body_title {
+    font-size: $font-size-28;
+    color: $black;
+    margin-bottom: 8px;
+  }
+  .modal_body_subtitle {
+    font-size: $font-size-14;
+    color: $light_grey;
+    line-height: 18x;
+  }
+}
+
+.modal-body {
+  padding: 1.5rem;
+  padding-top: 0px;
+  text-align: center;
+}
+
+.qrcode_img {
+  margin: 16px 0 8px 0;
+}

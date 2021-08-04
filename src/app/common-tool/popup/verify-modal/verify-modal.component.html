@@ -5,18 +5,24 @@
       alt="">
   </div>
   <div class="modal_title_panel">
-    <div class="modeal_body_title">{{title}}</div>
-    <div class="modal_body_subtitle">{{subTitle}}</div>
+    <div class="modeal_body_title">{{codeInvalid === true ? '驗證碼已失效' : title}}</div>
+    <div class="modal_body_subtitle">{{codeInvalid === true ? '若有任何問題請聯絡我們' : subTitle}} <br>contact.us@dksh.com
+    </div>
   </div>
 </div>
 <div class="modal-body verify_modal_body">
-  <div class="modal_verify">
+  <div class="modal_verify" *ngIf="!codeInvalid;else resend">
     <div class="modal_body_mailinput">
       <img src="../../../../assets/icon/password.png" alt="">
       <input type="text" class="mail_input" placeholder="請輸入驗證碼">
     </div>
     <button type="button" class="modal_verify_submit" (click)="submitVerifyCode()">送出</button>
-    <div class="verify_again cursor_pointer">再次寄送驗證碼</div>
-    <div class="separator">等 60 秒後可再次寄送驗證碼</div>
+    <div *ngIf="resentCodeTime === 0" class="verify_again cursor_pointer" (click)="codeInvalid = true">再次寄送驗證碼</div>
+    <div *ngIf="resentCodeTime !== 0" class="separator">等 {{resentCodeTime}} 秒後可再次寄送驗證碼</div>
   </div>
+  <ng-template #resend>
+    <div class="modal_verify">
+      <button type="button" class="modal_verify_resend" (click)="resendVerifyCode()">重新寄送驗證碼</button>
+    </div>
+  </ng-template>
 </div>

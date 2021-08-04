@@ -1,7 +1,6 @@
 @import '../../../../styles/variables.scss';
 @import '../../../../styles/bootstrap.scss';
 
-
 .modal-header {
   display: block !important;
   border-bottom: unset;
@@ -32,7 +31,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   font-size: $font-size-14;
   color: $light_grey;
 }
@@ -71,12 +70,17 @@
       background: unset;
       border: 0;
       width: 100%;
+      font-size: $font-size-14;
+      line-height: 22px;
     }
     .mail_input:focus {
       outline:0px;
     }
     img {
       margin-left: 16px;
+    }
+    input::placeholder {
+      color: $border_grey
     }
   }
   .modal_verify_submit {
@@ -86,13 +90,23 @@
     color: $white;
     border-radius: 100px;
     border: unset;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
+  }
+  .modal_verify_resend {
+    width: 100%;
+    height: 40px;
+    background: $blue;
+    color: $white;
+    border-radius: 100px;
+    border: unset;
+    margin-top: 24px;
+    margin-bottom: 8px;
   }
   .verify_again {
     font-size: $font-size-14;
     color: $blue;
     font-weight: 500;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     text-align: center;
   }
 }
