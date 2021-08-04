@@ -17,6 +17,10 @@ const routes: Routes = [
         path: 'home/:id',
         component: HomeItemComponent,
       },
+      {
+        path: 'member-edit',
+        loadChildren: () => import('./member-edit/member-edit.module').then((m) => m.MemberEditModule),
+      },
     ],
   },
 ];

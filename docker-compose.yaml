@@ -2,10 +2,10 @@ version: "1"
 
 services:
   ssr:
-    image: dksh_ssr_img
+    image: dksh_ssr_img_${ENV:-dev}
     # container_name: dksh_ssr_container
     build:
       context: .
-      dockerfile: Dockerfile.ssr
+      dockerfile: Dockerfile.ssr.${ENV:-dev}
     ports:
-      - 4000:4000
+      - 4000:80

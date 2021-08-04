@@ -7,5 +7,5 @@
   // identity
   // strange: 1, logined and not validated: 2,
   // logined and not need validate: 3, logined and validated: 4
-  window.__env.identity = 1;
+  window.__env.identity = 2;
 })(this);

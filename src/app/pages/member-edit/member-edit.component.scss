@@ -1,0 +1,199 @@
+@import '../../../styles/bootstrap.scss';
+@import '../../../styles/variables.scss';
+
+.member_edit_box {
+  padding: 32px 0px;
+}
+
+.member_edit_box_menu {
+  width: 300px;
+  margin-left: 48px;
+}
+
+.member_edit_box_menu_item {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 48px;
+  cursor: pointer;
+  p {
+    line-height: 48px;
+  }
+  &.active {
+    background-color: $light_light_light_light_grey;
+    p {
+      position: relative;
+      top: -54px;
+    }
+  }
+  &.active::before {
+    content: '';
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-color: $light_light_light_light_grey;
+    position: relative;
+    left: -48px;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .member_edit_box_menu {
+    width: 300px;
+    margin-left: 48px;
+  }
+}
+@include media-breakpoint-down(xl) {
+  .member_edit_box_menu {
+    width: 260px;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .member_edit_box_menu {
+    display: none;
+  }
+}
+
+.member_edit_box_content {
+  margin: auto;
+  max-width: 970px;
+}
+@include media-breakpoint-down(xxl) {
+  .member_edit_box_content {
+    margin: auto 32px;
+  }
+}
+
+.member_edit_box_content_header_bind {
+  line-height: 40px;
+  width: 179px;
+  height: 40px;
+  border: 1px solid;
+  border-color: $light_blue;
+  color: $blue;
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-weight: 500;
+  cursor: pointer;
+  svg {
+    margin-left: 8px;
+    margin-top: -4px;
+  }
+}
+
+.member_edit_box_content_scope {
+  border: 1px solid;
+  border-color: $hr_grey;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.member_edit_box_content_scope_item {
+  min-height: 72px;
+  line-height: 72px;
+  .member_edit_box_content_scope_item_first {
+    margin-left: 32px;
+    width: 200px;
+    color: $light_grey;
+  }
+  .member_edit_box_content_scope_item_last {
+    &.button {
+      border: 1px solid;
+      border-color: $light_blue;
+      color: $blue;
+      box-sizing: border-box;
+      border-radius: 100px;
+      width: 92px;
+      height: 48px;
+      text-align: center;
+      line-height: 48px;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+  }
+  .member_edit_box_content_scope_item_headshot {
+    background: $blue;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin: 24px auto;
+    font-size: 45px;
+    color: $white;
+    text-align: center;
+    line-height: 100px;
+  }
+  .member_edit_box_content_scope_item_title {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 38px 32px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .member_edit_box_content_scope_item {
+    .member_edit_box_content_scope_item_first {
+      width: 100px;
+    }
+  }
+}
+
+.member_edit_box_content_kanban {
+  background-image: url('../../../assets/img/verify_doctor_2.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 180px;
+  margin-top: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: $hr_grey;
+  .member_edit_box_content_kanban_text {
+    margin-left: 32px;
+    .member_edit_box_content_kanban_title {
+      font-size: $font-size-24;
+      font-weight: 500;
+      margin-top: 32px;
+    }
+    .member_edit_box_content_kanban_subtitle {
+      margin-top: 8px;
+      color: $light_grey;
+    }
+    .member_edit_box_content_kanban_button {
+      margin-top: 20px;
+      background-color: $blue;
+      color: $white;
+      border-radius: 100px;
+      width: 92px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+    .member_edit_box_content_kanban_img {
+      display: none;
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .member_edit_box_content_kanban {
+    background: $light_light_light_light_light_grey;
+    height: 404px;
+    .member_edit_box_content_kanban_text {
+      text-align: center;
+      margin: auto;
+      .member_edit_box_content_kanban_title {
+        margin-top: 20px;
+      }
+      .member_edit_box_content_kanban_button {
+        margin: 20px auto;
+        margin-bottom: 30px;
+      }
+      .member_edit_box_content_kanban_img {
+        display: block;
+        .member_edit_box_content_img_icon {
+          position: absolute;
+        }
+      }
+    }
+  }
+}

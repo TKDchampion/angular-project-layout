@@ -1,0 +1,87 @@
+<div class="member_edit_box d-flex">
+  <div class="member_edit_box_menu">
+    <div class="member_edit_box_menu_item" *ngFor="let item of menulist" [ngClass]="{ active: item.active }" (click)="selectMenu(item)">
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+  <div class="member_edit_box_content flex-grow-1">
+    <div class="member_edit_box_content_header d-flex justify-content-between">
+      <h1 class="member_edit_box_content_header_title">會員資料</h1>
+      <div class="member_edit_box_content_header_bind">
+        <svg class="exclamation"></svg>
+        開始綁定Line帳號
+      </div>
+    </div>
+    <div class="member_edit_box_content_scope">
+      <div class="member_edit_box_content_scope_item">
+        <div class="member_edit_box_content_scope_item_headshot">W</div>
+      </div>
+      <div class="line"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">帳號</div>
+        <div class="member_edit_box_content_scope_item_last">test@gmail.com</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">密碼</div>
+        <div class="member_edit_box_content_scope_item_last button">變更密碼</div>
+      </div>
+    </div>
+    <div class="member_edit_box_content_kanban d-flex">
+      <div class="member_edit_box_content_kanban_text">
+        <div class="member_edit_box_content_kanban_title">尚未通過身份驗證</div>
+        <div class="member_edit_box_content_kanban_subtitle">驗證後即可解鎖專業性醫學內容</div>
+        <div class="member_edit_box_content_kanban_button">立即驗證</div>
+        <div class="member_edit_box_content_kanban_img">
+          <img class="member_edit_box_content_img_icon" src="../../../assets/img/verify_icon.png" alt="" />
+          <img src="../../../assets/img/verify_doctor_mobile.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="member_edit_box_content_scope">
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_title">基本資訊</div>
+      </div>
+      <div class="line"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">暱稱</div>
+        <div class="member_edit_box_content_scope_item_last">Wendy Lian</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">姓名</div>
+        <div class="member_edit_box_content_scope_item_last">梁文欣</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">手機號碼</div>
+        <div class="member_edit_box_content_scope_item_last">0912345678</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">職業</div>
+        <div class="member_edit_box_content_scope_item_last">骨科醫生</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">執業單位名稱</div>
+        <div class="member_edit_box_content_scope_item_last">大安區聯合醫院</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">執業縣市</div>
+        <div class="member_edit_box_content_scope_item_last">台北市</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">執業科別</div>
+        <div class="member_edit_box_content_scope_item_last">骨科</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">醫事人員證號</div>
+        <div class="member_edit_box_content_scope_item_last">Q123456</div>
+      </div>
+    </div>
+  </div>
+</div>
