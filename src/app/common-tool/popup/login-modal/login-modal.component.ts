@@ -12,6 +12,7 @@ export class LoginModalComponent implements OnInit {
     mail: string;
     password: string;
   }
+  loginError = false;
   constructor() {
   }
 

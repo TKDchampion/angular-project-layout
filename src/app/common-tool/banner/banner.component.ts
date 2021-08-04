@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { EveService } from 'src/app/services/env.service';
+import { RegisterModalComponent } from '../popup/register-modal/register-modal.component';
 
 @Component({
   selector: 'app-banner',
@@ -8,7 +10,15 @@ import { EveService } from 'src/app/services/env.service';
 })
 export class BannerComponent implements OnInit {
   identity = this.envService.getEnv('identity');
-  constructor(private envService: EveService) {}
+  registerModalRef!: BsModalRef;
+  constructor(private envService: EveService,private modalService: BsModalService) {}
 
   ngOnInit(): void {}
+
+  register() {
+    this.registerModalRef = this.modalService.show(RegisterModalComponent, {
+      class: 'modal-dialog-centered modal_max_width'
+    });
+    this.registerModalRef.content.modalRef = this.registerModalRef;
+  }
 }

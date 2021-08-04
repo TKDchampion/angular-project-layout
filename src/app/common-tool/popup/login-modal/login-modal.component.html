@@ -1,5 +1,5 @@
 <!-- verify templete -->
-<div class="modal fade verify_modal" bsModal #childModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-nested-name2">
+<!-- <div class="modal fade verify_modal" bsModal #childModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-nested-name2">
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- verify templete end -->
 
 <!-- login templete -->
@@ -31,10 +31,10 @@
   <div class="separator">或使用信箱登入</div>
   <div class="modal_body_mail">
     <!-- login error content 暫時隱藏 -->
-    <!-- <div class="modal_body_loginerror">
+    <div *ngIf="loginError" class="modal_body_loginerror">
       <img src="../../../../assets/icon/warning.png" alt="">
       <div class="login_error_text">電子郵件或密碼輸入錯誤，請再嘗試一次</div>
-    </div> -->
+    </div>
     <!-- login error content end -->
     <div class="modal_body_mailinput" [ngClass]="{'input_error': mail.invalid && (mail.dirty || mail.touched)}">
       <img src="../../../../assets/icon/mail.png" alt="">
@@ -54,7 +54,7 @@
         必填欄位
       </div>
     </div>
-    <button type="button" class="modal_mail_login" (click)="childModal.show()">登入</button>
+    <button type="button" class="modal_mail_login" (click)="loginError = true">登入</button>
   </div>
   <div class="modal_body_clicktext d-flex">
     <div class="modal_body_clicktext_forget cursor_pointer">忘記密碼 </div>

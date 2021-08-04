@@ -1,0 +1,50 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/bootstrap.scss';
+
+.modal-header {
+  display: block !important;
+  border-bottom: unset;
+  padding: 20px 1.5rem 8px 1.5rem;
+}
+
+.modal_close_icon {
+  text-align: left;
+}
+
+.modal_title_panel {
+  padding-top: 0px;
+  text-align: center;
+  .modeal_body_title {
+    font-size: $font-size-24;
+    font-weight: 500;
+    color: $blue;
+    margin-bottom: 16px;
+  }
+}
+
+.modal-body {
+  padding: 1.5rem;
+  padding-top: 0px;
+  .modal_privacy {
+    max-height: 550px;
+    overflow: auto;
+    text-align: left;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $border_grey;
+  opacity: 0.6;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $light_grey;
+}

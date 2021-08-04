@@ -1,3 +1,4 @@
+import { RegisterModalComponent } from './../popup/register-modal/register-modal.component';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { EveService } from 'src/app/services/env.service';
@@ -14,6 +15,7 @@ export class NavBarComponent implements OnInit {
   isCollapsed = true;
   identity = this.envService.getEnv('identity');
   modalRef!: BsModalRef;
+  registerModalRef!: BsModalRef;
   constructor(private envService: EveService, private modalService: BsModalService) { }
 
   ngOnInit(): void {
@@ -33,8 +35,15 @@ export class NavBarComponent implements OnInit {
 
   login() {
     this.modalRef = this.modalService.show(LoginModalComponent, {
-      class: 'modal-dialog-centered',
+      class: 'modal-dialog-centered modal_max_width',
     });
     this.modalRef.content.modalRef = this.modalRef;
+  }
+
+  register() {
+    this.registerModalRef = this.modalService.show(RegisterModalComponent, {
+      class: 'modal-dialog-centered modal_max_width'
+    });
+    this.registerModalRef.content.modalRef = this.registerModalRef;
   }
 }
