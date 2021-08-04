@@ -241,6 +241,11 @@
   </app-verify-modal>
 </ng-template>
 
+<ng-template #privacyModal>
+  <app-privacy-modal [modalRef]="privacyModalRef" (closePrivacy)="closePrivacyModal(registerThird)">
+  </app-privacy-modal>
+</ng-template>
+
 <ng-template #registerThird>
   <app-default-modal [modalRef]="registerThirdStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'">
     <div class="d-flex register_status">
@@ -312,7 +317,7 @@
         </div>
       </div>
       <div class="privacy">點擊「註冊」表示您已閱讀且同意本網站的<span class="cursor_pointer privacy_text">使用條款</span>以及<span
-          class="cursor_pointer privacy_text"> 隱私權政策</span>。</div>
+          class="cursor_pointer privacy_text" (click)="openPrivacyModal(privacyModal)"> 隱私權政策</span>。</div>
     </div>
     <div class="register_identity_button isdoctor d-flex">
       <button type="button" class="modal_btn_laststep" (click)="backSecondStep(registerSecend)">上一步</button>

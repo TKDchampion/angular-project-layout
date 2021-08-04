@@ -28,6 +28,7 @@ import { DefaultModalComponent } from './popup/default-modal/default-modal.compo
 import { RegisterModalComponent } from './popup/register-modal/register-modal.component';
 import { VerifyModalComponent } from './popup/verify-modal/verify-modal.component';
 import { SuccessModalComponent } from './popup/success-modal/success-modal.component';
+import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { SuccessModalComponent } from './popup/success-modal/success-modal.compo
     RegisterModalComponent,
     VerifyModalComponent,
     SuccessModalComponent,
+    PrivacyModalComponent,
   ],
   imports: [FormsModule, CommonModule, RouterModule, SwiperModule,TooltipModule.forRoot(), ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -69,6 +71,7 @@ import { SuccessModalComponent } from './popup/success-modal/success-modal.compo
     DefaultModalComponent,
     VerifyModalComponent,
     SuccessModalComponent,
+    PrivacyModalComponent,
   ],
   providers: [ResizeService],
 })

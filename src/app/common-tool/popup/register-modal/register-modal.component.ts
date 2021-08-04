@@ -15,6 +15,7 @@ export class RegisterModalComponent implements OnInit {
   registerThirdStepModalRef!: BsModalRef;
   registerLearnCheckModalRef!: BsModalRef;
   registerSuccessModalRef!: BsModalRef;
+  privacyModalRef!: BsModalRef;
   registerIdentity!: boolean;
   registerLearnCount = 0;
   registerUserInfo: RegisterUserInfoModal = {
@@ -98,7 +99,20 @@ export class RegisterModalComponent implements OnInit {
 
   verifyEmail(template: TemplateRef<any>) {
     this.verifyEmailModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal-sm verify_email modal-sm',
+      class: 'modal-dialog-centered modal-sm verify_email',
+    });
+  }
+
+  openPrivacyModal(template: TemplateRef<any>) {
+    this.registerThirdStepModalRef.hide();
+    this.privacyModalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered modal_max_width',
+    });
+  }
+
+  closePrivacyModal(template: TemplateRef<any>) {
+    this.registerThirdStepModalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered modal_max_width'
     });
   }
 

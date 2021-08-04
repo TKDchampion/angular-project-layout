@@ -135,7 +135,8 @@ body .modal.fade.show {
 }
 
 // tooltip style
-body bs-tooltip-container {
+body bs-tooltip-container.tooltip.show {
+  opacity: 1;
   .tooltip-arrow {
     display: none !important;
   }
