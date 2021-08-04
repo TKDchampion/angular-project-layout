@@ -65,6 +65,12 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
 }
 
 // icon
+.editIcon {
+  background-image: url('../assets/icon/edit.svg');
+  width: 16px;
+  height: 16px;
+}
+
 .eyeIcon {
   background-image: url('../assets/icon/eye.svg');
   width: 52px;
@@ -114,4 +120,41 @@ body .modal-content {
 body app-login-modal .verify_modal.in.show ~ app-default-modal .default_modal_header,
 body app-login-modal .verify_modal.in.show ~ app-default-modal .default_modal_body {
   opacity: 0.5;
+}
+
+// button style
+.btn_blue_line {
+  border: 1px solid;
+  border-color: $light_blue;
+  color: $blue;
+  box-sizing: border-box;
+  border-radius: 100px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  background: $white;
+  &:hover {
+    border-color: $blue;
+    background: $light_light_light_grey;
+  }
+  &:focus {
+    background: $light_light_blue;
+  }
+}
+
+.btn_blue_bg {
+  background: $blue;
+  color: $white;
+  box-sizing: border-box;
+  border-radius: 100px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  border: 0px;
+  &:hover {
+    background: $light_blue;
+  }
+  &:focus {
+    background: $deep_blue;
+  }
 }
