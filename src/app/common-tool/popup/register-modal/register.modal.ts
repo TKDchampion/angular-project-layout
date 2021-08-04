@@ -55,4 +55,8 @@ export const DemoLearnType: LearnType[] = [
     id: 7,
     name: '人際關係及溝通技巧',
   },
+  {
+    id: 8,
+    name: '醫療財務管理'
+  }
 ];

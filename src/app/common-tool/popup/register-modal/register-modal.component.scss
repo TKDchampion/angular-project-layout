@@ -254,6 +254,10 @@
   margin-top: 32px;
 }
 
+.register_identity_button.learn_submit{
+  margin-top: 16px;
+}
+
 .modal_btn_laststep {
   width: 49%;
   height: 54px;
@@ -291,6 +295,7 @@
   border-radius: 8px;
   border: 1px solid $hr_grey;
   margin-top: 24px;
+  margin-bottom: 16px;
   img {
     margin-left: 16px;
   }
@@ -309,6 +314,8 @@
   }
 }
 .learn_panel {
+  overflow-y: auto;
+  max-height: 380px;
   display: flex;
   flex-wrap: wrap;
   .learn_item {
@@ -319,7 +326,7 @@
     border-radius: 8px;
     border: 1px solid $light_blue;
     padding: 0 16px;
-    margin-top: 16px;
+    margin-bottom: 16px;
     margin-right: 8px;
     label {
       display: contents;
@@ -368,6 +375,24 @@
   margin-left: .5em;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  right: 8pxs;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $border_grey;
+  opacity: 0.6;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $light_grey;
+}
+
 @include media-breakpoint-down(sm) {
   .divider {
     .line {
@@ -388,5 +413,11 @@
     .learn_item {
       width: 100%;
     }
+    .learn_item:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  .register_identity_button.learn_submit{
+    margin-top: 32px;
   }
 }
