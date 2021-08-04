@@ -98,17 +98,17 @@
   }
   .member_edit_box_content_scope_item_last {
     &.button {
-      border: 1px solid;
-      border-color: $light_blue;
-      color: $blue;
-      box-sizing: border-box;
-      border-radius: 100px;
+      // border: 1px solid;
+      // border-color: $light_blue;
+      // color: $blue;
+      // box-sizing: border-box;
+      // border-radius: 100px;
       width: 92px;
       height: 48px;
-      text-align: center;
+      // text-align: center;
       line-height: 48px;
       margin-top: 15px;
-      font-weight: 500;
+      // font-weight: 500;
     }
   }
   .member_edit_box_content_scope_item_headshot {
@@ -126,6 +126,15 @@
     font-size: 24px;
     font-weight: 500;
     margin: 38px 32px;
+  }
+  .member_edit_box_content_scope_item_edit {
+    width: 82px;
+    height: 40px;
+    line-height: 40px;
+    margin: auto 32px;
+    svg {
+      margin-top: -4px;
+    }
   }
 }
 
@@ -160,14 +169,14 @@
     }
     .member_edit_box_content_kanban_button {
       margin-top: 20px;
-      background-color: $blue;
-      color: $white;
-      border-radius: 100px;
+      // background-color: $blue;
+      // color: $white;
+      // border-radius: 100px;
       width: 92px;
       height: 40px;
-      text-align: center;
+      // text-align: center;
       line-height: 40px;
-      cursor: pointer;
+      // cursor: pointer;
     }
     .member_edit_box_content_kanban_img {
       display: none;
