@@ -26,7 +26,7 @@
 <!-- login templete -->
 <app-default-modal [modalRef]="modalRef" [title]="'登入'" [subTitle]="'登入後即可瀏覽影片與文章'">
   <div class="modal_body_line">
-    <button type="button" class="modal_line_login"><img src="../../../../assets/img/line.png" alt=""> 使用 LINE 登入</button>
+    <button type="button" class="modal_line_login" (click)="lineLogin()"><img src="../../../../assets/img/line.png" alt=""> 使用 LINE 登入</button>
   </div>
   <div class="separator">或使用信箱登入</div>
   <div class="modal_body_mail">
@@ -59,7 +59,7 @@
   <div class="modal_body_clicktext d-flex">
     <div class="modal_body_clicktext_forget cursor_pointer" (click)="forgetPassword()">忘記密碼 </div>
     •
-    <div class="modal_body_clicktext_register cursor_pointer"> 開始註冊</div>
+    <div class="modal_body_clicktext_register cursor_pointer" (click)="register()"> 開始註冊</div>
   </div>
 </app-default-modal>
 <!-- login templete end -->

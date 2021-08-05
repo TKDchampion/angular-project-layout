@@ -1,0 +1,22 @@
+<app-default-modal [modalRef]="modalRef" [title]="'設定學習意願'" [subTitle]="'我們將會依照您的意願提供專屬內容'"
+    [showCancelIcon]="false">
+    <div class="search-context">
+      <img src="../../../../assets/img/thin_search.png" width="20" height="18" alt="">
+      <input type="text" class="input-search" placeholder="請輸入關鍵字">
+    </div>
+    <div class="learn_panel">
+      <div class="learn_item" *ngFor="let type of demoLearnType;let i = index;" [ngClass]="{'checked': type.isChecked}">
+        <input class="form-check-input" type="checkbox" value="" (change)="changeLearnType(type)" id="learn_{{i}}">
+        <label class="form-check-label" for="learn_{{i}}">
+          {{type.name}}
+        </label>
+      </div>
+    </div>
+    <div class="register_identity_button d-flex isdoctor learn_submit">
+      <button type="button" class="modal_btn_laststep" (click)="submitPass()">略過</button>
+      <button type="button" class="modal_btn_nextstep" [ngClass]="{'disabled': registerLearnCount === 0}"
+        [disabled]="registerLearnCount === 0" (click)="submitSuccess()">完成 <span
+          *ngIf="registerLearnCount > 0">({{registerLearnCount}})</span></button>
+    </div>
+    <div class="separator">您隨時都可以調整學習意願的項目</div>
+  </app-default-modal>

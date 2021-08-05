@@ -1,6 +1,8 @@
-import { ForgetPasswordModalComponent } from './../forget-password-modal/forget-password-modal.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { RegisterModalComponent } from '../register-modal/register-modal.component';
+import { RegisterLineModalComponent } from './../register-line-modal/register-line-modal.component';
+import { ForgetPasswordModalComponent } from './../forget-password-modal/forget-password-modal.component';
 
 @Component({
   selector: 'app-login-modal',
@@ -9,6 +11,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 export class LoginModalComponent implements OnInit {
   @Input() modalRef!: BsModalRef;
+  registerModalRef!: BsModalRef;
   forgetPasswordModalRef!: BsModalRef;
   login!: {
     mail: string;
@@ -31,5 +34,21 @@ export class LoginModalComponent implements OnInit {
       class: 'modal-dialog-centered modal_max_width'
     });
     this.forgetPasswordModalRef.content.modalRef = this.forgetPasswordModalRef;
+  }
+
+  register() {
+    this.modalRef.hide();
+    this.registerModalRef = this.modalService.show(RegisterModalComponent, {
+      class: 'modal-dialog-centered modal_max_width'
+    });
+    this.registerModalRef.content.modalRef = this.registerModalRef;
+  }
+
+  lineLogin() {
+    this.modalRef.hide();
+    this.registerModalRef = this.modalService.show(RegisterLineModalComponent, {
+      class: 'modal-dialog-centered modal_max_width'
+    });
+    this.registerModalRef.content.modalRef = this.registerModalRef;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DemoLearnType, LearnType, RegisterAccountModal, RegisterJobModal, RegisterUserInfoModal } from './register.modal';
 
@@ -11,13 +11,13 @@ export class RegisterModalComponent implements OnInit {
   @Input() modalRef!: BsModalRef;
   verifyEmailModalRef!: BsModalRef;
   registerFirstStepModalRef!: BsModalRef;
-  registerSecendStepModalRef!: BsModalRef;
+  registerSecondStepModalRef!: BsModalRef;
   registerThirdStepModalRef!: BsModalRef;
   registerLearnCheckModalRef!: BsModalRef;
   registerSuccessModalRef!: BsModalRef;
   privacyModalRef!: BsModalRef;
+  registerLineFirstStepModalRef!: BsModalRef;
   registerIdentity!: boolean;
-  registerLearnCount = 0;
   registerUserInfo: RegisterUserInfoModal = {
     nickname: '',
     firstname: '',
@@ -48,6 +48,13 @@ export class RegisterModalComponent implements OnInit {
     this.registerJob = registerJob;
   };
 
+  registerLineFirstStep(template: TemplateRef<any>) {
+    this.modalRef.hide();
+    this.registerLineFirstStepModalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered modal_max_width'
+    });
+  }
+
   registerFirstStep(template: TemplateRef<any>) {
     this.modalRef.hide();
     this.registerFirstStepModalRef = this.modalService.show(template, {
@@ -57,13 +64,13 @@ export class RegisterModalComponent implements OnInit {
 
   registerSecondStep(template: TemplateRef<any>) {
     this.registerFirstStepModalRef.hide();
-    this.registerSecendStepModalRef = this.modalService.show(template, {
+    this.registerSecondStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width'
     });
   }
 
   registerThirdStep(template: TemplateRef<any>) {
-    this.registerSecendStepModalRef.hide();
+    this.registerSecondStepModalRef.hide();
     this.registerThirdStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width'
     });
@@ -84,7 +91,7 @@ export class RegisterModalComponent implements OnInit {
   }
 
   backFirstStep(template: TemplateRef<any>) {
-    this.registerSecendStepModalRef.hide();
+    this.registerSecondStepModalRef.hide();
     this.registerFirstStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width'
     });
@@ -92,7 +99,7 @@ export class RegisterModalComponent implements OnInit {
 
   backSecondStep(template: TemplateRef<any>) {
     this.registerThirdStepModalRef.hide();
-    this.registerSecendStepModalRef = this.modalService.show(template, {
+    this.registerSecondStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width'
     });
   }
@@ -118,15 +125,5 @@ export class RegisterModalComponent implements OnInit {
 
   getVerifyStatus($event: boolean) {
     this.verifyEmailStatus = $event;
-  }
-
-  changeLearnType(type: LearnType) {
-    type.isChecked = !type.isChecked;
-    this.registerLearnCount = 0;
-    this.demoLearnType.filter((i: LearnType) => {
-      if (i.isChecked) {
-        this.registerLearnCount++;
-      }
-    });
   }
 }

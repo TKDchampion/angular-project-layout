@@ -30,6 +30,8 @@ import { VerifyModalComponent } from './popup/verify-modal/verify-modal.componen
 import { SuccessModalComponent } from './popup/success-modal/success-modal.component';
 import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.component';
 import { ForgetPasswordModalComponent } from './popup/forget-password-modal/forget-password-modal.component';
+import { RegisterLineModalComponent } from './popup/register-line-modal/register-line-modal.component';
+import { RegisterLearnModalComponent } from './popup/register-learn-modal/register-learn-modal.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { ForgetPasswordModalComponent } from './popup/forget-password-modal/forg
     SuccessModalComponent,
     PrivacyModalComponent,
     ForgetPasswordModalComponent,
+    RegisterLineModalComponent,
+    RegisterLearnModalComponent,
   ],
   imports: [FormsModule, CommonModule, RouterModule, SwiperModule,TooltipModule.forRoot(), ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -74,6 +78,8 @@ import { ForgetPasswordModalComponent } from './popup/forget-password-modal/forg
     VerifyModalComponent,
     SuccessModalComponent,
     PrivacyModalComponent,
+    RegisterLineModalComponent,
+    RegisterLearnModalComponent,
   ],
   providers: [ResizeService],
 })
