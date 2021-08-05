@@ -1,3 +1,4 @@
+import { RegisterLineModalComponent } from './../register-line-modal/register-line-modal.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { RegisterModalComponent } from '../register-modal/register-modal.component';
@@ -28,6 +29,14 @@ export class LoginModalComponent implements OnInit {
   register() {
     this.modalRef.hide();
     this.registerModalRef = this.modalService.show(RegisterModalComponent, {
+      class: 'modal-dialog-centered modal_max_width'
+    });
+    this.registerModalRef.content.modalRef = this.registerModalRef;
+  }
+
+  lineLogin() {
+    this.modalRef.hide();
+    this.registerModalRef = this.modalService.show(RegisterLineModalComponent, {
       class: 'modal-dialog-centered modal_max_width'
     });
     this.registerModalRef.content.modalRef = this.registerModalRef;

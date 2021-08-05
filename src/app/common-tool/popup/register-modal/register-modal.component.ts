@@ -17,9 +17,7 @@ export class RegisterModalComponent implements OnInit {
   registerSuccessModalRef!: BsModalRef;
   privacyModalRef!: BsModalRef;
   registerLineFirstStepModalRef!: BsModalRef;
-  registerLineSecondStepModalRef!: BsModalRef;
   registerIdentity!: boolean;
-  registerLearnCount = 0;
   registerUserInfo: RegisterUserInfoModal = {
     nickname: '',
     firstname: '',
@@ -38,7 +36,6 @@ export class RegisterModalComponent implements OnInit {
     confirmPassword: ''
   }
   verifyEmailStatus!: boolean;
-  isLineRegister = false;
   demoLearnType = DemoLearnType;
 
   constructor(private modalService: BsModalService) { }
@@ -53,15 +50,7 @@ export class RegisterModalComponent implements OnInit {
 
   registerLineFirstStep(template: TemplateRef<any>) {
     this.modalRef.hide();
-    this.isLineRegister = true;
     this.registerLineFirstStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
-    });
-  }
-
-  registerLineSecondStep(template: TemplateRef<any>) {
-    this.registerLineFirstStepModalRef.hide();
-    this.registerLineSecondStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width'
     });
   }
@@ -88,8 +77,7 @@ export class RegisterModalComponent implements OnInit {
   }
 
   registerLearnCheck(template: TemplateRef<any>) {
-    this.demoLearnType.forEach((i: LearnType) => i.isChecked = false);
-    this.isLineRegister ? this.registerLineSecondStepModalRef.hide() : this.registerThirdStepModalRef.hide();
+    this.registerThirdStepModalRef.hide();
     this.registerLearnCheckModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width'
     });
@@ -116,13 +104,6 @@ export class RegisterModalComponent implements OnInit {
     });
   }
 
-  backLineFirstStep(template: TemplateRef<any>) {
-    this.registerLineSecondStepModalRef.hide();
-    this.registerLineFirstStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
-    });
-  }
-
   verifyEmail(template: TemplateRef<any>) {
     this.verifyEmailModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal-sm verify_email',
@@ -144,15 +125,5 @@ export class RegisterModalComponent implements OnInit {
 
   getVerifyStatus($event: boolean) {
     this.verifyEmailStatus = $event;
-  }
-
-  changeLearnType(type: LearnType) {
-    type.isChecked = !type.isChecked;
-    this.registerLearnCount = 0;
-    this.demoLearnType.forEach((i: LearnType) => {
-      if (i.isChecked) {
-        this.registerLearnCount++;
-      }
-    });
   }
 }
