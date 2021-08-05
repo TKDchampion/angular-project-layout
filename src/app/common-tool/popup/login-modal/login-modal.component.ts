@@ -1,5 +1,7 @@
+import { RegisterLineModalComponent } from './../register-line-modal/register-line-modal.component';
 import { Component, Input, OnInit } from '@angular/core';
-import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { RegisterModalComponent } from '../register-modal/register-modal.component';
 
 @Component({
   selector: 'app-login-modal',
@@ -13,7 +15,8 @@ export class LoginModalComponent implements OnInit {
     password: string;
   }
   loginError = false;
-  constructor() {
+  registerModalRef!: BsModalRef;
+  constructor(private modalService: BsModalService) {
   }
 
   ngOnInit(): void {
@@ -21,5 +24,21 @@ export class LoginModalComponent implements OnInit {
       mail: '',
       password: ''
     }
+  }
+
+  register() {
+    this.modalRef.hide();
+    this.registerModalRef = this.modalService.show(RegisterModalComponent, {
+      class: 'modal-dialog-centered modal_max_width'
+    });
+    this.registerModalRef.content.modalRef = this.registerModalRef;
+  }
+
+  lineLogin() {
+    this.modalRef.hide();
+    this.registerModalRef = this.modalService.show(RegisterLineModalComponent, {
+      class: 'modal-dialog-centered modal_max_width'
+    });
+    this.registerModalRef.content.modalRef = this.registerModalRef;
   }
 }

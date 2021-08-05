@@ -1,0 +1,164 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/bootstrap.scss';
+
+.search-context {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  line-height: 40px;
+  align-items: center;
+  background: $white;
+  border-radius: 8px;
+  border: 1px solid $hr_grey;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  img {
+    margin-left: 16px;
+  }
+  .input-search {
+    margin-left: 16px;
+    background: unset;
+    border: 0;
+    height: 40px;
+    width: 100%;
+  }
+  .input-search:focus {
+    outline:0px;
+  }
+  input::placeholder {
+    color: $border_grey
+  }
+}
+.learn_panel {
+  overflow-y: auto;
+  max-height: 380px;
+  display: flex;
+  flex-wrap: wrap;
+  .learn_item {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    background: $white;
+    border-radius: 8px;
+    border: 1px solid $light_blue;
+    padding: 0 16px;
+    margin-bottom: 16px;
+    margin-right: 8px;
+    label {
+      display: contents;
+      font-size: $font-size-14;
+      color: $black;
+    }
+    label:before {
+      height: 20px;
+      margin-right: 8px;
+      content: url('../../../../assets/icon/checkbox_uncheck.png');
+    }
+    :checked+label:before {
+      height: 20px;
+      margin-right: 8px;
+      content: url('../../../../assets/icon/checkbox_checked.png');
+    }
+    input[type=checkbox] {
+      display: none;
+    }
+  }
+  .learn_item.checked {
+    background: $light_light_blue;
+  }
+}
+
+.register_identity_button {
+  margin-top: 72px;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
+
+.register_identity_button.isdoctor{
+  margin-top: 32px;
+}
+
+.register_identity_button.learn_submit{
+  margin-top: 16px;
+}
+
+.modal_btn_laststep {
+  width: 49%;
+  height: 54px;
+  background: $white;
+  border: 1px solid $light_blue;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: $font-size-18;
+  color: $blue;
+}
+
+.modal_btn_nextstep {
+  width: 49%;
+  height: 54px;
+  background: $blue;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: $font-size-18;
+  color: $white;
+  border: unset;
+}
+
+.modal_btn_nextstep.disabled {
+  background: $light_light_light_grey;
+  color: $light_blue;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: $font-size-14;
+  color: $light_grey;
+}
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid $hr_grey;
+}
+.separator:not(:empty)::before {
+  margin-right: .5em;
+}
+.separator:not(:empty)::after {
+  margin-left: .5em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  right: 8pxs;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $border_grey;
+  opacity: 0.6;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $light_grey;
+}
+
+@include media-breakpoint-down(sm) {
+  .learn_panel {
+    .learn_item {
+      width: 100%;
+    }
+    .learn_item:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  .register_identity_button.learn_submit{
+    margin-top: 32px;
+  }
+}
