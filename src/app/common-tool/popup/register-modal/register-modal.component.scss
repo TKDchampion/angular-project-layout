@@ -63,6 +63,9 @@
     height: 2px;
     background-color: $light_light_light_light_light_light_grey;
   }
+  .line.line_register {
+    width: 208px;
+  }
 }
 
 .register_information {
@@ -397,6 +400,9 @@
   .divider {
     .line {
       width: 27.5px;
+    }
+    .line.line_register {
+      width: 110px;
     }
   }
   .check_radiobutton {
