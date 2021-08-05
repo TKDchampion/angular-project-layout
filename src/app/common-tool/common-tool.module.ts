@@ -29,6 +29,7 @@ import { RegisterModalComponent } from './popup/register-modal/register-modal.co
 import { VerifyModalComponent } from './popup/verify-modal/verify-modal.component';
 import { SuccessModalComponent } from './popup/success-modal/success-modal.component';
 import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.component';
+import { ForgetPasswordModalComponent } from './popup/forget-password-modal/forget-password-modal.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.compo
     VerifyModalComponent,
     SuccessModalComponent,
     PrivacyModalComponent,
+    ForgetPasswordModalComponent,
   ],
   imports: [FormsModule, CommonModule, RouterModule, SwiperModule,TooltipModule.forRoot(), ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
