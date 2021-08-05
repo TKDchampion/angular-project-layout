@@ -15,7 +15,7 @@
 
 <!-- email register -->
 <ng-template #registerFirst>
-  <app-default-modal [modalRef]="registerFirstStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'">
+  <app-default-modal [modalRef]="registerFirstStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'" [needRecheck]="true">
     <div class="d-flex register_status">
       <div class="information">
         <img src="../../../../assets/img/register_user_enabled.png" alt="" width="32" height="32">
@@ -86,7 +86,7 @@
 </ng-template>
 
 <ng-template #registerSecond>
-  <app-default-modal [modalRef]="registerSecondStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'">
+  <app-default-modal [modalRef]="registerSecondStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'" [needRecheck]="true">
     <div class="d-flex register_status">
       <div class="information">
         <img src="../../../../assets/img/register_user_done.png" alt="" width="32" height="32">
@@ -253,7 +253,7 @@
 </ng-template>
 
 <ng-template #registerThird>
-  <app-default-modal [modalRef]="registerThirdStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'">
+  <app-default-modal [modalRef]="registerThirdStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'" [needRecheck]="true">
     <div class="d-flex register_status">
       <div class="information">
         <img src="../../../../assets/img/register_user_done.png" alt="" width="32" height="32">

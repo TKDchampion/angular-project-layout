@@ -29,6 +29,7 @@ import { RegisterModalComponent } from './popup/register-modal/register-modal.co
 import { VerifyModalComponent } from './popup/verify-modal/verify-modal.component';
 import { SuccessModalComponent } from './popup/success-modal/success-modal.component';
 import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.component';
+import { ForgetPasswordModalComponent } from './popup/forget-password-modal/forget-password-modal.component';
 import { RegisterLineModalComponent } from './popup/register-line-modal/register-line-modal.component';
 import { RegisterLearnModalComponent } from './popup/register-learn-modal/register-learn-modal.component';
 
@@ -55,6 +56,7 @@ import { RegisterLearnModalComponent } from './popup/register-learn-modal/regist
     VerifyModalComponent,
     SuccessModalComponent,
     PrivacyModalComponent,
+    ForgetPasswordModalComponent,
     RegisterLineModalComponent,
     RegisterLearnModalComponent,
   ],

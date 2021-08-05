@@ -36,13 +36,17 @@ export class NavBarComponent implements OnInit {
   login() {
     this.modalRef = this.modalService.show(LoginModalComponent, {
       class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
     this.modalRef.content.modalRef = this.modalRef;
   }
 
   register() {
     this.registerModalRef = this.modalService.show(RegisterModalComponent, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
     this.registerModalRef.content.modalRef = this.registerModalRef;
   }

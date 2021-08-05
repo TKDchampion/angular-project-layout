@@ -41,14 +41,18 @@ export class RegisterLineModalComponent implements OnInit {
   registerLineSecondStep(template: TemplateRef<any>) {
     this.modalRef.hide();
     this.registerLineSecondStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   backLineFirstStep() {
     this.registerLineSecondStepModalRef.hide();
     this.modalRef = this.modalService.show(RegisterLineModalComponent, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
     this.modalRef.content.modalRef = this.modalRef;
   }
@@ -56,14 +60,18 @@ export class RegisterLineModalComponent implements OnInit {
   registerLearnCheck(template: TemplateRef<any>) {
     this.registerLineSecondStepModalRef.hide()
     this.registerLearnCheckModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   registerToSuccess(template: TemplateRef<any>) {
     this.registerLearnCheckModalRef.hide();
     this.registerSuccessModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 }
