@@ -31,7 +31,9 @@ export class LoginModalComponent implements OnInit {
   forgetPassword() {
     this.modalRef.hide();
     this.forgetPasswordModalRef = this.modalService.show(ForgetPasswordModalComponent, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
     this.forgetPasswordModalRef.content.modalRef = this.forgetPasswordModalRef;
   }
@@ -39,7 +41,9 @@ export class LoginModalComponent implements OnInit {
   register() {
     this.modalRef.hide();
     this.registerModalRef = this.modalService.show(RegisterModalComponent, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
     this.registerModalRef.content.modalRef = this.registerModalRef;
   }
@@ -47,7 +51,9 @@ export class LoginModalComponent implements OnInit {
   lineLogin() {
     this.modalRef.hide();
     this.registerModalRef = this.modalService.show(RegisterLineModalComponent, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
     this.registerModalRef.content.modalRef = this.registerModalRef;
   }

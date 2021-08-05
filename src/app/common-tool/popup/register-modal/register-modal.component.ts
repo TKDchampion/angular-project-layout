@@ -51,62 +51,80 @@ export class RegisterModalComponent implements OnInit {
   registerLineFirstStep(template: TemplateRef<any>) {
     this.modalRef.hide();
     this.registerLineFirstStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   registerFirstStep(template: TemplateRef<any>) {
     this.modalRef.hide();
     this.registerFirstStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   registerSecondStep(template: TemplateRef<any>) {
     this.registerFirstStepModalRef.hide();
     this.registerSecondStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   registerThirdStep(template: TemplateRef<any>) {
     this.registerSecondStepModalRef.hide();
     this.registerThirdStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   registerLearnCheck(template: TemplateRef<any>) {
     this.registerThirdStepModalRef.hide();
     this.registerLearnCheckModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   registerToSuccess(template: TemplateRef<any>) {
     this.registerLearnCheckModalRef.hide();
     this.registerSuccessModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   backFirstStep(template: TemplateRef<any>) {
     this.registerSecondStepModalRef.hide();
     this.registerFirstStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   backSecondStep(template: TemplateRef<any>) {
     this.registerThirdStepModalRef.hide();
     this.registerSecondStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   verifyEmail(template: TemplateRef<any>) {
     this.verifyEmailModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal-sm verify_email',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
@@ -114,12 +132,16 @@ export class RegisterModalComponent implements OnInit {
     this.registerThirdStepModalRef.hide();
     this.privacyModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 
   closePrivacyModal(template: TemplateRef<any>) {
     this.registerThirdStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width'
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
     });
   }
 

@@ -1,14 +1,29 @@
 <div class="modal-header default_modal_header">
   <div class="modal_close_icon">
     <h4 class="modal-title pull-left"></h4>
-    <img *ngIf="showCancelIcon" class="modal_close cursor_pointer" (click)="modalRef.hide()" src="../../../../assets/img/modal_close.png"
-      alt="">
+    <img *ngIf="showCancelIcon" class="modal_close cursor_pointer" (click)="closePopup(recheck)"
+      src="../../../../assets/img/modal_close.png" alt="">
   </div>
   <div class="modal_title_panel">
-    <div class="modeal_body_title">{{title}}</div>
+    <div class="modal_body_title">{{title}}</div>
     <div class="modal_body_subtitle">{{subTitle}}</div>
   </div>
 </div>
 <div class="modal-body default_modal_body">
   <ng-content></ng-content>
 </div>
+
+<ng-template #recheck>
+  <div class="modal-header default_modal_header">
+    <div class="recheck_modal_title_panel">
+      <div class="recheck_modal_body_title">確定捨棄目前編輯內容？</div>
+      <div class="recheck_modal_body_subtitle">若選擇確定捨棄，您所編輯的資料將不會儲存</div>
+    </div>
+  </div>
+  <div class="modal-body default_modal_body">
+    <div class="register_identity_button d-flex">
+      <button type="button" class="modal_btn_laststep" (click)="cancel()">取消</button>
+      <button type="button" class="modal_btn_nextstep" (click)="abandon()">確定捨棄</button>
+    </div>
+  </div>
+</ng-template>
