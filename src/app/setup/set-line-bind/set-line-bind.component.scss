@@ -1,0 +1,100 @@
+@import '../../../styles/bootstrap.scss';
+@import '../../../styles/variables.scss';
+
+.password_outside {
+  max-width: 416px;
+  padding: 20px 24px 32px 24px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title_panel {
+  text-align: center;
+  .title {
+    font-weight: 500;
+    font-size: $font-size-28;
+    color: $blue;
+  }
+  .subtitle {
+    font-weight: 500;
+    font-size: $font-size-16;
+    color: $light_grey;
+    margin-top: 8px;
+    margin-bottom: 32px;
+  }
+}
+
+
+.password_info {
+  text-align: left;
+  font-size: $font-size-14;
+  input::placeholder {
+    color: $border_grey
+  }
+  .nickname_tips {
+    margin-top: 6px;
+    color: $light_grey;
+  }
+  .register_password,
+  .register_checkpassword{
+    margin-top: 16px;
+  }
+
+  .modal_body_mailinput {
+    background: $white;
+    border: 1px solid $hr_grey;
+    border-radius: 8px;
+    width: 368px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    .mail_input {
+      margin-left: 16px;
+      background: unset;
+      border: 0;
+      width: 100%;
+    }
+    .mail_input:focus {
+      outline:0px;
+    }
+    img {
+      margin-left: 16px;
+    }
+  }
+  .forget_password {
+    color: $blue;
+    font-size: $font-size-16;
+    font-weight: 500;
+    margin-top: 24px;
+    text-align: center;
+  }
+}
+
+.btn_submit {
+  width: 368px;
+  height: 54px;
+  margin-top: 32px;
+  background: $blue;
+  color: $white;
+  font-size: $font-size-18;
+  border-radius: 100px;
+  border: unset;
+}
+
+.btn_submit.success {
+  margin-top: 0px;
+}
+
+.input_error {
+  border: 1px solid $light_red !important;
+}
+
+.verify_text {
+  color: $light_red;
+  text-align: left;
+  margin-top: 6px;
+  font-size: $font-size-14;
+  line-height: 22px;
+}

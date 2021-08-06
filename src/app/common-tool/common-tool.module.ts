@@ -33,6 +33,7 @@ import { ToastComponent } from './toast/toast.component';
 import { ForgetPasswordModalComponent } from './popup/forget-password-modal/forget-password-modal.component';
 import { RegisterLineModalComponent } from './popup/register-line-modal/register-line-modal.component';
 import { RegisterLearnModalComponent } from './popup/register-learn-modal/register-learn-modal.component';
+import { NavBarIcononlyComponent } from './nav-bar-icononly/nav-bar-icononly.component';
 import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.component';
 
 @NgModule({
@@ -62,6 +63,7 @@ import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.
     ForgetPasswordModalComponent,
     RegisterLineModalComponent,
     RegisterLearnModalComponent,
+    NavBarIcononlyComponent,
     BindMailModalComponent,
   ],
   imports: [
@@ -94,7 +96,8 @@ import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.
     ToastComponent,
     RegisterLineModalComponent,
     RegisterLearnModalComponent,
-    BindMailModalComponent,
+    NavBarIcononlyComponent,
+    BindMailModalComponent
   ],
   providers: [ResizeService],
 })
