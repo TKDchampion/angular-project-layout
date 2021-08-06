@@ -9,38 +9,6 @@
   line-height: 22px;
 }
 
-.modal_body_line {
-  display: flex;
-  justify-content: center;
-  .modal_line_login {
-    img {
-      margin-right: 10px;
-    }
-    margin-top: 32px;
-    width: 280px;
-    height: 54px;
-    background: $green;
-    font-size: $font-size-16;
-    color: $white;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: unset;
-  }
-}
-
-.modal_email_register {
-  width: 280px;
-  height: 54px;
-  margin-top: 20px;
-  margin-bottom: 32px;
-  background: $blue;
-  color: $white;
-  border-radius: 100px;
-  border: unset;
-}
-
 .register_status {
   margin-top: 24px;
   justify-content: space-around;
@@ -286,29 +254,6 @@
 .modal_btn_nextstep.disabled {
   background: $light_light_light_grey;
   color: $light_blue;
-}
-
-
-.separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: $font-size-14;
-  color: $light_grey;
-}
-.separator::before,
-.separator::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid $hr_grey;
-}
-.separator:not(:empty)::before {
-  margin-right: .5em;
-}
-.separator:not(:empty)::after {
-  margin-left: .5em;
 }
 
 @include media-breakpoint-down(sm) {

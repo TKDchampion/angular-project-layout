@@ -1,114 +1,79 @@
-<app-default-modal [modalRef]="modalRef" [title]="'請選擇註冊方式'" [subTitle]="'註冊後即可瀏覽影片與文章'">
-  <div class="modal_body_line">
-    <button type="button" class="modal_line_login" (click)="registerLineFirstStep(registerLineFirst)"><img
-        src="../../../../assets/img/line.png" alt=""> 使用 LINE
-      登入</button>
+<app-default-modal [modalRef]="modalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'" [needRecheck]="true">
+  <div class="d-flex register_status">
+    <div class="information">
+      <img src="../../../../assets/img/register_user_enabled.png" alt="" width="32" height="32">
+      <div class="register_select">基本資訊</div>
+    </div>
+    <div class="divider">
+      <div class="line line_register"></div>
+    </div>
+    <div class="identifying">
+      <img src="../../../../assets/img/register_shild_disable.png" alt="" width="32" height="32">
+      <div class="register_unselect">確認身份</div>
+    </div>
   </div>
-  <div class="modal_body_mail">
-    <button type="button" class="modal_email_register" (click)="registerFirstStep(registerFirst)">信箱註冊</button>
+  <div class="register_information">
+    <div class="register_nickname">
+      暱稱
+      <input required type="text" class="nickname_input" placeholder="請輸入暱稱" [(ngModel)]="registerUserInfo.nickname"
+        #nickname="ngModel" [ngClass]="{'input_error': nickname.invalid && (nickname.dirty || nickname.touched)}">
+      <ng-template #nicktips>
+        <div class="nickname_tips">字數上限為12個字元</div>
+      </ng-template>
+    </div>
+    <div class="verify_text" *ngIf="nickname.invalid && (nickname.dirty || nickname.touched); else nicktips">
+      <div *ngIf="nickname.errors?.required">
+        必填欄位
+      </div>
+    </div>
+    <div class="register_firstname">
+      姓氏
+      <input required type="text" class="firstname_input" placeholder="請輸入姓氏" [(ngModel)]="registerUserInfo.firstname"
+        #firstname="ngModel" [ngClass]="{'input_error': firstname.invalid && (firstname.dirty || firstname.touched)}">
+    </div>
+    <div class="verify_text" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+      <div *ngIf="firstname.errors?.required">
+        必填欄位
+      </div>
+    </div>
+    <div class="register_lastname">
+      名字
+      <input required type="text" class="lastname_input" placeholder="請輸入名字" [(ngModel)]="registerUserInfo.lastname"
+        #lastname="ngModel" [ngClass]="{'input_error': lastname.invalid && (lastname.dirty || lastname.touched)}">
+    </div>
+    <div class="verify_text" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+      <div *ngIf="lastname.errors?.required">
+        必填欄位
+      </div>
+    </div>
+    <div class="register_phone">
+      手機號碼
+      <input required type="text" class="firstname_phone" placeholder="請輸入手機號碼" [(ngModel)]="registerUserInfo.phone"
+        #phone="ngModel" [ngClass]="{'input_error': phone.invalid && (phone.dirty || phone.touched)}">
+    </div>
+    <div class="verify_text" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+      <div *ngIf="phone.errors?.required">
+        必填欄位
+      </div>
+    </div>
   </div>
+  <button type="button" class="modal_btn_bignextstep" (click)="registerLineSecondStep(registerLineSecond)">下一步</button>
 </app-default-modal>
 
-<!-- line register -->
-<ng-template #registerLineFirst>
-  <app-register-line-modal [modalRef]="registerLineFirstStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'">
-  </app-register-line-modal>
-</ng-template>
 
-<!-- email register -->
-<ng-template #registerFirst>
-  <app-default-modal [modalRef]="registerFirstStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'"
-    [needRecheck]="true">
-    <div class="d-flex register_status">
-      <div class="information">
-        <img src="../../../../assets/img/register_user_enabled.png" alt="" width="32" height="32">
-        <div class="register_select">基本資訊</div>
-      </div>
-      <div class="divider">
-        <div class="line"></div>
-      </div>
-      <div class="identifying">
-        <img src="../../../../assets/img/register_shild_disable.png" alt="" width="32" height="32">
-        <div class="register_unselect">確認身份</div>
-      </div>
-      <div class="divider">
-        <div class="line"></div>
-      </div>
-      <div class="account">
-        <img src="../../../../assets/img/register_account_disable.png" alt="" width="32" height="32">
-        <div class="register_unselect">設定帳號</div>
-      </div>
-    </div>
-    <div class="register_information">
-      <div class="register_nickname">
-        暱稱
-        <input required type="text" class="nickname_input" placeholder="請輸入暱稱" [(ngModel)]="registerUserInfo.nickname"
-          #nickname="ngModel" [ngClass]="{'input_error': nickname.invalid && (nickname.dirty || nickname.touched)}">
-        <ng-template #nicktips>
-          <div class="nickname_tips">字數上限為12個字元</div>
-        </ng-template>
-      </div>
-      <div class="verify_text" *ngIf="nickname.invalid && (nickname.dirty || nickname.touched); else nicktips">
-        <div *ngIf="nickname.errors?.required">
-          必填欄位
-        </div>
-      </div>
-      <div class="register_firstname">
-        姓氏
-        <input required type="text" class="firstname_input" placeholder="請輸入姓氏" [(ngModel)]="registerUserInfo.firstname"
-          #firstname="ngModel" [ngClass]="{'input_error': firstname.invalid && (firstname.dirty || firstname.touched)}">
-      </div>
-      <div class="verify_text" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
-        <div *ngIf="firstname.errors?.required">
-          必填欄位
-        </div>
-      </div>
-      <div class="register_lastname">
-        名字
-        <input required type="text" class="lastname_input" placeholder="請輸入名字" [(ngModel)]="registerUserInfo.lastname"
-          #lastname="ngModel" [ngClass]="{'input_error': lastname.invalid && (lastname.dirty || lastname.touched)}">
-      </div>
-      <div class="verify_text" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
-        <div *ngIf="lastname.errors?.required">
-          必填欄位
-        </div>
-      </div>
-      <div class="register_phone">
-        手機號碼
-        <input required type="text" class="firstname_phone" placeholder="請輸入手機號碼" [(ngModel)]="registerUserInfo.phone"
-          #phone="ngModel" [ngClass]="{'input_error': phone.invalid && (phone.dirty || phone.touched)}">
-      </div>
-      <div class="verify_text" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
-        <div *ngIf="phone.errors?.required">
-          必填欄位
-        </div>
-      </div>
-    </div>
-    <button type="button" class="modal_btn_bignextstep" (click)="registerSecondStep(registerSecond)">下一步</button>
-  </app-default-modal>
-</ng-template>
-
-<ng-template #registerSecond>
-  <app-default-modal [modalRef]="registerSecondStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'"
-    [needRecheck]="true">
+<ng-template #registerLineSecond>
+  <app-default-modal [modalRef]="registerLineSecondStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'" [needRecheck]="true">
     <div class="d-flex register_status">
       <div class="information">
         <img src="../../../../assets/img/register_user_done.png" alt="" width="32" height="32">
         <div class="register_select">基本資訊</div>
       </div>
       <div class="divider">
-        <div class="line"></div>
+        <div class="line line_register"></div>
       </div>
       <div class="identifying">
         <img src="../../../../assets/img/register_shild_enabled.png" alt="" width="32" height="32">
         <div class="register_select">確認身份</div>
-      </div>
-      <div class="divider">
-        <div class="line"></div>
-      </div>
-      <div class="account">
-        <img src="../../../../assets/img/register_account_disable.png" alt="" width="32" height="32">
-        <div class="register_unselect">設定帳號</div>
       </div>
     </div>
     <div class="check_register_identity">
@@ -237,18 +202,12 @@
         </div>
       </div>
       <div class="register_identity_button d-flex" [ngClass]="{'isdoctor': registerIdentity}">
-        <button type="button" class="modal_btn_laststep" (click)="backFirstStep(registerFirst)">上一步</button>
+        <button type="button" class="modal_btn_laststep" (click)="backLineFirstStep()">上一步</button>
         <button type="button" class="modal_btn_nextstep" [ngClass]="{'disabled': registerIdentity === undefined}"
-          (click)="registerThirdStep(registerThird)" [disabled]="registerIdentity === undefined">下一步</button>
+          (click)="registerLearnCheck(registerLearn)" [disabled]="registerIdentity === undefined">完成</button>
       </div>
     </div>
   </app-default-modal>
-</ng-template>
-
-<ng-template #registerThird>
-  <app-bind-mail-modal [modalRef]="registerThirdStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'"
-    [showStepIcon]="true" [registerAccount]="registerAccount" [verifyEmailStatus]="verifyEmailStatus" (verifiedMail)="setVerifiedMail($event)" (backStep)="backSecondStep(registerSecond)" (register)="registerLearnCheck(registerLearn)">
-  </app-bind-mail-modal>
 </ng-template>
 
 <ng-template #registerLearn>

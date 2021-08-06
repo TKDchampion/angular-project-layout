@@ -15,7 +15,7 @@
 .modal_title_panel {
   padding-top: 0px;
   text-align: center;
-  .modeal_body_title {
+  .modal_body_title {
     font-size: $font-size-28;
     color: $black;
     margin-bottom: 8px;
@@ -27,8 +27,52 @@
   }
 }
 
+.recheck_modal_title_panel{
+  padding-top: 0px;
+  text-align: left;
+  .recheck_modal_body_title {
+    font-size: $font-size-20;
+    color: $blue;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+  .recheck_modal_body_subtitle {
+    font-size: $font-size-14;
+    color: $light_grey;
+    line-height: 18x;
+  }
+}
+
 .modal-body {
   padding: 1.5rem;
   padding-top: 0px;
   text-align: center;
+}
+
+.register_identity_button {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
+
+.modal_btn_laststep {
+  width: 48%;
+  height: 40px;
+  background: $white;
+  border: 1px solid $light_blue;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: $font-size-16;
+  color: $blue;
+}
+
+.modal_btn_nextstep {
+  width: 48%;
+  height: 40px;
+  background: $blue;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: $font-size-16;
+  color: $white;
+  border: unset;
 }

@@ -30,6 +30,10 @@ import { VerifyModalComponent } from './popup/verify-modal/verify-modal.componen
 import { SuccessModalComponent } from './popup/success-modal/success-modal.component';
 import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.component';
 import { ToastComponent } from './toast/toast.component';
+import { ForgetPasswordModalComponent } from './popup/forget-password-modal/forget-password-modal.component';
+import { RegisterLineModalComponent } from './popup/register-line-modal/register-line-modal.component';
+import { RegisterLearnModalComponent } from './popup/register-learn-modal/register-learn-modal.component';
+import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,10 @@ import { ToastComponent } from './toast/toast.component';
     SuccessModalComponent,
     PrivacyModalComponent,
     ToastComponent,
+    ForgetPasswordModalComponent,
+    RegisterLineModalComponent,
+    RegisterLearnModalComponent,
+    BindMailModalComponent,
   ],
   imports: [
     FormsModule,
@@ -84,6 +92,9 @@ import { ToastComponent } from './toast/toast.component';
     SuccessModalComponent,
     PrivacyModalComponent,
     ToastComponent,
+    RegisterLineModalComponent,
+    RegisterLearnModalComponent,
+    BindMailModalComponent,
   ],
   providers: [ResizeService],
 })
