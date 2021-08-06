@@ -120,32 +120,7 @@ export class RegisterModalComponent implements OnInit {
     });
   }
 
-  verifyEmail(template: TemplateRef<any>) {
-    this.verifyEmailModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal-sm verify_email',
-      ignoreBackdropClick: true,
-      keyboard: false
-    });
-  }
-
-  openPrivacyModal(template: TemplateRef<any>) {
-    this.registerThirdStepModalRef.hide();
-    this.privacyModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width',
-      ignoreBackdropClick: true,
-      keyboard: false
-    });
-  }
-
-  closePrivacyModal(template: TemplateRef<any>) {
-    this.registerThirdStepModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width',
-      ignoreBackdropClick: true,
-      keyboard: false
-    });
-  }
-
-  getVerifyStatus($event: boolean) {
+  setVerifiedMail($event: boolean) {
     this.verifyEmailStatus = $event;
   }
 }

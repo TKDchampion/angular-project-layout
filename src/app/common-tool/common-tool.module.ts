@@ -33,6 +33,7 @@ import { ForgetPasswordModalComponent } from './popup/forget-password-modal/forg
 import { RegisterLineModalComponent } from './popup/register-line-modal/register-line-modal.component';
 import { RegisterLearnModalComponent } from './popup/register-learn-modal/register-learn-modal.component';
 import { NavBarIcononlyComponent } from './nav-bar-icononly/nav-bar-icononly.component';
+import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { NavBarIcononlyComponent } from './nav-bar-icononly/nav-bar-icononly.com
     ForgetPasswordModalComponent,
     RegisterLineModalComponent,
     RegisterLearnModalComponent,
-    NavBarIcononlyComponent
+    NavBarIcononlyComponent,
+    BindMailModalComponent,
   ],
   imports: [FormsModule, CommonModule, RouterModule, SwiperModule,TooltipModule.forRoot(), ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
   exports: [
@@ -82,7 +84,8 @@ import { NavBarIcononlyComponent } from './nav-bar-icononly/nav-bar-icononly.com
     PrivacyModalComponent,
     RegisterLineModalComponent,
     RegisterLearnModalComponent,
-    NavBarIcononlyComponent
+    NavBarIcononlyComponent,
+    BindMailModalComponent
   ],
   providers: [ResizeService],
 })
