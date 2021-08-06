@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Component, Input, OnInit, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DemoLearnType, LearnType, RegisterAccountModal, RegisterJobModal, RegisterUserInfoModal } from './register.modal';
@@ -5,9 +7,9 @@ import { DemoLearnType, LearnType, RegisterAccountModal, RegisterJobModal, Regis
 @Component({
   selector: 'app-register-modal',
   templateUrl: './register-modal.component.html',
-  styleUrls: ['./register-modal.component.scss']
+  styleUrls: ['./register-modal.component.scss'],
 })
-export class RegisterModalComponent implements OnInit {
+export class RegisterModalComponent {
   @Input() modalRef!: BsModalRef;
   verifyEmailModalRef!: BsModalRef;
   registerFirstStepModalRef!: BsModalRef;
@@ -22,105 +24,102 @@ export class RegisterModalComponent implements OnInit {
     nickname: '',
     firstname: '',
     lastname: '',
-    phone: ''
+    phone: '',
   };
   registerJob: RegisterJobModal = {
     job: '',
     jobCompany: '',
     jobCity: '',
-    jobType: ''
+    jobType: '',
   };
   registerAccount: RegisterAccountModal = {
     account: '',
     password: '',
-    confirmPassword: ''
-  }
+    confirmPassword: '',
+  };
   verifyEmailStatus!: boolean;
   demoLearnType = DemoLearnType;
 
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService) {}
 
-  ngOnInit(): void {
-  }
-
-  setRegisterJob(registerJob: any, column: string, name: string) {
+  setRegisterJob(registerJob: any, column: string, name: string): void {
     registerJob[column] = name;
     this.registerJob = registerJob;
-  };
+  }
 
-  registerLineFirstStep(template: TemplateRef<any>) {
+  registerLineFirstStep(template: TemplateRef<unknown>): void {
     this.modalRef.hide();
     this.registerLineFirstStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
   }
 
-  registerFirstStep(template: TemplateRef<any>) {
+  registerFirstStep(template: TemplateRef<unknown>): void {
     this.modalRef.hide();
     this.registerFirstStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
   }
 
-  registerSecondStep(template: TemplateRef<any>) {
+  registerSecondStep(template: TemplateRef<unknown>): void {
     this.registerFirstStepModalRef.hide();
     this.registerSecondStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
   }
 
-  registerThirdStep(template: TemplateRef<any>) {
+  registerThirdStep(template: TemplateRef<unknown>): void {
     this.registerSecondStepModalRef.hide();
     this.registerThirdStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
   }
 
-  registerLearnCheck(template: TemplateRef<any>) {
+  registerLearnCheck(template: TemplateRef<unknown>): void {
     this.registerThirdStepModalRef.hide();
     this.registerLearnCheckModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
   }
 
-  registerToSuccess(template: TemplateRef<any>) {
+  registerToSuccess(template: TemplateRef<any>): void {
     this.registerLearnCheckModalRef.hide();
     this.registerSuccessModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
   }
 
-  backFirstStep(template: TemplateRef<any>) {
+  backFirstStep(template: TemplateRef<unknown>): void {
     this.registerSecondStepModalRef.hide();
     this.registerFirstStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
   }
 
-  backSecondStep(template: TemplateRef<any>) {
+  backSecondStep(template: TemplateRef<unknown>): void {
     this.registerThirdStepModalRef.hide();
     this.registerSecondStepModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
   }
 
-  setVerifiedMail($event: boolean) {
+  setVerifiedMail($event: boolean): void {
     this.verifyEmailStatus = $event;
   }
 }

@@ -27,11 +27,14 @@
         <button class="member_edit_box_content_scope_item_last btn_blue_line button">變更密碼</button>
       </div>
     </div>
-    <div class="member_edit_box_content_kanban d-flex">
+    <div class="member_edit_box_content_kanban d-flex" *ngIf="identity !== 3">
       <div class="member_edit_box_content_kanban_text">
-        <div class="member_edit_box_content_kanban_title">尚未通過身份驗證</div>
-        <div class="member_edit_box_content_kanban_subtitle">驗證後即可解鎖專業性醫學內容</div>
-        <button class="member_edit_box_content_kanban_button btn_blue_bg">立即驗證</button>
+        <div class="member_edit_box_content_kanban_title">{{ identity === 4 ? '已通過身份驗證' : '尚未通過身份驗證' }}</div>
+        <div class="member_edit_box_content_kanban_subtitle">
+          {{ identity === 4 ? '您可盡情瀏覽專業、多元的醫學內容' : '驗證後即可解鎖專業性醫學內容' }}
+        </div>
+        <button class="member_edit_box_content_kanban_button btn_blue_bg" *ngIf="identity !== 4">立即驗證</button>
+        <div *ngIf="identity === 4" class="mt-5"></div>
         <div class="member_edit_box_content_kanban_img">
           <img class="member_edit_box_content_img_icon" src="../../../assets/img/verify_icon.png" alt="" />
           <img src="../../../assets/img/verify_doctor_mobile.png" alt="" />
@@ -61,31 +64,65 @@
         <div class="member_edit_box_content_scope_item_first">手機號碼</div>
         <div class="member_edit_box_content_scope_item_last">0912345678</div>
       </div>
-      <div class="line short"></div>
-      <div class="member_edit_box_content_scope_item d-flex">
-        <div class="member_edit_box_content_scope_item_first">職業</div>
-        <div class="member_edit_box_content_scope_item_last">骨科醫生</div>
+      <div class="line short" *ngIf="!isMailValidated"></div>
+      <div class="member_edit_box_content_scope_item d-flex" *ngIf="!isMailValidated">
+        <div class="member_edit_box_content_scope_item_first">
+          電子信箱<img
+            class="cursor_pointer"
+            src="../../../assets/img/tooltips_icon.png"
+            alt=""
+            width="16"
+            height="16"
+            tooltip="若您想要使用信箱進行登入，需完成信箱綁定流程。"
+            placement="bottom"
+          />
+        </div>
+        <div class="member_edit_box_content_scope_item_last">
+          <div>
+            test@gmail.com
+            <button class="member_edit_box_content_scope_item_bind btn_blue_line" (click)="openBindPopup(memberModal)">綁定信箱</button>
+          </div>
+        </div>
       </div>
-      <div class="line short"></div>
-      <div class="member_edit_box_content_scope_item d-flex">
-        <div class="member_edit_box_content_scope_item_first">執業單位名稱</div>
-        <div class="member_edit_box_content_scope_item_last">大安區聯合醫院</div>
-      </div>
-      <div class="line short"></div>
-      <div class="member_edit_box_content_scope_item d-flex">
-        <div class="member_edit_box_content_scope_item_first">執業縣市</div>
-        <div class="member_edit_box_content_scope_item_last">台北市</div>
-      </div>
-      <div class="line short"></div>
-      <div class="member_edit_box_content_scope_item d-flex">
-        <div class="member_edit_box_content_scope_item_first">執業科別</div>
-        <div class="member_edit_box_content_scope_item_last">骨科</div>
-      </div>
-      <div class="line short"></div>
-      <div class="member_edit_box_content_scope_item d-flex">
-        <div class="member_edit_box_content_scope_item_first">醫事人員證號</div>
-        <div class="member_edit_box_content_scope_item_last">Q123456</div>
+      <div *ngIf="identity === 2 || identity === 4">
+        <div class="line short"></div>
+        <div class="member_edit_box_content_scope_item d-flex">
+          <div class="member_edit_box_content_scope_item_first">職業</div>
+          <div class="member_edit_box_content_scope_item_last">骨科醫生</div>
+        </div>
+        <div class="line short"></div>
+        <div class="member_edit_box_content_scope_item d-flex">
+          <div class="member_edit_box_content_scope_item_first">執業單位名稱</div>
+          <div class="member_edit_box_content_scope_item_last">大安區聯合醫院</div>
+        </div>
+        <div class="line short"></div>
+        <div class="member_edit_box_content_scope_item d-flex">
+          <div class="member_edit_box_content_scope_item_first">執業縣市</div>
+          <div class="member_edit_box_content_scope_item_last">台北市</div>
+        </div>
+        <div class="line short"></div>
+        <div class="member_edit_box_content_scope_item d-flex">
+          <div class="member_edit_box_content_scope_item_first">執業科別</div>
+          <div class="member_edit_box_content_scope_item_last">骨科</div>
+        </div>
+        <div class="line short"></div>
+        <div class="member_edit_box_content_scope_item d-flex">
+          <div class="member_edit_box_content_scope_item_first">醫事人員證號</div>
+          <div class="member_edit_box_content_scope_item_last">Q123456</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #memberModal>
+  <app-default-modal [modalRef]="memberModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'">
+    <div class="register_identity_button isdoctor d-flex">
+      <button type="button" class="modal_btn_laststep">上一步</button>
+      <button type="button" class="modal_btn_nextstep">註冊</button>
+    </div>
+  </app-default-modal>
+</ng-template>
+
+<app-toast id="custom-modal-1" title="已成功綁定信箱"></app-toast>
+<button (click)="openModal('custom-modal-1')">test</button>

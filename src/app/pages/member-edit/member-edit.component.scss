@@ -3,6 +3,8 @@
 
 .member_edit_box {
   padding: 32px 0px;
+  padding-top: 44px;
+  padding-bottom: 88px;
 }
 
 .member_edit_box_menu {
@@ -62,6 +64,11 @@
     margin: auto 32px;
   }
 }
+@include media-breakpoint-down(sm) {
+  .member_edit_box_content {
+    margin: auto 20px;
+  }
+}
 
 .member_edit_box_content_header_bind {
   line-height: 40px;
@@ -97,18 +104,13 @@
     color: $light_grey;
   }
   .member_edit_box_content_scope_item_last {
+    flex: 1;
     &.button {
-      // border: 1px solid;
-      // border-color: $light_blue;
-      // color: $blue;
-      // box-sizing: border-box;
-      // border-radius: 100px;
       width: 92px;
       height: 48px;
-      // text-align: center;
       line-height: 48px;
       margin-top: 15px;
-      // font-weight: 500;
+      flex: none;
     }
   }
   .member_edit_box_content_scope_item_headshot {
@@ -136,12 +138,20 @@
       margin-top: -4px;
     }
   }
+  .member_edit_box_content_scope_item_bind {
+    width: 92px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 16px;
+  }
 }
-
 @include media-breakpoint-down(sm) {
   .member_edit_box_content_scope_item {
     .member_edit_box_content_scope_item_first {
-      width: 100px;
+      width: 120px;
+    }
+    .member_edit_box_content_scope_item_bind {
+      margin-left: 0px;
     }
   }
 }
