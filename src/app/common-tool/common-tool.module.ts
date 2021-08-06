@@ -29,6 +29,7 @@ import { RegisterModalComponent } from './popup/register-modal/register-modal.co
 import { VerifyModalComponent } from './popup/verify-modal/verify-modal.component';
 import { SuccessModalComponent } from './popup/success-modal/success-modal.component';
 import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.component';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +54,18 @@ import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.compo
     VerifyModalComponent,
     SuccessModalComponent,
     PrivacyModalComponent,
+    ToastComponent,
   ],
-  imports: [FormsModule, CommonModule, RouterModule, SwiperModule,TooltipModule.forRoot(), ModalModule.forRoot(), BsDropdownModule.forRoot(), CollapseModule.forRoot()],
+  imports: [
+    FormsModule,
+    CommonModule,
+    RouterModule,
+    SwiperModule,
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    CollapseModule.forRoot(),
+  ],
   exports: [
     NewArticleComponent,
     LearnWillingnessComponent,
@@ -72,6 +83,7 @@ import { PrivacyModalComponent } from './popup/privacy-modal/privacy-modal.compo
     VerifyModalComponent,
     SuccessModalComponent,
     PrivacyModalComponent,
+    ToastComponent,
   ],
   providers: [ResizeService],
 })
