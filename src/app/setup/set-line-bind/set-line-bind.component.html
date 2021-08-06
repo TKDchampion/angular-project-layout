@@ -1,0 +1,55 @@
+<div class="password_outside width_limit d-flex">
+  <div class="set_new_password" *ngIf="!loginStatus; else bindLineStatus ? success : fail">
+    <div class="title_panel">
+      <div class="title">綁定 Line 帳號</div>
+      <div class="subtitle">請先登入您在 Dr.Talk 的帳號</div>
+    </div>
+    <div class="password_info">
+      <div class="modal_body_mailinput" [ngClass]="{'input_error': mail.invalid && (mail.dirty || mail.touched)}">
+        <img src="../../../../assets/icon/mail.png" alt="">
+        <input id="mail" name="mail" required type="text" class="mail_input" placeholder="請輸入電子信箱"
+          [(ngModel)]="bindMail" #mail="ngModel">
+      </div>
+      <div class="verify_text" *ngIf="mail.invalid && (mail.dirty || mail.touched)">
+        <div *ngIf="mail.errors?.required">
+          必填欄位
+        </div>
+      </div>
+      <div class="modal_body_mailinput"
+        [ngClass]="{'input_error': password.invalid && (password.dirty || password.touched)}">
+        <img src="../../../../assets/icon/password.png" alt="">
+        <input id="password" name="password" required type="password" class="mail_input" placeholder="請輸入密碼"
+          [(ngModel)]="bindPassword" #password="ngModel">
+      </div>
+      <div class="verify_text" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors?.required">
+          必填欄位
+        </div>
+      </div>
+      <button type="button" class="btn_submit" (click)="login()">登入</button>
+      <div class="cursor_pointer forget_password">忘記密碼</div>
+    </div>
+  </div>
+
+  <ng-template #success>
+    <div class="set_new_password">
+      <div class="title_panel">
+        <img src="../../../../assets/img/check.png" alt="">
+        <div class="title">綁定成功</div>
+        <div class="subtitle">您可透過 Line 來進行登入</div>
+      </div>
+      <button type="button" class="btn_submit success" routerLink="/pages">回首頁</button>
+    </div>
+  </ng-template>
+
+  <ng-template #fail>
+    <div class="set_new_password">
+      <div class="title_panel">
+        <img src="../../../../assets/img/hint.png" alt="">
+        <div class="title">此帳號已綁定</div>
+        <div class="subtitle">您可直接使用 Line 來進行登入</div>
+      </div>
+      <button type="button" class="btn_submit success" routerLink="/pages">回首頁</button>
+    </div>
+  </ng-template>
+</div>

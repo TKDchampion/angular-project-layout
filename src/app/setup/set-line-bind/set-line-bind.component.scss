@@ -29,16 +29,6 @@
 .password_info {
   text-align: left;
   font-size: $font-size-14;
-  input {
-    width: 368px;
-    background: $white;
-    border: 1px solid $hr_grey;
-    box-sizing: border-box;
-    border-radius: 8px;
-    height: 40px;
-    padding-left: 16px;
-    margin-top: 6px;
-  }
   input::placeholder {
     color: $border_grey
   }
@@ -49,6 +39,36 @@
   .register_password,
   .register_checkpassword{
     margin-top: 16px;
+  }
+
+  .modal_body_mailinput {
+    background: $white;
+    border: 1px solid $hr_grey;
+    border-radius: 8px;
+    width: 368px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    .mail_input {
+      margin-left: 16px;
+      background: unset;
+      border: 0;
+      width: 100%;
+    }
+    .mail_input:focus {
+      outline:0px;
+    }
+    img {
+      margin-left: 16px;
+    }
+  }
+  .forget_password {
+    color: $blue;
+    font-size: $font-size-16;
+    font-weight: 500;
+    margin-top: 24px;
+    text-align: center;
   }
 }
 

@@ -12,6 +12,10 @@ const routes: Routes = [
         path: 'newpassword',
         loadChildren: () => import('./set-new-password/set-new-password.module').then((m) => m.SetNewPasswordModule),
       },
+      {
+        path: 'line',
+        loadChildren:() => import('./set-line-bind/set-line-bind.module').then((m) => m.SetLineBindModule)
+      }
     ],
   },
 ];
