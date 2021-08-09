@@ -1,5 +1,6 @@
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ForgetPasswordModalComponent } from 'src/app/common-tool/popup/forget-password-modal/forget-password-modal.component';
 import { ModalService } from 'src/app/common-tool/toast/toast.services';
 import { EveService } from 'src/app/services/env.service';
 import { MenuInfo } from './member-edit.model';
@@ -11,6 +12,13 @@ import { MenuInfo } from './member-edit.model';
 })
 export class MemberEditComponent {
   memberModalRef!: BsModalRef;
+  changePasswordModalRef!: BsModalRef;
+  forgetPasswordModalRef!: BsModalRef;
+  changePassword = {
+    oldPassword: '',
+    newPassword: '',
+    confirmPassword: ''
+  }
   identity = 1;
   isMailValidated = false;
 
@@ -34,6 +42,28 @@ export class MemberEditComponent {
     this.memberModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
     });
+  }
+
+  openChangePasswordPopup(template: TemplateRef<unknown>): void {
+    this.changePasswordModalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false,
+    })
+  }
+
+  forgetPassword() {
+    this.changePasswordModalRef.hide();
+    this.forgetPasswordModalRef = this.modalService.show(ForgetPasswordModalComponent, {
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false
+    });
+    this.forgetPasswordModalRef.content.modalRef = this.forgetPasswordModalRef;
+  }
+
+  confirmChange() {
+    this.changePasswordModalRef.hide();
   }
 
   openModal(id: string): void {
