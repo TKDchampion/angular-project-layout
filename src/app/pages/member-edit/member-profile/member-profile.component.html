@@ -1,0 +1,187 @@
+<div class="member_edit_box_content">
+  <div class="member_edit_box_content_header d-flex justify-content-between">
+    <h1 class="member_edit_box_content_header_title">會員資料</h1>
+    <div class="member_edit_box_content_header_bind" (click)="bindLine(bindLineModal)">
+      <svg class="exclamation"></svg>
+      開始綁定Line帳號
+    </div>
+  </div>
+  <div class="member_edit_box_content_scope">
+    <div class="member_edit_box_content_scope_item">
+      <div class="member_edit_box_content_scope_item_headshot">W</div>
+    </div>
+    <div class="line"></div>
+    <div class="member_edit_box_content_scope_item d-flex">
+      <div class="member_edit_box_content_scope_item_first">帳號</div>
+      <div class="member_edit_box_content_scope_item_last">test@gmail.com</div>
+    </div>
+    <div class="line short"></div>
+    <div class="member_edit_box_content_scope_item d-flex">
+      <div class="member_edit_box_content_scope_item_first">密碼</div>
+      <button class="member_edit_box_content_scope_item_last btn_blue_line button" (click)="openChangePasswordPopup(changePasswordModal)">
+        變更密碼
+      </button>
+    </div>
+  </div>
+  <div class="member_edit_box_content_kanban d-flex" *ngIf="identity !== 3">
+    <div class="member_edit_box_content_kanban_text">
+      <div class="member_edit_box_content_kanban_title">{{ identity === 4 ? '已通過身份驗證' : '尚未通過身份驗證' }}</div>
+      <div class="member_edit_box_content_kanban_subtitle">
+        {{ identity === 4 ? '您可盡情瀏覽專業、多元的醫學內容' : '驗證後即可解鎖專業性醫學內容' }}
+      </div>
+      <button class="member_edit_box_content_kanban_button btn_blue_bg" *ngIf="identity !== 4">立即驗證</button>
+      <div *ngIf="identity === 4" class="mt-5"></div>
+      <div class="member_edit_box_content_kanban_img">
+        <img class="member_edit_box_content_img_icon" src="../../../assets/img/verify_icon.png" alt="" />
+        <img src="../../../assets/img/verify_doctor_mobile.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="member_edit_box_content_scope">
+    <div class="member_edit_box_content_scope_item d-flex justify-content-between">
+      <div class="member_edit_box_content_scope_item_title">基本資訊</div>
+      <button class="member_edit_box_content_scope_item_edit btn_blue_line">
+        <svg class="editIcon"></svg>
+        編輯
+      </button>
+    </div>
+    <div class="line"></div>
+    <div class="member_edit_box_content_scope_item d-flex">
+      <div class="member_edit_box_content_scope_item_first">暱稱</div>
+      <div class="member_edit_box_content_scope_item_last">Wendy Lian</div>
+    </div>
+    <div class="line short"></div>
+    <div class="member_edit_box_content_scope_item d-flex">
+      <div class="member_edit_box_content_scope_item_first">姓名</div>
+      <div class="member_edit_box_content_scope_item_last">梁文欣</div>
+    </div>
+    <div class="line short"></div>
+    <div class="member_edit_box_content_scope_item d-flex">
+      <div class="member_edit_box_content_scope_item_first">手機號碼</div>
+      <div class="member_edit_box_content_scope_item_last">0912345678</div>
+    </div>
+    <div class="line short" *ngIf="!isMailValidated"></div>
+    <div class="member_edit_box_content_scope_item d-flex" *ngIf="!isMailValidated">
+      <div class="member_edit_box_content_scope_item_first">
+        電子信箱<img
+          class="cursor_pointer"
+          src="../../../assets/img/tooltips_icon.png"
+          alt=""
+          width="16"
+          height="16"
+          tooltip="若您想要使用信箱進行登入，需完成信箱綁定流程。"
+          placement="bottom"
+        />
+      </div>
+      <div class="member_edit_box_content_scope_item_last">
+        <div>
+          test@gmail.com
+          <button class="member_edit_box_content_scope_item_bind btn_blue_line" (click)="openBindPopup(memberModal)">綁定信箱</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="identity === 2 || identity === 4">
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">職業</div>
+        <div class="member_edit_box_content_scope_item_last">骨科醫生</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">執業單位名稱</div>
+        <div class="member_edit_box_content_scope_item_last">大安區聯合醫院</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">執業縣市</div>
+        <div class="member_edit_box_content_scope_item_last">台北市</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">執業科別</div>
+        <div class="member_edit_box_content_scope_item_last">骨科</div>
+      </div>
+      <div class="line short"></div>
+      <div class="member_edit_box_content_scope_item d-flex">
+        <div class="member_edit_box_content_scope_item_first">醫事人員證號</div>
+        <div class="member_edit_box_content_scope_item_last">Q123456</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #memberModal>
+  <app-bind-mail-modal
+    [modalRef]="memberModalRef"
+    [title]="'綁定信箱'"
+    [subTitle]="'設定帳號與密碼後，未來可進行一般帳號登入'"
+    [registerAccount]="registerAccount"
+    [verifyEmailStatus]="verifyEmailStatus"
+    (verifiedMail)="setVerifiedMail($event)"
+    (backStep)="backStep()"
+    (register)="registerMail()">
+  </app-bind-mail-modal>
+</ng-template>
+
+<ng-template #changePasswordModal>
+  <app-default-modal [modalRef]="changePasswordModalRef" [title]="'變更密碼'" [subTitle]="'密碼變更後將需要重新登入'">
+    <div class="register_information">
+      <div class="register_account">
+        <div class="account">舊密碼</div>
+        <input
+          required
+          type="password"
+          class="account_input"
+          placeholder="請輸入舊密碼"
+          [(ngModel)]="changePassword.oldPassword"
+          #oldPassword="ngModel"
+          [ngClass]="{ input_error: oldPassword.invalid && (oldPassword.dirty || oldPassword.touched) }"
+        />
+      </div>
+      <div class="verify_text" *ngIf="oldPassword.invalid && (oldPassword.dirty || oldPassword.touched)">
+        <div *ngIf="oldPassword.errors?.required">必填欄位</div>
+      </div>
+      <div class="register_password">
+        新密碼
+        <input
+          required
+          type="password"
+          class="password_input"
+          placeholder="請輸入新密碼"
+          [(ngModel)]="changePassword.newPassword"
+          #newPassword="ngModel"
+          [ngClass]="{ input_error: newPassword.invalid && (newPassword.dirty || newPassword.touched) }"
+        />
+        <ng-template #passwordTips>
+          <div class="nickname_tips">需包含英文與數字，並且至少 8 位數以上</div>
+        </ng-template>
+      </div>
+      <div class="verify_text" *ngIf="newPassword.invalid && (newPassword.dirty || newPassword.touched); else passwordTips">
+        <div *ngIf="newPassword.errors?.required">必填欄位</div>
+      </div>
+      <div class="register_checkpassword">
+        確認新密碼
+        <input
+          required
+          type="password"
+          class="checkpassword_input"
+          placeholder="請再次輸入密碼"
+          [(ngModel)]="changePassword.confirmPassword"
+          #confirmPassword="ngModel"
+          [ngClass]="{ input_error: confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) }"
+        />
+      </div>
+      <div class="verify_text" *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+        <div *ngIf="confirmPassword.errors?.required">必填欄位</div>
+      </div>
+      <button type="button" class="modal_btn_laststep" (click)="confirmChange()">確認變更</button>
+      <div class="forget_password cursor_pointer" (click)="forgetPassword()">忘記密碼</div>
+    </div>
+  </app-default-modal>
+</ng-template>
+
+<ng-template #bindLineModal>
+  <app-success-modal [modalRef]="bindLineModalRef" [title]="'Line 官方帳號'"
+    [subTitle]="'掃描 Qrcode 進入我們的 Line 官方帳號後，即可將您的帳號與個人 Line 帳號綁定'">
+  </app-success-modal>
+</ng-template>

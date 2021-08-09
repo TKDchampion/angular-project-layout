@@ -13,20 +13,6 @@ import { MenuInfo } from './member-edit.model';
 })
 export class MemberEditComponent {
   memberModalRef!: BsModalRef;
-  changePasswordModalRef!: BsModalRef;
-  forgetPasswordModalRef!: BsModalRef;
-  bindLineModalRef!: BsModalRef;
-  changePassword = {
-    oldPassword: '',
-    newPassword: '',
-    confirmPassword: ''
-  }
-  registerAccount: RegisterAccountModal = {
-    account: '',
-    password: '',
-    confirmPassword: '',
-  };
-  verifyEmailStatus!: boolean;
   identity = 1;
   isMailValidated = false;
 
@@ -40,9 +26,11 @@ export class MemberEditComponent {
     { name: '瀏覽紀錄', active: false },
     { name: '我的收藏', active: false },
   ];
+  activeStatus = '會員資料';
 
   selectMenu(item: MenuInfo): void {
     this.menulist.forEach((i) => (i.active = false));
+    this.activeStatus = item.name;
     item.active = true;
   }
 
@@ -52,49 +40,6 @@ export class MemberEditComponent {
       ignoreBackdropClick: true,
       keyboard: false,
     });
-  }
-
-  openChangePasswordPopup(template: TemplateRef<unknown>): void {
-    this.changePasswordModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width',
-      ignoreBackdropClick: true,
-      keyboard: false,
-    })
-  }
-
-  forgetPassword() {
-    this.changePasswordModalRef.hide();
-    this.forgetPasswordModalRef = this.modalService.show(ForgetPasswordModalComponent, {
-      class: 'modal-dialog-centered modal_max_width',
-      ignoreBackdropClick: true,
-      keyboard: false
-    });
-    this.forgetPasswordModalRef.content.modalRef = this.forgetPasswordModalRef;
-  }
-
-  bindLine(template: TemplateRef<unknown>) {
-    this.bindLineModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width',
-      ignoreBackdropClick: true,
-      keyboard: false
-    })
-  }
-
-  confirmChange() {
-    this.changePasswordModalRef.hide();
-  }
-
-  setVerifiedMail($event: boolean): void {
-    this.verifyEmailStatus = $event;
-  }
-
-  backStep() {
-    this.memberModalRef.hide();
-  }
-
-  registerMail() {
-    this.memberModalRef.hide();
-    this.modalServices.open('custom-modal-1');
   }
 
   openModal(id: string): void {
