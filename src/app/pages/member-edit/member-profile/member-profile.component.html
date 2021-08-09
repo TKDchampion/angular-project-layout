@@ -18,7 +18,9 @@
     <div class="line short"></div>
     <div class="member_edit_box_content_scope_item d-flex">
       <div class="member_edit_box_content_scope_item_first">密碼</div>
-      <button class="member_edit_box_content_scope_item_last btn_blue_line button">變更密碼</button>
+      <button class="member_edit_box_content_scope_item_last btn_blue_line button" (click)="openChangePasswordPopup(changePasswordModal)">
+        變更密碼
+      </button>
     </div>
   </div>
   <div class="member_edit_box_content_kanban d-flex" *ngIf="identity !== 3">
@@ -113,6 +115,63 @@
     <div class="register_identity_button isdoctor d-flex">
       <button type="button" class="modal_btn_laststep">上一步</button>
       <button type="button" class="modal_btn_nextstep">註冊</button>
+    </div>
+  </app-default-modal>
+</ng-template>
+
+<ng-template #changePasswordModal>
+  <app-default-modal [modalRef]="changePasswordModalRef" [title]="'變更密碼'" [subTitle]="'密碼變更後將需要重新登入'">
+    <div class="register_information">
+      <div class="register_account">
+        <div class="account">舊密碼</div>
+        <input
+          required
+          type="password"
+          class="account_input"
+          placeholder="請輸入舊密碼"
+          [(ngModel)]="changePassword.oldPassword"
+          #oldPassword="ngModel"
+          [ngClass]="{ input_error: oldPassword.invalid && (oldPassword.dirty || oldPassword.touched) }"
+        />
+      </div>
+      <div class="verify_text" *ngIf="oldPassword.invalid && (oldPassword.dirty || oldPassword.touched)">
+        <div *ngIf="oldPassword.errors?.required">必填欄位</div>
+      </div>
+      <div class="register_password">
+        新密碼
+        <input
+          required
+          type="password"
+          class="password_input"
+          placeholder="請輸入新密碼"
+          [(ngModel)]="changePassword.newPassword"
+          #newPassword="ngModel"
+          [ngClass]="{ input_error: newPassword.invalid && (newPassword.dirty || newPassword.touched) }"
+        />
+        <ng-template #passwordTips>
+          <div class="nickname_tips">需包含英文與數字，並且至少 8 位數以上</div>
+        </ng-template>
+      </div>
+      <div class="verify_text" *ngIf="newPassword.invalid && (newPassword.dirty || newPassword.touched); else passwordTips">
+        <div *ngIf="newPassword.errors?.required">必填欄位</div>
+      </div>
+      <div class="register_checkpassword">
+        確認新密碼
+        <input
+          required
+          type="password"
+          class="checkpassword_input"
+          placeholder="請再次輸入密碼"
+          [(ngModel)]="changePassword.confirmPassword"
+          #confirmPassword="ngModel"
+          [ngClass]="{ input_error: confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) }"
+        />
+      </div>
+      <div class="verify_text" *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+        <div *ngIf="confirmPassword.errors?.required">必填欄位</div>
+      </div>
+      <button type="button" class="modal_btn_laststep" (click)="confirmChange()">確認變更</button>
+      <div class="forget_password cursor_pointer" (click)="forgetPassword()">忘記密碼</div>
     </div>
   </app-default-modal>
 </ng-template>

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { MemberEditRoutingModule } from './member-edit-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,6 +10,6 @@ import { MemberProfileComponent } from './member-profile/member-profile.componen
 
 @NgModule({
   declarations: [MemberEditComponent, MemberCollectionComponent, MemberProfileComponent],
-  imports: [CommonModule, MemberEditRoutingModule, TooltipModule.forRoot(), CommonToolModule],
+  imports: [FormsModule, CommonModule, MemberEditRoutingModule, TooltipModule.forRoot(), CommonToolModule],
 })
 export class MemberEditModule {}

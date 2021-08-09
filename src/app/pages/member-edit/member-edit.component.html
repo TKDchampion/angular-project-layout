@@ -9,14 +9,5 @@
   <app-member-collection *ngIf="activeStatus === '瀏覽紀錄'"></app-member-collection>
 </div>
 
-<ng-template #memberModal>
-  <app-default-modal [modalRef]="memberModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'">
-    <div class="register_identity_button isdoctor d-flex">
-      <button type="button" class="modal_btn_laststep">上一步</button>
-      <button type="button" class="modal_btn_nextstep">註冊</button>
-    </div>
-  </app-default-modal>
-</ng-template>
-
 <app-toast id="custom-modal-1" title="已成功綁定信箱"></app-toast>
 <button (click)="openModal('custom-modal-1')">test</button>

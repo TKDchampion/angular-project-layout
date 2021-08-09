@@ -1,5 +1,6 @@
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ForgetPasswordModalComponent } from 'src/app/common-tool/popup/forget-password-modal/forget-password-modal.component';
 import { ModalService } from 'src/app/common-tool/toast/toast.services';
 import { EveService } from 'src/app/services/env.service';
 import { MenuInfo } from './member-edit.model';
