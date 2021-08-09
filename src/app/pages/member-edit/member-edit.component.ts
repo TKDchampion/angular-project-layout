@@ -12,13 +12,6 @@ import { MenuInfo } from './member-edit.model';
 })
 export class MemberEditComponent {
   memberModalRef!: BsModalRef;
-  changePasswordModalRef!: BsModalRef;
-  forgetPasswordModalRef!: BsModalRef;
-  changePassword = {
-    oldPassword: '',
-    newPassword: '',
-    confirmPassword: ''
-  }
   identity = 1;
   isMailValidated = false;
 
@@ -32,9 +25,11 @@ export class MemberEditComponent {
     { name: '瀏覽紀錄', active: false },
     { name: '我的收藏', active: false },
   ];
+  activeStatus = '會員資料';
 
   selectMenu(item: MenuInfo): void {
     this.menulist.forEach((i) => (i.active = false));
+    this.activeStatus = item.name;
     item.active = true;
   }
 
@@ -42,28 +37,6 @@ export class MemberEditComponent {
     this.memberModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
     });
-  }
-
-  openChangePasswordPopup(template: TemplateRef<unknown>): void {
-    this.changePasswordModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width',
-      ignoreBackdropClick: true,
-      keyboard: false,
-    })
-  }
-
-  forgetPassword() {
-    this.changePasswordModalRef.hide();
-    this.forgetPasswordModalRef = this.modalService.show(ForgetPasswordModalComponent, {
-      class: 'modal-dialog-centered modal_max_width',
-      ignoreBackdropClick: true,
-      keyboard: false
-    });
-    this.forgetPasswordModalRef.content.modalRef = this.forgetPasswordModalRef;
-  }
-
-  confirmChange() {
-    this.changePasswordModalRef.hide();
   }
 
   openModal(id: string): void {

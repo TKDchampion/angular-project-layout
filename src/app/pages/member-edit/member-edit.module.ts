@@ -5,9 +5,11 @@ import { CommonModule } from '@angular/common';
 import { MemberEditComponent } from './member-edit.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CommonToolModule } from 'src/app/common-tool/common-tool.module';
+import { MemberCollectionComponent } from './member-collection/member-collection.component';
+import { MemberProfileComponent } from './member-profile/member-profile.component';
 
 @NgModule({
-  declarations: [MemberEditComponent],
+  declarations: [MemberEditComponent, MemberCollectionComponent, MemberProfileComponent],
   imports: [FormsModule, CommonModule, MemberEditRoutingModule, TooltipModule.forRoot(), CommonToolModule],
 })
 export class MemberEditModule {}
