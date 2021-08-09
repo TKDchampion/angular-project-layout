@@ -18,22 +18,62 @@
     <div class="line short"></div>
     <div class="member_edit_box_content_scope_item d-flex">
       <div class="member_edit_box_content_scope_item_first">密碼</div>
-      <button class="member_edit_box_content_scope_item_last btn_blue_line button" (click)="openChangePasswordPopup(changePasswordModal)">
+      <button class="member_edit_box_content_scope_item_last btn_blue_line button"
+        (click)="openChangePasswordPopup(changePasswordModal)">
         變更密碼
       </button>
     </div>
   </div>
-  <div class="member_edit_box_content_kanban d-flex" *ngIf="identity !== 3">
+  <div class="member_edit_box_content_kanban d-flex" *ngIf="identity !== 3 && !isStartVerify">
     <div class="member_edit_box_content_kanban_text">
       <div class="member_edit_box_content_kanban_title">{{ identity === 4 ? '已通過身份驗證' : '尚未通過身份驗證' }}</div>
       <div class="member_edit_box_content_kanban_subtitle">
         {{ identity === 4 ? '您可盡情瀏覽專業、多元的醫學內容' : '驗證後即可解鎖專業性醫學內容' }}
       </div>
-      <button class="member_edit_box_content_kanban_button btn_blue_bg" *ngIf="identity !== 4">立即驗證</button>
+      <button class="member_edit_box_content_kanban_button btn_blue_bg" (click)="openVerify(verifyUser)"
+        *ngIf="identity !== 4">立即驗證</button>
       <div *ngIf="identity === 4" class="mt-5"></div>
       <div class="member_edit_box_content_kanban_img">
         <img class="member_edit_box_content_img_icon" src="../../../assets/img/verify_icon.png" alt="" />
         <img src="../../../assets/img/verify_doctor_mobile.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="member_edit_box_content_kanban isVerify d-flex" *ngIf="identity === 2 && isStartVerify">
+    <div class="member_edit_box_content_kanban_text">
+      <div class="member_edit_box_content_kanban_title verify_content">驗證進度</div>
+      <div class="member_edit_box_content_kanban_subtitle verify_content">
+        我們將會盡快處理您的驗證需求
+      </div>
+      <div class="member_edit_box_content_kanban_verify d-flex">
+        <div class="member_edit_box_content_kanban_step d-flex align-items-center">
+          <div class="member_edit_box_content_kanban_step_icon">
+            <img src="../../../../assets/img/verify_step1.png" alt="">
+          </div>
+          <div class="member_edit_box_content_kanban_step_text">
+            <div class="text_title">步驟一</div>
+            <div class="text_content">送出驗證通知</div>
+          </div>
+        </div>
+        <div class="member_edit_box_content_kanban_step d-flex align-items-center active" [ngClass]="{'need_invite_code': !hasInviteCode}">
+          <div class="member_edit_box_content_kanban_step_icon">
+            <img src="../../../../assets/img/verify_step2.png" alt="">
+          </div>
+          <div class="member_edit_box_content_kanban_step_text">
+            <div class="text_title">步驟二</div>
+            <div class="text_content">業務拜訪</div>
+            <button class="text_invite" *ngIf="!hasInviteCode">輸入邀請碼</button>
+          </div>
+        </div>
+        <div class="member_edit_box_content_kanban_step d-flex align-items-center">
+          <div class="member_edit_box_content_kanban_step_icon">
+            <img src="../../../../assets/img/verify_step3.png" alt="">
+          </div>
+          <div class="member_edit_box_content_kanban_step_text">
+            <div class="text_title">步驟三</div>
+            <div class="text_content">等待驗證通過</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -63,20 +103,14 @@
     <div class="line short" *ngIf="!isMailValidated"></div>
     <div class="member_edit_box_content_scope_item d-flex" *ngIf="!isMailValidated">
       <div class="member_edit_box_content_scope_item_first">
-        電子信箱<img
-          class="cursor_pointer"
-          src="../../../assets/img/tooltips_icon.png"
-          alt=""
-          width="16"
-          height="16"
-          tooltip="若您想要使用信箱進行登入，需完成信箱綁定流程。"
-          placement="bottom"
-        />
+        電子信箱<img class="cursor_pointer" src="../../../assets/img/tooltips_icon.png" alt="" width="16" height="16"
+          tooltip="若您想要使用信箱進行登入，需完成信箱綁定流程。" placement="bottom" />
       </div>
       <div class="member_edit_box_content_scope_item_last">
         <div>
           test@gmail.com
-          <button class="member_edit_box_content_scope_item_bind btn_blue_line" (click)="openBindPopup(memberModal)">綁定信箱</button>
+          <button class="member_edit_box_content_scope_item_bind btn_blue_line"
+            (click)="openBindPopup(memberModal)">綁定信箱</button>
         </div>
       </div>
     </div>
@@ -110,16 +144,20 @@
   </div>
 </div>
 
+<ng-template #verifyUser>
+  <app-verify-user-modal [modalRef]="verifyUserModalRef" (startVerify)="startVerify($event)"
+    (getInvite)="openSalesInviteModal(salesInvite)"></app-verify-user-modal>
+</ng-template>
+
+<ng-template #salesInvite>
+  <app-sales-invite [modalRef]="salesCodeModalRef" (getInvite)="getInviteCode($event)"></app-sales-invite>
+</ng-template>
+
+
 <ng-template #memberModal>
-  <app-bind-mail-modal
-    [modalRef]="memberModalRef"
-    [title]="'綁定信箱'"
-    [subTitle]="'設定帳號與密碼後，未來可進行一般帳號登入'"
-    [registerAccount]="registerAccount"
-    [verifyEmailStatus]="verifyEmailStatus"
-    (verifiedMail)="setVerifiedMail($event)"
-    (backStep)="backStep()"
-    (register)="registerMail()">
+  <app-bind-mail-modal [modalRef]="memberModalRef" [title]="'綁定信箱'" [subTitle]="'設定帳號與密碼後，未來可進行一般帳號登入'"
+    [registerAccount]="registerAccount" [verifyEmailStatus]="verifyEmailStatus" (verifiedMail)="setVerifiedMail($event)"
+    (backStep)="backStep()" (register)="registerMail()">
   </app-bind-mail-modal>
 </ng-template>
 
@@ -128,48 +166,31 @@
     <div class="register_information">
       <div class="register_account">
         <div class="account">舊密碼</div>
-        <input
-          required
-          type="password"
-          class="account_input"
-          placeholder="請輸入舊密碼"
-          [(ngModel)]="changePassword.oldPassword"
-          #oldPassword="ngModel"
-          [ngClass]="{ input_error: oldPassword.invalid && (oldPassword.dirty || oldPassword.touched) }"
-        />
+        <input required type="password" class="account_input" placeholder="請輸入舊密碼"
+          [(ngModel)]="changePassword.oldPassword" #oldPassword="ngModel"
+          [ngClass]="{ input_error: oldPassword.invalid && (oldPassword.dirty || oldPassword.touched) }" />
       </div>
       <div class="verify_text" *ngIf="oldPassword.invalid && (oldPassword.dirty || oldPassword.touched)">
         <div *ngIf="oldPassword.errors?.required">必填欄位</div>
       </div>
       <div class="register_password">
         新密碼
-        <input
-          required
-          type="password"
-          class="password_input"
-          placeholder="請輸入新密碼"
-          [(ngModel)]="changePassword.newPassword"
-          #newPassword="ngModel"
-          [ngClass]="{ input_error: newPassword.invalid && (newPassword.dirty || newPassword.touched) }"
-        />
+        <input required type="password" class="password_input" placeholder="請輸入新密碼"
+          [(ngModel)]="changePassword.newPassword" #newPassword="ngModel"
+          [ngClass]="{ input_error: newPassword.invalid && (newPassword.dirty || newPassword.touched) }" />
         <ng-template #passwordTips>
           <div class="nickname_tips">需包含英文與數字，並且至少 8 位數以上</div>
         </ng-template>
       </div>
-      <div class="verify_text" *ngIf="newPassword.invalid && (newPassword.dirty || newPassword.touched); else passwordTips">
+      <div class="verify_text"
+        *ngIf="newPassword.invalid && (newPassword.dirty || newPassword.touched); else passwordTips">
         <div *ngIf="newPassword.errors?.required">必填欄位</div>
       </div>
       <div class="register_checkpassword">
         確認新密碼
-        <input
-          required
-          type="password"
-          class="checkpassword_input"
-          placeholder="請再次輸入密碼"
-          [(ngModel)]="changePassword.confirmPassword"
-          #confirmPassword="ngModel"
-          [ngClass]="{ input_error: confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) }"
-        />
+        <input required type="password" class="checkpassword_input" placeholder="請再次輸入密碼"
+          [(ngModel)]="changePassword.confirmPassword" #confirmPassword="ngModel"
+          [ngClass]="{ input_error: confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched) }" />
       </div>
       <div class="verify_text" *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
         <div *ngIf="confirmPassword.errors?.required">必填欄位</div>

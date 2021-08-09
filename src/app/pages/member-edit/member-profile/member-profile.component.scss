@@ -53,8 +53,8 @@
     flex: 1;
     &.button {
       width: 92px;
-      height: 48px;
-      line-height: 48px;
+      height: 40px;
+      line-height: 40px;
       margin-top: 15px;
       flex: none;
     }
@@ -107,13 +107,16 @@
   background-position: right;
   background-repeat: no-repeat;
   width: 100%;
-  height: 180px;
+  min-height: 180px;
   margin-top: 16px;
   border-radius: 8px;
   border: 1px solid;
   border-color: $hr_grey;
   .member_edit_box_content_kanban_text {
+    width: 100%;
     margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: 20px;
     .member_edit_box_content_kanban_title {
       font-size: $font-size-24;
       font-weight: 500;
@@ -132,8 +135,63 @@
     .member_edit_box_content_kanban_img {
       display: none;
     }
+    .member_edit_box_content_kanban_step {
+      border-radius: 24px;
+      border: 1px solid $hr_grey;
+      background-color: $white;
+      width: 100%;
+      height: 104px;
+      margin-top: 20px;
+      margin-right: 24px;
+      .member_edit_box_content_kanban_step_icon {
+        margin-left: 16px;
+        margin-right: 32px;
+      }
+      .member_edit_box_content_kanban_step_text {
+        text-align: left;
+        .text_title {
+          font-size: $font-size-12;
+          color: $black;
+        }
+        .text_content {
+          font-size: $font-size-16;
+          color: $black;
+          margin-top: 4px;
+        }
+        .text_invite {
+          width: 81px;
+          height: 23px;
+          border-radius: 100px;
+          color: $dark_red;
+          background: $light_light_red;
+          font-size: $font-size-12;
+          border: unset;
+          margin-top: 10px;
+        }
+      }
+    }
+    .member_edit_box_content_kanban_step.active {
+      border: unset;
+      background-color: $pink_red;
+      .member_edit_box_content_kanban_step_text {
+        .text_title {
+          color: $white;
+        }
+        .text_content {
+          color: $white;
+        }
+      }
+    }
+    .member_edit_box_content_kanban_step:last-child {
+      margin-right: 0px;
+    }
   }
 }
+.member_edit_box_content_kanban.isVerify {
+  background-image: unset;
+  background: $light_light_light_light_light_grey;
+}
+
 @include media-breakpoint-down(sm) {
   .member_edit_box_content_kanban {
     background: $light_light_light_light_light_grey;
@@ -144,6 +202,15 @@
       .member_edit_box_content_kanban_title {
         margin-top: 20px;
       }
+      .member_edit_box_content_kanban_title.verify_content {
+        text-align: left;
+        margin-left: 20px;
+      }
+      .member_edit_box_content_kanban_subtitle.verify_content {
+        text-align: left;
+        margin-bottom: 12px;
+        margin-left: 20px;
+      }
       .member_edit_box_content_kanban_button {
         margin: 20px auto;
         margin-bottom: 30px;
@@ -152,6 +219,23 @@
         display: block;
         .member_edit_box_content_img_icon {
           position: absolute;
+        }
+      }
+      .member_edit_box_content_kanban_verify {
+        flex-wrap: wrap;
+        .member_edit_box_content_kanban_step {
+          height: 69px;
+          margin: 8px 20px;
+          .member_edit_box_content_kanban_step_icon {
+            height: 48px;
+            img {
+              height: 48px;
+              width: 48px;
+            }
+          }
+        }
+        .member_edit_box_content_kanban_step.active.need_invite_code {
+          height: 96px;
         }
       }
     }

@@ -14,6 +14,8 @@ export class MemberProfileComponent {
   changePasswordModalRef!: BsModalRef;
   forgetPasswordModalRef!: BsModalRef;
   bindLineModalRef!: BsModalRef;
+  verifyUserModalRef!: BsModalRef;
+  salesCodeModalRef!: BsModalRef;
   changePassword = {
     oldPassword: '',
     newPassword: '',
@@ -28,15 +30,43 @@ export class MemberProfileComponent {
   memberModalRef!: BsModalRef;
   identity = 1;
   isMailValidated = false;
+  isStartVerify = false;
+  hasInviteCode = false;
 
-  constructor(private envService: EveService, private modalService: BsModalService,private modalServices: ModalService) {
+  constructor(private envService: EveService, private modalService: BsModalService, private modalServices: ModalService) {
     this.identity = this.envService.getEnv('identity') as number;
     this.isMailValidated = this.envService.getEnv('isMailValidated') as boolean;
+  }
+
+  openVerify(template: TemplateRef<unknown>): void {
+    this.verifyUserModalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false,
+    });
+  }
+  openSalesInviteModal(template: TemplateRef<unknown>): void {
+    this.salesCodeModalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false,
+    });
+  }
+
+  startVerify(status: boolean): void {
+    this.isStartVerify = status;
+  }
+
+  getInviteCode(status: boolean): void {
+    this.hasInviteCode = status;
+    this.isStartVerify = status;
   }
 
   openBindPopup(template: TemplateRef<unknown>): void {
     this.memberModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false,
     });
   }
 

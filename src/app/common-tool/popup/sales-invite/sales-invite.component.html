@@ -1,0 +1,25 @@
+<app-default-modal [modalRef]="modalRef" [title]="'邀請碼'" [subTitle]="'此為業務專屬流程，若您非業務請忽略此步驟'">
+  <div class="register_information">
+    <div class="register_account">
+      <div class="account">邀請碼</div>
+      <input required type="password" class="account_input" placeholder="請輸入設定碼" [(ngModel)]="inviteCode"
+        #code="ngModel" [ngClass]="{ input_error: code.invalid && (code.dirty || code.touched) }" />
+    </div>
+    <div class="verify_text" *ngIf="code.invalid && (code.dirty || code.touched)">
+      <div *ngIf="code.errors?.required">必填欄位</div>
+    </div>
+  </div>
+  <button type="button" class="modal_btn_bignextstep" (click)="submitCodeVerify(remindModal)">確認送出</button>
+  <div class="invite_code cursor_pointer">邀請碼</div>
+</app-default-modal>
+
+<ng-template #remindModal>
+  <app-default-modal [modalRef]="remindModalRef">
+    <div class="remind_body">
+      <img src="../../../../assets/img/check.png" alt="">
+      <div class="remind_title">已提交邀請碼</div>
+      <div class="remind_subtitle">已將您的資訊提交給 Dr.Talk ，驗證成功後將會通知您</div>
+      <button type="button" class="modal_btn_bignextstep remind_btn" (click)="closeRemindModal()">確認</button>
+    </div>
+  </app-default-modal>
+</ng-template>

@@ -34,14 +34,6 @@ export class MemberEditComponent {
     item.active = true;
   }
 
-  openBindPopup(template: TemplateRef<unknown>): void {
-    this.memberModalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal_max_width',
-      ignoreBackdropClick: true,
-      keyboard: false,
-    });
-  }
-
   openModal(id: string): void {
     this.modalServices.open(id);
   }

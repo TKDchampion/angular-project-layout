@@ -1,0 +1,23 @@
+<app-default-modal [modalRef]="modalRef" [title]="'驗證身份'" [subTitle]="'請確認您的聯絡資訊，並填寫設定碼，我們將會請業務與您聯絡'">
+  <div class="modal_body_mailinput">
+    <div class="input_title">電子信箱</div>
+    <input id="mail" name="mail" required type="text" class="mail_input" [(ngModel)]="verifyMail" disabled>
+  </div>
+  <div class="modal_body_mailinput">
+    <div class="input_title">手機</div>
+    <input id="phone" name="phone" required type="text" class="mail_input" [(ngModel)]="verifyPhone" disabled>
+  </div>
+  <button type="button" class="modal_btn_bignextstep" (click)="submitVerify(remindModal)">確認送出</button>
+  <div class="invite_code cursor_pointer" (click)="openInviteCode()">邀請碼</div>
+</app-default-modal>
+
+<ng-template #remindModal>
+  <app-default-modal [modalRef]="remindModalRef">
+    <div class="remind_body">
+      <img src="../../../../assets/img/check.png" alt="">
+      <div class="remind_title">已送出驗證通知</div>
+      <div class="remind_subtitle">我們將會請業務與您聯絡，進行更詳細的身份驗證流程，請稍等5-10個工作天</div>
+      <button type="button" class="modal_btn_bignextstep remind_btn" (click)="closeRemindModal()">確認</button>
+    </div>
+  </app-default-modal>
+</ng-template>
