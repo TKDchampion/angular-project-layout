@@ -24,9 +24,11 @@ export class MemberEditComponent {
     { name: '瀏覽紀錄', active: false },
     { name: '我的收藏', active: false },
   ];
+  activeStatus = '會員資料';
 
   selectMenu(item: MenuInfo): void {
     this.menulist.forEach((i) => (i.active = false));
+    this.activeStatus = item.name;
     item.active = true;
   }
 
