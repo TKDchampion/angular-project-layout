@@ -35,6 +35,7 @@ import { RegisterLineModalComponent } from './popup/register-line-modal/register
 import { RegisterLearnModalComponent } from './popup/register-learn-modal/register-learn-modal.component';
 import { NavBarIcononlyComponent } from './nav-bar-icononly/nav-bar-icononly.component';
 import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.component';
+import { SearchComponent } from './search/search.component';
 import { VerifyUserModalComponent } from './popup/verify-user-modal/verify-user-modal.component';
 import { SalesInviteComponent } from './popup/sales-invite/sales-invite.component';
 
@@ -67,6 +68,7 @@ import { SalesInviteComponent } from './popup/sales-invite/sales-invite.componen
     RegisterLearnModalComponent,
     NavBarIcononlyComponent,
     BindMailModalComponent,
+    SearchComponent,
     VerifyUserModalComponent,
     SalesInviteComponent,
   ],
@@ -102,8 +104,9 @@ import { SalesInviteComponent } from './popup/sales-invite/sales-invite.componen
     RegisterLearnModalComponent,
     NavBarIcononlyComponent,
     BindMailModalComponent,
+    SearchComponent,
     VerifyUserModalComponent,
-    SalesInviteComponent
+    SalesInviteComponent,
   ],
   providers: [ResizeService],
 })

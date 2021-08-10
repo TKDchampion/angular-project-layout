@@ -7,9 +7,10 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CommonToolModule } from 'src/app/common-tool/common-tool.module';
 import { MemberCollectionComponent } from './member-collection/member-collection.component';
 import { MemberProfileComponent } from './member-profile/member-profile.component';
+import { MemberHistoryComponent } from './member-history/member-history.component';
 
 @NgModule({
-  declarations: [MemberEditComponent, MemberCollectionComponent, MemberProfileComponent],
+  declarations: [MemberEditComponent, MemberCollectionComponent, MemberProfileComponent, MemberHistoryComponent],
   imports: [FormsModule, CommonModule, MemberEditRoutingModule, TooltipModule.forRoot(), CommonToolModule],
 })
 export class MemberEditModule {}
