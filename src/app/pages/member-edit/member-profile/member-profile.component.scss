@@ -146,6 +146,11 @@
       .member_edit_box_content_kanban_step_icon {
         margin-left: 16px;
         margin-right: 32px;
+        height: 64px;
+        img {
+          height: 64px;
+          width: 64px;
+        }
       }
       .member_edit_box_content_kanban_step_text {
         text-align: left;
@@ -187,13 +192,43 @@
     }
   }
 }
+.member_edit_box_content_kanban.passVerify {
+  background-size: contain;
+  background-color: $light_light_light_light_light_grey;
+  background-image: url('../../../../assets/img/verify_doctor_3.png');
+}
+
 .member_edit_box_content_kanban.isVerify {
   background-image: unset;
   background: $light_light_light_light_light_grey;
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(xl) {
   .member_edit_box_content_kanban {
+    .member_edit_box_content_kanban_text {
+      .member_edit_box_content_kanban_verify {
+        flex-wrap: wrap;
+        .member_edit_box_content_kanban_step {
+          height: 69px;
+          margin-right: 0px;
+          .member_edit_box_content_kanban_step_icon {
+            height: 48px;
+            img {
+              height: 48px;
+              width: 48px;
+            }
+          }
+        }
+        .member_edit_box_content_kanban_step.active.need_invite_code {
+          height: 96px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .member_edit_box_content_kanban,.member_edit_box_content_kanban.passVerify {
     background: $light_light_light_light_light_grey;
     height: 404px;
     .member_edit_box_content_kanban_text {
@@ -222,20 +257,8 @@
         }
       }
       .member_edit_box_content_kanban_verify {
-        flex-wrap: wrap;
         .member_edit_box_content_kanban_step {
-          height: 69px;
           margin: 8px 20px;
-          .member_edit_box_content_kanban_step_icon {
-            height: 48px;
-            img {
-              height: 48px;
-              width: 48px;
-            }
-          }
-        }
-        .member_edit_box_content_kanban_step.active.need_invite_code {
-          height: 96px;
         }
       }
     }

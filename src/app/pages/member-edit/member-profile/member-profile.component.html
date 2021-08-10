@@ -24,7 +24,7 @@
       </button>
     </div>
   </div>
-  <div class="member_edit_box_content_kanban d-flex" *ngIf="identity !== 3 && !isStartVerify">
+  <div class="member_edit_box_content_kanban d-flex" *ngIf="identity !== 3 && !isStartVerify" [ngClass]="{'passVerify': identity === 4}">
     <div class="member_edit_box_content_kanban_text">
       <div class="member_edit_box_content_kanban_title">{{ identity === 4 ? '已通過身份驗證' : '尚未通過身份驗證' }}</div>
       <div class="member_edit_box_content_kanban_subtitle">
@@ -35,7 +35,7 @@
       <div *ngIf="identity === 4" class="mt-5"></div>
       <div class="member_edit_box_content_kanban_img">
         <img class="member_edit_box_content_img_icon" src="../../../assets/img/verify_icon.png" alt="" />
-        <img src="../../../assets/img/verify_doctor_mobile.png" alt="" />
+        <img [src]="identity === 4 ? '../../../assets/img/verify_doctor_mobile_2.png' : '../../../assets/img/verify_doctor_mobile.png'" alt="" />
       </div>
     </div>
   </div>
@@ -55,19 +55,19 @@
             <div class="text_content">送出驗證通知</div>
           </div>
         </div>
-        <div class="member_edit_box_content_kanban_step d-flex align-items-center active" [ngClass]="{'need_invite_code': !hasInviteCode}">
+        <div class="member_edit_box_content_kanban_step d-flex align-items-center need_invite_code" [ngClass]="{'active': !hasInviteCode}">
           <div class="member_edit_box_content_kanban_step_icon">
-            <img src="../../../../assets/img/verify_step2.png" alt="">
+            <img [src]="!hasInviteCode ? '../../../../assets/img/verify_step2.png': '../../../../assets/img/verify_step2_disable.png'" alt="">
           </div>
           <div class="member_edit_box_content_kanban_step_text">
             <div class="text_title">步驟二</div>
             <div class="text_content">業務拜訪</div>
-            <button class="text_invite" *ngIf="!hasInviteCode">輸入邀請碼</button>
+            <button class="text_invite" *ngIf="!hasInviteCode" (click)="openSalesInviteModal(salesInvite)">輸入邀請碼</button>
           </div>
         </div>
-        <div class="member_edit_box_content_kanban_step d-flex align-items-center">
+        <div class="member_edit_box_content_kanban_step d-flex align-items-center" [ngClass]="{'active': hasInviteCode}">
           <div class="member_edit_box_content_kanban_step_icon">
-            <img src="../../../../assets/img/verify_step3.png" alt="">
+            <img [src]="hasInviteCode ? '../../../../assets/img/verify_step3_active.png': '../../../../assets/img/verify_step3.png'" alt="">
           </div>
           <div class="member_edit_box_content_kanban_step_text">
             <div class="text_title">步驟三</div>
