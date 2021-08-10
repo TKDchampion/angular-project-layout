@@ -71,12 +71,6 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   height: 22px;
 }
 
-.test {
-  background-image: url('../assets/icon/verify_arrow.svg');
-  // width: 22px;
-  height: 104px;
-}
-
 .closeIcon {
   background-image: url('../assets/img/close_circle.png');
   width: 18px;
@@ -207,4 +201,14 @@ body bs-tooltip-container.tooltip.show {
   &:focus {
     background: $deep_blue;
   }
+}
+
+// radio button
+body .form-check-input:checked {
+  background-color: $blue;
+  border-color: $blue;
+}
+
+body .form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgb(59 90 144 / 25%);
 }
