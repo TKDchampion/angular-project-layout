@@ -35,6 +35,7 @@ import { RegisterLineModalComponent } from './popup/register-line-modal/register
 import { RegisterLearnModalComponent } from './popup/register-learn-modal/register-learn-modal.component';
 import { NavBarIcononlyComponent } from './nav-bar-icononly/nav-bar-icononly.component';
 import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.
     RegisterLearnModalComponent,
     NavBarIcononlyComponent,
     BindMailModalComponent,
+    SearchComponent,
   ],
   imports: [
     FormsModule,
@@ -97,7 +99,8 @@ import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.
     RegisterLineModalComponent,
     RegisterLearnModalComponent,
     NavBarIcononlyComponent,
-    BindMailModalComponent
+    BindMailModalComponent,
+    SearchComponent,
   ],
   providers: [ResizeService],
 })

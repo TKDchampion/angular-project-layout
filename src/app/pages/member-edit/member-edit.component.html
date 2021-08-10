@@ -4,9 +4,11 @@
       <p>{{ item.name }}</p>
     </div>
   </div>
-
-  <app-member-profile class="flex-grow-1" *ngIf="activeStatus === '會員資料'"></app-member-profile>
-  <app-member-collection *ngIf="activeStatus === '瀏覽紀錄'"></app-member-collection>
+  <div class="member_edit_box_content flex-grow-1">
+    <app-member-profile *ngIf="activeStatus === '會員資料'"></app-member-profile>
+    <app-member-history *ngIf="activeStatus === '瀏覽紀錄'"></app-member-history>
+    <app-member-collection *ngIf="activeStatus === '我的收藏'"></app-member-collection>
+  </div>
 </div>
 
 <app-toast id="custom-modal-1" title="已成功綁定信箱"></app-toast>
