@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ModalService } from '../../toast/toast.services';
 import { RegisterAccountModal } from '../register-modal/register.modal';
 
 @Component({
@@ -19,12 +20,13 @@ export class BindMailModalComponent implements OnInit {
   @Output() verifiedMail = new EventEmitter<boolean>();
   verifyEmailModalRef!: BsModalRef;
   privacyModalRef!: BsModalRef;
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService,private modalServices: ModalService) { }
 
   ngOnInit(): void {
   }
 
   verifyEmail(template: TemplateRef<any>) {
+    // this.openModal('bind_mail_toast');
     this.verifyEmailModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal-sm verify_email',
       ignoreBackdropClick: true,
@@ -57,5 +59,9 @@ export class BindMailModalComponent implements OnInit {
   registerModal() {
     this.modalRef.hide();
     this.register.emit(true);
+  }
+
+  openModal(id: string): void {
+    this.modalServices.open(id);
   }
 }

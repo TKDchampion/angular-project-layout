@@ -118,7 +118,7 @@
           tooltip="若您的身份為醫生、護士等行業，或就讀醫療相關學系，請選擇「是」，若皆不是請選擇「否」" placement="bottom">
       </div>
       <div class="check_radiobutton d-flex">
-        <div class="radio_panel d-flex">
+        <div class="radio_panel d-flex" [ngClass]="{'checked': registerIdentity === false}">
           <div class="check_panel">
             <input class="form-check-input" [(ngModel)]="registerIdentity" [value]="false" type="radio"
               name="check_doctor" id="radio_no">
@@ -128,7 +128,7 @@
           </div>
           <img src="../../../../assets/img/not_doctor.png" alt="" width="100" height="100">
         </div>
-        <div class="radio_panel d-flex">
+        <div class="radio_panel d-flex" [ngClass]="{'checked': registerIdentity}">
           <div class="check_panel">
             <input class="form-check-input" [(ngModel)]="registerIdentity" [value]="true" type="radio"
               name="check_doctor" id="radio_yes">
