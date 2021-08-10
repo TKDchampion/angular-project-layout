@@ -1,1 +1,67 @@
-<p>member-collection works!</p>
+<div class="member_collection_box">
+  <h1>我的收藏</h1>
+  <app-search placeholder="搜尋我的收藏"></app-search>
+  <div class="member_collection_content">
+    <div class="tab">
+      <div class="tab_item" [ngClass]="{ active: item.active }" *ngFor="let item of tabList" (click)="selectTab(item)">
+        {{ item.name }}
+        <span></span>
+      </div>
+    </div>
+
+    <!-- tab 課程影片 -->
+    <div *ngIf="selectedTab === '課程影片'">
+      <div class="member_collection_listItem d-flex" *ngFor="let item of fakeVideoItemData">
+        <div>
+          <div class="member_collection_listItem_time">{{ item.time }}</div>
+          <img [src]="item.headUrl" alt="" class="member_collection_listItem_img" />
+        </div>
+        <div class="member_collection_listItem_content">
+          <div class="member_collection_listItem_title">{{ item.title }}</div>
+          <div class="member_collection_listItem_subtitle">
+            {{ item.text }}
+          </div>
+          <div class="member_collection_listItem_author">
+            <div class="d-flex">
+              <div class="member_collection_listItem_author_icon">
+                <img class="headshot_sm" [src]="item.headShotUrl" alt="" />
+              </div>
+              <div class="member_collection_listItem_author_name">
+                <div>{{ item.people }}<span>•</span></div>
+                <div>{{ item.read }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="closeIcon"></div>
+      </div>
+    </div>
+
+    <!-- tab 專題文章 -->
+    <div *ngIf="selectedTab === '專題文章'">
+      <div class="member_collection_listItem d-flex" *ngFor="let item of fakeArticleItemData">
+        <div>
+          <img [src]="item.headUrl" alt="" class="member_collection_listItem_img" />
+        </div>
+        <div class="member_collection_listItem_content">
+          <div class="member_collection_listItem_title">{{ item.title }}</div>
+          <div class="member_collection_listItem_subtitle">
+            {{ item.text }}
+          </div>
+          <div class="member_collection_listItem_author">
+            <div class="d-flex">
+              <div class="member_collection_listItem_author_icon">
+                <img class="headshot_sm" [src]="item.headShotUrl" alt="" />
+              </div>
+              <div class="member_collection_listItem_author_name">
+                <div>{{ item.people }}<span>•</span></div>
+                <div>{{ item.read }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="closeIcon"></div>
+      </div>
+    </div>
+  </div>
+</div>

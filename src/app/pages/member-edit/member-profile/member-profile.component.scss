@@ -1,21 +1,6 @@
 @import '../../../../styles/bootstrap.scss';
 @import '../../../../styles/variables.scss';
 
-.member_edit_box_content {
-  margin: auto;
-  max-width: 970px;
-}
-@include media-breakpoint-down(xxl) {
-  .member_edit_box_content {
-    margin: auto 32px;
-  }
-}
-@include media-breakpoint-down(sm) {
-  .member_edit_box_content {
-    margin: auto 20px;
-  }
-}
-
 .member_edit_box_content_header_bind {
   line-height: 40px;
   width: 179px;

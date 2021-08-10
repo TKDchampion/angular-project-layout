@@ -1,0 +1,5 @@
+<div class="member_collection_searchBox">
+  <svg class="searchContentIcon"></svg>
+  <div class="closeIcon" *ngIf="inputValue" (click)="close()"></div>
+  <input class="member_collection_search" type="text" [placeholder]="placeholder" [(ngModel)]="inputValue" />
+</div>

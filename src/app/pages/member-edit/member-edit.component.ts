@@ -15,18 +15,18 @@ export class MemberEditComponent {
   memberModalRef!: BsModalRef;
   identity = 1;
   isMailValidated = false;
+  menulist: MenuInfo[] = [
+    { name: '會員資料', active: false },
+    { name: '瀏覽紀錄', active: false },
+    { name: '我的收藏', active: true },
+  ];
+  activeStatus: string | undefined;
 
   constructor(private envService: EveService, private modalService: BsModalService, private modalServices: ModalService) {
     this.identity = this.envService.getEnv('identity') as number;
     this.isMailValidated = this.envService.getEnv('isMailValidated') as boolean;
+    this.activeStatus = this.menulist.find((i) => i.active === true)?.name;
   }
-
-  menulist: MenuInfo[] = [
-    { name: '會員資料', active: true },
-    { name: '瀏覽紀錄', active: false },
-    { name: '我的收藏', active: false },
-  ];
-  activeStatus = '會員資料';
 
   selectMenu(item: MenuInfo): void {
     this.menulist.forEach((i) => (i.active = false));
