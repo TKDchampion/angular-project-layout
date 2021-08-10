@@ -88,15 +88,15 @@ export class MemberProfileComponent {
     this.forgetPasswordModalRef.content.modalRef = this.forgetPasswordModalRef;
   }
 
-  bindLine(template: TemplateRef<unknown>) {
+  bindLine(template: TemplateRef<unknown>): void {
     this.bindLineModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
-    })
+      keyboard: false,
+    });
   }
 
-  confirmChange() {
+  confirmChange(): void {
     this.changePasswordModalRef.hide();
   }
 
@@ -104,11 +104,11 @@ export class MemberProfileComponent {
     this.verifyEmailStatus = $event;
   }
 
-  backStep() {
+  backStep(): void {
     this.memberModalRef.hide();
   }
 
-  registerMail() {
+  registerMail(): void {
     this.memberModalRef.hide();
     this.modalServices.open('custom-modal-1');
   }
