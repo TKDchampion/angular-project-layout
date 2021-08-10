@@ -20,7 +20,7 @@ export class MemberHistoryComponent {
       obj[item.date] = 1;
       return obj;
     }, {});
-    const grouplist = Object.keys(result); // ["1", "2", "3", "a", "b"]
+    const grouplist = Object.keys(result);
     this.historyList = grouplist.map((item) => ({
       group: item,
       videoItem: array.filter((data) => data.date === item),
