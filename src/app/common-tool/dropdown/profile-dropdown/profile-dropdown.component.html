@@ -11,7 +11,7 @@
       routerLink="/pages/member-edit">瀏覽會員資料</button></li>
   <li *ngIf="identity === 2" class="divider dropdown-divider"></li>
   <li *ngIf="identity === 2" class="text-center profile_viewverify">
-    <button type="button" class="btn btn_verify" (click)="openVerifyModal()">驗證身份</button>
+    <button type="button" class="btn btn_verify" (click)="openVerify(verifyUser)">驗證身份</button>
   </li>
   <li class="divider dropdown-divider mb-0"></li>
   <li class="profile_record">
@@ -48,3 +48,12 @@
     </a>
   </li>
 </ul>
+
+<ng-template #verifyUser>
+  <app-verify-user-modal [modalRef]="verifyUserModalRef"
+    (getInvite)="openSalesInviteModal(salesInvite)"></app-verify-user-modal>
+</ng-template>
+
+<ng-template #salesInvite>
+  <app-sales-invite [modalRef]="salesCodeModalRef"></app-sales-invite>
+</ng-template>

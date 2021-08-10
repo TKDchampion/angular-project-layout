@@ -6,6 +6,15 @@
     </div>
     <div class="verify_kanban_title">探索更多專業內容</div>
     <div class="verify_kanban_subtitle">通過身份驗證，即可瀏覽更多專業的醫學教育內容！</div>
-    <div class="verify_kanban_button"><button type="button" class="btn btn_verify">立即驗證</button></div>
+    <div class="verify_kanban_button"><button type="button" class="btn btn_verify" (click)="openVerify(verifyUser)">立即驗證</button></div>
   </div>
 </div>
+
+<ng-template #verifyUser>
+  <app-verify-user-modal [modalRef]="verifyUserModalRef"
+    (getInvite)="openSalesInviteModal(salesInvite)"></app-verify-user-modal>
+</ng-template>
+
+<ng-template #salesInvite>
+  <app-sales-invite [modalRef]="salesCodeModalRef"></app-sales-invite>
+</ng-template>

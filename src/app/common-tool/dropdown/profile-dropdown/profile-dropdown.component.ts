@@ -1,5 +1,4 @@
-import { VerifyUserModalComponent } from './../../popup/verify-user-modal/verify-user-modal.component';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -10,17 +9,25 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class ProfileDropdownComponent implements OnInit {
   @Input() identity!: any;
   modalRef!: BsModalRef;
+  verifyUserModalRef!: BsModalRef;
+  salesCodeModalRef!: BsModalRef;
   constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
   }
 
-  openVerifyModal(): void {
-    this.modalRef = this.modalService.show(VerifyUserModalComponent, {
+  openVerify(template: TemplateRef<unknown>): void {
+    this.verifyUserModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
       keyboard: false,
     });
-    this.modalRef.content.modalRef = this.modalRef;
+  }
+  openSalesInviteModal(template: TemplateRef<unknown>): void {
+    this.salesCodeModalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false,
+    });
   }
 }
