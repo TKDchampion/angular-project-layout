@@ -8,9 +8,18 @@ import { CommonToolModule } from 'src/app/common-tool/common-tool.module';
 import { MemberCollectionComponent } from './member-collection/member-collection.component';
 import { MemberProfileComponent } from './member-profile/member-profile.component';
 import { MemberHistoryComponent } from './member-history/member-history.component';
+import { StoreModule } from '@ngrx/store';
+import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.reducer';
 
 @NgModule({
   declarations: [MemberEditComponent, MemberCollectionComponent, MemberProfileComponent, MemberHistoryComponent],
-  imports: [FormsModule, CommonModule, MemberEditRoutingModule, TooltipModule.forRoot(), CommonToolModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    MemberEditRoutingModule,
+    TooltipModule.forRoot(),
+    CommonToolModule,
+    StoreModule.forFeature(profileDropReducer.clickValueKey, profileDropReducer.profileDropReducer),
+  ],
 })
 export class MemberEditModule {}
