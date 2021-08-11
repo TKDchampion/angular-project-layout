@@ -12,7 +12,6 @@ export class MemberHistoryComponent {
 
   constructor() {
     this.organisation(this.fakeVideoItemData);
-    console.log('this.historyList :>> ', this.historyList);
   }
 
   organisation(array: VideoModel[]): void {

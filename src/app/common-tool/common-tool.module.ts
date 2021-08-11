@@ -38,6 +38,8 @@ import { BindMailModalComponent } from './popup/bind-mail-modal/bind-mail-modal.
 import { SearchComponent } from './search/search.component';
 import { VerifyUserModalComponent } from './popup/verify-user-modal/verify-user-modal.component';
 import { SalesInviteComponent } from './popup/sales-invite/sales-invite.component';
+import { StoreModule } from '@ngrx/store';
+import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.reducer';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,7 @@ import { SalesInviteComponent } from './popup/sales-invite/sales-invite.componen
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
+    StoreModule.forFeature(profileDropReducer.clickValueKey, profileDropReducer.profileDropReducer),
   ],
   exports: [
     NewArticleComponent,
