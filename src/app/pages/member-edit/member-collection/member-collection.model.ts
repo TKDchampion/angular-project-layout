@@ -99,7 +99,7 @@ export const NewArticle: ArticleModel[] = [
   },
   {
     headUrl: '../../../assets/img/fakeImge/new_article_2.png',
-    title: '甲狀腺癌術後病人採低碘飲食持續時間對尿碘濃度之影響',
+    title: '甲狀腺癌術後放射碘清除治療及全身掃描',
     text: '本研究目的為探討甲狀腺癌術後病人採低碘飲食的持續時間對尿碘濃度之影響。',
     people: '黃織芬 教授',
     headShotUrl: '../../../assets/img/fakeImge/header_fake_headshot.png',
