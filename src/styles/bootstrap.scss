@@ -31,18 +31,9 @@ $grid-breakpoints: (
   border-color: $dark_green;
   border-radius: 6px;
   top: 83px;
-  left: 50%;
+  left: calc(50% - 150px);
   color: $black;
   font-size: $font-size-14;
   line-height: 8px;
-}
-@include media-breakpoint-down(lg) {
-  .alert {
-    left: 30%;
-  }
-}
-@include media-breakpoint-down(sm) {
-  .alert {
-    left: 55px;
-  }
+  z-index: 9999;
 }

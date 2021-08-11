@@ -26,7 +26,7 @@ export class BindMailModalComponent implements OnInit {
   }
 
   verifyEmail(template: TemplateRef<any>) {
-    // this.openModal('bind_mail_toast');
+    this.openModal('bind_mail_toast');
     this.verifyEmailModalRef = this.modalService.show(template, {
       class: 'modal-dialog-centered modal-sm verify_email',
       ignoreBackdropClick: true,
