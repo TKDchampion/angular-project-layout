@@ -1,1 +1,33 @@
-<p>member-history works!</p>
+<div class="member_history_box">
+  <h1>瀏覽紀錄</h1>
+  <div class="member_history_search">
+    <app-search placeholder="搜尋瀏覽紀錄"></app-search>
+  </div>
+  <div *ngFor="let groupItem of historyList">
+    <div class="member_history_date">{{ groupItem.group }}</div>
+    <div class="member_history_listItem d-flex" *ngFor="let item of groupItem.videoItem">
+      <div>
+        <div class="member_history_listItem_time">{{ item.time }}</div>
+        <img [src]="item.headUrl" alt="" class="member_history_listItem_img" />
+      </div>
+      <div class="member_history_listItem_content">
+        <div class="member_history_listItem_title">{{ item.title }}</div>
+        <div class="member_history_listItem_subtitle">
+          {{ item.text }}
+        </div>
+        <div class="member_history_listItem_author">
+          <div class="d-flex">
+            <div class="member_history_listItem_author_icon">
+              <img class="headshot_sm" [src]="item.headShotUrl" alt="" />
+            </div>
+            <div class="member_history_listItem_author_name">
+              <div>{{ item.people }}<span>•</span></div>
+              <div>{{ item.read }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="closeIcon"></div>
+    </div>
+  </div>
+</div>

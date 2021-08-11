@@ -1,0 +1,105 @@
+@import '../../../../styles/bootstrap.scss';
+@import '../../../../styles/variables.scss';
+
+.member_history_box {
+  h1 {
+    margin-bottom: 20px;
+  }
+  .member_history_search {
+    margin-bottom: 50px;
+  }
+}
+
+.member_history_listItem {
+  position: relative;
+  .member_history_listItem_img {
+    width: 306px;
+    height: 210px;
+    border-radius: 14px;
+    margin: 24px 10px 0px 0px;
+    @include media-breakpoint-down(md) {
+      width: 140px;
+      height: 95px;
+      margin: 16px 10px 0px 0px;
+    }
+  }
+
+  .member_history_listItem_content {
+    margin: 20px;
+    @include media-breakpoint-down(md) {
+      margin-left: 5px;
+    }
+  }
+}
+
+.member_history_listItem_time {
+  background-color: $black;
+  width: 55px;
+  height: 24px;
+  opacity: 0.8;
+  border-radius: 100px;
+  color: $white;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+  position: absolute;
+  margin-top: 195px;
+  margin-left: 235px;
+  @include media-breakpoint-down(md) {
+    width: 52px;
+    height: 22px;
+    margin-top: 87px;
+    margin-left: 90px;
+    transform: scale(0.6);
+  }
+}
+
+.member_history_listItem_title {
+  font-size: $font-size-24;
+  font-weight: 500;
+  margin-bottom: 8px;
+  @include media-breakpoint-down(md) {
+    font-size: $font-size-14;
+  }
+}
+
+.member_history_listItem_subtitle {
+  color: $grey;
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.member_history_listItem_author {
+  margin-top: 21px;
+  @include media-breakpoint-down(md) {
+    margin-top: 14px;
+  }
+  .member_history_listItem_author_icon {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  .member_history_listItem_author_name {
+    color: $grey;
+    font-size: $font-size-14;
+    display: flex;
+    @include media-breakpoint-down(md) {
+      font-size: $font-size-12;
+      display: block;
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.member_history_date {
+  margin-top: 24px;
+}
+
+.closeIcon {
+  margin-top: 24px;
+  position: absolute;
+  right: 0px;
+}
