@@ -39,6 +39,9 @@ export class RegisterModalComponent {
   };
   verifyEmailStatus!: boolean;
   demoLearnType = DemoLearnType;
+  isJobEmpty = false;
+  isJobCityEmpty = false;
+  isJobTypeEmpty = false;
 
   constructor(private modalService: BsModalService) {}
 
@@ -121,5 +124,15 @@ export class RegisterModalComponent {
 
   setVerifiedMail($event: boolean): void {
     this.verifyEmailStatus = $event;
+  }
+
+  validateJobDropdown() {
+    this.isJobEmpty = !this.registerJob.job;
+  }
+  validateJobCityDropdown() {
+    this.isJobCityEmpty = !this.registerJob.jobCity;
+  }
+  validateJobTypeDropdown() {
+    this.isJobTypeEmpty = !this.registerJob.jobType;
   }
 }

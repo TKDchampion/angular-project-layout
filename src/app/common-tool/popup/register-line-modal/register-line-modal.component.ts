@@ -28,6 +28,9 @@ export class RegisterLineModalComponent implements OnInit {
     jobCity: '',
     jobType: ''
   };
+  isJobEmpty = false;
+  isJobCityEmpty = false;
+  isJobTypeEmpty = false;
   constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
@@ -73,5 +76,15 @@ export class RegisterLineModalComponent implements OnInit {
       ignoreBackdropClick: true,
       keyboard: false
     });
+  }
+
+  validateJobDropdown() {
+    this.isJobEmpty = !this.registerJob.job;
+  }
+  validateJobCityDropdown() {
+    this.isJobCityEmpty = !this.registerJob.jobCity;
+  }
+  validateJobTypeDropdown() {
+    this.isJobTypeEmpty = !this.registerJob.jobType;
   }
 }
