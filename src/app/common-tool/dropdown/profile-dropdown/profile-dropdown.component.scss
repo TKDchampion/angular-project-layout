@@ -24,14 +24,14 @@
   .btn_profile {
     width: 112px;
     height: 38px;
-    background: #FFFFFF;
-    border: 1px solid #9DACC7;
+    background: #ffffff;
+    border: 1px solid #9dacc7;
     box-sizing: border-box;
     border-radius: 100px;
     font-weight: 500;
     font-size: 14px;
     line-height: 14px;
-    color: #3B5A90;
+    color: #3b5a90;
   }
   .profile_viewbtn {
     margin-top: 10px;
@@ -40,30 +40,16 @@
   .btn_verify {
     width: 256px;
     height: 40px;
-    background: #3B5A90;
+    background: #3b5a90;
     border-radius: 100px;
     font-weight: 500;
     font-size: 16px;
     line-height: 16px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
   .profile_viewverify {
     margin-top: 24px;
     margin-bottom: 24px;
-  }
-  .profile_record {
-    // margin-top: 24px;
-  }
-  .profile_favorite {
-    // margin-top: 24px;
-  }
-  .profile_learn {
-    // margin-top: 24px;
-    // margin-bottom: 24px;
-  }
-  .profile_logout {
-    // margin-top: 24px;
-    // margin-bottom: 16px;
   }
   .profile_item {
     display: flex;
@@ -74,11 +60,14 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 16px;
-    color: #15191C;
+    color: #15191c;
     .profile_a_img {
       height: 20px;
       margin-left: 32px;
       margin-right: 16px;
+    }
+    &:focus {
+      background: #e8e8e8;
     }
   }
 }

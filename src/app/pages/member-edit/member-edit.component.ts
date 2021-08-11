@@ -15,9 +15,9 @@ export class MemberEditComponent {
   identity = 1;
   isMailValidated = false;
   menulist: MenuInfo[] = [
-    { name: '會員資料', key: 'member-profile', active: false },
-    { name: '瀏覽紀錄', key: 'member-history', active: false },
-    { name: '我的收藏', key: 'member-collection', active: false },
+    { name: '會員資料', key: 'member-profile', active: false, icon: 'profileIcon' },
+    { name: '瀏覽紀錄', key: 'member-history', active: false, icon: 'timeCircleIcon' },
+    { name: '我的收藏', key: 'member-collection', active: false, icon: 'bookmarkIcon' },
   ];
 
   constructor(private envService: EveService, private modalServices: ModalService, private router: Router) {

@@ -65,6 +65,39 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
 }
 
 // icon
+.profileIcon {
+  -webkit-mask: url('../assets/icon/profile.svg') no-repeat 50% 50%;
+  mask: url('../assets/icon/profile.svg') no-repeat 50% 50%;
+  background-color: $light_black;
+  width: 20px;
+  height: 20px;
+  &.active {
+    background-color: $red;
+  }
+}
+
+.timeCircleIcon {
+  -webkit-mask: url('../assets/icon/time_circle.svg') no-repeat 50% 50%;
+  mask: url('../assets/icon/time_circle.svg') no-repeat 50% 50%;
+  background-color: $light_black;
+  width: 20px;
+  height: 20px;
+  &.active {
+    background-color: $red;
+  }
+}
+
+.bookmarkIcon {
+  -webkit-mask: url('../assets/icon/bookmark.svg') no-repeat 50% 50%;
+  mask: url('../assets/icon/bookmark.svg') no-repeat 50% 50%;
+  background-color: $light_black;
+  width: 20px;
+  height: 20px;
+  &.active {
+    background-color: $red;
+  }
+}
+
 .searchContentIcon {
   background-image: url('../assets/icon/search_content.svg');
   width: 15px;
