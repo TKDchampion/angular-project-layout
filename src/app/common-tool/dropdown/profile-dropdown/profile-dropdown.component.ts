@@ -1,20 +1,17 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-profile-dropdown',
   templateUrl: './profile-dropdown.component.html',
-  styleUrls: ['./profile-dropdown.component.scss']
+  styleUrls: ['./profile-dropdown.component.scss'],
 })
-export class ProfileDropdownComponent implements OnInit {
-  @Input() identity!: any;
+export class ProfileDropdownComponent {
+  @Input() identity!: unknown;
   modalRef!: BsModalRef;
   verifyUserModalRef!: BsModalRef;
   salesCodeModalRef!: BsModalRef;
-  constructor(private modalService: BsModalService) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private modalService: BsModalService) {}
 
   openVerify(template: TemplateRef<unknown>): void {
     this.verifyUserModalRef = this.modalService.show(template, {

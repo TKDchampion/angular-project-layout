@@ -20,11 +20,15 @@
   p {
     line-height: 48px;
   }
+  svg {
+    margin-top: -3px;
+  }
   &.active {
     background-color: $light_light_light_light_grey;
     p {
       position: relative;
       top: -54px;
+      color: $red;
     }
   }
   &.active::before {
