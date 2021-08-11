@@ -63,6 +63,9 @@
     height: 2px;
     background-color: $light_light_light_light_light_light_grey;
   }
+  .line.active {
+    background-color: $blue;
+  }
   .line.line_register {
     width: 208px;
   }

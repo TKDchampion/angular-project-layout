@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
   identity = this.envService.getEnv('identity');
   modalRef!: BsModalRef;
   registerModalRef!: BsModalRef;
+  startScroll = false;
   constructor(private envService: EveService, private modalService: BsModalService) { }
 
   ngOnInit(): void {
@@ -26,6 +27,11 @@ export class NavBarComponent implements OnInit {
   onResize(_: any) {
     this.isCollapsed = true;
     this.showSearchInputMobile = false;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.startScroll = window.scrollY > 0;
   }
 
   collapsedStatus() {
