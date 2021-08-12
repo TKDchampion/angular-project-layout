@@ -40,6 +40,7 @@ import { VerifyUserModalComponent } from './popup/verify-user-modal/verify-user-
 import { SalesInviteComponent } from './popup/sales-invite/sales-invite.component';
 import { StoreModule } from '@ngrx/store';
 import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.reducer';
+import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisiter-job-modal.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.
     SearchComponent,
     VerifyUserModalComponent,
     SalesInviteComponent,
+    RegisiterJobModalComponent,
   ],
   imports: [
     FormsModule,

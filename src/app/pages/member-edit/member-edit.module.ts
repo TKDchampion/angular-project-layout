@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MemberEditComponent } from './member-edit.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CommonToolModule } from 'src/app/common-tool/common-tool.module';
 import { MemberCollectionComponent } from './member-collection/member-collection.component';
 import { MemberProfileComponent } from './member-profile/member-profile.component';
@@ -20,6 +21,7 @@ import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.
     TooltipModule.forRoot(),
     CommonToolModule,
     StoreModule.forFeature(profileDropReducer.clickValueKey, profileDropReducer.profileDropReducer),
+    BsDropdownModule.forRoot(),
   ],
 })
 export class MemberEditModule {}
