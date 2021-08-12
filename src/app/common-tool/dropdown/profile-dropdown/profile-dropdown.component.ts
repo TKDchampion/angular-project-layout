@@ -1,5 +1,7 @@
 import { Component, Input, TemplateRef } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { clickValue } from 'src/app/core/store/profileDrap/profileDrop.actions';
 
 @Component({
   selector: 'app-profile-dropdown',
@@ -11,7 +13,7 @@ export class ProfileDropdownComponent {
   modalRef!: BsModalRef;
   verifyUserModalRef!: BsModalRef;
   salesCodeModalRef!: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+  constructor(private modalService: BsModalService, private storeValue: Store<{ clickValue: { value: string } }>) {}
 
   openVerify(template: TemplateRef<unknown>): void {
     this.verifyUserModalRef = this.modalService.show(template, {
@@ -26,5 +28,9 @@ export class ProfileDropdownComponent {
       ignoreBackdropClick: true,
       keyboard: false,
     });
+  }
+
+  set(item: string): void {
+    this.storeValue.dispatch(clickValue({ value: item }));
   }
 }
