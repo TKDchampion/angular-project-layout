@@ -33,7 +33,7 @@
     <!-- login error content 暫時隱藏 -->
     <div *ngIf="loginError" class="modal_body_loginerror">
       <img src="../../../../assets/icon/warning.png" alt="">
-      <div class="login_error_text">電子郵件或密碼輸入錯誤，請再嘗試一次</div>
+      <div class="login_error_text">帳號或密碼輸入錯誤，請再嘗試一次</div>
     </div>
     <!-- login error content end -->
     <div class="modal_body_mailinput" [ngClass]="{'input_error': mail.invalid && (mail.dirty || mail.touched)}">

@@ -22,7 +22,7 @@ export class MemberProfileComponent {
     confirmPassword: '',
   };
   registerAccount: RegisterAccountModal = {
-    account: '',
+    account: 'test@gmail.com',
     password: '',
     confirmPassword: '',
   };
@@ -97,6 +97,7 @@ export class MemberProfileComponent {
   }
 
   confirmChange(): void {
+    // TODO 導至登出
     this.changePasswordModalRef.hide();
   }
 
