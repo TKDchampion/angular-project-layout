@@ -3,15 +3,9 @@
 
 .member_edit_box_content_header_bind {
   line-height: 40px;
-  width: 179px;
+  width: 180px;
   height: 40px;
-  border: 1px solid;
-  border-color: $light_blue;
-  color: $blue;
-  box-sizing: border-box;
-  border-radius: 100px;
-  font-weight: 500;
-  cursor: pointer;
+  padding-right: 5px;
   svg {
     margin-left: 8px;
     margin-top: -4px;
@@ -58,13 +52,13 @@
   .member_edit_box_content_scope_item_title {
     font-size: 24px;
     font-weight: 500;
-    margin: 38px 32px;
+    margin: auto 32px;
   }
   .member_edit_box_content_scope_item_edit {
     width: 82px;
     height: 40px;
     line-height: 40px;
-    margin: auto 32px;
+    margin: 32px;
     svg {
       margin-top: -4px;
     }
@@ -213,7 +207,8 @@
 }
 
 @include media-breakpoint-down(sm) {
-  .member_edit_box_content_kanban,.member_edit_box_content_kanban.passVerify {
+  .member_edit_box_content_kanban,
+  .member_edit_box_content_kanban.passVerify {
     background: $light_light_light_light_light_grey;
     height: 404px;
     .member_edit_box_content_kanban_text {

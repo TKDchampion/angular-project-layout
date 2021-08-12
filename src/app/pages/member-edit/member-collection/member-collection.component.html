@@ -27,7 +27,7 @@
                 <img class="headshot_sm" [src]="item.headShotUrl" alt="" />
               </div>
               <div class="member_collection_listItem_author_name">
-                <div>{{ item.people }}<span>•</span></div>
+                <div class="me-3">{{ item.people }}</div>
                 <div>{{ item.read }}</div>
               </div>
             </div>
@@ -56,7 +56,8 @@
               <div class="member_collection_listItem_author_name">{{ item.people }}</div>
             </div>
             <div class="member_collection_listItem_author_name">
-              <span>{{ item.date }}•</span>{{ item.read }}
+              <span class="me-3">{{ item.date }}</span
+              >{{ item.read }}
             </div>
           </div>
         </div>
