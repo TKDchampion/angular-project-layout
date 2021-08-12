@@ -77,21 +77,6 @@ export class RegisterLineModalComponent implements OnInit, AfterContentInit {
     this.modalRef.content.registerIdentity = this.registerIdentity;
   }
 
-  // backLineFirstStep($event: any) {
-  //   this.registerLineSecondStepModalRef.hide();
-  //   this.modalRef = this.modalService.show(RegisterLineModalComponent, {
-  //     class: 'modal-dialog-centered modal_max_width',
-  //     ignoreBackdropClick: true,
-  //     keyboard: false
-  //   });
-  //   this.modalRef.content.modalRef = this.modalRef;
-  //   this.modalRef.content.title = this.title;
-  //   this.modalRef.content.isEdit = this.isEdit;
-  //   this.modalRef.content.registerUserInfo = this.registerUserInfo;
-  //   this.modalRef.content.registerJob = $event.job;
-  //   this.modalRef.content.registerIdentity = $event.registerIdentity;
-  // }
-
   registerLearnCheck(template: TemplateRef<any>) {
     this.registerLineSecondStepModalRef.hide();
     this.registerLearnCheckModalRef = this.modalService.show(template, {
