@@ -3,8 +3,8 @@
 
 .banner {
   background: $light_light_light_light_light_grey;
-  background-image: linear-gradient(90deg, $light_light_light_light_light_grey 40%, rgba(250, 249, 249, 0) 100%),
-    url('../../../assets/img/banner_1.png');
+  background-image: url('../../../assets/img/stranger_banner_1366.png');
+  background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
   height: 600px;
@@ -78,10 +78,8 @@
     display: none;
   }
 }
-
 .login_banner {
-  background-image: linear-gradient(90deg, $light_light_light_light_light_grey 40%, rgba(250, 249, 249, 0) 100%),
-    url('../../../assets/img/banner_2.png');
+  background-image: url('../../../assets/img/logined_banner_1366.png');
 }
 
 @include media-breakpoint-up(xl) {
@@ -93,14 +91,29 @@
   }
 }
 
+@include media-breakpoint-between(sm, xl) {
+  .banner-outside {
+    .banner {
+      background-image: url('../../../assets/img/stranger_banner_1024.png');
+    }
+    .login_banner {
+      background-image: url('../../../assets/img/logined_banner_1024.png');
+    }
+  }
+}
+
 @include media-breakpoint-up(xxl) {
   .banner-outside {
     padding: unset;
     .banner {
       border-radius: unset;
+      background-image: url('../../../assets/img/stranger_banner_1920.png');
       .banner_content {
         left: calc((100% - 1366px) / 2 + 60px);
       }
+    }
+    .login_banner {
+      background-image: url('../../../assets/img/logined_banner_1920.png');
     }
   }
 }
@@ -109,11 +122,9 @@
   .banner {
     display: flex;
     flex-wrap: wrap;
-    background-image: linear-gradient(180deg, $light_light_light_light_light_grey 20%, rgba(250, 249, 249, 0) 100%),
-      url('../../../assets/img/banner_1.png');
+    background-image: url('../../../assets/img/stranger_banner_mobile.png');
     background-color: $light_light_light_light_light_grey;
     background-position: bottom;
-    background-size: 100% 311px;
     height: 500px;
     overflow: hidden;
     .banner_content {
@@ -158,7 +169,6 @@
     }
   }
   .login_banner {
-    background-image: linear-gradient(180deg, $light_light_light_light_light_grey 20%, rgba(250, 249, 249, 0) 100%),
-      url('../../../assets/img/banner_2.png');
+    background-image: url('../../../assets/img/logined_banner_mobile.png');
   }
 }

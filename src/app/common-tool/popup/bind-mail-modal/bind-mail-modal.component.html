@@ -27,7 +27,7 @@
           <img src="../../../../assets/icon/shield_done.png" alt="" width="14" height="14">已驗證
         </div>
       </div>
-      <input required type="text" class="account_input" placeholder="請輸入帳號" [(ngModel)]="registerAccount.account"
+      <input required type="text" class="account_input" placeholder="請輸入電子信箱" [(ngModel)]="registerAccount.account"
         #account="ngModel" [ngClass]="{'input_error': account.invalid && (account.dirty || account.touched)}">
       <ng-template #accountTips>
         <div class="nickname_tips">此電子信箱將是您未來登入的帳號</div>
