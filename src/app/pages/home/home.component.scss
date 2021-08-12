@@ -45,3 +45,13 @@
     padding-right: 0px;
   }
 }
+::ng-deep app-home app-new-article {
+  @include media-breakpoint-down(sm) {
+    .article-context-title {
+      margin-top: 8px;
+    }
+    .new-article {
+      padding-right: 20px;
+    }
+  }
+}

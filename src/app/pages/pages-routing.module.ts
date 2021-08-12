@@ -21,6 +21,10 @@ const routes: Routes = [
         path: 'member-edit',
         loadChildren: () => import('./member-edit/member-edit.module').then((m) => m.MemberEditModule),
       },
+      {
+        path: 'feature-article',
+        loadChildren: () => import('./feature-article/feature-article.module').then((m) => m.FeatureArticleModule),
+      },
     ],
   },
 ];
