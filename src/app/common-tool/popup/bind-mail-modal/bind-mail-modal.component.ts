@@ -20,7 +20,7 @@ export class BindMailModalComponent implements OnInit {
   @Output() verifiedMail = new EventEmitter<boolean>();
   verifyEmailModalRef!: BsModalRef;
   privacyModalRef!: BsModalRef;
-  constructor(private modalService: BsModalService,private modalServices: ModalService) { }
+  constructor(private modalService: BsModalService, private modalServices: ModalService) { }
 
   ngOnInit(): void {
   }
