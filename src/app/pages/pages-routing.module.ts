@@ -21,6 +21,10 @@ const routes: Routes = [
         path: 'member-edit',
         loadChildren: () => import('./member-edit/member-edit.module').then((m) => m.MemberEditModule),
       },
+      {
+        path: 'willingness-learn',
+        loadChildren: () => import('./willingness-learn/willingness-learn.module').then((m) => m.WillingnessLearnModule)
+      }
     ],
   },
 ];
@@ -29,4 +33,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PagesRoutingModule {}
+export class PagesRoutingModule { }

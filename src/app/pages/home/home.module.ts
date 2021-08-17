@@ -11,10 +11,12 @@ import * as setValueReducer from 'src/app/core/store/setValue/set-value.reducer'
 import { CommonToolModule } from 'src/app/common-tool/common-tool.module';
 import { SwiperModule } from 'swiper/angular';
 import { ResizeService } from 'src/app/services/resize.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HomeComponent, HomeItemComponent],
   imports: [
+    RouterModule,
     CommonModule,
     CommonToolModule,
     HomeRoutingModule,
