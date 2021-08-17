@@ -21,6 +21,10 @@ const routes: Routes = [
         path: 'member-edit',
         loadChildren: () => import('./member-edit/member-edit.module').then((m) => m.MemberEditModule),
       },
+      {
+        path: 'subject',
+        loadChildren: () => import('./subjects/subjects.module').then((m) => m.SubjectsModule)
+      }
     ],
   },
 ];
@@ -29,4 +33,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PagesRoutingModule {}
+export class PagesRoutingModule { }
