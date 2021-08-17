@@ -40,6 +40,7 @@ import { VerifyUserModalComponent } from './popup/verify-user-modal/verify-user-
 import { SalesInviteComponent } from './popup/sales-invite/sales-invite.component';
 import { StoreModule } from '@ngrx/store';
 import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.reducer';
+import { SortDropdownComponent } from './sort-dropdown/sort-dropdown.component';
 import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisiter-job-modal.component';
 
 @NgModule({
@@ -74,6 +75,7 @@ import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisite
     SearchComponent,
     VerifyUserModalComponent,
     SalesInviteComponent,
+    SortDropdownComponent,
     RegisiterJobModalComponent,
   ],
   imports: [
@@ -112,6 +114,7 @@ import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisite
     SearchComponent,
     VerifyUserModalComponent,
     SalesInviteComponent,
+    SortDropdownComponent,
   ],
   providers: [ResizeService],
 })

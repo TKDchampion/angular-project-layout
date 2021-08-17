@@ -24,7 +24,15 @@ const routes: Routes = [
       {
         path: 'subject',
         loadChildren: () => import('./subjects/subjects.module').then((m) => m.SubjectsModule)
-      }
+      },
+      {
+        path: 'feature-article',
+        loadChildren: () => import('./feature-article/feature-article.module').then((m) => m.FeatureArticleModule),
+      },
+      {
+        path: 'willingness-learn',
+        loadChildren: () => import('./willingness-learn/willingness-learn.module').then((m) => m.WillingnessLearnModule),
+      },
     ],
   },
 ];

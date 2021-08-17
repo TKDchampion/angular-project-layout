@@ -4,7 +4,7 @@
 .new-article {
   min-width: 335px;
   min-height: 210px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   .article-context-viewer,
   .article-context-author-name,
   .article-context-subtitle {
@@ -43,13 +43,4 @@
 
 .article-context-author-name {
   line-height: 24px !important;
-}
-
-@include media-breakpoint-down(sm) {
-  .article-context-title {
-    margin-top: 8px;
-  }
-  .new-article {
-    padding-right: 20px;
-  }
 }

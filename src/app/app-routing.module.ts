@@ -12,6 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./setup/setup.module').then((m) => m.SetupModule),
   },
   { path: 'subjects', loadChildren: () => import('./pages/subjects/subjects.module').then(m => m.SubjectsModule) },
+  { path: 'willingness-learn', loadChildren: () => import('./pages/willingness-learn/willingness-learn.module').then(m => m.WillingnessLearnModule) },
 ];
 
 @NgModule({

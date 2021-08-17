@@ -1,0 +1,12 @@
+<div class="feature_article_box">
+  <h1 class="feature_article_title">專題文章</h1>
+  <div class="feature_article_search d-flex justify-content-between">
+    <app-search placeholder="搜尋瀏覽紀錄"></app-search>
+    <app-sort-dropdown></app-sort-dropdown>
+  </div>
+  <div class="feature_article_content">
+    <div *ngFor="let item of newArticle">
+      <app-new-article [newArticle]="item"></app-new-article>
+    </div>
+  </div>
+</div>

@@ -65,6 +65,12 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
 }
 
 // icon
+.sortMdIcon {
+  background-image: url('../assets/icon/sort_md.svg');
+  width: 40px;
+  height: 40px;
+}
+
 .profileIcon {
   -webkit-mask: url('../assets/icon/profile.svg') no-repeat 50% 50%;
   mask: url('../assets/icon/profile.svg') no-repeat 50% 50%;
@@ -138,11 +144,15 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
 .arrow_down {
   background-image: url('../assets/icon/arrow_down.png');
   background-repeat: no-repeat;
+  width: 14px;
+  height: 14px;
 }
 
 .arrow_up {
   background-image: url('../assets/icon/arrow_up.png');
   background-repeat: no-repeat;
+  width: 14px;
+  height: 14px;
 }
 
 .swiper_prev {
@@ -161,6 +171,18 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   width: 16px;
   height: 16px;
   background-image: url(../assets/icon/exclamation.svg);
+}
+
+.editIcon {
+  width: 14px;
+  height: 14px;
+  background-image: url(../assets/icon/edit2.svg);
+}
+
+.searchAdvanceIcon {
+  width: 40px;
+  height: 40px;
+  background-image: url(../assets/icon/search_advance.svg);
 }
 
 // modal style
@@ -187,6 +209,10 @@ body .modal.fade.show {
   body .modal-sm.modal-dialog-centered {
     margin: auto;
   }
+}
+
+body .modal-fullscreen.search_modal {
+  height: 400px;
 }
 
 // tooltip style
@@ -224,6 +250,10 @@ body bs-tooltip-container.tooltip.show {
   &:focus {
     background: $light_light_blue;
   }
+
+  &.nonFocus:focus {
+    background: initial;
+  }
 }
 
 .btn_blue_bg {
@@ -255,4 +285,17 @@ body .form-check-input:focus {
 
 input::placeholder {
   color: $border_grey;
+}
+
+
+// willingness-learn
+@include media-breakpoint-up(lg) {
+  body app-new-video.willingness_video .new_video_box {
+    width: 290px;
+  }
+}
+
+// scope title
+body .willingness_learn .content_title app-scope-title .scope_title_box {
+  margin: unset;
 }

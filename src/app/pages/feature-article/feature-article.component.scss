@@ -1,0 +1,28 @@
+@import '../../../styles/bootstrap.scss';
+@import '../../../styles/variables.scss';
+
+.feature_article_box {
+  margin-top: 44px;
+  margin-bottom: 88px;
+  margin: 44px 48px 88px 48px;
+  @include media-breakpoint-down(md) {
+    margin: 32px 20px 64px 20px;
+  }
+}
+
+.feature_article_content {
+  min-height: 500px;
+}
+
+.feature_article_search {
+  margin-top: 28px;
+  margin-bottom: 50px;
+}
+
+.split {
+  width: 2px;
+  height: 14px;
+  background-color: $hr_grey;
+  margin: 0 12px;
+  margin-top: 14px;
+}

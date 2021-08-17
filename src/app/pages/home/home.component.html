@@ -118,7 +118,7 @@
         </ng-template>
       </swiper>
     </div>
-    <button type="button" class="btn btn-check-all">查看全部 <img src="../../../assets/icon/right.png" alt="" /></button>
+    <button type="button" class="btn btn-check-all" routerLink="/pages/willingness-learn">查看全部 <img src="../../../assets/icon/right.png" alt="" /></button>
     <!-- 未設定學習意願 -->
     <!-- <app-unset-learn-willingness></app-unset-learn-willingness> -->
   </ng-container>
@@ -200,3 +200,4 @@
     <button type="button" class="btn btn-check-all w-100">查看更多</button>
   </div>
 </div>
+<app-brand *ngIf="identity === 1"></app-brand>
