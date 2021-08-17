@@ -1,15 +1,21 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/bootstrap.scss';
 
+.footer_padding {
+  padding: 0 48px;
+}
+
+.footer_padding_mobile {
+  padding: 0 20px;
+}
+
 .footer_hr {
-  width: 90%;
   margin: auto;
   margin-top: 50px;
   color: $light_blue;
 }
 
 .footer_content {
-  width: 90%;
   margin: auto;
   margin-top: 40px;
   justify-content: space-between;
@@ -36,7 +42,6 @@
 }
 
 .footer_copyright {
-  width: 90%;
   margin: auto;
   justify-content: space-between;
   margin-top: 16px;
@@ -78,12 +83,10 @@
     }
   }
   .footer_hr_mobile {
-    width: 90%;
     margin: auto;
     margin-top: 40px;
   }
   .footer_copyright_mobile {
-    width: 90%;
     margin: auto;
     margin-top: 16px;
     .footer_copyright_english_mobile {

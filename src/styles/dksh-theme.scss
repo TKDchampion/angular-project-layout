@@ -163,6 +163,18 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   background-image: url(../assets/icon/exclamation.svg);
 }
 
+.editIcon {
+  width: 14px;
+  height: 14px;
+  background-image: url(../assets/icon/edit2.svg);
+}
+
+.searchAdvanceIcon {
+  width: 40px;
+  height: 40px;
+  background-image: url(../assets/icon/search_advance.svg);
+}
+
 // modal style
 .modal_max_width {
   max-width: 416px;
@@ -187,6 +199,10 @@ body .modal.fade.show {
   body .modal-sm.modal-dialog-centered {
     margin: auto;
   }
+}
+
+body .modal-fullscreen.search_modal {
+  height: 400px;
 }
 
 // tooltip style
@@ -255,4 +271,17 @@ body .form-check-input:focus {
 
 input::placeholder {
   color: $border_grey;
+}
+
+
+// willingness-learn
+@include media-breakpoint-up(lg) {
+  body app-new-video.willingness_video .new_video_box {
+    width: 290px;
+  }
+}
+
+// scope title
+body .willingness_learn .content_title app-scope-title .scope_title_box {
+  margin: unset;
 }
