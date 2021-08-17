@@ -41,6 +41,7 @@ import { SalesInviteComponent } from './popup/sales-invite/sales-invite.componen
 import { StoreModule } from '@ngrx/store';
 import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.reducer';
 import { SortDropdownComponent } from './sort-dropdown/sort-dropdown.component';
+import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisiter-job-modal.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { SortDropdownComponent } from './sort-dropdown/sort-dropdown.component';
     VerifyUserModalComponent,
     SalesInviteComponent,
     SortDropdownComponent,
+    RegisiterJobModalComponent,
   ],
   imports: [
     FormsModule,

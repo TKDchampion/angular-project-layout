@@ -268,7 +268,16 @@
   }
   .register_account,
   .register_password,
-  .register_checkpassword {
+  .register_checkpassword,
+  .register_nickname,
+  .register_firstname,
+  .register_lastname,
+  .register_phone,
+  .register_job,
+  .register_jobname,
+  .register_jobcity,
+  .register_jobtype,
+  .register_doctorid {
     margin-top: 16px;
   }
   .verify_text {
@@ -298,5 +307,59 @@
     color: $blue;
     margin-top: 27px;
     margin-bottom: 32px;
+  }
+  .job_select {
+    width: 100%;
+    height: 40px;
+    background: $white;
+    border: 1px solid $hr_grey;
+    border-radius: 8px;
+    margin-top: 6px;
+    button {
+      text-align: left;
+      color: $border_grey;
+      font-size: $font-size-14;
+      display: flex;
+      align-items: center;
+    }
+    button::after {
+      display: none;
+    }
+    button.select {
+      color: $black;
+    }
+    ul {
+      width: 100%;
+      font-size: $font-size-14;
+      border: 1px solid $hr_grey;
+      border-radius: 8px;
+    }
+    .arrow_up {
+      display: none;
+    }
+    .arrow_down {
+      width: 18px;
+      height: 18px;
+      background-size: 18px;
+      position: absolute;
+      right: 16px;
+    }
+    .arrow_up.unselect,
+    .arrow_down.unselect {
+      filter: invert(92%) sepia(0%) saturate(0%) hue-rotate(300deg) brightness(84%) contrast(83%);
+    }
+  }
+  .job_select.open.show {
+    .arrow_up {
+      display: unset;
+      width: 18px;
+      height: 18px;
+      background-size: 18px;
+      position: absolute;
+      right: 16px;
+    }
+    .arrow_down {
+      display: none;
+    }
   }
 }

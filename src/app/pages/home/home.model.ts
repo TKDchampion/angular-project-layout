@@ -134,14 +134,14 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
 
 export const LearnWillingness: LearnWillingnessNewArticleModel = {
   learnTitle: '全人健康',
-  lookMoreUrl: '/pages/home/1',
+  lookMoreUrl: '/pages/willingness-learn',
   learnImg: '../../../assets/img/book.svg',
   learnBackgroundColor: '#3B5A90',
 };
 
 export const LearnWillingness2: LearnWillingnessNewArticleModel = {
   learnTitle: '疾病防治',
-  lookMoreUrl: '/pages/home/1',
+  lookMoreUrl: '/pages/willingness-learn',
   learnImg: '../../../assets/img/heart.svg',
   learnBackgroundColor: '#D42335',
 };

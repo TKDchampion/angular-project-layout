@@ -1,4 +1,4 @@
-<div class="footer" *ngIf="!isMobile; else mobile_footer">
+<div class="footer footer_padding" *ngIf="!isMobile; else mobile_footer">
   <hr class="footer_hr" />
   <div class="footer_content d-flex">
     <div class="footer_content_logo">
@@ -32,7 +32,7 @@
 </div>
 
 <ng-template #mobile_footer>
-  <div class="footer_mobile">
+  <div class="footer_mobile footer_padding_mobile">
     <div class="footer_content_mobile">
       <div class="footer_content_mobile_logo">
         <img class="DKSH-icon" src="../../../assets/img/DKSH_big.png" width="103" height="32" alt="" />

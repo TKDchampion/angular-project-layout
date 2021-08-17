@@ -25,6 +25,10 @@ const routes: Routes = [
         path: 'feature-article',
         loadChildren: () => import('./feature-article/feature-article.module').then((m) => m.FeatureArticleModule),
       },
+      {
+        path: 'willingness-learn',
+        loadChildren: () => import('./willingness-learn/willingness-learn.module').then((m) => m.WillingnessLearnModule),
+      },
     ],
   },
 ];

@@ -1,4 +1,4 @@
-<app-default-modal [modalRef]="modalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'" [needRecheck]="true">
+<app-default-modal [modalRef]="modalRef" [title]="title" [subTitle]="subTitle" [needRecheck]="true">
   <div class="d-flex register_status">
     <div class="information">
       <img src="../../../../assets/img/register_user_enabled.png" alt="" width="32" height="32">
@@ -62,7 +62,7 @@
 
 
 <ng-template #registerLineSecond>
-  <app-default-modal [modalRef]="registerLineSecondStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'" [needRecheck]="true">
+  <app-default-modal [modalRef]="registerLineSecondStepModalRef" [title]="title" [subTitle]="subTitle" [needRecheck]="true">
     <div class="d-flex register_status">
       <div class="information">
         <img src="../../../../assets/img/register_user_done.png" alt="" width="32" height="32">
@@ -108,7 +108,6 @@
         <div class="register_job">
           職業
           <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobEmpty}" (onHidden)="validateJobDropdown()">
-            <!-- <input required type="text" dropdownToggle class="job_input" placeholder="請選擇職業"> -->
             <button dropdownToggle type="button" class="btn dropdown-toggle" [ngClass]="{'select': registerJob.job}">
               {{registerJob.job ? registerJob.job : '請選擇職業'}}
               <div class="arrow_down" [ngClass]="{'unselect': !registerJob.job}"></div>
@@ -141,7 +140,6 @@
         </div>
         <div class="register_jobcity">
           執業縣市
-          <!-- <input required type="text" class="jobcity_input" placeholder="請選擇執業縣市"> -->
           <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobCityEmpty}" (onHidden)="validateJobCityDropdown()">
             <button dropdownToggle type="button" class="btn dropdown-toggle"
               [ngClass]="{'select': registerJob.jobCity}">
@@ -165,7 +163,6 @@
         </div>
         <div class="register_jobtype">
           執業科別
-          <!-- <input required type="text" class="jobtype_input" placeholder="請選擇執業科別"> -->
           <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobTypeEmpty}" (onHidden)="validateJobTypeDropdown()">
             <button dropdownToggle type="button" class="btn dropdown-toggle"
               [ngClass]="{'select': registerJob.jobType}">
@@ -204,11 +201,16 @@
       <div class="register_identity_button d-flex" [ngClass]="{'isdoctor': registerIdentity}">
         <button type="button" class="modal_btn_laststep" (click)="backLineFirstStep()">上一步</button>
         <button type="button" class="modal_btn_nextstep" [ngClass]="{'disabled': registerIdentity === undefined}"
-          (click)="registerLearnCheck(registerLearn)" [disabled]="registerIdentity === undefined">完成</button>
+          (click)="isEdit ? openCheckDoctorModal(checkIsDoctor) : registerLearnCheck(registerLearn)" [disabled]="registerIdentity === undefined">{{isEdit ? '儲存' : '完成'}}</button>
       </div>
     </div>
   </app-default-modal>
 </ng-template>
+
+<!-- <ng-template #registerLineSecond>
+  <app-regisiter-job-modal [modalRef]="registerLineSecondStepModalRef" [title]="title" [subTitle]="subTitle" [isEdit]="isEdit"
+  [registerJob]="registerJob" [registerIdentity]="registerIdentity" (backFirstStep)="backLineFirstStep($event)" (gotoLearnCkech)="isEdit ? openCheckDoctorModal(checkIsDoctor) : registerLearnCheck(registerLearn)"></app-regisiter-job-modal>
+</ng-template> -->
 
 <ng-template #registerLearn>
   <app-register-learn-modal [modalRef]="registerLearnCheckModalRef" (passSetLearn)="registerToSuccess(registerSuccess)"
@@ -221,3 +223,20 @@
     [subTitle]="'您可以掃描 Qrcode 進入我們的 Line 官方帳號後，即可將您的帳號與個人 Line 帳號綁定'">
   </app-success-modal>
 </ng-template>
+
+<ng-template #checkIsDoctor>
+  <div class="modal-header checkdoctor_modal_header">
+    <div class="recheck_modal_title_panel">
+      <div class="recheck_modal_body_title">確認為醫療相關從業人員？</div>
+      <div class="recheck_modal_body_subtitle">確認後將無法修改身份</div>
+    </div>
+  </div>
+  <div class="modal-body checkdoctor_modal_body">
+    <div class="register_identity_button d-flex">
+      <button type="button" class="modal_btn_laststep" (click)="cancel()">取消</button>
+      <button type="button" class="modal_btn_nextstep" (click)="isDoctor()">確定</button>
+    </div>
+  </div>
+</ng-template>
+
+<app-toast id="edit_profile_toast" title="已成功編輯基本資訊"></app-toast>

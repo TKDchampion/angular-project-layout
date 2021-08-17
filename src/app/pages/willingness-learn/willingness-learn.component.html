@@ -1,0 +1,106 @@
+<div class="home_box width_limit willingness_learn">
+  <div class="title d-flex">
+    <div class="title_name">我的學習意願</div>
+    <div class="edit_learn cursor_pointer" (click)="setLearnModal(registerLearn)"><svg class="editIcon"></svg>編輯</div>
+  </div>
+  <div class="search d-flex">
+    <app-search placeholder="請輸入關鍵字"></app-search>
+    <svg class="searchAdvanceIcon" (click)="openModal(searchModal)"></svg>
+    <div class="btn-group learn_select learn_select_desktop" dropdown>
+      <button dropdownToggle type="button" class="btn dropdown-toggle" [ngClass]="{'select': willingnessLearnType}">
+        {{willingnessLearnType ? willingnessLearnType : '請選擇學習意願'}}
+        <div class="arrow_down" [ngClass]="{'unselect': !willingnessLearnType}"></div>
+        <div class="arrow_up" [ngClass]="{'unselect': !willingnessLearnType}"></div>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
+        <div class="li_outside">
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='全部'"
+              [ngClass]="{'selected': willingnessLearnType==='全部'}">全部</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='數位醫療'"
+              [ngClass]="{'selected': willingnessLearnType==='數位醫療'}">數位醫療</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='醫療資訊'"
+              [ngClass]="{'selected': willingnessLearnType==='醫療資訊'}">醫療資訊</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='醫學人文'"
+              [ngClass]="{'selected': willingnessLearnType==='醫學人文'}">醫學人文</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='醫學研究'"
+              [ngClass]="{'selected': willingnessLearnType==='醫學研究'}">醫學研究</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='疾病防治'"
+              [ngClass]="{'selected': willingnessLearnType==='疾病防治'}">疾病防治</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='專業素養'"
+              [ngClass]="{'selected': willingnessLearnType==='專業素養'}">專業素養</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='醫療財務管理'"
+              [ngClass]="{'selected': willingnessLearnType==='醫療財務管理'}">醫療財務管理</a></li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_title d-flex align-items-center">
+      <app-scope-title [title]="learnTitle" [showTag]="false" [showMoreBtn]="false"></app-scope-title>
+      <div class="content_title_count">共有15個相關影片</div>
+    </div>
+    <div class="content_item w-100 d-flex flex-wrap">
+      <ng-container *ngFor="let item of videoRecommendItem">
+        <app-new-video [newVideoItem]="item" class="willingness_video"></app-new-video>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #searchModal>
+  <div class="modal-header">
+    <img class="modal_close cursor_pointer" (click)="modalRef.hide()" src="../../../../assets/img/modal_close.png"
+      alt="">
+    <h4 class="modal-title pull-left">篩選與排序</h4>
+  </div>
+  <div class="modal-body">
+    <div class="body_title">篩選</div>
+    <div class="btn-group learn_select" dropdown>
+      <button dropdownToggle type="button" class="btn dropdown-toggle" [ngClass]="{'select': willingnessLearnType}">
+        {{willingnessLearnType ? willingnessLearnType : '請選擇學習意願'}}
+        <div class="arrow_down" [ngClass]="{'unselect': !willingnessLearnType}"></div>
+        <div class="arrow_up" [ngClass]="{'unselect': !willingnessLearnType}"></div>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
+        <div class="li_outside">
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='全部'"
+              [ngClass]="{'selected': willingnessLearnType==='全部'}">全部</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='數位醫療'"
+              [ngClass]="{'selected': willingnessLearnType==='數位醫療'}">數位醫療</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='醫療資訊'"
+              [ngClass]="{'selected': willingnessLearnType==='醫療資訊'}">醫療資訊</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='醫學人文'"
+              [ngClass]="{'selected': willingnessLearnType==='醫學人文'}">醫學人文</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='醫學研究'"
+              [ngClass]="{'selected': willingnessLearnType==='醫學研究'}">醫學研究</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='疾病防治'"
+              [ngClass]="{'selected': willingnessLearnType==='疾病防治'}">疾病防治</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='專業素養'"
+              [ngClass]="{'selected': willingnessLearnType==='專業素養'}">專業素養</a></li>
+          <li><a class="dropdown-item" (click)="learnTitle = willingnessLearnType='醫療財務管理'"
+              [ngClass]="{'selected': willingnessLearnType==='醫療財務管理'}">醫療財務管理</a></li>
+        </div>
+      </ul>
+    </div>
+    <div class="body_title">排序方式</div>
+    <div class="check_panel">
+      <label class="form-check-label" for="radio_no">
+        最新
+      </label>
+      <input class="form-check-input" [(ngModel)]="sort" [value]="false" type="radio" name="check_doctor" id="radio_no">
+    </div>
+    <div class="check_panel">
+      <label class="form-check-label" for="radio_yes">
+        最多觀看
+      </label>
+      <input class="form-check-input" [(ngModel)]="sort" [value]="true" type="radio" name="check_doctor" id="radio_yes">
+    </div>
+    <button type="button" class="btn_blue_bg" (click)="modalRef.hide()">確認</button>
+  </div>
+</ng-template>
+
+<ng-template #registerLearn>
+  <app-register-learn-modal [modalRef]="learnModalRef" (passSetLearn)="registerToSuccess()"
+    (successSetLearn)="registerToSuccess()">
+  </app-register-learn-modal>
+</ng-template>
