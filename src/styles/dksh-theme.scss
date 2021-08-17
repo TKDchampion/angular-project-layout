@@ -65,6 +65,12 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
 }
 
 // icon
+.sortMdIcon {
+  background-image: url('../assets/icon/sort_md.svg');
+  width: 40px;
+  height: 40px;
+}
+
 .profileIcon {
   -webkit-mask: url('../assets/icon/profile.svg') no-repeat 50% 50%;
   mask: url('../assets/icon/profile.svg') no-repeat 50% 50%;
@@ -138,11 +144,15 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
 .arrow_down {
   background-image: url('../assets/icon/arrow_down.png');
   background-repeat: no-repeat;
+  width: 14px;
+  height: 14px;
 }
 
 .arrow_up {
   background-image: url('../assets/icon/arrow_up.png');
   background-repeat: no-repeat;
+  width: 14px;
+  height: 14px;
 }
 
 .swiper_prev {
@@ -222,6 +232,10 @@ body bs-tooltip-container.tooltip.show {
   }
   &:focus {
     background: $light_light_blue;
+  }
+
+  &.nonFocus:focus {
+    background: initial;
   }
 }
 
