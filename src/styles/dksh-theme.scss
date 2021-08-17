@@ -273,6 +273,14 @@ input::placeholder {
   color: $border_grey;
 }
 
+
+// willingness-learn
+@include media-breakpoint-up(lg) {
+  body app-new-video.willingness_video .new_video_box {
+    width: 290px;
+  }
+}
+
 // scope title
 body .willingness_learn .content_title app-scope-title .scope_title_box {
   margin: unset;
