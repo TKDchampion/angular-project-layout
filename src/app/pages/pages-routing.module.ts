@@ -22,9 +22,13 @@ const routes: Routes = [
         loadChildren: () => import('./member-edit/member-edit.module').then((m) => m.MemberEditModule),
       },
       {
+        path: 'feature-article',
+        loadChildren: () => import('./feature-article/feature-article.module').then((m) => m.FeatureArticleModule),
+      },
+      {
         path: 'willingness-learn',
-        loadChildren: () => import('./willingness-learn/willingness-learn.module').then((m) => m.WillingnessLearnModule)
-      }
+        loadChildren: () => import('./willingness-learn/willingness-learn.module').then((m) => m.WillingnessLearnModule),
+      },
     ],
   },
 ];
@@ -33,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}

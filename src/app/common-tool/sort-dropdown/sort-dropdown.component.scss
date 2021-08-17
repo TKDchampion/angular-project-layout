@@ -1,0 +1,71 @@
+@import '../../../styles/bootstrap.scss';
+@import '../../../styles/variables.scss';
+
+.feature_article_sort_btn {
+  min-width: 80px;
+  height: 40px;
+  line-height: 39px;
+  display: flex;
+  padding-left: 12px;
+  position: relative;
+}
+
+.split {
+  width: 2px;
+  height: 14px;
+  background: $hr_grey;
+  border-radius: 100px;
+  margin: 13px;
+}
+
+.arrow_down,
+.arrow_up {
+  margin-top: 12px;
+  margin-left: 6px;
+  margin-right: 8px;
+}
+
+.feature_article_sort_txt {
+  line-height: 40px;
+  color: $light_grey;
+}
+
+.feature_article_sort_popup {
+  min-width: 200px;
+  min-height: 84px;
+  background: $white;
+  box-shadow: 0px 0.4px 0.8px rgba(68, 71, 73, 0.1), 0px 3px 6px rgba(68, 71, 73, 0.16);
+  border-radius: 8px;
+  position: absolute;
+  margin-top: 45px;
+  right: 48px;
+  padding: 8px 0px;
+  z-index: 10001;
+}
+
+.feature_article_sort_popup_item {
+  padding: 8px 12px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $light_light_light_light_blue;
+  }
+}
+
+.feature_article_sort_md {
+  display: none;
+}
+
+@include media-breakpoint-down(md) {
+  .feature_article_sort_md {
+    display: block;
+  }
+  .mdNone {
+    display: none;
+  }
+  .feature_article_sort_popup {
+    right: 20px;
+  }
+}
