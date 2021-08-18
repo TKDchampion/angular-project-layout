@@ -1,0 +1,25 @@
+<div class="home_box width_limit subject">
+  <div class="title d-flex align-items-center"><img src="{{subjectItem?.url}}" alt=""> {{subjectItem?.title}}</div>
+  <app-search placeholder="搜尋我的收藏"></app-search>
+  <div class="subject_content">
+    <div class="tab">
+      <div class="tab_item" [ngClass]="{ active: item.active }" *ngFor="let item of tabList" (click)="selectTab(item)">
+        {{ item.name }}
+        <span></span>
+      </div>
+    </div>
+
+    <!-- tab 課程影片 -->
+    <div *ngIf="selectedTab === '課程影片'" class="subject_video">
+      <ng-container *ngFor="let item of videoRecommendItem">
+        <app-new-video [newVideoItem]="item"></app-new-video>
+      </ng-container>
+    </div>
+    <!-- tab 專題文章 -->
+    <div *ngIf="selectedTab === '專題文章'" class="subject_article">
+      <ng-container *ngFor="let item of fakeArticleItemData">
+        <app-new-article class="col-xxl-6 new_article" [newArticle]="item"></app-new-article>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -5,8 +5,8 @@
   <div class="search">
     <app-search placeholder="請輸入關鍵字"></app-search>
   </div>
-  <div class="subject_item d-flex flex-wrap">
-    <div class="hot_subject_box" *ngFor="let hotSubjectItemInfo of hotSubjectArray">
+  <div class="subject_item d-flex flex-wrap row row-cols-2">
+    <div class="hot_subject_box col" *ngFor="let hotSubjectItemInfo of hotSubjectArray" (click)="gotoSubjectItem(hotSubjectItemInfo.title)">
       <div *ngIf="breakpointSize === 'xs'" class="hot_subject_top">
         <div class="hot_subject_top_icon" [ngStyle]="{'background-image': 'url(' + hotSubjectItemInfo.url + ')'}"></div>
       </div>

@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { SubjectsRoutingModule } from './subjects-routing.module';
 import { SubjectsComponent } from './subjects.component';
+import { SubjectsItemComponent } from './subjects-item/subjects-item.component';
 
 
 @NgModule({
   declarations: [
-    SubjectsComponent
+    SubjectsComponent,
+    SubjectsItemComponent
   ],
   imports: [
     CommonModule,
