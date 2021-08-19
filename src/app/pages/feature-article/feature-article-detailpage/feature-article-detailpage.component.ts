@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./feature-article-detailpage.component.scss'],
 })
 export class FeatureArticleDetailpageComponent {
+  titleStyle = {
+    'font-size': '20px',
+  };
   autherSetting = {
     title: '作者介紹',
     img: '../../../assets/img/fakeImge/new_video_fake_headshot.png',

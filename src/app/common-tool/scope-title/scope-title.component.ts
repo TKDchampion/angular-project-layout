@@ -11,8 +11,8 @@ export class ScopeTitleComponent {
   @Input() title!: string;
   @Input() showMoreBtn = true;
   @Input() showTag = true;
-  @Input() customClass: string | undefined;
   @Input() url: string | undefined;
+  @Input() titleStyle!: Record<string, unknown>;
   tag: string | undefined;
   tags = [
     { id: 1, text: '登入後即可瀏覽內容' },
@@ -23,7 +23,7 @@ export class ScopeTitleComponent {
     this.tag = this.tags.find((i) => i.id === this.identity)?.text;
   }
 
-  linkToPage() {
+  linkToPage(): void {
     if (this.url) {
       this.router.navigate([this.url]);
     }

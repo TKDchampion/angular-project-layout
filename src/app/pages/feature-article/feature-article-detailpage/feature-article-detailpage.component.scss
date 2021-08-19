@@ -21,6 +21,15 @@
   margin: 32px 0px;
 }
 
+.feature_article_detail_box_editor {
+  margin: 32px 0px;
+}
+
+.feature_article_detail_scope_title {
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
 @include media-breakpoint-down(xl) {
   .feature_article_detail_box {
     margin: 48px;
