@@ -2,14 +2,14 @@
 @import '../../../../styles/variables.scss';
 
 .subject {
-  margin-top: 32px;
+  margin-top: 16px;
   padding: 0 33px 0 48px;
   @include media-breakpoint-down(sm) {
     padding: 0 20px;
   }
-}
-
-.subject {
+  .default_hr {
+    margin-bottom: 32px;
+  }
   .title {
     font-size: 28px;
     font-weight: 500;

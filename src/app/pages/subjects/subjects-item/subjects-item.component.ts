@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotSubjectItemInfoNewArticleModel } from 'src/app/common-tool/hot-subject/hot-subject.model';
 import { HotSubjectItemInfo } from '../subjects.model';
 import { NewArticle, NewVideoItem, TabListModel, VideoRecommendItem } from './subjects-item.model';
@@ -20,7 +20,7 @@ export class SubjectsItemComponent implements OnInit {
   fakeArticleItemData = NewArticle;
   hotSubjectArray = HotSubjectItemInfo;
   subjectItem: HotSubjectItemInfoNewArticleModel | undefined;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
     const title = this.route.snapshot.paramMap.get('subject');
@@ -31,5 +31,9 @@ export class SubjectsItemComponent implements OnInit {
     this.tabList.forEach((i) => (i.active = false));
     item.active = true;
     this.selectedTab = item.name;
+  }
+
+  backToSubject() {
+    this.router.navigate([`/pages/subject`]);
   }
 }

@@ -22,7 +22,7 @@ export class SubjectsComponent implements OnInit {
   }
 
   gotoSubjectItem(subjectItem: string): void {
-    this.router.navigate([`/pages/subject/${subjectItem}`]);
+    this.router.navigate([`/pages/subject`, subjectItem]);
   }
 
 }
