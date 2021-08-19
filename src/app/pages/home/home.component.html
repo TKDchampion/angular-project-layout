@@ -44,7 +44,7 @@
 
   <!-- learn willingness -->
   <ng-container *ngIf="identity !== 1">
-    <app-scope-title [title]="'根據您的學習意願'"></app-scope-title>
+    <app-scope-title [title]="'根據您的學習意願'" [url]="'/pages/willingness-learn'"></app-scope-title>
     <!-- 已設定學習意願 -->
     <div class="swiper_box">
       <button
@@ -159,7 +159,7 @@
   <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
 
   <!-- Hot subject -->
-  <app-scope-title [title]="'熱門學科'" [showMoreBtn]="false"></app-scope-title>
+  <app-scope-title [title]="'熱門學科'" [url]="'/pages/subject'"></app-scope-title>
   <div class="d-flex">
     <app-hot-subject *ngFor="let subject of hotSubjectArray" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
@@ -167,7 +167,7 @@
     <app-hot-subject *ngFor="let subject of hotSubjectArray2" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
   <div class="subject_btn-check-all">
-    <button type="button" class="btn btn-check-all w-100">查看全部</button>
+    <button type="button" class="btn btn-check-all w-100" routerLink="/pages/subject">查看全部</button>
   </div>
 
   <!-- New active -->
