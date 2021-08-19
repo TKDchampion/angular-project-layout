@@ -42,6 +42,7 @@ import { StoreModule } from '@ngrx/store';
 import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.reducer';
 import { SortDropdownComponent } from './sort-dropdown/sort-dropdown.component';
 import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisiter-job-modal.component';
+import { AuthorIntroduceComponent } from './author-introduce/author-introduce.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisite
     SalesInviteComponent,
     SortDropdownComponent,
     RegisiterJobModalComponent,
+    AuthorIntroduceComponent,
   ],
   imports: [
     FormsModule,
@@ -115,6 +117,7 @@ import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisite
     VerifyUserModalComponent,
     SalesInviteComponent,
     SortDropdownComponent,
+    AuthorIntroduceComponent,
   ],
   providers: [ResizeService],
 })
