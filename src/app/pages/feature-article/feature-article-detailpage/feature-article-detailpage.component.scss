@@ -2,12 +2,9 @@
 @import '../../../../styles/variables.scss';
 
 .feature_article_detail_box {
-  margin: 48px;
+  margin: 48px auto;
+  max-width: 928px;
 }
-
-// .feature_article_detail_box_header {
-//   margin-bottom: 32px;
-// }
 
 .feature_article_detail_box_header_subtitle {
   color: $grey;
@@ -24,14 +21,11 @@
   margin: 32px 0px;
 }
 
-// .feature_article_detail_box_auther {
-
-// }
-
-.feature_article_detail_box_scopeTitle {
-  font-size: $font-size-20;
+@include media-breakpoint-down(xl) {
+  .feature_article_detail_box {
+    margin: 48px;
+  }
 }
-
 @include media-breakpoint-down(md) {
   .feature_article_detail_box {
     margin: 32px 20px 64px 20px;
