@@ -7,4 +7,5 @@ export interface NewArticleModel {
   authorImg: string;
   bulletinCount?: number;
   viewer: string;
+  id: string;
 }
