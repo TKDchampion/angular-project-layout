@@ -120,7 +120,7 @@
   @include media-breakpoint-down(xxl) {
     grid-template-columns: repeat(3,306px);
   }
-  @include media-breakpoint-down(tablet) {
+  @include media-breakpoint-down(xl) {
     grid-template-columns: repeat(2,306px);
   }
   @include media-breakpoint-down(md) {
@@ -187,7 +187,7 @@
 .feature_learn_sort {
   position: absolute;
   right: 48px;
-  @include media-breakpoint-down(tablet) {
+  @include media-breakpoint-down(xl) {
     display: none !important;
   }
 }
@@ -245,7 +245,7 @@
   }
 }
 
-@include media-breakpoint-down(tablet) {
+@include media-breakpoint-down(xl) {
   .search {
     .searchAdvanceIcon {
       display: unset;
