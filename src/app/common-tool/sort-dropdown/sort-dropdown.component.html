@@ -10,7 +10,7 @@
     {{ selected }}
     <div [ngClass]="clickStatus ? 'arrow_up' : 'arrow_down'"></div>
   </button>
-  <div class="feature_article_sort_md sortMdIcon" (click)="selectedBtn()" (blur)="clickStatus = false"></div>
+  <button class="feature_article_sort_md sortMdIcon" (click)="selectedBtn()" (blur)="clickStatus = false"></button>
   <div class="feature_article_sort_popup" *ngIf="clickStatus">
     <div class="feature_article_sort_popup_item" *ngFor="let item of dropList" (mousedown)="dropSelected(item)">{{ item }}</div>
   </div>

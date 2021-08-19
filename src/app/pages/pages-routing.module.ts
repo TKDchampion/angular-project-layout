@@ -2,6 +2,7 @@ import { HomeItemComponent } from './home/home-item/home-item.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
+import { FeatureArticleDetailpageComponent } from './feature-article/feature-article-detailpage/feature-article-detailpage.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
       {
         path: 'feature-article',
         loadChildren: () => import('./feature-article/feature-article.module').then((m) => m.FeatureArticleModule),
+      },
+      {
+        path: 'feature-article/:id',
+        component: FeatureArticleDetailpageComponent,
       },
       {
         path: 'willingness-learn',

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { NewArticle } from '../home/home.model';
 
@@ -8,4 +9,10 @@ import { NewArticle } from '../home/home.model';
 })
 export class FeatureArticleComponent {
   newArticle = NewArticle;
+
+  constructor(private router: Router) {}
+
+  goArticleDetail(id: string): void {
+    this.router.navigate(['pages/feature-article', id]);
+  }
 }

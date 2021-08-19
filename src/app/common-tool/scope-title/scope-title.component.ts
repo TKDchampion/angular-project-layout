@@ -10,6 +10,7 @@ export class ScopeTitleComponent {
   @Input() title!: string;
   @Input() showMoreBtn = true;
   @Input() showTag = true;
+  @Input() customClass: string | undefined;
   tag: string | undefined;
   tags = [
     { id: 1, text: '登入後即可瀏覽內容' },
