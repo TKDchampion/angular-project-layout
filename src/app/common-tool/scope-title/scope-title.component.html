@@ -1,6 +1,8 @@
-<div class="scope_title_box d-flex" [class]="customClass">
+<div class="scope_title_box d-flex">
   <span class="scope_title_box_icon"></span>
-  <div class="scope_title_box_text">{{ title }}</div>
+  <div class="scope_title_box_text" [ngStyle]="titleStyle">{{ title }}</div>
   <span *ngIf="showTag" class="scope_title_box_tag">{{ tag }}</span>
-  <button *ngIf="showMoreBtn" type="button" class="btn btn-check-all" (click)="linkToPage()">查看全部 <img src="../../../assets/icon/right.png" alt="" /></button>
+  <button *ngIf="showMoreBtn" type="button" class="btn btn-check-all" (click)="linkToPage()">
+    查看全部 <img src="../../../assets/icon/right.png" alt="" />
+  </button>
 </div>

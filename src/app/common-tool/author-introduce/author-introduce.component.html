@@ -1,10 +1,7 @@
 <div class="feature_article_detail_box_author">
-  <app-scope-title
-    [title]="setting.title"
-    [showTag]="false"
-    [showMoreBtn]="false"
-    customClass="feature_article_detail_box_scopeTitle"
-  ></app-scope-title>
+  <div class="feature_article_detail_box_author_scope_title">
+    <app-scope-title [title]="setting.title" [showTag]="false" [showMoreBtn]="false" [titleStyle]="titleStyle"></app-scope-title>
+  </div>
   <div class="feature_article_detail_box_author_container">
     <img class="headshot_xl" [src]="setting.img" alt="" />
     <div>

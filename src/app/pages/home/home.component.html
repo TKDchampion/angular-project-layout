@@ -10,7 +10,9 @@
 <div class="home_box width_limit">
   <!-- New video -->
   <div>
-    <app-scope-title [title]="'最新影片'"></app-scope-title>
+    <div class="home_box_scope_title">
+      <app-scope-title [title]="'最新影片'"></app-scope-title>
+    </div>
     <div class="swiper_box">
       <button
         (click)="prev('swiperRef1')"
@@ -44,7 +46,9 @@
 
   <!-- learn willingness -->
   <ng-container *ngIf="identity !== 1">
-    <app-scope-title [title]="'根據您的學習意願'" [url]="'/pages/willingness-learn'"></app-scope-title>
+    <div class="home_box_scope_title">
+      <app-scope-title [title]="'根據您的學習意願'" [url]="'/pages/willingness-learn'"></app-scope-title>
+    </div>
     <!-- 已設定學習意願 -->
     <div class="swiper_box">
       <button
@@ -118,7 +122,9 @@
         </ng-template>
       </swiper>
     </div>
-    <button type="button" class="btn btn-check-all" routerLink="/pages/willingness-learn">查看全部 <img src="../../../assets/icon/right.png" alt="" /></button>
+    <button type="button" class="btn btn-check-all" routerLink="/pages/willingness-learn">
+      查看全部 <img src="../../../assets/icon/right.png" alt="" />
+    </button>
     <!-- 未設定學習意願 -->
     <!-- <app-unset-learn-willingness></app-unset-learn-willingness> -->
   </ng-container>
@@ -127,7 +133,9 @@
 <app-verify-kanban *ngIf="identity === 2"></app-verify-kanban>
 <div class="home_box width_limit">
   <!-- Recommend video -->
-  <app-scope-title [title]="'影片推薦'"></app-scope-title>
+  <div class="home_box_scope_title">
+    <app-scope-title [title]="'影片推薦'"></app-scope-title>
+  </div>
   <div class="swiper_box">
     <button
       (click)="prev('swiperRef4')"
@@ -159,7 +167,9 @@
   <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
 
   <!-- Hot subject -->
-  <app-scope-title [title]="'熱門學科'" [url]="'/pages/subject'"></app-scope-title>
+  <div class="home_box_scope_title">
+    <app-scope-title [title]="'熱門學科'" [url]="'/pages/subject'"></app-scope-title>
+  </div>
   <div class="d-flex">
     <app-hot-subject *ngFor="let subject of hotSubjectArray" [hotSubjectItemInfo]="subject"></app-hot-subject>
   </div>
@@ -171,7 +181,9 @@
   </div>
 
   <!-- New active -->
-  <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  <div class="home_box_scope_title">
+    <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+  </div>
   <div class="row">
     <ng-container *ngFor="let item of newActiveItemInfo">
       <app-new-active class="col-xxl-6" [newActiveItemInfo]="item"></app-new-active>
@@ -183,7 +195,9 @@
   </div>
 
   <!-- New article -->
-  <app-scope-title [title]="'最新文章'"></app-scope-title>
+  <div class="home_box_scope_title">
+    <app-scope-title [title]="'最新文章'"></app-scope-title>
+  </div>
   <div class="row">
     <ng-container *ngFor="let item of newArticle1">
       <app-new-article class="col-xxl-6 new_article" [newArticle]="item"></app-new-article>

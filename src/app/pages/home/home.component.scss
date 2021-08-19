@@ -39,6 +39,11 @@
   }
 }
 
+.home_box_scope_title {
+  margin-bottom: 38px;
+  margin-top: 56px;
+}
+
 @include media-breakpoint-down(sm) {
   .home_box {
     padding: 0 20px;

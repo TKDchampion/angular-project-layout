@@ -12,4 +12,8 @@ export class AuthorIntroduceComponent {
     authorName: string;
     authorText: string;
   };
+
+  titleStyle = {
+    'font-size': '20px',
+  };
 }
