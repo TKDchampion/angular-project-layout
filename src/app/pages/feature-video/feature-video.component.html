@@ -1,0 +1,16 @@
+<div class="home_box width_limit feature_video_box">
+  <div class="title d-flex">
+    <div class="title_name">探索全部課程</div>
+  </div>
+  <div class="search d-flex justify-content-between">
+    <app-search placeholder="請輸入關鍵字"></app-search>
+    <app-sort-dropdown></app-sort-dropdown>
+  </div>
+  <div class="content">
+    <div class="content_item">
+      <ng-container *ngFor="let item of videoRecommendItem">
+        <app-new-video [newVideoItem]="item" class="feature_video"></app-new-video>
+      </ng-container>
+    </div>
+  </div>
+</div>

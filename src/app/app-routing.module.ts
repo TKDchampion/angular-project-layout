@@ -13,6 +13,7 @@ const routes: Routes = [
   },
   { path: 'subjects', loadChildren: () => import('./pages/subjects/subjects.module').then(m => m.SubjectsModule) },
   { path: 'willingness-learn', loadChildren: () => import('./pages/willingness-learn/willingness-learn.module').then(m => m.WillingnessLearnModule) },
+  { path: 'feature-video', loadChildren: () => import('./pages/feature-video/feature-video.module').then(m => m.FeatureVideoModule) },
 ];
 
 @NgModule({

@@ -311,7 +311,7 @@ input::placeholder {
 }
 
 //subject-video
-body .subject_video app-new-video, app-new-video.willingness_video {
+body .subject_video app-new-video, app-new-video.willingness_video, app-new-video.feature_video {
   .new_video_box {
     margin-bottom: 16px;
     @include media-breakpoint-down(sm) {

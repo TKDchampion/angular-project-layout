@@ -40,6 +40,14 @@ const routes: Routes = [
         component: FeatureArticleDetailpageComponent,
       },
       {
+        path: 'feature-video',
+        loadChildren: () => import('./feature-video/feature-video.module').then((m) => m.FeatureVideoModule),
+      },
+      {
+        path: 'feature-video/:id',
+        component: FeatureArticleDetailpageComponent,
+      },
+      {
         path: 'willingness-learn',
         loadChildren: () => import('./willingness-learn/willingness-learn.module').then((m) => m.WillingnessLearnModule),
       },
