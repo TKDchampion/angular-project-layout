@@ -1,0 +1,120 @@
+@import '../../../styles/bootstrap.scss';
+@import '../../../styles/variables.scss';
+
+.subject {
+  margin-top: 32px;
+  padding: 0 48px;
+}
+
+.subject_item {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-content: space-between;
+  @include media-breakpoint-down(xxl) {
+    grid-template-columns: repeat(3,300px);
+  }
+  @include media-breakpoint-down(xl) {
+    grid-template-columns: repeat(2,1fr);
+  }
+  @include media-breakpoint-down(md) {
+    grid-template-columns: repeat(1,1fr);
+  }
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(2,160px);
+  }
+}
+
+.title_name {
+  font-weight: 500;
+  font-size: $font-size-28;
+  margin-right: 16px;
+}
+
+.search {
+  margin-top: 28px;
+  margin-bottom: 50px;
+}
+
+.search > app-search {
+  width: 400px;
+}
+
+.hot_subject_box {
+  width: 307px;
+  height: 130px;
+  background-color: $light_light_grey;
+  border-radius: 14px;
+  justify-content: space-around;
+  padding-top: 24px;
+  margin-right: 14px;
+  margin-bottom: 14px;
+  display: flex;
+}
+
+.hot_subject_top {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 100px;
+  margin: 0px 20px;
+  .hot_subject_top_icon {
+    width: 100%;
+    height: 100%;
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+  }
+}
+
+.hot_subject_right {
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 100px;
+  .hot_subject_right_icon {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.hot_subject_left_title {
+  color: $black;
+  font-weight: bold;
+  font-size: $font-size-20;
+}
+
+.hot_subject_left_titleSub {
+  color: $light_grey;
+  font-size: $font-size-14;
+  margin-top: 8px;
+}
+
+@include media-breakpoint-down(xxl) {
+  .hot_subject_box {
+    width: 300px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .subject {
+    padding: 0 20px;
+  }
+
+  .search {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  .hot_subject_box {
+    width: 160px;
+    height: 160px;
+    margin-right: unset;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .hot_subject_left {
+    margin-left: 20px;
+    margin-top: 14px;
+  }
+}

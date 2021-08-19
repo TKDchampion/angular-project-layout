@@ -4,6 +4,14 @@
 .cursor_pointer {
   cursor: pointer;
 }
+.default_img_height {
+  height: 210px;
+}
+
+.default_hr {
+  margin: auto;
+  color: $hr_grey;
+}
 
 // headshot xl
 .headshot_xl {
@@ -194,6 +202,12 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   background-image: url(../assets/icon/search_advance.svg);
 }
 
+.breadcrumbLeftIcon {
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/icon/breadcrumb_left.svg);
+}
+
 // modal style
 .modal_max_width {
   max-width: 416px;
@@ -296,10 +310,26 @@ input::placeholder {
   color: $border_grey;
 }
 
-// willingness-learn
-@include media-breakpoint-up(lg) {
-  body app-new-video.willingness_video .new_video_box {
-    width: 290px;
+//subject-video
+body .subject_video app-new-video, app-new-video.willingness_video {
+  .new_video_box {
+    margin-bottom: 16px;
+    @include media-breakpoint-down(sm) {
+      margin-left: unset;
+      width: 100%;
+    }
+    .video_img {
+      min-width: 306px;
+      min-height: 210px;
+      max-width: 330px;
+      @include media-breakpoint-down(sm) {
+        max-width: 375px;
+      }
+      max-height: 230px;
+      .new_video_box_header {
+        max-width: unset;
+      }
+    }
   }
 }
 

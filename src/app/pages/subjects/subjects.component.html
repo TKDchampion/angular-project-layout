@@ -1,0 +1,23 @@
+<div class="home_box width_limit subject">
+  <div class="title d-flex">
+    <div class="title_name">所有學科</div>
+  </div>
+  <div class="search">
+    <app-search placeholder="請輸入關鍵字"></app-search>
+  </div>
+  <div class="subject_item">
+    <div class="hot_subject_box" *ngFor="let hotSubjectItemInfo of hotSubjectArray" (click)="gotoSubjectItem(hotSubjectItemInfo.title)">
+      <div *ngIf="breakpointSize === 'xs'" class="hot_subject_top">
+        <div class="hot_subject_top_icon" [ngStyle]="{'background-image': 'url(' + hotSubjectItemInfo.url + ')'}"></div>
+      </div>
+      <div class="hot_subject_left">
+        <div class="hot_subject_left_title">{{ hotSubjectItemInfo.title }}</div>
+        <div class="hot_subject_left_titleSub">{{ hotSubjectItemInfo.subTitle }}</div>
+      </div>
+      <div *ngIf="breakpointSize !== 'xs'" class="hot_subject_right">
+        <div class="hot_subject_right_icon" [ngStyle]="{'background-image': 'url(' + hotSubjectItemInfo.url + ')'}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

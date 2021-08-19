@@ -33,13 +33,26 @@
         </div>
       </ul>
     </div>
+    <div class="feature_learn_sort d-flex">
+      <div class="feature_learn_sort_txt mdNone">排序方式</div>
+      <div class="split mdNone"></div>
+      <button class="btn_blue_line feature_learn_sort_btn mdNone" [ngClass]="{ nonFocus: !clickStatus }"
+        (click)="selectedBtn()" (blur)="clickStatus = false">
+        {{ selected }}
+        <div [ngClass]="clickStatus ? 'arrow_up' : 'arrow_down'"></div>
+      </button>
+      <div class="feature_learn_sort_popup" *ngIf="clickStatus">
+        <div class="feature_learn_sort_popup_item" *ngFor="let item of dropList" (mousedown)="dropSelected(item)">{{
+          item }}</div>
+      </div>
+    </div>
   </div>
   <div class="content">
     <div class="content_title d-flex align-items-center">
       <app-scope-title [title]="learnTitle" [showTag]="false" [showMoreBtn]="false"></app-scope-title>
       <div class="content_title_count">共有15個相關影片</div>
     </div>
-    <div class="content_item w-100 d-flex flex-wrap">
+    <div class="content_item">
       <ng-container *ngFor="let item of videoRecommendItem">
         <app-new-video [newVideoItem]="item" class="willingness_video"></app-new-video>
       </ng-container>

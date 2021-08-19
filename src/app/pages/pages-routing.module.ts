@@ -1,3 +1,4 @@
+import { SubjectsItemComponent } from './subjects/subjects-item/subjects-item.component';
 import { HomeItemComponent } from './home/home-item/home-item.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -23,6 +24,14 @@ const routes: Routes = [
         loadChildren: () => import('./member-edit/member-edit.module').then((m) => m.MemberEditModule),
       },
       {
+        path: 'subject',
+        loadChildren: () => import('./subjects/subjects.module').then((m) => m.SubjectsModule)
+      },
+      {
+        path: 'subject/:subject',
+        component: SubjectsItemComponent,
+      },
+      {
         path: 'feature-article',
         loadChildren: () => import('./feature-article/feature-article.module').then((m) => m.FeatureArticleModule),
       },
@@ -42,4 +51,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PagesRoutingModule {}
+export class PagesRoutingModule { }
