@@ -43,6 +43,7 @@ import * as profileDropReducer from 'src/app/core/store/profileDrap/profileDrop.
 import { SortDropdownComponent } from './sort-dropdown/sort-dropdown.component';
 import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisiter-job-modal.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { AuthorIntroduceComponent } from './author-introduce/author-introduce.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     SortDropdownComponent,
     RegisiterJobModalComponent,
     BreadcrumbComponent,
+    AuthorIntroduceComponent,
   ],
   imports: [
     FormsModule,
@@ -117,7 +119,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     VerifyUserModalComponent,
     SalesInviteComponent,
     SortDropdownComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    AuthorIntroduceComponent,
   ],
   providers: [ResizeService],
 })

@@ -1,0 +1,15 @@
+<div class="feature_article_detail_box_author">
+  <app-scope-title
+    [title]="setting.title"
+    [showTag]="false"
+    [showMoreBtn]="false"
+    customClass="feature_article_detail_box_scopeTitle"
+  ></app-scope-title>
+  <div class="feature_article_detail_box_author_container">
+    <img class="headshot_xl" [src]="setting.img" alt="" />
+    <div>
+      <div class="feature_article_detail_box_author_name">{{ setting.authorName }}</div>
+      <div class="feature_article_detail_box_author_text">{{ setting.authorText }}</div>
+    </div>
+  </div>
+</div>
