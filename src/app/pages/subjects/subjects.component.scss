@@ -6,6 +6,24 @@
   padding: 0 33px 0 48px;
 }
 
+.subject_item {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-content: space-between;
+  @include media-breakpoint-down(xxl) {
+    grid-template-columns: repeat(3,300px);
+  }
+  @include media-breakpoint-down(tablet) {
+    grid-template-columns: repeat(2,1fr);
+  }
+  @include media-breakpoint-down(md) {
+    grid-template-columns: repeat(1,1fr);
+  }
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(2,160px);
+  }
+}
+
 .title_name {
   font-weight: 500;
   font-size: $font-size-28;
@@ -85,10 +103,6 @@
   .search {
     margin-top: 10px;
     margin-bottom: 40px;
-  }
-
-  .subject_item {
-    justify-content: space-between;
   }
 
   .hot_subject_box {
