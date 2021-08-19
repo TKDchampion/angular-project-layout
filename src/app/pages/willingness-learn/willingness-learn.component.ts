@@ -14,6 +14,9 @@ export class WillingnessLearnComponent implements OnInit {
   willingnessLearnType!: string;
   videoRecommendItem = WillingnessLearnItem;
   sort = false;
+  clickStatus = false;
+  selected = '最新';
+  dropList = ['最新', '最多觀看'];
   constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
@@ -36,6 +39,14 @@ export class WillingnessLearnComponent implements OnInit {
   }
 
   registerToSuccess() {
+  }
+
+  dropSelected(item: string): void {
+    this.selected = item;
+  }
+
+  selectedBtn(): void {
+    this.clickStatus = !this.clickStatus;
   }
 
 }

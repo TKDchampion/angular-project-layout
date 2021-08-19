@@ -301,16 +301,8 @@ input::placeholder {
   color: $border_grey;
 }
 
-
-// willingness-learn
-@include media-breakpoint-up(lg) {
-  body app-new-video.willingness_video .new_video_box {
-    width: 290px;
-  }
-}
-
 //subject-video
-body .subject_video app-new-video {
+body .subject_video app-new-video, app-new-video.willingness_video {
   .new_video_box {
     margin-bottom: 16px;
     @include media-breakpoint-down(sm) {
