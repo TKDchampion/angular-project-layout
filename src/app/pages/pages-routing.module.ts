@@ -1,3 +1,5 @@
+import { FeatureVideoComponent } from './feature-video/feature-video.component';
+import { FeatureVideoDetailpageComponent } from './feature-video/feature-video-detailpage/feature-video-detailpage.component';
 import { SubjectsItemComponent } from './subjects/subjects-item/subjects-item.component';
 import { HomeItemComponent } from './home/home-item/home-item.component';
 import { NgModule } from '@angular/core';
@@ -38,6 +40,18 @@ const routes: Routes = [
       {
         path: 'feature-article/:id',
         component: FeatureArticleDetailpageComponent,
+      },
+      {
+        path: 'feature-video',
+        loadChildren: () => import('./feature-video/feature-video.module').then((m) => m.FeatureVideoModule),
+      },
+      {
+        path: 'feature-video/:type',
+        component: FeatureVideoComponent,
+      },
+      {
+        path: 'feature-video/:type/:id',
+        component: FeatureVideoDetailpageComponent,
       },
       {
         path: 'willingness-learn',

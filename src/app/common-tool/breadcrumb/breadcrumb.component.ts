@@ -7,7 +7,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class BreadcrumbComponent implements OnInit {
   @Input() breadcrumbText!: string;
+  @Input() isBreadcrumb = true;
   @Output() back = new EventEmitter<boolean>();
+  @Output() goType = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
@@ -17,4 +19,7 @@ export class BreadcrumbComponent implements OnInit {
     this.back.emit(true);
   }
 
+  goToType() {
+    this.goType.emit(true);
+  }
 }

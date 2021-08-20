@@ -4,14 +4,14 @@
 <p>{{ flag$ | async }}</p>
 
 <button (click)="set()">test</button>
-<p>{{ getdata?.value }}</p>
-<div data-vimeo-url="https://player.vimeo.com/video/559876766" id="handstick"></div> -->
+<p>{{ getdata?.value }}</p>-->
+<!-- <div data-vimeo-url="https://player.vimeo.com/video/559876766" id="handstick"></div> -->
 <app-banner></app-banner>
 <div class="home_box width_limit">
   <!-- New video -->
   <div>
     <div class="home_box_scope_title">
-      <app-scope-title [title]="'最新影片'"></app-scope-title>
+      <app-scope-title [title]="'最新影片'" [url]="'/pages/feature-video'"></app-scope-title>
     </div>
     <div class="swiper_box">
       <button
@@ -41,7 +41,7 @@
         </ng-template>
       </swiper>
     </div>
-    <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
+    <button type="button" class="btn btn-check-all" routerLink="/pages/feature-video">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
   </div>
 
   <!-- learn willingness -->
@@ -134,7 +134,7 @@
 <div class="home_box width_limit">
   <!-- Recommend video -->
   <div class="home_box_scope_title">
-    <app-scope-title [title]="'影片推薦'"></app-scope-title>
+    <app-scope-title [title]="'影片推薦'" [url]="'/pages/feature-video'"></app-scope-title>
   </div>
   <div class="swiper_box">
     <button
@@ -164,7 +164,7 @@
       </ng-template>
     </swiper>
   </div>
-  <button type="button" class="btn btn-check-all">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
+  <button type="button" class="btn btn-check-all" routerLink="/pages/feature-video">查看更多 <img src="../../../assets/icon/right.png" alt="" /></button>
 
   <!-- Hot subject -->
   <div class="home_box_scope_title">

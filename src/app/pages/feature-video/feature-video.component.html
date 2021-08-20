@@ -1,0 +1,25 @@
+<div class="home_box width_limit feature_video_box">
+  <app-breadcrumb *ngIf="videoType" [breadcrumbText]="videoType" (back)="goBack()" (goType)="goToType()"></app-breadcrumb>
+  <div class="title d-flex">
+    <div class="title_name">{{videoType ? videoType : '探索全部課程'}}</div>
+  </div>
+  <div class="search d-flex justify-content-between">
+    <app-search placeholder="請輸入關鍵字" (searchChange)="getSearchText($event)"></app-search>
+    <app-sort-dropdown></app-sort-dropdown>
+  </div>
+  <div class="content" [ngClass]="{'empty_content': searchText}">
+    <div class="content_item" *ngIf="!searchText else searchEmpty">
+      <ng-container *ngFor="let item of videoRecommendItem">
+        <app-new-video [newVideoItem]="item" class="feature_video"></app-new-video>
+      </ng-container>
+    </div>
+  </div>
+  <ng-template #searchEmpty>
+    <div class="search_empty">
+      <img src="../../../assets/img/no_result.png" alt="">
+      <div class="title">查無任何課程影片</div>
+      <div class="subtitle">請嘗試其他關鍵字</div>
+    </div>
+  </ng-template>
+
+</div>

@@ -1,0 +1,103 @@
+@import '../../../../styles/bootstrap.scss';
+@import '../../../../styles/variables.scss';
+
+.feature_video_detail_box {
+  margin: 48px auto;
+  margin-top: 16px;
+  max-width: 928px;
+}
+
+.feature_video_detail_box_header_subtitle {
+  color: $grey;
+  margin: 10px 0px;
+}
+
+.feature_video_detail_box_header_time {
+  color: $grey;
+}
+
+.feature_video_detail_box_video {
+  max-width: 928px;
+  max-height: 560px;
+  margin: 32px 0px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  @include media-breakpoint-down(sm) {
+    position: unset;
+    padding-top: unset;
+  }
+}
+
+.feature_video_detail_box_info {
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  @include media-breakpoint-down(sm) {
+    height: 100%;
+    flex-wrap: wrap;
+    .box_btn {
+      margin-top: 20px;
+      margin-bottom: 16px;
+    }
+  }
+  .info_viewer {
+    font-size: $font-size-14;
+    .split {
+      width: 2px;
+      height: 12px;
+      background: $hr_grey;
+      border-radius: 100px;
+      margin: 6px 12px;
+    }
+  }
+  .btn_download {
+    width: 114px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn_bookmark {
+    margin-left: 12px;
+    width: 82px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .bookmarkIcon {
+      width: 16px;
+      height: 16px;
+      background: $blue;
+    }
+  }
+}
+
+.feature_video_detail_box_editor {
+  margin-bottom: 32px;
+}
+
+@include media-breakpoint-down(xl) {
+  .feature_video_detail_box {
+    margin: 48px;
+    margin-top: 16px;
+  }
+}
+@include media-breakpoint-down(md) {
+  .feature_video_detail_box {
+    margin: 32px 20px 64px 20px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .hide_mobile {
+    display: none;
+  }
+  #handstick {
+    iframe {
+      width: 335px;
+      height: 245px;
+    }
+  }
+}

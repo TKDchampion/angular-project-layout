@@ -1,6 +1,6 @@
 import { NewVideoItemInfoNewArticleModel } from "src/app/common-tool/new-video/new-video.model";
 
-export const WillingnessLearnItem: NewVideoItemInfoNewArticleModel[] = [
+export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
   {
     id: '1',
     type: '醫務管理',
