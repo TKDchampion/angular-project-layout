@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChangeDetectorRef, Component, HostListener, Input, ViewChild } from '@angular/core';
-import { NewActiveItemInfo } from 'src/app/pages/home/home.model';
+import { NewActiveItemInfo, NewVideoItem } from 'src/app/pages/home/home.model';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 import { NewArticle } from './swiper.model';
 
@@ -11,7 +11,7 @@ import { NewArticle } from './swiper.model';
   styleUrls: ['./swiper.component.scss'],
 })
 export class SwiperComponent implements OnInit {
-  @Input() type!: 'article' | 'active';
+  @Input() type!: 'article' | 'active' | 'video';
   @ViewChild('swiperRef1', { static: false }) swiperRef1: any;
   @HostListener('window:resize', ['$event'])
   onResize(event: ResizeEvent): void {
@@ -43,6 +43,9 @@ export class SwiperComponent implements OnInit {
         break;
       case this.type === 'active':
         this.swiperItems = NewActiveItemInfo;
+        break;
+      case this.type === 'video':
+        this.swiperItems = NewVideoItem;
         break;
     }
     this.size = this.resizeService.default();

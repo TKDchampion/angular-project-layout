@@ -34,9 +34,11 @@
         </div>
         <!-- <app-new-article [newArticle]="item"></app-new-article> -->
       </ng-container>
-
       <ng-container *ngSwitchCase="type === 'active'">
         <app-new-active [newActiveItemInfo]="item"></app-new-active>
+      </ng-container>
+      <ng-container *ngSwitchCase="type === 'video'">
+        <app-new-video [newVideoItem]="item"></app-new-video>
       </ng-container>
     </ng-template>
   </swiper>
