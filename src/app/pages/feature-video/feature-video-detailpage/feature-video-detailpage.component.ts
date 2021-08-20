@@ -1,8 +1,10 @@
-import { isPlatformBrowser } from '@angular/common';
+import { formatNumber, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, HostListener, Inject, InjectionToken, OnInit, PLATFORM_ID } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Player from '@vimeo/player';
+import { NewVideoItemInfoNewArticleModel } from 'src/app/common-tool/new-video/new-video.model';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
+import { FeatureVideoItem } from '../feature-video.model';
 
 @Component({
   selector: 'app-feature-video-detailpage',
@@ -18,8 +20,22 @@ export class FeatureVideoDetailpageComponent implements OnInit, AfterViewInit {
       '由擁有臺大醫院15年臨床經驗的恬兒職能治療師協助號召、聚集多種兒童發展醫學專業，來提供專業的育兒、教養知識。服務內容包含:專業/親職講座、幼童發展潛能評估、學前發展核心能力培養遊戲課程、學前發展核心能力培養遊戲課程、教具玩具開發。',
   };
   isMobile = false;
-  constructor(@Inject(PLATFORM_ID) private platformId: InjectionToken<Record<string, unknown>>, private resizeService: ResizeService,private router: Router) {
+  // videoId!: string | null;
+  videoRecommendItem = FeatureVideoItem;
+  videoDetail: NewVideoItemInfoNewArticleModel | undefined;
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: InjectionToken<Record<string, unknown>>,
+    private resizeService: ResizeService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
     this.isMobile = this.detectWindowSize(this.resizeService.default());
+    const videoId = this.route.snapshot.paramMap.get('id');
+    this.videoDetail = this.videoRecommendItem.find(i => i.id === videoId);
+    router.events.subscribe((val: unknown) => {
+      const videoId = this.route.snapshot.paramMap.get('id');
+      this.videoDetail = this.videoRecommendItem.find(i => i.id === videoId);
+    });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -35,7 +51,7 @@ export class FeatureVideoDetailpageComponent implements OnInit, AfterViewInit {
   }
 
   goToType() {
-    this.router.navigate([`/pages/feature-video`,'醫務管理']);
+    this.router.navigate([`/pages/feature-video`, '醫務管理']);
   }
 
   ngAfterViewInit(): void {
@@ -43,7 +59,7 @@ export class FeatureVideoDetailpageComponent implements OnInit, AfterViewInit {
       // SSR video
       const player = new Player('handstick', {
         width: 928,
-        height: 560
+        height: 528
       });
       const onPlay = (data: unknown) => {
         console.log(data);

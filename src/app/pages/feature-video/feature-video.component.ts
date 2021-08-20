@@ -14,7 +14,7 @@ export class FeatureVideoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {
     router.events.subscribe((val: unknown) => {
       this.videoType = this.route.snapshot.paramMap.get('type');
-    })
+    });
   }
 
   ngOnInit(): void {
