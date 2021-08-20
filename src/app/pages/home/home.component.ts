@@ -250,7 +250,7 @@ export class HomeComponent implements AfterViewInit {
         sizeCounts = 4;
         break;
     }
-    return allCounts - sizeCounts;
+    return allCounts - sizeCounts < 0 ? 0 : allCounts - sizeCounts;
   }
 
   private detectNewVideoColumn(size: string): number {
