@@ -44,6 +44,10 @@
   max-width: 1366px;
   margin: auto;
 }
+// swiper custom common-tool
+body app-swiper swiper.video_swiper .swiper-wrapper .swiper-slide {
+  width: 310px !important;
+}
 
 // swiper
 body swiper.video_swiper .swiper-wrapper .swiper-slide {
@@ -58,7 +62,7 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   border: 2px solid #e8e8e8;
   position: absolute;
   z-index: 11;
-  margin-top: 115px;
+  margin-top: 90px;
   &.disabled {
     display: none;
   }
