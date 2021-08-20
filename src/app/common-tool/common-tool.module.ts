@@ -44,6 +44,7 @@ import { SortDropdownComponent } from './sort-dropdown/sort-dropdown.component';
 import { RegisiterJobModalComponent } from './popup/regisiter-job-modal/regisiter-job-modal.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { AuthorIntroduceComponent } from './author-introduce/author-introduce.component';
+import { SwiperComponent } from './swiper/swiper.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { AuthorIntroduceComponent } from './author-introduce/author-introduce.co
     RegisiterJobModalComponent,
     BreadcrumbComponent,
     AuthorIntroduceComponent,
+    SwiperComponent,
   ],
   imports: [
     FormsModule,
@@ -121,6 +123,7 @@ import { AuthorIntroduceComponent } from './author-introduce/author-introduce.co
     SortDropdownComponent,
     BreadcrumbComponent,
     AuthorIntroduceComponent,
+    SwiperComponent,
   ],
   providers: [ResizeService],
 })

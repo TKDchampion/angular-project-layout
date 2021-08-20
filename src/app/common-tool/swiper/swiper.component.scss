@@ -1,0 +1,26 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/bootstrap.scss';
+
+.swiper_box {
+  position: relative;
+}
+
+.swiper_article_box {
+  width: 298px;
+}
+
+.swiper_article_box_img {
+  width: 298px;
+  height: 210px;
+  border-radius: 14px;
+}
+
+.swiper_article_box_author_name {
+  color: $grey;
+  font-size: $font-size-14;
+}
+
+.swiper_article_box_time {
+  color: $grey;
+  font-size: $font-size-14;
+}

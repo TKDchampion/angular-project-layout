@@ -1,0 +1,43 @@
+<div class="swiper_box">
+  <button
+    (click)="prev('swiperRef1')"
+    class="swiper_button_prev"
+    [ngClass]="{ disabled: swiperSlideTransform['swiperRef1'] === 0 || size === 'xs' || size === 'sm' }"
+  >
+    <svg class="swiper_prev"></svg>
+  </button>
+  <button
+    (click)="next('swiperRef1')"
+    class="swiper_button_next"
+    [ngClass]="{ disabled: swiperSlideTransform['swiperRef1'] === swiperSlideCounts['swiperRef1'] * -310 || size === 'xs' || size === 'sm' }"
+  >
+    <svg class="swiper_next"></svg>
+  </button>
+  <swiper
+    class="video_swiper"
+    [spaceBetween]="0"
+    [navigation]="false"
+    [slidesPerView]="swiperColumn"
+    (transitionStart)="onSlideChange($event, 'swiperRef1')"
+    #swiperRef1
+  >
+    <ng-template *ngFor="let item of swiperItems" swiperSlide [ngSwitch]="!!type">
+      <ng-container *ngSwitchCase="type === 'article'">
+        <div class="swiper_article_box">
+          <img [src]="item.articleImg" alt="" class="swiper_article_box_img" />
+          <h3 class="swiper_article_box_title mt-2">{{ item.articleTitle }}</h3>
+          <div class="swiper_article_box_author d-flex mt-2">
+            <img class="swiper_article_box_author_img headshot_sm" [src]="item.authorImg" alt="" />
+            <div class="swiper_article_box_author_name">{{ item.author }} 教授</div>
+          </div>
+          <div class="swiper_article_box_time mt-2">{{ item.viewer }}</div>
+        </div>
+        <!-- <app-new-article [newArticle]="item"></app-new-article> -->
+      </ng-container>
+
+      <ng-container *ngSwitchCase="type === 'active'">
+        <app-new-active [newActiveItemInfo]="item"></app-new-active>
+      </ng-container>
+    </ng-template>
+  </swiper>
+</div>
