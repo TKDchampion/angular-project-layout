@@ -1,5 +1,5 @@
 <div class="home_box width_limit subject">
-  <app-breadcrumb [breadcrumbText]="'返回所有學科'" (back)="backToSubject()"></app-breadcrumb>
+  <app-breadcrumb [breadcrumbText]="'返回所有學科'" [isBreadcrumb]="false" (back)="backToSubject()"></app-breadcrumb>
   <hr class="default_hr mb-4">
   <div class="title d-flex align-items-center"><img src="{{subjectItem?.url}}" alt=""> {{subjectItem?.title}}</div>
   <app-search placeholder="搜尋我的收藏"></app-search>

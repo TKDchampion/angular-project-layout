@@ -49,17 +49,17 @@
               aria-expanded="false"
             >
               課程影片
-              <div class="arrow_down"></div>
+              <div class="nav_arrow_down"></div>
               <div class="arrow_up"></div>
             </a>
           </div>
           <div *dropdownMenu role="menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a role="menuitem" class="dropdown-item" href="#">全部</a>
-            <a role="menuitem" class="dropdown-item" href="#">醫藥管理</a>
-            <a role="menuitem" class="dropdown-item" href="#">臨床醫學</a>
-            <a role="menuitem" class="dropdown-item" href="#">臨床護理</a>
-            <a role="menuitem" class="dropdown-item" href="#">保健營養</a>
-            <a role="menuitem" class="dropdown-item" href="#">醫療法務</a>
+            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video']">全部</a>
+            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video','醫藥管理']">醫藥管理</a>
+            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video','臨床醫學']">臨床醫學</a>
+            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video','臨床護理']">臨床護理</a>
+            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video','保健營養']">保健營養</a>
+            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video','醫療法務']">醫療法務</a>
           </div>
         </li>
         <li class="nav-item dropdown nav-article">

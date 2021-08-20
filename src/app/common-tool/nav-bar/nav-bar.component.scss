@@ -95,7 +95,7 @@
     .arrow_up {
       display: none;
     }
-    .arrow_down {
+    .nav_arrow_down {
       display: unset;
       width: 14px;
       height: 14px;
@@ -123,7 +123,7 @@
       background-size: 14px;
       filter: invert(16%) sepia(71%) saturate(3531%) hue-rotate(341deg) brightness(110%) contrast(92%);
     }
-    .arrow_down {
+    .nav_arrow_down {
       display: none;
     }
   }
@@ -412,7 +412,7 @@
         .arrow_up {
           display: none;
         }
-        .arrow_down {
+        .nav_arrow_down {
           display: unset;
           width: 12px;
           height: 12px;
@@ -465,7 +465,7 @@
           right: 35px;
           opacity: 1;
         }
-        .arrow_down {
+        .nav_arrow_down {
           display: none;
         }
       }

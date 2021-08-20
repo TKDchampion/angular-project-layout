@@ -48,6 +48,8 @@ export const NewArticle2: NewArticleModel[] = [
 
 export const NewVideoItem: NewVideoItemInfoNewArticleModel[] = [
   {
+    id: '1',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/new_video_fake_img.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
@@ -55,6 +57,8 @@ export const NewVideoItem: NewVideoItemInfoNewArticleModel[] = [
     text: '歐朔銘 醫師．4,567 已觀看',
   },
   {
+    id: '2',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/newvideo_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_2.png',
@@ -62,6 +66,8 @@ export const NewVideoItem: NewVideoItemInfoNewArticleModel[] = [
     text: '林美麗 醫師．3,567 已觀看',
   },
   {
+    id: '3',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/newvideo_3.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
@@ -69,6 +75,8 @@ export const NewVideoItem: NewVideoItemInfoNewArticleModel[] = [
     text: '王彩華 醫師．2,567 已觀看',
   },
   {
+    id: '4',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/newvideo_4.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
@@ -76,6 +84,8 @@ export const NewVideoItem: NewVideoItemInfoNewArticleModel[] = [
     text: '歐朔銘 醫師．2,567 已觀看',
   },
   {
+    id: '5',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/new_video_fake_img.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
@@ -83,6 +93,8 @@ export const NewVideoItem: NewVideoItemInfoNewArticleModel[] = [
     text: '歐朔銘 醫師．4,567 已觀看',
   },
   {
+    id: '6',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/newvideo_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_2.png',
@@ -93,6 +105,8 @@ export const NewVideoItem: NewVideoItemInfoNewArticleModel[] = [
 
 export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
   {
+    id: '1',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/video_recommend_1.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
@@ -100,6 +114,8 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
     text: '歐朔銘 醫師．3,567 已觀看',
   },
   {
+    id: '2',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/video_recommend_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_4.png',
@@ -107,6 +123,8 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
     text: '林美麗 醫師．2,967 已觀看',
   },
   {
+    id: '3',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/video_recommend_3.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_2.png',
@@ -114,6 +132,8 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
     text: '王音名 醫師．1,567 已觀看',
   },
   {
+    id: '4',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/video_recommend_4.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
@@ -121,6 +141,8 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
     text: '邵昕 醫師．2,567 已觀看',
   },
   {
+    id: '5',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/video_recommend_1.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
@@ -128,6 +150,8 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
     text: '歐朔銘 醫師．3,567 已觀看',
   },
   {
+    id: '6',
+    type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/video_recommend_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_4.png',

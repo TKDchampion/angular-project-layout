@@ -1,4 +1,15 @@
-<div class="breadcrumb d-flex align-items-center cursor_pointer" (click)="backPage()">
-  <svg class="breadcrumbLeftIcon"></svg>
-  <div class="text">{{breadcrumbText}}</div>
+<div class="breadcrumb d-flex align-items-center" *ngIf="isBreadcrumb else breadcrumb">
+  <div class="cursor_pointer text" (click)="backPage()">全部</div>
+  <svg class="breadcrumbRightIcon"></svg>
+  <div class="text cursor_pointer" (click)="goToType()">{{breadcrumbText}}</div>
 </div>
+
+<ng-template #breadcrumb>
+  <div class="breadcrumb d-flex align-items-center cursor_pointer" (click)="backPage()">
+    <svg class="breadcrumbLeftIcon"></svg>
+    <div class="text">{{breadcrumbText}}</div>
+  </div>
+</ng-template>
+
+
+
