@@ -385,7 +385,7 @@ body .willingness_learn .content_title app-scope-title .scope_title_box {
   margin: unset;
 }
 
-body app-scope-title .scope_title_box.feature_article_detail_box_scopeTitle {
+body app-scope-title.feature_article_detail_box_scopeTitle .scope_title_box {
   margin-top: 32px;
   margin-bottom: 24px;
   .scope_title_box_text {
@@ -402,13 +402,6 @@ body .feature_video_detail_box_video #handstick iframe {
   right: 0;
   width: 100%;
   height: 100%;
-  // body .player {
-  //   max-width: unset;
-  //   .vp-video-wrapper .vp-perview {
-  //     background-repeat: unset;
-  //     background-position: unset;
-  //   }
-  // }
   @include media-breakpoint-down(sm) {
     width: 335px;
     height: 245px;
