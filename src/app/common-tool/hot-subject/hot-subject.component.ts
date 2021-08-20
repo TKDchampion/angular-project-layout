@@ -1,4 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 import { HotSubjectItemInfoNewArticleModel } from './hot-subject.model';
 
@@ -15,7 +16,11 @@ export class HotSubjectComponent {
   @Input() hotSubjectItemInfo!: HotSubjectItemInfoNewArticleModel;
   breakpointSize: string | undefined;
 
-  constructor(private resizeService: ResizeService) {
+  constructor(private resizeService: ResizeService, private router: Router) {
     this.breakpointSize = this.resizeService.default();
+  }
+
+  gotoSubjectItem(subjectItem: string): void {
+    this.router.navigate([`/pages/subject`, subjectItem]);
   }
 }
