@@ -31,7 +31,7 @@ const routes: Routes = [
         loadChildren: () => import('./subjects/subjects.module').then((m) => m.SubjectsModule)
       },
       {
-        path: 'subject/:subject',
+        path: 'subject/:id',
         component: SubjectsItemComponent,
       },
       {
