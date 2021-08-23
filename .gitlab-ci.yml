@@ -1,5 +1,4 @@
 stages:
-  - publish
   - build
   - deploy
   - publish
