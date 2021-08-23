@@ -1,6 +1,7 @@
 stages:
   - build
   - deploy
+  - publish
 
 .job_build_template:
   stage: build
@@ -38,6 +39,27 @@ stages:
       --cluster $PROJECT-$ENV --force-new-deployment
     - aws ecs wait services-stable --services $SERVICE_NAME --cluster $PROJECT-$ENV
 
+.job_publish_template:
+  stage: publish
+  image: docker:19.03
+  before_script:
+    - apk add --update py-pip
+    - pip install awscli --upgrade
+    - aws configure set region $AWS_DEFAULT_REGION
+    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+
+  script:
+    - >-
+      docker build --build-arg APP_ENV=$ENV -t 955155698011.dkr.ecr.ap-northeast-1.amazonaws.com/ghs:latest 
+      -t 955155698011.dkr.ecr.ap-northeast-1.amazonaws.com/ghs:$CI_COMMIT_SHORT_SHA .
+    - >-
+      aws ecr get-login-password --region $AWS_DEFAULT_REGION | 
+      docker login --username AWS --password-stdin 955155698011.dkr.ecr.ap-northeast-1.amazonaws.com
+    - docker push 955155698011.dkr.ecr.ap-northeast-1.amazonaws.com/ghs:$CI_COMMIT_SHORT_SHA
+    - docker push 955155698011.dkr.ecr.ap-northeast-1.amazonaws.com/ghs:latest
+    - docker logout 955155698011.dkr.ecr.ap-northeast-1.amazonaws.com
+
 dev_build:
   extends: .job_build_template
   stage: build
@@ -58,3 +80,13 @@ dev_deploy:
   tags:
     - local
 
+dev_publish:
+  extends: .job_publish_template
+  environment:
+    name: publish
+  variables:
+    ENV: "dev"
+  only:
+    - main
+  tags:
+    - local
