@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { FeatureArticleDetailpageComponent } from './feature-article/feature-article-detailpage/feature-article-detailpage.component';
+import { FeatureDownloadDetailpageComponent } from './feature-download/feature-download-detailpage/feature-download-detailpage.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,14 @@ const routes: Routes = [
       {
         path: 'willingness-learn',
         loadChildren: () => import('./willingness-learn/willingness-learn.module').then((m) => m.WillingnessLearnModule),
+      },
+      {
+        path: 'feature-download',
+        loadChildren: () => import('./feature-download/feature-download.module').then((m) => m.FeatureDownloadModule)
+      },
+      {
+        path: 'feature-download/:id',
+        component: FeatureDownloadDetailpageComponent,
       },
     ],
   },
