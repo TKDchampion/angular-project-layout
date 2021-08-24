@@ -1,0 +1,54 @@
+<div class="home_box width_limit download">
+  <div class="title d-flex">
+    <div class="title_name">檔案下載</div>
+  </div>
+  <div class="search">
+    <app-search placeholder="請輸入關鍵字" (searchChange)="getSearchText($event)"></app-search>
+  </div>
+  <div class="download_panel" [ngClass]="{'d-flex': searchText}">
+    <div class="download_item cursor_pointer" *ngIf="!searchText else searchEmpty">
+      <div class="download_box d-flex align-items-center" *ngFor="let name of folder" (click)="gotoDownloadItem(name.id)">
+        <svg class="folderIcon"></svg>
+        <div class="download_box_name">{{name.name}}</div>
+      </div>
+    </div>
+    <!-- 搜尋時如果有檔案顯示 mobileDownloadList為手機版-->
+    <div class="download_list" *ngIf="showDemoSearchList">
+      <table class="table" *ngIf="!isMobile else mobileDownloadList">
+        <thead>
+          <tr>
+            <th scope="col-8">名稱</th>
+            <th scope="col-2">檔案大小</th>
+            <th scope="col-2">下載</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cursor_pointer" *ngFor="let file of filesList">
+            <td class="name"><svg class="paperIcon"></svg>{{file.name}}</td>
+            <td class="size">{{file.size}}</td>
+            <td class="action"><svg class="bigDownloadIcon"></svg></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <ng-template #searchEmpty>
+    <div class="search_empty">
+      <img src="../../../assets/img/no_result.png" alt="">
+      <div class="title">查無任何課程影片</div>
+      <div class="subtitle">請嘗試其他關鍵字</div>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #mobileDownloadList>
+  <div class="download_list_item d-flex align-items-center" *ngFor="let file of filesList">
+    <svg class="paperIcon"></svg>
+    <div class="list_detail">
+      <div class="detail_name">{{file.name}}</div>
+      <div class="detail_size">{{file.size}}</div>
+    </div>
+    <svg class="bigDownloadIcon"></svg>
+  </div>
+</ng-template>
+

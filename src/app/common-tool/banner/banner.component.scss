@@ -3,7 +3,7 @@
 
 .banner {
   background: $light_light_light_light_light_grey;
-  background-image: url('../../../assets/img/stranger_banner_1366.png');
+  background-image: url('../../../assets/img/stranger_banner_1920.png');
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
@@ -79,7 +79,7 @@
   }
 }
 .login_banner {
-  background-image: url('../../../assets/img/logined_banner_1366.png');
+  background-image: url('../../../assets/img/logined_banner_1920.png');
 }
 
 @include media-breakpoint-up(xl) {
@@ -102,18 +102,16 @@
   }
 }
 
-@include media-breakpoint-up(xxl) {
+@media (min-width: 1367px) {
   .banner-outside {
     padding: unset;
     .banner {
       border-radius: unset;
-      background-image: url('../../../assets/img/stranger_banner_1920.png');
       .banner_content {
         left: calc((100% - 1366px) / 2 + 60px);
       }
     }
     .login_banner {
-      background-image: url('../../../assets/img/logined_banner_1920.png');
     }
   }
 }

@@ -7,7 +7,7 @@
     <app-search placeholder="請輸入關鍵字" (searchChange)="getSearchText($event)"></app-search>
     <app-sort-dropdown></app-sort-dropdown>
   </div>
-  <div class="content" [ngClass]="{'empty_content': searchText}">
+  <div class="content" [ngClass]="{'d-flex': searchText}">
     <div class="content_item" *ngIf="!searchText else searchEmpty">
       <ng-container *ngFor="let item of videoRecommendItem">
         <app-new-video [newVideoItem]="item" class="feature_video"></app-new-video>

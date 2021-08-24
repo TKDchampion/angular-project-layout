@@ -47,7 +47,7 @@
       <div class="member_edit_box_content_kanban_title verify_content">驗證進度</div>
       <div class="member_edit_box_content_kanban_subtitle verify_content">我們將會盡快處理您的驗證需求</div>
       <div class="member_edit_box_content_kanban_verify d-flex">
-        <div class="member_edit_box_content_kanban_step d-flex align-items-center">
+        <div class="member_edit_box_content_kanban_step member_edit_box_content_kanban_step_bg d-flex align-items-center">
           <div class="member_edit_box_content_kanban_step_icon">
             <img src="../../../../assets/img/verify_step1.png" alt="" />
           </div>
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="member_edit_box_content_kanban_step d-flex align-items-center need_invite_code"
-          [ngClass]="{ active: !hasInviteCode }">
+          [ngClass]="{ active: !hasInviteCode, member_edit_box_content_kanban_step_active_bg: !hasInviteCode,member_edit_box_content_kanban_step_bg: hasInviteCode}">
           <div class="member_edit_box_content_kanban_step_icon">
             <img
               [src]="!hasInviteCode ? '../../../../assets/img/verify_step2.png' : '../../../../assets/img/verify_step2_disable.png'"
