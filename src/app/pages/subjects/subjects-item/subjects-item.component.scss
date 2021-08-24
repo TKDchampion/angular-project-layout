@@ -33,10 +33,6 @@
 
 .subject_content {
   margin-top: 40px;
-  min-height: 432px;
-  @include media-breakpoint-down(sm) {
-    min-height: 320px;
-  }
 }
 
 .tab {

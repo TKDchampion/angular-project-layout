@@ -23,8 +23,8 @@ export class SubjectsItemComponent implements OnInit {
   constructor(private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.subjectItem = this.hotSubjectArray.find(i => i.id === id);
+    const title = this.route.snapshot.paramMap.get('subject');
+    this.subjectItem = this.hotSubjectArray.find(i => i.title === title);
   }
 
   selectTab(item: TabListModel): void {
