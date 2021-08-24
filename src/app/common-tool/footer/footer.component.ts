@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
+import { clickValue } from 'src/app/core/store/profileDrap/profileDrop.actions';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +10,7 @@ import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 })
 export class FooterComponent implements OnInit {
   isMobile = false;
-  constructor(private resizeService: ResizeService) {
+  constructor(private resizeService: ResizeService,private storeValue: Store<{ clickValue: { value: string } }>) {
     this.isMobile = this.detectWindowSize(this.resizeService.default());
   }
 
@@ -23,5 +25,9 @@ export class FooterComponent implements OnInit {
   private detectWindowSize(size: string): boolean {
     const mobileSize = ['md', 'sm', 'xs'];
     return mobileSize.find((i) => i === size) ? true : false;
+  }
+
+  set(item: string): void {
+    this.storeValue.dispatch(clickValue({ value: item }));
   }
 }

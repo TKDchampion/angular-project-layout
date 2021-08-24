@@ -1,0 +1,13 @@
+<div class="regulations_edit_box d-flex">
+  <div class="regulations_edit_box_menu">
+    <div class="regulations_edit_box_menu_item" *ngFor="let item of menulist" [ngClass]="{ active: item.active }" (click)="selectMenu(item)">
+      <p>
+        <svg [class]="item.icon" [ngClass]="{ active: item.active }"></svg>
+        {{ item.name }}
+      </p>
+    </div>
+  </div>
+  <div class="regulations_edit_box_content flex-grow-1">
+    <router-outlet></router-outlet>
+  </div>
+</div>
