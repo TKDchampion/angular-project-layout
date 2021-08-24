@@ -1,12 +1,12 @@
 <div class="feature_video_detail_box">
-  <app-breadcrumb [breadcrumbText]="'醫務管理'" (back)="goBack()" (goType)="goToType()"></app-breadcrumb>
+  <app-breadcrumb [breadcrumbText]="videoDetail?.type" (back)="goBack()" (goType)="goToType()"></app-breadcrumb>
   <div class="default_hr mb-4 hide_mobile"></div>
   <div class="feature_video_detail_box_header">
     <div class="feature_video_detail_box_header_tag d-flex mb-2">
       <div class="category_tag">醫學資訊</div>
       <div class="category_tag" routerLink="/pages/subject/家醫科">家醫科</div>
     </div>
-    <h1 class="feature_video_detail_box_header_title">從小實施衛教的重要性</h1>
+    <h1 class="feature_video_detail_box_header_title">{{videoDetail?.title}}</h1>
   </div>
   <div class="feature_video_detail_box_video">
     <div data-vimeo-url="https://player.vimeo.com/video/559876766" id="handstick"></div>

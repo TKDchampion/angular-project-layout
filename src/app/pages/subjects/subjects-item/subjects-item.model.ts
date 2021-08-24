@@ -29,7 +29,7 @@ interface ArticleModel {
 
 export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
   {
-    id: '1',
+    id: '5',
     type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/video_recommend_1.png',
@@ -38,7 +38,7 @@ export const VideoRecommendItem: NewVideoItemInfoNewArticleModel[] = [
     text: '歐朔銘 醫師．3,567 已觀看',
   },
   {
-    id: '2',
+    id: '6',
     type: '醫務管理',
     time: '32:24',
     headUrl: '../../../assets/img/fakeImge/video_recommend_2.png',

@@ -403,7 +403,7 @@ body .feature_video_detail_box_video #handstick iframe {
   width: 100%;
   height: 100%;
   @include media-breakpoint-down(sm) {
-    width: 335px;
+    width: 100%;
     height: 245px;
     position: unset;
   }

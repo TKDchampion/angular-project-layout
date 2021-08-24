@@ -8,7 +8,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_1.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
     title: '社區普篩可行性？',
-    text: '歐朔銘 醫師•3,567 已觀看',
+    text: '歐朔銘 醫師．3,567 已觀看',
   },
   {
     id: '2',
@@ -17,7 +17,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_4.png',
     title: '寵物恐感新冠肺炎？',
-    text: '林美麗 醫師•2,967 已觀看',
+    text: '林美麗 醫師．2,967 已觀看',
   },
   {
     id: '3',
@@ -26,7 +26,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_3.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_2.png',
     title: '間歇性斷食操作指南',
-    text: '王音名 醫師•1,567 已觀看',
+    text: '王音名 醫師．1,567 已觀看',
   },
   {
     id: '4',
@@ -35,7 +35,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_4.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
     title: '二手菸對人體的危害',
-    text: '邵昕 醫師•2,567 已觀看',
+    text: '邵昕 醫師．2,567 已觀看',
   },
   {
     id: '5',
@@ -44,7 +44,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_1.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
     title: '社區普篩可行性？',
-    text: '歐朔銘 醫師•3,567 已觀看',
+    text: '歐朔銘 醫師．3,567 已觀看',
   },
   {
     id: '6',
@@ -53,7 +53,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_4.png',
     title: '寵物恐感新冠肺炎？',
-    text: '林美麗 醫師•2,967 已觀看',
+    text: '林美麗 醫師．2,967 已觀看',
   },
   {
     id: '7',
@@ -62,7 +62,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/new_video_fake_img.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
     title: '從小實施衛教的重要性',
-    text: '歐朔銘 醫師•4,567 已觀看',
+    text: '歐朔銘 醫師．4,567 已觀看',
   },
   {
     id: '8',
@@ -71,7 +71,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/newvideo_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_2.png',
     title: '為什麼流感會致命？',
-    text: '林美麗 醫師•3,567 已觀看',
+    text: '林美麗 醫師．3,567 已觀看',
   },
   {
     id: '9',
@@ -80,7 +80,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/newvideo_3.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
     title: '教你如何分辨醫療口罩',
-    text: '王彩華 醫師•2,567 已觀看',
+    text: '王彩華 醫師．2,567 已觀看',
   },
   {
     id: '10',
@@ -89,7 +89,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/newvideo_4.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
     title: '防曬，從小做起',
-    text: '歐朔銘 醫師•2,567 已觀看',
+    text: '歐朔銘 醫師．2,567 已觀看',
   },
   {
     id: '11',
@@ -98,7 +98,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_1.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
     title: '社區普篩可行性？',
-    text: '歐朔銘 醫師•3,567 已觀看',
+    text: '歐朔銘 醫師．3,567 已觀看',
   },
   {
     id: '12',
@@ -107,7 +107,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_4.png',
     title: '寵物恐感新冠肺炎？',
-    text: '林美麗 醫師•2,967 已觀看',
+    text: '林美麗 醫師．2,967 已觀看',
   },
   {
     id: '13',
@@ -116,7 +116,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_3.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_2.png',
     title: '間歇性斷食操作指南',
-    text: '王音名 醫師•1,567 已觀看',
+    text: '王音名 醫師．1,567 已觀看',
   },
   {
     id: '14',
@@ -125,7 +125,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_4.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
     title: '二手菸對人體的危害',
-    text: '邵昕 醫師•2,567 已觀看',
+    text: '邵昕 醫師．2,567 已觀看',
   },
   {
     id: '15',
@@ -134,7 +134,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_1.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
     title: '社區普篩可行性？',
-    text: '歐朔銘 醫師•3,567 已觀看',
+    text: '歐朔銘 醫師．3,567 已觀看',
   },
   {
     id: '16',
@@ -143,7 +143,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/video_recommend_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_4.png',
     title: '寵物恐感新冠肺炎？',
-    text: '林美麗 醫師•2,967 已觀看',
+    text: '林美麗 醫師．2,967 已觀看',
   },
   {
     id: '17',
@@ -152,7 +152,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/new_video_fake_img.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
     title: '從小實施衛教的重要性',
-    text: '歐朔銘 醫師•4,567 已觀看',
+    text: '歐朔銘 醫師．4,567 已觀看',
   },
   {
     id: '18',
@@ -161,7 +161,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/newvideo_2.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_2.png',
     title: '為什麼流感會致命？',
-    text: '林美麗 醫師•3,567 已觀看',
+    text: '林美麗 醫師．3,567 已觀看',
   },
   {
     id: '19',
@@ -170,7 +170,7 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/newvideo_3.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot.png',
     title: '教你如何分辨醫療口罩',
-    text: '王彩華 醫師•2,567 已觀看',
+    text: '王彩華 醫師．2,567 已觀看',
   },
   {
     id: '20',
@@ -179,6 +179,6 @@ export const FeatureVideoItem: NewVideoItemInfoNewArticleModel[] = [
     headUrl: '../../../assets/img/fakeImge/newvideo_4.png',
     headShotUrl: '../../../assets/img/fakeImge/new_video_fake_headshot_3.png',
     title: '防曬，從小做起',
-    text: '歐朔銘 醫師•2,567 已觀看',
+    text: '歐朔銘 醫師．2,567 已觀看',
   },
 ];

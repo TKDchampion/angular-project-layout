@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent implements OnInit {
-  @Input() breadcrumbText!: string;
+  @Input() breadcrumbText!: string | undefined;
   @Input() isBreadcrumb = true;
   @Output() back = new EventEmitter<boolean>();
   @Output() goType = new EventEmitter<boolean>();
