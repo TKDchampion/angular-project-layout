@@ -21,8 +21,8 @@ export class SubjectsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  gotoSubjectItem(subjectId: string): void {
-    this.router.navigate([`/pages/subject`, subjectId]);
+  gotoSubjectItem(subjectItem: string): void {
+    this.router.navigate([`/pages/subject`, subjectItem]);
   }
 
 }

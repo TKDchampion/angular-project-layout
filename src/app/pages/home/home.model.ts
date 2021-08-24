@@ -176,56 +176,48 @@ export const LearnWillingness2: LearnWillingnessNewArticleModel = {
 
 export const HotSubjectItemInfo: HotSubjectItemInfoNewArticleModel[] = [
   {
-    id: '1',
     title: '眼科',
     subTitle: '121相關課程',
     svgClass: 'eyeIcon',
     url: '../../../assets/img/eyes.png',
   },
   {
-    id: '2',
     title: '小兒科',
     subTitle: '31相關課程',
     svgClass: 'babyIcon',
     url: '../../../assets/img/baby.png',
   },
   {
-    id: '3',
     title: '耳鼻喉科',
     subTitle: '93相關課程',
     svgClass: 'eyeIcon',
     url: '../../../assets/img/ear.png',
   },
   {
-    id: '4',
     title: '骨科',
     subTitle: '251相關課程',
     svgClass: 'eyeIcon',
     url: '../../../assets/img/bone.png',
   },
   {
-    id: '5',
     title: '腦科',
     subTitle: '121相關課程',
     svgClass: 'eyeIcon',
     url: '../../../assets/img/brain.png',
   },
   {
-    id: '6',
     title: '精神科',
     subTitle: '31相關課程',
     svgClass: 'eyeIcon',
     url: '../../../assets/img/mind.png',
   },
   {
-    id: '7',
     title: '皮膚科',
     subTitle: '93相關課程',
     svgClass: 'eyeIcon',
     url: '../../../assets/img/skin.png',
   },
   {
-    id: '8',
     title: '牙科',
     subTitle: '251相關課程',
     svgClass: 'eyeIcon',

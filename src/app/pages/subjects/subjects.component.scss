@@ -7,10 +7,6 @@
 }
 
 .subject_item {
-  min-height: 432px;
-  @include media-breakpoint-down(sm) {
-    min-height: 320px;
-  }
   display: grid;
   grid-template-columns: repeat(4,1fr);
   justify-content: space-between;
