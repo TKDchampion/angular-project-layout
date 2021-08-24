@@ -1,0 +1,80 @@
+@import '../../../styles/bootstrap.scss';
+@import '../../../styles/variables.scss';
+
+.regulations_edit_box {
+  padding: 32px 0px;
+  padding-top: 44px;
+  padding-bottom: 88px;
+}
+
+.regulations_edit_box_menu {
+  flex: 0 0 252px;
+  @include media-breakpoint-down(xxl) {
+    flex: 0 0 212px;
+  }
+  width: 300px;
+  margin-left: 48px;
+}
+
+.regulations_edit_box_menu_item {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 48px;
+  cursor: pointer;
+  p {
+    line-height: 48px;
+  }
+  svg {
+    margin-top: -3px;
+  }
+  &.active {
+    background-color: $light_light_light_light_grey;
+    p {
+      position: relative;
+      top: -54px;
+      color: $red;
+    }
+  }
+  &.active::before {
+    content: '';
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-color: $light_light_light_light_grey;
+    position: relative;
+    left: -48px;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .regulations_edit_box_menu {
+    width: 300px;
+    margin-left: 48px;
+  }
+}
+@include media-breakpoint-down(xl) {
+  .regulations_edit_box_menu {
+    width: 260px;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .regulations_edit_box_menu {
+    display: none;
+  }
+}
+
+.regulations_edit_box_content {
+  margin: auto;
+  max-width: 970px;
+  min-height: 500px;
+}
+@include media-breakpoint-down(xxl) {
+  .regulations_edit_box_content {
+    margin: auto 32px;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .regulations_edit_box_content {
+    margin: auto 20px;
+  }
+}

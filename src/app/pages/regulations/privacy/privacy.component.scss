@@ -1,0 +1,14 @@
+@import '../../../../styles/bootstrap.scss';
+@import '../../../../styles/variables.scss';
+
+.privacy_header {
+  margin-bottom: 54px;
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 40px;
+  }
+  .privacy_header_subtitle {
+    margin-top: 14px;
+    font-size: 14px;
+    color: $light_grey;
+  }
+}
