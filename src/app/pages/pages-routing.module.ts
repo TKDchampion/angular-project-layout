@@ -75,6 +75,10 @@ const routes: Routes = [
         path: 'feature-download/:id',
         component: FeatureDownloadDetailpageComponent,
       },
+      {
+        path: 'regulations',
+        loadChildren: () => import('./regulations/regulations.module').then(m => m.RegulationsModule)
+      },
     ],
   },
 ];

@@ -10,14 +10,14 @@
         <div class="footer_content_contact_text">contact.us@dksh.com</div>
       </div>
       <div class="footer_content_link">
-        <div class="footer_content_contact_text">課程影片</div>
-        <div class="footer_content_contact_text">專題文章</div>
-        <div class="footer_content_contact_text">活動消息</div>
-        <div class="footer_content_contact_text">檔案下載</div>
+        <div class="footer_content_contact_text cursor_pointer" routerLink="/pages/feature-video">課程影片</div>
+        <div class="footer_content_contact_text cursor_pointer">專題文章</div>
+        <div class="footer_content_contact_text cursor_pointer">活動消息</div>
+        <div class="footer_content_contact_text cursor_pointer" routerLink="/pages/feature-download">檔案下載</div>
       </div>
       <div class="footer_content_linkcontact">
-        <div class="footer_content_contact_text">關於我們</div>
-        <div class="footer_content_contact_text">聯絡我們</div>
+        <div class="footer_content_contact_text cursor_pointer" routerLink="/pages/regulations/aboutus" (click)="set('aboutus')">關於我們</div>
+        <div class="footer_content_contact_text cursor_pointer" routerLink="/pages/regulations/contactus" (click)="set('contactus')">聯絡我們</div>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
   <div class="footer_copyright d-flex">
     <div class="footer_copyright_text">
       <div class="footer_copyright_english">Copyright @ 2021 Good Health Solutions International All rights reserved. Powered by Dr. Talk.</div>
-      <div class="footer_copyright_chinese">使用條款•隱私權政策</div>
+      <div class="footer_copyright_chinese cursor_pointer"><span routerLink="/pages/regulations/terms-of-use" (click)="set('terms-of-use')">使用條款</span>•<span routerLink="/pages/regulations/privacy" (click)="set('privacy')">隱私權政策</span></div>
     </div>
     <app-language-dropdown></app-language-dropdown>
   </div>
@@ -37,9 +37,9 @@
       <div class="footer_content_mobile_logo">
         <img class="DKSH-icon" src="../../../assets/img/DKSH_big.png" width="103" height="32" alt="" />
       </div>
-      <div class="footer_content_mobile_text">
+      <!-- <div class="footer_content_mobile_text">
         <div>contact.us@dksh.com</div>
-      </div>
+      </div> -->
     </div>
     <hr class="footer_hr_mobile" />
     <div class="footer_copyright_mobile">
@@ -47,7 +47,7 @@
         Copyright @ 2021 Good Health Solutions International All rights reserved. Powered by Dr. Talk.
       </div>
       <div class="footer_copyright_content_mobile d-flex">
-        <div class="footer_copyright_content_text_mobile">使用條款•隱私權政策</div>
+        <div class="footer_copyright_content_text_mobile cursor_pointer"><span routerLink="/pages/regulations/terms-of-use" (click)="set('terms-of-use')">使用條款</span>•<span routerLink="/pages/regulations/privacy" (click)="set('privacy')">隱私權政策</span></div>
         <div>
           <app-language-dropdown></app-language-dropdown>
         </div>
