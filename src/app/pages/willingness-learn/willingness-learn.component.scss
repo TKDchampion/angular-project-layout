@@ -113,6 +113,10 @@
 }
 
 .content_item {
+  min-height: 432px;
+  @include media-breakpoint-down(sm) {
+    min-height: 320px;
+  }
   margin-top: 16px;
   display: grid;
   grid-template-columns: repeat(4,306px);

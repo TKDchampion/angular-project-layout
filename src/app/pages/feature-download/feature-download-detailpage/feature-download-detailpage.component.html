@@ -1,0 +1,47 @@
+<div class="home_box width_limit download">
+  <app-breadcrumb [breadcrumbText]="'返回檔案下載'" [isBreadcrumb]="false" (back)="backToDownload()"></app-breadcrumb>
+  <hr class="default_hr mb-4">
+  <div class="title d-flex">
+    <div class="title_name">{{folderTitle}}</div>
+  </div>
+  <div class="search">
+    <app-search placeholder="請輸入關鍵字"></app-search>
+  </div>
+  <div class="download_panel" [ngClass]="{'d-flex': folderId === '1'}">
+    <div class="download_list" *ngIf="folderId !== '1' else searchFileEmpty">
+      <table class="table" *ngIf="!isMobile else mobileDownloadList">
+        <thead>
+          <tr>
+            <th scope="col-8">名稱</th>
+            <th scope="col-2">檔案大小</th>
+            <th scope="col-2">下載</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cursor_pointer" *ngFor="let file of filesList">
+            <td class="name"><svg class="paperIcon"></svg>{{file.name}}</td>
+            <td class="size">{{file.size}}</td>
+            <td class="action"><svg class="bigDownloadIcon"></svg></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <ng-template #searchFileEmpty>
+    <div class="search_empty">
+      <img src="../../../../assets/img/no_file.png" alt="">
+      <div class="title">目前無任何檔案</div>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #mobileDownloadList>
+  <div class="download_list_item d-flex align-items-center" *ngFor="let file of filesList">
+    <svg class="paperIcon"></svg>
+    <div class="list_detail">
+      <div class="detail_name">{{file.name}}</div>
+      <div class="detail_size">{{file.size}}</div>
+    </div>
+    <svg class="bigDownloadIcon"></svg>
+  </div>
+</ng-template>
