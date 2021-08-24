@@ -17,7 +17,7 @@ export class NavBarComponent implements OnInit {
   modalRef!: BsModalRef;
   registerModalRef!: BsModalRef;
   startScroll = false;
-  constructor(private envService: EveService, private modalService: BsModalService) { }
+  constructor(private envService: EveService, private modalService: BsModalService) {}
 
   ngOnInit(): void {
     console.log('identity', this.envService.getEnv('identity'));
@@ -43,7 +43,7 @@ export class NavBarComponent implements OnInit {
     this.modalRef = this.modalService.show(LoginModalComponent, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
     this.modalRef.content.modalRef = this.modalRef;
   }
@@ -52,7 +52,7 @@ export class NavBarComponent implements OnInit {
     this.registerModalRef = this.modalService.show(RegisterModalComponent, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
-      keyboard: false
+      keyboard: false,
     });
     this.registerModalRef.content.modalRef = this.registerModalRef;
   }

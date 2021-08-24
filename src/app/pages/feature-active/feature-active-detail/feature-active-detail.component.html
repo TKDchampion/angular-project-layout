@@ -1,0 +1,48 @@
+<div class="feature_active_detail_box" *ngIf="detailData">
+  <div class="feature_active_detail_box_img">
+    <img class="h-100 w-100" src="../../../../assets/img/fakeImge/article_detail.png" alt="" />
+  </div>
+  <div class="feature_active_detail_box_header">
+    <div class="feature_active_detail_box_header_tags d-flex flex-wrap">
+      <p class="feature_active_detail_box_header_tags_item" *ngFor="let tag of detailData.tag">{{ tag }}</p>
+    </div>
+    <div class="feature_active_detail_box_header_title">{{ detailData.title }}</div>
+    <div class="feature_active_detail_box_header_messages">
+      <div class="feature_active_detail_box_header_messages_item">
+        <svg class="locationIcon"></svg>
+        <div class="feature_active_detail_box_header_messages_item_content">
+          <div class="title">活動地點</div>
+          <div class="subtitle">
+            {{ detailData.subTitle }}
+          </div>
+        </div>
+      </div>
+      <div class="split"></div>
+      <div class="feature_active_detail_box_header_messages_item">
+        <svg class="calendarIcon"></svg>
+        <div class="feature_active_detail_box_header_messages_item_content time">
+          <div class="title">活動時間</div>
+          <div class="subtitle">
+            {{ detailData.time }}
+          </div>
+        </div>
+      </div>
+      <div class="split"></div>
+      <div class="feature_active_detail_box_header_messages_button">
+        <button class="btn_blue_bg">立即報名</button>
+      </div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="feature_active_detail_scope_title">
+    <app-scope-title title="活動介紹" [showTag]="false" [showMoreBtn]="false" [titleStyle]="titleStyle"></app-scope-title>
+  </div>
+  <div class="feature_active_detail_box_editor">this area is CKedit</div>
+  <div class="line"></div>
+  <app-author-introduce [setting]="autherSetting"></app-author-introduce>
+  <div class="line"></div>
+  <div class="feature_active_detail_scope_title">
+    <app-scope-title title="相關活動" [showTag]="false" [showMoreBtn]="false" [titleStyle]="titleStyle"></app-scope-title>
+  </div>
+  <app-swiper type="active"> </app-swiper>
+</div>

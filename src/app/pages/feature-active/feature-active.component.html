@@ -1,0 +1,12 @@
+<div class="feature_active_box">
+  <h1 class="feature_active_title">活動消息</h1>
+  <div class="feature_active_search d-flex justify-content-between">
+    <app-search placeholder="搜尋瀏覽紀錄"></app-search>
+    <!-- <app-sort-dropdown></app-sort-dropdown> -->
+  </div>
+  <div class="feature_active_content">
+    <div *ngFor="let item of newActiveItemInfo" class="feature_active_content_item">
+      <app-new-active [newActiveItemInfo]="item" (click)="goActiveDetail(item.id)"></app-new-active>
+    </div>
+  </div>
+</div>

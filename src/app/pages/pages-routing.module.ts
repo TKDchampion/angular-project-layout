@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { FeatureArticleDetailpageComponent } from './feature-article/feature-article-detailpage/feature-article-detailpage.component';
 import { FeatureDownloadDetailpageComponent } from './feature-download/feature-download-detailpage/feature-download-detailpage.component';
+import { FeatureActiveDetailComponent } from './feature-active/feature-active-detail/feature-active-detail.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
       },
       {
         path: 'subject',
-        loadChildren: () => import('./subjects/subjects.module').then((m) => m.SubjectsModule)
+        loadChildren: () => import('./subjects/subjects.module').then((m) => m.SubjectsModule),
       },
       {
         path: 'subject/:id',
@@ -41,6 +42,14 @@ const routes: Routes = [
       {
         path: 'feature-article/:id',
         component: FeatureArticleDetailpageComponent,
+      },
+      {
+        path: 'feature-active',
+        loadChildren: () => import('./feature-active/feature-active.module').then((m) => m.FeatureActiveModule),
+      },
+      {
+        path: 'feature-active/:id',
+        component: FeatureActiveDetailComponent,
       },
       {
         path: 'feature-video',
@@ -60,7 +69,7 @@ const routes: Routes = [
       },
       {
         path: 'feature-download',
-        loadChildren: () => import('./feature-download/feature-download.module').then((m) => m.FeatureDownloadModule)
+        loadChildren: () => import('./feature-download/feature-download.module').then((m) => m.FeatureDownloadModule),
       },
       {
         path: 'feature-download/:id',
@@ -74,4 +83,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}

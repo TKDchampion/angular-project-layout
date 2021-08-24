@@ -24,3 +24,53 @@
   color: $grey;
   font-size: $font-size-14;
 }
+
+// active
+.swiper_active_box {
+  width: 298px;
+  min-height: 230px;
+  margin-bottom: 20px;
+}
+
+.swiper_active_left img {
+  width: 298px;
+  height: 210px;
+  border-radius: 14px;
+}
+
+.swiper_active_right_content {
+  margin-top: 8px;
+}
+
+.swiper_active_right_content_subTitle {
+  color: $grey;
+  font-size: $font-size-14;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.swiper_active_right_tags_item {
+  height: 32px;
+  background-color: $pink;
+  color: $red;
+  border-radius: 100px;
+  font-size: $font-size-16;
+  line-height: 32px;
+  padding: 0 14px;
+  margin-right: 8px;
+}
+
+.swiper_active_right_footer {
+  color: $grey;
+  font-size: $font-size-14;
+}
+
+.swiper_active_right_footer_people {
+  margin: 8px 0;
+}
+
+@include media-breakpoint-down(sm) {
+  .swiper_active_box {
+    padding-right: 20px;
+  }
+}

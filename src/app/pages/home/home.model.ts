@@ -235,6 +235,7 @@ export const HotSubjectItemInfo: HotSubjectItemInfoNewArticleModel[] = [
 
 export const NewActiveItemInfo: NewActiveItemInfoNewArticleModel[] = [
   {
+    id: '1',
     img: '../../../assets/img/fakeImge/new_active_fake_img.png',
     tag: ['線上研討會', '系列講座'],
     title: '110年安泰醫療社團法人安泰醫院辦理醫護人員教育訓練計畫',
@@ -244,6 +245,7 @@ export const NewActiveItemInfo: NewActiveItemInfoNewArticleModel[] = [
     time: '2021/05/11 19:00-2021/05/13 17:00',
   },
   {
+    id: '2',
     img: '../../../assets/img/fakeImge/new_active_fake_img_2.png',
     tag: ['實體活動'],
     title: '臺中榮民總醫院感染科與小兒科聯合討論會',

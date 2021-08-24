@@ -1,3 +1,4 @@
+import { NewActiveItemInfoNewArticleModel } from '../new-active/new-active.model';
 import { NewArticleModel } from '../new-article/new-article.modal';
 
 export const NewArticle: NewArticleModel[] = [
@@ -45,5 +46,68 @@ export const NewArticle: NewArticleModel[] = [
     author: '黃織芬',
     authorImg: '../../../assets/img/fakeImge/new_article_headshot_1.png',
     viewer: '2021/05/11．1,567',
+  },
+];
+
+export const NewActiveItemInfo: NewActiveItemInfoNewArticleModel[] = [
+  {
+    id: '1',
+    img: '../../../assets/img/fakeImge/new_active_fake_img.png',
+    tag: ['線上研討會', '系列講座'],
+    title: '110年安泰醫療社團法人安泰醫院辦理醫護人員教育訓練計畫',
+    subTitle: '地點：安泰醫院',
+    headShot: '../../../assets/img/fakeImge/new_active_fake_headshot.png',
+    name: '黃織芬 教授',
+    time: '2021/05/11 19:00-2021/05/13 17:00',
+  },
+  {
+    id: '2',
+    img: '../../../assets/img/fakeImge/new_active_fake_img_2.png',
+    tag: ['實體活動'],
+    title: '臺中榮民總醫院感染科與小兒科聯合討論會',
+    subTitle: '地點：臺中榮民總醫院',
+    headShot: '../../../assets/img/fakeImge/new_active_fake_headshot.png',
+    name: '黃織芬 教授',
+    time: '2021/05/11 19:00-2021/05/13 17:00',
+  },
+  {
+    id: '3',
+    img: '../../../assets/img/fakeImge/new_active_fake_img.png',
+    tag: ['線上研討會', '系列講座'],
+    title: '110年安泰醫療社團法人安泰醫院辦理醫護人員教育訓練計畫',
+    subTitle: '地點：安泰醫院',
+    headShot: '../../../assets/img/fakeImge/new_active_fake_headshot.png',
+    name: '黃織芬 教授',
+    time: '2021/05/11 19:00-2021/05/13 17:00',
+  },
+  {
+    id: '4',
+    img: '../../../assets/img/fakeImge/new_active_fake_img_2.png',
+    tag: ['實體活動'],
+    title: '臺中榮民總醫院感染科與小兒科聯合討論會',
+    subTitle: '地點：臺中榮民總醫院',
+    headShot: '../../../assets/img/fakeImge/new_active_fake_headshot.png',
+    name: '黃織芬 教授',
+    time: '2021/05/11 19:00-2021/05/13 17:00',
+  },
+  {
+    id: '5',
+    img: '../../../assets/img/fakeImge/new_active_fake_img.png',
+    tag: ['系列講座'],
+    title: '110年安泰醫療社團法人安泰醫院辦理醫護人員教育訓練計畫',
+    subTitle: '地點：安泰醫院',
+    headShot: '../../../assets/img/fakeImge/new_active_fake_headshot.png',
+    name: '黃織芬 教授',
+    time: '2021/05/11 19:00-2021/05/13 17:00',
+  },
+  {
+    id: '6',
+    img: '../../../assets/img/fakeImge/new_active_fake_img_2.png',
+    tag: ['實體活動'],
+    title: '臺中榮民總醫院感染科與小兒科聯合討論會',
+    subTitle: '地點：臺中榮民總醫院',
+    headShot: '../../../assets/img/fakeImge/new_active_fake_headshot.png',
+    name: '黃織芬 教授',
+    time: '2021/05/11 19:00-2021/05/13 17:00',
   },
 ];
