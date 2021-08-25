@@ -1,4 +1,4 @@
-<div class="new_active_box">
+<div class="new_active_box" (click)="clickActive(newActiveItemInfo)">
   <div class="d-flex" [ngClass]="{ 'flex-wrap': breakpointSize }">
     <div class="new_active_left">
       <img [src]="newActiveItemInfo.img" alt="" />
