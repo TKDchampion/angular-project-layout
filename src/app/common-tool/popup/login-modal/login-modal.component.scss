@@ -119,6 +119,9 @@
   }
 }
 .modal_body_clicktext {
+  div {
+    color: $blue;
+  }
   color: $blue;
   font-size: $font-size-16;
   line-height: 16px;
