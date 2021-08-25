@@ -47,7 +47,8 @@
       <div class="member_edit_box_content_kanban_title verify_content">驗證進度</div>
       <div class="member_edit_box_content_kanban_subtitle verify_content">我們將會盡快處理您的驗證需求</div>
       <div class="member_edit_box_content_kanban_verify d-flex">
-        <div class="member_edit_box_content_kanban_step member_edit_box_content_kanban_step_bg d-flex align-items-center">
+        <div
+          class="member_edit_box_content_kanban_step member_edit_box_content_kanban_step_bg d-flex align-items-center">
           <div class="member_edit_box_content_kanban_step_icon">
             <img src="../../../../assets/img/verify_step1.png" alt="" />
           </div>
@@ -269,12 +270,14 @@
             <div class="arrow_up" [ngClass]="{'unselect': !registerJob.job}"></div>
           </button>
           <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','醫師')">醫師</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','骨科醫生')">骨科醫生</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','中醫師')">中醫師</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','助產師')">助產師</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','呼吸治療師')">呼吸治療師</a>
-            </li>
+            <div class="select_area">
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','醫師')">醫師</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','骨科醫生')">骨科醫生</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','中醫師')">中醫師</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','助產師')">助產師</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','呼吸治療師')">呼吸治療師</a>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
@@ -304,11 +307,13 @@
             <div class="arrow_up" [ngClass]="{'unselect': !registerJob.jobCity}"></div>
           </button>
           <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台北市')">台北市</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','新北市')">新北市</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台中市')">台中市</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','高雄市')">高雄市</a>
-            </li>
+            <div class="select_area">
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台北市')">台北市</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','新北市')">新北市</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台中市')">台中市</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','高雄市')">高雄市</a>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
@@ -327,12 +332,14 @@
             <div class="arrow_up" [ngClass]="{'unselect': !registerJob.jobType}"></div>
           </button>
           <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','內科')">內科</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','骨科')">骨科</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','外科')">外科</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','婦產科')">婦產科</a></li>
-            <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','小兒科')">小兒科</a>
-            </li>
+            <div class="select_area">
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','內科')">內科</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','骨科')">骨科</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','外科')">外科</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','婦產科')">婦產科</a></li>
+              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','小兒科')">小兒科</a>
+              </li>
+            </div>
           </ul>
         </div>
       </div>

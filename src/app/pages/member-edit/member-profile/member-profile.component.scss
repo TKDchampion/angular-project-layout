@@ -384,6 +384,12 @@
       font-size: $font-size-14;
       border: 1px solid $hr_grey;
       border-radius: 8px;
+      transform: translateY(8px) !important;
+    }
+    .select_area {
+      width: 98%;
+      max-height: 190px;
+      overflow: auto;
     }
     .arrow_up {
       display: none;

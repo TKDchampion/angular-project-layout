@@ -62,7 +62,8 @@
 
 
 <ng-template #registerLineSecond>
-  <app-default-modal [modalRef]="registerLineSecondStepModalRef" [title]="title" [subTitle]="subTitle" [needRecheck]="true">
+  <app-default-modal [modalRef]="registerLineSecondStepModalRef" [title]="title" [subTitle]="subTitle"
+    [needRecheck]="true">
     <div class="d-flex register_status">
       <div class="information">
         <img src="../../../../assets/img/register_user_done.png" alt="" width="32" height="32">
@@ -107,18 +108,21 @@
       <div class="register_information register_job_information" *ngIf="registerIdentity">
         <div class="register_job">
           職業
-          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobEmpty}" (onHidden)="validateJobDropdown()">
+          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobEmpty}"
+            (onHidden)="validateJobDropdown()">
             <button dropdownToggle type="button" class="btn dropdown-toggle" [ngClass]="{'select': registerJob.job}">
               {{registerJob.job ? registerJob.job : '請選擇職業'}}
               <div class="arrow_down" [ngClass]="{'unselect': !registerJob.job}"></div>
               <div class="arrow_up" [ngClass]="{'unselect': !registerJob.job}"></div>
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','醫師')">醫師</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','中醫師')">中醫師</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','助產師')">助產師</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','呼吸治療師')">呼吸治療師</a>
-              </li>
+              <div class="select_area">
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','醫師')">醫師</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','中醫師')">中醫師</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','助產師')">助產師</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','呼吸治療師')">呼吸治療師</a>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -140,7 +144,8 @@
         </div>
         <div class="register_jobcity">
           執業縣市
-          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobCityEmpty}" (onHidden)="validateJobCityDropdown()">
+          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobCityEmpty}"
+            (onHidden)="validateJobCityDropdown()">
             <button dropdownToggle type="button" class="btn dropdown-toggle"
               [ngClass]="{'select': registerJob.jobCity}">
               {{registerJob.jobCity ? registerJob.jobCity : '請選擇執業縣市'}}
@@ -148,11 +153,13 @@
               <div class="arrow_up" [ngClass]="{'unselect': !registerJob.jobCity}"></div>
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台北市')">台北市</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','新北市')">新北市</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台中市')">台中市</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','高雄市')">高雄市</a>
-              </li>
+              <div class="select_area">
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台北市')">台北市</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','新北市')">新北市</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台中市')">台中市</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','高雄市')">高雄市</a>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -163,7 +170,8 @@
         </div>
         <div class="register_jobtype">
           執業科別
-          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobTypeEmpty}" (onHidden)="validateJobTypeDropdown()">
+          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobTypeEmpty}"
+            (onHidden)="validateJobTypeDropdown()">
             <button dropdownToggle type="button" class="btn dropdown-toggle"
               [ngClass]="{'select': registerJob.jobType}">
               {{registerJob.jobType ? registerJob.jobType : '請選擇執業科別'}}
@@ -171,11 +179,13 @@
               <div class="arrow_up" [ngClass]="{'unselect': !registerJob.jobType}"></div>
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','內科')">內科</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','外科')">外科</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','婦產科')">婦產科</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','小兒科')">小兒科</a>
-              </li>
+              <div class="select_area">
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','內科')">內科</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','外科')">外科</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','婦產科')">婦產科</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','小兒科')">小兒科</a>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -201,7 +211,8 @@
       <div class="register_identity_button d-flex" [ngClass]="{'isdoctor': registerIdentity}">
         <button type="button" class="modal_btn_laststep" (click)="backLineFirstStep()">上一步</button>
         <button type="button" class="modal_btn_nextstep" [ngClass]="{'disabled': registerIdentity === undefined}"
-          (click)="isEdit ? openCheckDoctorModal(checkIsDoctor) : registerLearnCheck(registerLearn)" [disabled]="registerIdentity === undefined">{{isEdit ? '儲存' : '完成'}}</button>
+          (click)="isEdit ? openCheckDoctorModal(checkIsDoctor) : registerLearnCheck(registerLearn)"
+          [disabled]="registerIdentity === undefined">{{isEdit ? '儲存' : '完成'}}</button>
       </div>
     </div>
   </app-default-modal>
