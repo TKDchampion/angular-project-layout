@@ -27,7 +27,7 @@ export class FilterDropdownComponent {
 
   openModal(template: TemplateRef<unknown>): void {
     this.modalRef = this.modalService.show(template, {
-      class: 'modal-fullscreen search_modal',
+      class: 'modal-fullscreen filter_modal',
       ignoreBackdropClick: true,
       keyboard: false,
     });

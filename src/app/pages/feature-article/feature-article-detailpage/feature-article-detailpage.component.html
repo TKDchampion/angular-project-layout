@@ -1,7 +1,7 @@
-<div class="feature_article_detail_box">
+<div class="feature_article_detail_box" *ngIf="detailData">
   <div class="feature_article_detail_box_header">
     <div class="category_tag">家醫科</div>
-    <h1 class="feature_article_detail_box_header_title">加護病房靜脈同時給予多種藥品之型態與風險</h1>
+    <h1 class="feature_article_detail_box_header_title">{{ detailData.articleTitle }}</h1>
     <div class="feature_article_detail_box_header_subtitle">對某醫學中心11個加護病房的護理師問卷調查，以了解同時靜脈給多種藥的型態與風險。</div>
     <div class="feature_article_detail_box_header_time">2021/05/11．2,967 已閱讀</div>
   </div>

@@ -23,7 +23,7 @@
   >
     <ng-template *ngFor="let item of swiperItems" swiperSlide [ngSwitch]="!!type">
       <ng-container *ngSwitchCase="type === 'article'">
-        <div class="swiper_article_box">
+        <div class="swiper_article_box" (click)="clickItem('article', item)">
           <img [src]="item.articleImg" alt="" class="swiper_article_box_img" />
           <h3 class="swiper_article_box_title mt-2">{{ item.articleTitle }}</h3>
           <div class="swiper_article_box_author d-flex mt-2">
@@ -35,7 +35,7 @@
         <!-- <app-new-article [newArticle]="item"></app-new-article> -->
       </ng-container>
       <ng-container *ngSwitchCase="type === 'active'">
-        <div class="swiper_active_box">
+        <div class="swiper_active_box" (click)="clickItem('active', item)">
           <div>
             <div class="swiper_active_left">
               <img [src]="item.img" alt="" />

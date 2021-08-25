@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChangeDetectorRef, Component, HostListener, Input, ViewChild } from '@angular/core';
@@ -34,7 +35,7 @@ export class SwiperComponent implements OnInit {
   swiperColumn = 3;
   swiperRef = 'swiperRef1';
 
-  constructor(private resizeService: ResizeService, private changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private resizeService: ResizeService, private changeDetectorRef: ChangeDetectorRef, private router: Router) {}
 
   ngOnInit(): void {
     switch (!!this.type) {
@@ -71,6 +72,10 @@ export class SwiperComponent implements OnInit {
     this.swiperSlideTransform[elIndex] = index * -310;
     this.setSwiperTransformStylele(this.swiperSlideTransform[elIndex], elIndex);
     this.changeDetectorRef.detectChanges();
+  }
+
+  clickItem(type: string, item: Record<string, unknown>): void {
+    this.router.navigate([`/pages/feature-${type}`, item.id]);
   }
 
   private setSwiperTransformStylele(swiperSlideTransform: number, elIndex: string) {
