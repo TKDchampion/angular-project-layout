@@ -1,0 +1,49 @@
+<div class="feature_article_sort d-flex">
+  <button class="btn_blue_line feature_article_sort_btn mdNone" (click)="selectedBtn(button)" (blur)="clickStatus = false" #button>
+    <div class="feature_article_sort_btn_txt" [ngClass]="{ default: selected === '請選擇活動類別' }">
+      {{ selected }}
+    </div>
+    <div [ngClass]="clickStatus ? 'arrow_up' : 'arrow_down'"></div>
+  </button>
+  <button class="feature_article_sort_md filterMdIcon" (click)="openModal(searchModal)" (blur)="clickStatus = false"></button>
+
+  <!-- drop -->
+  <div class="feature_article_sort_popup mdNone" *ngIf="clickStatus">
+    <div
+      class="feature_article_sort_popup_item"
+      [ngClass]="{ active: item === selected }"
+      *ngFor="let item of dropList"
+      (mousedown)="dropSelected(item)"
+    >
+      {{ item }}
+    </div>
+  </div>
+
+  <!-- mobile -->
+  <ng-template #searchModal>
+    <div class="modal-header">
+      <img class="modal_close cursor_pointer" (click)="modalRef.hide()" src="../../../../assets/img/modal_close.png" alt="" />
+      <h4 class="modal-title pull-left">篩選與排序</h4>
+    </div>
+    <div class="modal-body">
+      <div class="body_title">篩選</div>
+      <button class="btn_blue_line feature_article_sort_btn drop_m" (click)="selectedBtn(buttonM)" (blur)="clickStatus = false" #buttonM>
+        <div class="feature_article_sort_btn_txt" [ngClass]="{ default: selected === '請選擇活動類別' }">
+          {{ selected }}
+        </div>
+        <div [ngClass]="clickStatus ? 'arrow_up' : 'arrow_down'"></div>
+      </button>
+      <div class="feature_article_sort_popup" *ngIf="clickStatus">
+        <div
+          class="feature_article_sort_popup_item"
+          [ngClass]="{ active: item === selected }"
+          *ngFor="let item of dropList"
+          (mousedown)="dropSelected(item)"
+        >
+          {{ item }}
+        </div>
+      </div>
+      <button type="button" class="btn_blue_bg" (click)="modalRef.hide()">確認</button>
+    </div>
+  </ng-template>
+</div>
