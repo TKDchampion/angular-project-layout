@@ -130,6 +130,12 @@
       font-size: $font-size-14;
       border: 1px solid $hr_grey;
       border-radius: 8px;
+      transform: translateY(8px) !important;
+    }
+    .select_area {
+      width: 98%;
+      max-height: 190px;
+      overflow: auto;
     }
     .arrow_up {
       display: none;
@@ -336,4 +342,21 @@
       }
     }
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $border_grey;
+  opacity: 0.6;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $light_grey;
 }
