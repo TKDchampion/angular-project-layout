@@ -1,5 +1,5 @@
 <app-default-modal [modalRef]="modalRef" [title]="'設定學習意願'" [subTitle]="'我們將會依照您的意願提供專屬內容'"
-    [showCancelIcon]="false">
+    [showCancelIcon]="onlyEdit">
     <div class="search-context">
       <img src="../../../../assets/img/thin_search.png" width="20" height="18" alt="">
       <input type="text" class="input-search" placeholder="請輸入關鍵字">
@@ -12,11 +12,17 @@
         </label>
       </div>
     </div>
-    <div class="register_identity_button d-flex isdoctor learn_submit">
+    <div class="register_identity_button d-flex isdoctor learn_submit" *ngIf="!onlyEdit else onlyOneButton">
       <button type="button" class="modal_btn_laststep" (click)="submitPass()">略過</button>
       <button type="button" class="modal_btn_nextstep" [ngClass]="{'disabled': registerLearnCount === 0}"
         [disabled]="registerLearnCount === 0" (click)="submitSuccess()">完成 <span
           *ngIf="registerLearnCount > 0">({{registerLearnCount}})</span></button>
     </div>
+    <ng-template #onlyOneButton>
+      <button type="button" class="modal_btn_nextstep onlyEdit" [ngClass]="{'disabled': registerLearnCount === 0}"
+      [disabled]="registerLearnCount === 0" (click)="submitSuccess()">完成 <span
+        *ngIf="registerLearnCount > 0">({{registerLearnCount}})</span></button>
+    </ng-template>
+
     <div class="separator">您隨時都可以調整學習意願的項目</div>
   </app-default-modal>
