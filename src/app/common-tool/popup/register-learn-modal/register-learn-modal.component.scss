@@ -102,6 +102,9 @@
   font-size: $font-size-18;
   color: $white;
   border: unset;
+  span {
+    color: $white;
+  }
 }
 
 .modal_btn_nextstep.disabled {

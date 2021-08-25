@@ -56,4 +56,8 @@ export class NavBarComponent implements OnInit {
     });
     this.registerModalRef.content.modalRef = this.registerModalRef;
   }
+
+  closeCollapsed() {
+    this.isCollapsed = true;
+  }
 }
