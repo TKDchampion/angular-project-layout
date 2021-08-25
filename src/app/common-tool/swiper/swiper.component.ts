@@ -1,9 +1,9 @@
 import { OnInit } from '@angular/core';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChangeDetectorRef, Component, HostListener, Input, ViewChild } from '@angular/core';
-import { NewActiveItemInfo, NewVideoItem } from 'src/app/pages/home/home.model';
+import { NewVideoItem } from 'src/app/pages/home/home.model';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
-import { NewArticle } from './swiper.model';
+import { NewActiveItemInfo, NewArticle } from './swiper.model';
 
 @Component({
   selector: 'app-swiper',

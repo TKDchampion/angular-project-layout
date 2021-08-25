@@ -35,7 +35,30 @@
         <!-- <app-new-article [newArticle]="item"></app-new-article> -->
       </ng-container>
       <ng-container *ngSwitchCase="type === 'active'">
-        <app-new-active [newActiveItemInfo]="item"></app-new-active>
+        <div class="swiper_active_box">
+          <div>
+            <div class="swiper_active_left">
+              <img [src]="item.img" alt="" />
+            </div>
+            <div class="swiper_active_right">
+              <div class="swiper_active_right_tags d-flex flex-wrap">
+                <p class="swiper_active_right_tags_item" *ngFor="let tag of item.tag">{{ tag }}</p>
+              </div>
+              <div class="swiper_active_right_content">
+                <h3>{{ item.title }}</h3>
+                <div class="swiper_active_right_content_subTitle">{{ item.subTitle }}</div>
+              </div>
+              <div class="swiper_active_right_footer">
+                <div class="swiper_active_right_footer_people d-flex">
+                  <img class="headshot_sm" [src]="item.headShot" alt="" />
+                  <p>{{ item.name }}</p>
+                </div>
+                <div>{{ item.time }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <app-new-active [newActiveItemInfo]="item"></app-new-active> -->
       </ng-container>
       <ng-container *ngSwitchCase="type === 'video'">
         <app-new-video [newVideoItem]="item"></app-new-video>

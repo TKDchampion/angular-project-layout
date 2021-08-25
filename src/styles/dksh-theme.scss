@@ -127,6 +127,17 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   }
 }
 
+.locationIcon {
+  background-image: url('../assets/icon/location.svg');
+  width: 24px;
+  height: 24px;
+}
+
+.calendarIcon {
+  background-image: url('../assets/icon/calendar.svg');
+  width: 24px;
+  height: 24px;
+}
 .aboutUsIcon {
   -webkit-mask: url('../assets/icon/aboutus.svg') no-repeat 50% 50%;
   mask: url('../assets/icon/aboutus.svg') no-repeat 50% 50%;
@@ -386,7 +397,7 @@ body bs-tooltip-container.tooltip.show {
   width: fit-content;
   padding: 0 16px;
   display: flex;
-  align-items: center;;
+  align-items: center;
   background: $light_light_light_light_light_light_light_grey;
   color: $light_light_black;
   height: 32px;
@@ -419,7 +430,9 @@ input::placeholder {
 }
 
 //subject-video
-body .subject_video app-new-video, app-new-video.willingness_video, app-new-video.feature_video {
+body .subject_video app-new-video,
+app-new-video.willingness_video,
+app-new-video.feature_video {
   .new_video_box {
     margin-bottom: 16px;
     @include media-breakpoint-down(sm) {
