@@ -38,6 +38,7 @@
 }
 
 .feature_active_detail_box_header_messages_item_content {
+  flex: 1;
   margin-left: 12px;
 
   & .title {
@@ -45,6 +46,7 @@
     color: $light_grey;
   }
   & .subtitle {
+    word-break: break-all;
     font-weight: 500;
   }
 
