@@ -1,4 +1,4 @@
-<div class="hot_subject_box" (click)="gotoSubjectItem(hotSubjectItemInfo.title)">
+<div class="hot_subject_box" (click)="gotoSubjectItem(hotSubjectItemInfo.id)">
   <div *ngIf="breakpointSize === 'xs'" class="hot_subject_top">
     <div class="hot_subject_top_icon" [ngStyle]="{'background-image': 'url(' + hotSubjectItemInfo.url + ')'}"></div>
   </div>
