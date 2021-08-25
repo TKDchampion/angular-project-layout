@@ -1,5 +1,9 @@
 import { Component, HostListener, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { EveService } from 'src/app/services/env.service';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
+import { LoginModalComponent } from '../popup/login-modal/login-modal.component';
 import { NewActiveItemInfoNewArticleModel } from './new-active.model';
 
 @Component({
@@ -16,10 +20,32 @@ export class NewActiveComponent {
   @Input() newActiveItemInfo!: NewActiveItemInfoNewArticleModel;
 
   breakpointSize: boolean | undefined;
-
-  constructor(private resizeService: ResizeService) {
+  modalRef!: BsModalRef;
+  identity = this.envService.getEnv('identity');
+  constructor(private resizeService: ResizeService, private envService: EveService, private modalService: BsModalService, private router: Router) {
     const size = this.resizeService.default();
     this.breakpointSize = this.delectbreakpoint(size);
+  }
+
+  clickActive(newArticleItem: NewActiveItemInfoNewArticleModel) {
+    if (this.identity === 1) {
+      this.login();
+    } else {
+      this.goActiveDetail(newArticleItem.id);
+    }
+  }
+
+  goActiveDetail(id: string): void {
+    this.router.navigate(['pages/feature-active', id]);
+  }
+
+  login() {
+    this.modalRef = this.modalService.show(LoginModalComponent, {
+      class: 'modal-dialog-centered modal_max_width',
+      ignoreBackdropClick: true,
+      keyboard: false,
+    });
+    this.modalRef.content.modalRef = this.modalRef;
   }
 
   private delectbreakpoint(size: string): boolean {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { NewActiveItemInfo } from '../home/home.model';
 
 @Component({
@@ -10,9 +9,5 @@ import { NewActiveItemInfo } from '../home/home.model';
 export class FeatureActiveComponent {
   newActiveItemInfo = NewActiveItemInfo;
 
-  constructor(private router: Router) {}
-
-  goActiveDetail(id: string): void {
-    this.router.navigate(['pages/feature-active', id]);
-  }
+  constructor() {}
 }

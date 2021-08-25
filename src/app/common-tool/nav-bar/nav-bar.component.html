@@ -54,12 +54,12 @@
             </a>
           </div>
           <div *dropdownMenu role="menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video']">全部</a>
-            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video', '醫藥管理']">醫藥管理</a>
-            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video', '臨床醫學']">臨床醫學</a>
-            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video', '臨床護理']">臨床護理</a>
-            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video', '保健營養']">保健營養</a>
-            <a role="menuitem" class="dropdown-item" [routerLink]="['/pages/feature-video', '醫療法務']">醫療法務</a>
+            <a role="menuitem" class="dropdown-item" (click)="closeCollapsed()" [routerLink]="['/pages/feature-video']">全部</a>
+            <a role="menuitem" class="dropdown-item" (click)="closeCollapsed()" [routerLink]="['/pages/feature-video', '醫務管理']">醫務管理</a>
+            <a role="menuitem" class="dropdown-item" (click)="closeCollapsed()" [routerLink]="['/pages/feature-video', '臨床醫學']">臨床醫學</a>
+            <a role="menuitem" class="dropdown-item" (click)="closeCollapsed()" [routerLink]="['/pages/feature-video', '臨床護理']">臨床護理</a>
+            <a role="menuitem" class="dropdown-item" (click)="closeCollapsed()" [routerLink]="['/pages/feature-video', '保健營養']">保健營養</a>
+            <a role="menuitem" class="dropdown-item" (click)="closeCollapsed()" [routerLink]="['/pages/feature-video', '醫療法務']">醫療法務</a>
           </div>
         </li>
         <li class="nav-item dropdown nav-article">
@@ -67,7 +67,7 @@
             <div class="nav-item-img">
               <img src="../../../assets/img/document.png" width="24" height="24" alt="" />
             </div>
-            <a class="nav-link" routerLink="/pages/feature-article">專題文章</a>
+            <a class="nav-link" (click)="closeCollapsed()" routerLink="/pages/feature-article">專題文章</a>
           </div>
         </li>
         <li class="nav-item dropdown nav-event">
@@ -75,7 +75,7 @@
             <div class="nav-item-img">
               <img src="../../../assets/img/activity.png" width="24" height="24" alt="" />
             </div>
-            <a class="nav-link" routerLink="/pages/feature-active">活動消息</a>
+            <a class="nav-link" (click)="closeCollapsed()" routerLink="/pages/feature-active">活動消息</a>
           </div>
         </li>
         <li class="nav-item dropdown nav-filedownload">
@@ -83,7 +83,7 @@
             <div class="nav-item-img">
               <img src="../../../assets/img/download.png" width="24" height="24" alt="" />
             </div>
-            <a class="nav-link" routerLink="/pages/feature-download">檔案下載</a>
+            <a class="nav-link" (click)="closeCollapsed()" routerLink="/pages/feature-download">檔案下載</a>
           </div>
         </li>
       </ul>

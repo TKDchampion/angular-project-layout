@@ -7,7 +7,7 @@
   </div>
   <div class="feature_active_content">
     <div *ngFor="let item of newActiveItemInfo" class="feature_active_content_item">
-      <app-new-active [newActiveItemInfo]="item" (click)="goActiveDetail(item.id)"></app-new-active>
+      <app-new-active [newActiveItemInfo]="item"></app-new-active>
     </div>
   </div>
 </div>
