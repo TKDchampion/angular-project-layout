@@ -182,7 +182,7 @@
 
   <!-- New active -->
   <div class="home_box_scope_title">
-    <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'"></app-scope-title>
+    <app-scope-title [title]="'最新活動'" [tag]="'登入後即可瀏覽內容'" [url]="'/pages/feature-active'"></app-scope-title>
   </div>
   <div class="row">
     <ng-container *ngFor="let item of newActiveItemInfo">
@@ -191,12 +191,12 @@
     </ng-container>
   </div>
   <div class="subject_btn-check-all">
-    <button type="button" class="btn btn-check-all w-100">查看更多</button>
+    <button type="button" class="btn btn-check-all w-100" routerLink="/pages/feature-active">查看更多</button>
   </div>
 
   <!-- New article -->
   <div class="home_box_scope_title">
-    <app-scope-title [title]="'最新文章'"></app-scope-title>
+    <app-scope-title [title]="'最新文章'" [url]="'/pages/feature-article'"></app-scope-title>
   </div>
   <div class="row">
     <ng-container *ngFor="let item of newArticle1">
@@ -211,7 +211,7 @@
     </ng-container>
   </div>
   <div class="subject_btn-check-all">
-    <button type="button" class="btn btn-check-all w-100">查看更多</button>
+    <button type="button" class="btn btn-check-all w-100" routerLink="/pages/feature-article">查看更多</button>
   </div>
 </div>
 <app-brand *ngIf="identity === 1"></app-brand>

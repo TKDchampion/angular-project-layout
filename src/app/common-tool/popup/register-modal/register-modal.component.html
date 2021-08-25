@@ -142,19 +142,22 @@
       <div class="register_information register_job_information" *ngIf="registerIdentity">
         <div class="register_job">
           職業
-          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobEmpty }" (onHidden)="validateJobDropdown()">
+          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobEmpty }"
+            (onHidden)="validateJobDropdown()">
             <!-- <input required type="text" dropdownToggle class="job_input" placeholder="請選擇職業"> -->
             <button dropdownToggle type="button" class="btn dropdown-toggle" [ngClass]="{'select': registerJob.job}">
               {{registerJob.job ? registerJob.job : '請選擇職業'}}
               <div class="arrow_down" [ngClass]="{'unselect': !registerJob.job}"></div>
               <div class="arrow_up" [ngClass]="{'unselect': !registerJob.job}"></div>
             </button>
-            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" >
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','醫師')">醫師</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','中醫師')">中醫師</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','助產師')">助產師</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','呼吸治療師')">呼吸治療師</a>
-              </li>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
+              <div class="select_area">
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','醫師')">醫師</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','中醫師')">中醫師</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','助產師')">助產師</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'job','呼吸治療師')">呼吸治療師</a>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -177,7 +180,8 @@
         <div class="register_jobcity">
           執業縣市
           <!-- <input required type="text" class="jobcity_input" placeholder="請選擇執業縣市"> -->
-          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobCityEmpty}" (onHidden)="validateJobCityDropdown()">
+          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobCityEmpty}"
+            (onHidden)="validateJobCityDropdown()">
             <button dropdownToggle type="button" class="btn dropdown-toggle"
               [ngClass]="{'select': registerJob.jobCity}">
               {{registerJob.jobCity ? registerJob.jobCity : '請選擇執業縣市'}}
@@ -185,11 +189,13 @@
               <div class="arrow_up" [ngClass]="{'unselect': !registerJob.jobCity}"></div>
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台北市')">台北市</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','新北市')">新北市</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台中市')">台中市</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','高雄市')">高雄市</a>
-              </li>
+              <div class="select_area">
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台北市')">台北市</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','新北市')">新北市</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','台中市')">台中市</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobCity','高雄市')">高雄市</a>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -201,7 +207,8 @@
         <div class="register_jobtype">
           執業科別
           <!-- <input required type="text" class="jobtype_input" placeholder="請選擇執業科別"> -->
-          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobTypeEmpty}" (onHidden)="validateJobTypeDropdown()">
+          <div class="btn-group job_select" dropdown [ngClass]="{'input_error': isJobTypeEmpty}"
+            (onHidden)="validateJobTypeDropdown()">
             <button dropdownToggle type="button" class="btn dropdown-toggle"
               [ngClass]="{'select': registerJob.jobType}">
               {{registerJob.jobType ? registerJob.jobType : '請選擇執業科別'}}
@@ -209,11 +216,13 @@
               <div class="arrow_up" [ngClass]="{'unselect': !registerJob.jobType}"></div>
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu">
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','內科')">內科</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','外科')">外科</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','婦產科')">婦產科</a></li>
-              <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','小兒科')">小兒科</a>
-              </li>
+              <div class="select_area">
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','內科')">內科</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','外科')">外科</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','婦產科')">婦產科</a></li>
+                <li><a class="dropdown-item" (click)="setRegisterJob(registerJob,'jobType','小兒科')">小兒科</a>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -247,7 +256,9 @@
 
 <ng-template #registerThird>
   <app-bind-mail-modal [modalRef]="registerThirdStepModalRef" [title]="'註冊'" [subTitle]="'註冊後即可瀏覽影片與文章'"
-    [showStepIcon]="true" [registerAccount]="registerAccount" [verifyEmailStatus]="verifyEmailStatus" (verifiedMail)="setVerifiedMail($event)" (backStep)="backSecondStep(registerSecond)" (register)="registerLearnCheck(registerLearn)">
+    [showStepIcon]="true" [registerAccount]="registerAccount" [verifyEmailStatus]="verifyEmailStatus"
+    (verifiedMail)="setVerifiedMail($event)" (backStep)="backSecondStep(registerSecond)"
+    (register)="registerLearnCheck(registerLearn)">
   </app-bind-mail-modal>
 </ng-template>
 

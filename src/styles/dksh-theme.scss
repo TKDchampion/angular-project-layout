@@ -503,3 +503,16 @@ body .feature_video_detail_box_video #handstick iframe {
     color: $border_grey;
   }
 }
+
+// verify text
+.verify_text {
+  div {
+    color: $light_red;
+  }
+}
+
+// dropdown active css
+body a.dropdown-item:active{
+  color: $black;
+  background-color: $hr_grey;
+}
