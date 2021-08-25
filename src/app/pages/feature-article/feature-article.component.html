@@ -6,7 +6,7 @@
   </div>
   <div class="feature_article_content">
     <div *ngFor="let item of newArticle" class="feature_article_content_item">
-      <app-new-article [newArticle]="item" (click)="goArticleDetail(item.id)"></app-new-article>
+      <app-new-article [newArticle]="item"></app-new-article>
     </div>
   </div>
 </div>
