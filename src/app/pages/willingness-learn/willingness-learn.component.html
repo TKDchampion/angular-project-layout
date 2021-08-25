@@ -114,6 +114,6 @@
 
 <ng-template #registerLearn>
   <app-register-learn-modal [modalRef]="learnModalRef" (passSetLearn)="registerToSuccess()"
-    (successSetLearn)="registerToSuccess()">
+    (successSetLearn)="registerToSuccess()" [onlyEdit]="true">
   </app-register-learn-modal>
 </ng-template>

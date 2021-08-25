@@ -106,7 +106,6 @@ export class RegisterLineModalComponent implements OnInit, AfterContentInit {
   }
 
   openCheckDoctorModal(template: TemplateRef<any>) {
-    debugger
     if (this.registerIdentity) {
       this.checkIsDoctorModalRef = this.modalService.show(template, {
         class: 'modal-dialog-centered modal-sm',

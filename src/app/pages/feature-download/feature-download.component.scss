@@ -149,6 +149,9 @@
     }
   }
 }
+.bigDownloadIcon:hover {
+  background-image: url('../../../assets/icon/big_download_hover.svg');
+}
 .download_list_item:hover {
   border: 1px solid $light_blue;
   .paperIcon {

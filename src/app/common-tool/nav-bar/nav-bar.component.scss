@@ -104,6 +104,19 @@
     }
   }
 
+  .nav-article:active, .nav-event:active, .nav-filedownload:active {
+    background: $light_light_light_light_grey;
+    border-radius: 100px;
+    .nav-item-img {
+      img {
+        filter: invert(27%) sepia(56%) saturate(2972%) hue-rotate(334deg) brightness(82%) contrast(105%);
+      }
+    }
+    .nav-link {
+      color: $red;
+    }
+  }
+
   .nav-category.open.show {
     background: $light_light_light_light_grey;
     border-radius: 100px;
