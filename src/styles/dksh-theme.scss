@@ -94,6 +94,12 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   height: 40px;
 }
 
+.filterMdIcon {
+  background-image: url('../assets/icon/filter.svg');
+  width: 40px;
+  height: 40px;
+}
+
 .profileIcon {
   -webkit-mask: url('../assets/icon/profile.svg') no-repeat 50% 50%;
   mask: url('../assets/icon/profile.svg') no-repeat 50% 50%;
