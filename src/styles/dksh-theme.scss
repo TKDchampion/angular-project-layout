@@ -520,3 +520,17 @@ body a.dropdown-item:active {
   color: $black;
   background-color: $hr_grey;
 }
+
+// dropdown focus
+.learn_select_desktop {
+  .btn-check:focus + .btn, .btn:focus {
+    box-shadow: unset;
+    border: 1px solid $deep_deep_blue;
+  }
+}
+.job_select {
+  .btn-check:focus + .btn, .btn:focus {
+    box-shadow: unset;
+  }
+}
+
