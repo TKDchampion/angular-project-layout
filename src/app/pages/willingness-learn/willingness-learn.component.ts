@@ -45,8 +45,11 @@ export class WillingnessLearnComponent implements OnInit {
     this.selected = item;
   }
 
-  selectedBtn(): void {
+  selectedBtn(template: HTMLButtonElement): void {
     this.clickStatus = !this.clickStatus;
+    if (!this.clickStatus) {
+      template.blur();
+    }
   }
 
 }
