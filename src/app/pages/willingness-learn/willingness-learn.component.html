@@ -36,13 +36,14 @@
     <div class="feature_learn_sort d-flex">
       <div class="feature_learn_sort_txt mdNone">排序方式</div>
       <div class="split mdNone"></div>
-      <button class="btn_blue_line feature_learn_sort_btn mdNone" [ngClass]="{ nonFocus: !clickStatus }"
-        (click)="selectedBtn()" (blur)="clickStatus = false">
+      <button class="btn_blue_line feature_learn_sort_btn mdNone" (click)="selectedBtn(button)"
+        (blur)="clickStatus = false" #button>
         {{ selected }}
         <div [ngClass]="clickStatus ? 'arrow_up' : 'arrow_down'"></div>
       </button>
       <div class="feature_learn_sort_popup" *ngIf="clickStatus">
-        <div class="feature_learn_sort_popup_item" *ngFor="let item of dropList" (mousedown)="dropSelected(item)">{{
+        <div class="feature_learn_sort_popup_item" [ngClass]="{ active: item === selected }"
+          *ngFor="let item of dropList" (mousedown)="dropSelected(item)">{{
           item }}</div>
       </div>
     </div>

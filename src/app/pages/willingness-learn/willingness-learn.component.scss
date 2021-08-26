@@ -246,6 +246,14 @@
   cursor: pointer;
   &:hover {
     background-color: $light_light_light_light_blue;
+    color: $black;
+  }
+  &.active {
+    color: $blue;
+    justify-content: space-between;
+    &::after {
+      content: url('../../../assets/icon/blue_check.svg');
+    }
   }
 }
 
