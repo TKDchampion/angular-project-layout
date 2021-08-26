@@ -5,6 +5,7 @@ import { ChangeDetectorRef, Component, HostListener, Input, ViewChild } from '@a
 import { NewVideoItem } from 'src/app/pages/home/home.model';
 import { ResizeEvent, ResizeService } from 'src/app/services/resize.service';
 import { NewActiveItemInfo, NewArticle } from './swiper.model';
+import { NewVideoItemInfoNewArticleModel } from '../new-video/new-video.model';
 
 @Component({
   selector: 'app-swiper',
@@ -76,6 +77,10 @@ export class SwiperComponent implements OnInit {
 
   clickItem(type: string, item: Record<string, unknown>): void {
     this.router.navigate([`/pages/feature-${type}`, item.id]);
+  }
+
+  clickVideo(newVideoItem: NewVideoItemInfoNewArticleModel): void {
+    this.router.navigate([`/pages/feature-video`, newVideoItem.type, newVideoItem.id]);
   }
 
   private setSwiperTransformStylele(swiperSlideTransform: number, elIndex: string) {
