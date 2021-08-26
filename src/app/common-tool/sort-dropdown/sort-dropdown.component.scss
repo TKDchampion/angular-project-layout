@@ -51,6 +51,14 @@
   cursor: pointer;
   &:hover {
     background-color: $light_light_light_light_blue;
+    color: $black;
+  }
+  &.active {
+    color: $blue;
+    justify-content: space-between;
+    &::after {
+      content: url('../../../assets/icon/blue_check.svg');
+    }
   }
 }
 
@@ -58,6 +66,12 @@
   display: none;
   border-radius: 100px;
   border: 0px;
+  width: 40px;
+  height: 40px;
+  background-color: inherit;
+  &:focus {
+    background-color: $light_light_blue;
+  }
 }
 
 @include media-breakpoint-down(md) {
