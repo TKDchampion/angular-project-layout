@@ -17,7 +17,7 @@
 
 .feature_article_detail_box_header_subtitle {
   color: $grey;
-  margin: 10px 0px;
+  margin-top: 10px;
 }
 
 .feature_article_detail_box_header_time {
@@ -37,6 +37,24 @@
 .feature_article_detail_scope_title {
   margin-top: 32px;
   margin-bottom: 24px;
+}
+
+.feature_article_detail_box_header_time_txt {
+  line-height: 40px;
+}
+
+.btn_bookmark {
+  margin-left: 12px;
+  width: 82px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .bookmarkIcon {
+    width: 16px;
+    height: 16px;
+    background: $blue;
+  }
 }
 
 @include media-breakpoint-down(xl) {
