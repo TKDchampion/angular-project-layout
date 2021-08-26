@@ -87,6 +87,6 @@ dev_publish:
   variables:
     ENV: "dev"
   only:
-    - main
+    - /^v.*$/
   tags:
     - local
