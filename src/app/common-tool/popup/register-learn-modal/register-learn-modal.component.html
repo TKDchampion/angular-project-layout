@@ -19,7 +19,7 @@
           *ngIf="registerLearnCount > 0">({{registerLearnCount}})</span></button>
     </div>
     <ng-template #onlyOneButton>
-      <button type="button" class="modal_btn_nextstep onlyEdit" [ngClass]="{'disabled': registerLearnCount === 0}"
+      <button type="button" class="modal_btn_nextstep register_identity_button isdoctor onlyEdit" [ngClass]="{'disabled': registerLearnCount === 0}"
       [disabled]="registerLearnCount === 0" (click)="submitSuccess()">完成 <span
         *ngIf="registerLearnCount > 0">({{registerLearnCount}})</span></button>
     </ng-template>
