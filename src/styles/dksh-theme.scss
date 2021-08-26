@@ -90,8 +90,8 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
 // icon
 .sortMdIcon {
   background-image: url('../assets/icon/sort_md.svg');
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
 }
 
 .filterMdIcon {
@@ -379,10 +379,6 @@ body bs-tooltip-container.tooltip.show {
   }
   &:focus {
     background: $light_light_blue;
-  }
-
-  &.nonFocus:focus {
-    background: initial;
   }
 }
 

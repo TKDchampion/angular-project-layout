@@ -14,7 +14,10 @@ export class SortDropdownComponent {
     this.selected = item;
   }
 
-  selectedBtn(): void {
+  selectedBtn(template: HTMLButtonElement): void {
     this.clickStatus = !this.clickStatus;
+    if (!this.clickStatus) {
+      template.blur();
+    }
   }
 }

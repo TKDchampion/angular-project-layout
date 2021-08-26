@@ -14,13 +14,13 @@ export class NewVideoComponent {
   @Input() newVideoItem!: NewVideoItemInfoNewArticleModel;
   modalRef!: BsModalRef;
   identity = this.envService.getEnv('identity');
-  constructor(private envService: EveService, private modalService: BsModalService, private router: Router) { }
+  constructor(private envService: EveService, private modalService: BsModalService, private router: Router) {}
 
   clickVideo(newVideoItem: NewVideoItemInfoNewArticleModel) {
     if (this.identity === 1) {
       this.login();
     } else {
-      this.router.navigate([`/pages/feature-video`, newVideoItem.type ,newVideoItem.id]);
+      this.router.navigate([`/pages/feature-video`, newVideoItem.type, newVideoItem.id]);
     }
   }
 

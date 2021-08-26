@@ -32,7 +32,6 @@
           </div>
           <div class="swiper_article_box_time mt-2">{{ item.viewer }}</div>
         </div>
-        <!-- <app-new-article [newArticle]="item"></app-new-article> -->
       </ng-container>
       <ng-container *ngSwitchCase="type === 'active'">
         <div class="swiper_active_box" (click)="clickItem('active', item)">
@@ -58,10 +57,22 @@
             </div>
           </div>
         </div>
-        <!-- <app-new-active [newActiveItemInfo]="item"></app-new-active> -->
       </ng-container>
       <ng-container *ngSwitchCase="type === 'video'">
-        <app-new-video [newVideoItem]="item"></app-new-video>
+        <div class="new_video_box" (click)="clickVideo(item)">
+          <div class="video_img">
+            <div class="new_video_box_time">{{ item.time }}</div>
+            <img class="new_video_box_header default_img_height" [src]="item.headUrl" alt="" />
+          </div>
+          <div class="new_video_box_content d-flex">
+            <img class="headshot_lg" [src]="item.headShotUrl" alt="" />
+            <div>
+              <h3 class="new_video_box_content_title">{{ item.title }}</h3>
+              <div class="new_video_box_content_text">{{ item.text }}</div>
+            </div>
+          </div>
+        </div>
+        <!-- <app-new-video [newVideoItem]="item"></app-new-video> -->
       </ng-container>
     </ng-template>
   </swiper>
