@@ -11,6 +11,7 @@ export class RegisterLearnModalComponent implements OnInit {
   @Input() modalRef!: BsModalRef;
   @Input() title!: string;
   @Input() subTitle!: string;
+  @Input() onlyEdit = false;
   @Output() passSetLearn = new EventEmitter<boolean>();
   @Output() successSetLearn = new EventEmitter<boolean>();
   constructor() { }
