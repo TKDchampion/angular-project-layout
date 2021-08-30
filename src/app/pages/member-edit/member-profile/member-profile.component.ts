@@ -32,14 +32,14 @@ export class MemberProfileComponent {
     nickname: 'Wendy Lian',
     firstname: '梁',
     lastname: '文欣',
-    phone: '0912345678'
+    phone: '0912345678',
   };
   registerJob: RegisterJobModal = {
     job: '骨科醫生',
     jobCompany: '大安區聯合醫院',
     jobCity: '台北市',
     jobType: '骨科',
-    doctorId: 'Q123456'
+    doctorId: 'Q123456',
   };
   verifyEmailStatus!: boolean;
   memberModalRef!: BsModalRef;
@@ -132,12 +132,10 @@ export class MemberProfileComponent {
     this.modalServices.open('custom-modal-1');
   }
 
-  editMemberSubmit() {
+  editMemberSubmit(): void {
     this.editMemberModalRef.hide();
     this.openModal('edit_profile_toast');
   }
-
-
 
   editNotVerifyMember(template: TemplateRef<unknown>): void {
     this.editNotVerifyProfileModalRef = this.modalService.show(template, {
@@ -155,18 +153,18 @@ export class MemberProfileComponent {
     });
   }
 
-  setRegisterJob(registerJob: any, column: string, name: string) {
+  setRegisterJob(registerJob: any, column: string, name: string): void {
     registerJob[column] = name;
     this.registerJob = registerJob;
-  };
+  }
 
-  validateJobDropdown() {
+  validateJobDropdown(): void {
     this.isJobEmpty = !this.registerJob.job;
   }
-  validateJobCityDropdown() {
+  validateJobCityDropdown(): void {
     this.isJobCityEmpty = !this.registerJob.jobCity;
   }
-  validateJobTypeDropdown() {
+  validateJobTypeDropdown(): void {
     this.isJobTypeEmpty = !this.registerJob.jobType;
   }
 

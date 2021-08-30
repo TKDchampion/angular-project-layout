@@ -27,6 +27,9 @@
     margin-left: 32px;
     width: 200px;
     color: $light_grey;
+    img {
+      margin-left: 8px;
+    }
   }
   .member_edit_box_content_scope_item_last {
     flex: 1;
@@ -165,14 +168,14 @@
         }
       }
     }
-    .member_edit_box_content_kanban_step_bg{
+    .member_edit_box_content_kanban_step_bg {
       background-image: url('../../../../assets/img/verify_bg.png');
       background-color: unset;
       border: unset;
       background-size: 100% 104px;
       background-repeat: no-repeat;
     }
-    .member_edit_box_content_kanban_step_active_bg{
+    .member_edit_box_content_kanban_step_active_bg {
       background-image: url('../../../../assets/img/verify_bg_active.png');
       background-color: unset !important;
       border: unset;
@@ -215,16 +218,15 @@
   }
 }
 
-
 @include media-breakpoint-down(xl) {
   .member_edit_box_content_kanban {
     .member_edit_box_content_kanban_text {
-      .member_edit_box_content_kanban_step_bg{
+      .member_edit_box_content_kanban_step_bg {
         background-image: unset;
         border: 1px solid $hr_grey;
         background-color: $white;
       }
-      .member_edit_box_content_kanban_step_active_bg{
+      .member_edit_box_content_kanban_step_active_bg {
         background-image: unset;
         border: unset;
         background-color: $pink_red !important;

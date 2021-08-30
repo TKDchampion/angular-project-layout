@@ -226,7 +226,7 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   height: 18px;
 }
 
-.editIcon {
+.editIcon1 {
   background-image: url('../assets/icon/edit.svg');
   width: 16px;
   height: 16px;
@@ -570,14 +570,15 @@ body .dropdown-item:hover, .dropdown-item:focus {
 
 // dropdown focus
 .learn_select_desktop {
-  .btn-check:focus + .btn, .btn:focus {
+  .btn-check:focus + .btn,
+  .btn:focus {
     box-shadow: unset;
     border: 1px solid $deep_deep_blue;
   }
 }
 .job_select {
-  .btn-check:focus + .btn, .btn:focus {
+  .btn-check:focus + .btn,
+  .btn:focus {
     box-shadow: unset;
   }
 }
-

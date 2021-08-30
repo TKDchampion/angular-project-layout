@@ -1,5 +1,5 @@
 import { RegisterModalComponent } from './../popup/register-modal/register-modal.component';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { EveService } from 'src/app/services/env.service';
 import { LoginModalComponent } from '../popup/login-modal/login-modal.component';
@@ -18,28 +18,38 @@ export class NavBarComponent implements OnInit {
   registerModalRef!: BsModalRef;
   startScroll = false;
   constructor(private envService: EveService, private modalService: BsModalService) {}
-
+  @ViewChild('search') searchElement!: ElementRef;
   ngOnInit(): void {
     console.log('identity', this.envService.getEnv('identity'));
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(_: any) {
+  onResize(_: any): void {
     this.isCollapsed = true;
     this.showSearchInputMobile = false;
   }
 
   @HostListener('window:scroll', [])
-  onWindowScroll() {
+  onWindowScroll(): void {
     this.startScroll = window.scrollY > 0;
   }
 
-  collapsedStatus() {
+  searchClick(): void {
+    this.showSearchInput = !this.showSearchInput;
+    if (this.showSearchInput) {
+      setTimeout(() => {
+        // this will make the execution after the above boolean has changed
+        this.searchElement.nativeElement.focus();
+      }, 0);
+    }
+  }
+
+  collapsedStatus(): void {
     this.isCollapsed = !this.isCollapsed;
     this.showSearchInputMobile = false;
   }
 
-  login() {
+  login(): void {
     this.modalRef = this.modalService.show(LoginModalComponent, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
@@ -48,7 +58,7 @@ export class NavBarComponent implements OnInit {
     this.modalRef.content.modalRef = this.modalRef;
   }
 
-  register() {
+  register(): void {
     this.registerModalRef = this.modalService.show(RegisterModalComponent, {
       class: 'modal-dialog-centered modal_max_width',
       ignoreBackdropClick: true,
@@ -57,7 +67,7 @@ export class NavBarComponent implements OnInit {
     this.registerModalRef.content.modalRef = this.registerModalRef;
   }
 
-  closeCollapsed() {
+  closeCollapsed(): void {
     this.isCollapsed = true;
   }
 }

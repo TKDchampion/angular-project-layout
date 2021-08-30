@@ -45,11 +45,11 @@
     width: 306px;
     height: 210px;
     border-radius: 14px;
-    margin: 24px 10px 0px 0px;
+    margin: 24px 10px -6px 0px;
     @include media-breakpoint-down(md) {
       width: 140px;
       height: 95px;
-      margin: 16px 10px 0px 0px;
+      margin: 16px 10px -6px 0px;
     }
   }
 
