@@ -1,5 +1,5 @@
 <div class="banner-outside">
-  <div class="banner" [ngClass]="{'login_banner': identity !== 1}">
+  <div class="banner" [ngClass]="{ login_banner: identity !== 1 }">
     <div class="banner_content" *ngIf="identity === 1; else login_content">
       <div class="banner_title">專業、多元的醫學相關課程</div>
       <div class="banner_subTitle">與眾多醫學廠商與醫院診所合作，分享產品經驗、實際案例，讓您輕鬆獲取專業知識。</div>
@@ -10,7 +10,7 @@
 
 <ng-template #login_content>
   <div class="banner_content">
-    <div class="banner_title">您的 <img class="dksh_icon" src="../../../assets/img/DKSH_big.png" width="157" height="50" alt="" />數位課程平台</div>
+    <div class="banner_title">您的數位課程平台</div>
     <div class="banner_subTitle">持續得到最新的醫學內容</div>
     <div class="banner_search_panel d-flex">
       <input type="text" class="input_search" placeholder="今天想學什麼？" />
