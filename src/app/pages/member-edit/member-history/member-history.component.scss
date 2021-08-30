@@ -10,6 +10,18 @@
   }
 }
 
+.delete_history {
+  margin-left: 16px;
+  height: 33px;
+  .delete_history_text {
+    margin-left: 6px;
+    color: $light_grey;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+}
+
 .member_history_listItem {
   position: relative;
   .member_history_listItem_img {

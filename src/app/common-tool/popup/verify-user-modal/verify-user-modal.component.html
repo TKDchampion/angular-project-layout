@@ -1,11 +1,14 @@
 <app-default-modal [modalRef]="modalRef" [title]="'驗證身份'" [subTitle]="'請確認您的聯絡資訊，並填寫設定碼，我們將會請業務與您聯絡'">
-  <div class="modal_body_mailinput">
-    <div class="input_title">電子信箱</div>
-    <input id="mail" name="mail" required type="text" class="mail_input" [(ngModel)]="verifyMail" disabled>
-  </div>
-  <div class="modal_body_mailinput">
-    <div class="input_title">手機</div>
-    <input id="phone" name="phone" required type="text" class="mail_input" [(ngModel)]="verifyPhone" disabled>
+  <div class="member_edit_box_content_scope">
+    <div class="member_edit_box_content_scope_item d-flex">
+      <div class="member_edit_box_content_scope_item_first">電子信箱</div>
+      <div class="member_edit_box_content_scope_item_last">{{verifyMail}}</div>
+    </div>
+    <div class="item_line"></div>
+    <div class="member_edit_box_content_scope_item d-flex">
+      <div class="member_edit_box_content_scope_item_first">手機</div>
+      <div class="member_edit_box_content_scope_item_last">{{verifyPhone}}</div>
+    </div>
   </div>
   <button type="button" class="modal_btn_bignextstep" (click)="submitVerify(remindModal)">確認送出</button>
   <div class="invite_code cursor_pointer" (click)="openInviteCode()">邀請碼</div>

@@ -100,3 +100,36 @@
     border: 1px solid $light_red !important;
   }
 }
+
+.member_edit_box_content_scope {
+  border: 1px solid;
+  border-color: $hr_grey;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.member_edit_box_content_scope_item {
+  height: 40px;
+  line-height: 40px;
+}
+
+.member_edit_box_content_scope_item_first {
+  text-align: left;
+  font-size: 14px;
+  margin-left: 16px;
+  width: 88px;
+  color: $light_grey;
+}
+.member_edit_box_content_scope_item_last {
+  flex: 1;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 8px;
+}
+
+.item_line {
+  width: calc(100% - 16px);
+  margin-left: 16px;
+  border-bottom: 1px solid $hr_grey;
+}
