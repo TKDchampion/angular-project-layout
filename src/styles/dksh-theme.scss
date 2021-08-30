@@ -531,6 +531,12 @@ body .feature_video_detail_box_video #handstick iframe {
   }
 }
 
+body .feature_video_page .new_video_box .video_img .new_video_box_time {
+  @include media-breakpoint-down(sm) {
+    margin-left: 70%;
+  }
+}
+
 // empty search
 .search_empty {
   margin: auto;

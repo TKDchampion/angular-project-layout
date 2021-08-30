@@ -10,7 +10,7 @@
   <div class="content" [ngClass]="{'d-flex': searchText}">
     <div class="content_item" *ngIf="!searchText else searchEmpty">
       <ng-container *ngFor="let item of videoRecommendItem">
-        <app-new-video [newVideoItem]="item" class="feature_video"></app-new-video>
+        <app-new-video [newVideoItem]="item" class="feature_video feature_video_page"></app-new-video>
       </ng-container>
     </div>
   </div>
