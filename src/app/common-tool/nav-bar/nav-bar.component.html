@@ -19,7 +19,7 @@
         <!-- 未登入 End -->
         <!-- 已登入mobile -->
         <ng-container *ngIf="identity !== 1">
-          <div class="nav_bar_search_mobile" [ngClass]="{'active': showSearchInputMobile}">
+          <div class="nav_bar_search_mobile" [ngClass]="{ active: showSearchInputMobile }">
             <svg (click)="showSearchInputMobile = true" class="searchContentIcon"></svg>
           </div>
           <div class="nav_bar_headshot_mobile" dropdown>
@@ -93,13 +93,13 @@
       </ng-container>
     </div>
     <div class="event-group">
-      <div class="search" *ngIf="!showSearchInput" (click)="showSearchInput = !showSearchInput">
+      <div class="search" *ngIf="!showSearchInput" (click)="searchClick()">
         <svg class="searchContentIcon"></svg>
         <span class="text-search">搜尋</span>
       </div>
-      <div class="search-context" *ngIf="showSearchInput">
+      <div class="search-context" [hidden]="!showSearchInput">
         <svg class="searchContentIcon"></svg>
-        <input type="text" class="input-search" placeholder="搜尋" />
+        <input type="text" class="input-search" placeholder="搜尋" (blur)="searchClick()" #search />
       </div>
       <div class="rectangle"></div>
       <ng-container *ngIf="identity === 4">

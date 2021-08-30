@@ -7,11 +7,11 @@
     <p class="profile_username">陳薰依</p>
   </li>
   <li class="text-center profile_viewbtn">
-    <button type="button" class="btn btn_profile" routerLink="/pages/member-edit" (click)="set('member-profile')">瀏覽會員資料</button>
+    <button type="button" class="btn_profile btn_blue_line" routerLink="/pages/member-edit" (click)="set('member-profile')">瀏覽會員資料</button>
   </li>
   <li *ngIf="identity === 2" class="divider dropdown-divider"></li>
   <li *ngIf="identity === 2" class="text-center profile_viewverify">
-    <button type="button" class="btn btn_verify" (click)="openVerify(verifyUser)">驗證身份</button>
+    <button type="button" class="btn_verify btn_blue_bg" (click)="openVerify(verifyUser)">驗證身份</button>
   </li>
   <li class="divider dropdown-divider mb-0"></li>
   <li class="profile_record">
