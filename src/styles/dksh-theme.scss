@@ -13,6 +13,7 @@
   height: 1px;
   color: $hr_grey;
   background: $hr_grey;
+  opacity: 1;
 }
 
 // headshot xl
@@ -203,6 +204,14 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   background-image: url('../assets/icon/search_content.svg');
   width: 15px;
   height: 15px;
+  background-repeat: no-repeat;
+}
+
+.searchContentFatIcon {
+  background-image: url('../assets/icon/search_fat.svg');
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
 }
 
 .successChecked {
@@ -309,6 +318,33 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   width: 24px;
   height: 24px;
   background-image: url(../assets/icon/paper.svg);
+}
+
+.categoryIcon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/icon/category.svg);
+  &.active {
+    background-color: $red;
+  }
+}
+
+.activityIcon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/icon/activity.svg);
+  &.active {
+    background-color: $red;
+  }
+}
+
+.downloadPageIcon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/icon/download_page.svg);
+  &.active {
+    background-color: $red;
+  }
 }
 
 // modal style
@@ -515,6 +551,15 @@ body .feature_video_detail_box_video #handstick iframe {
 body a.dropdown-item:active {
   color: $black;
   background-color: $hr_grey;
+}
+
+body .dropdown-item {
+  color: $light_grey;
+}
+
+body .dropdown-item:hover, .dropdown-item:focus {
+  color: $black;
+  background-color: $light_light_light_grey;
 }
 
 // dropdown focus
