@@ -9,6 +9,15 @@
   align-items: center;
 }
 
+.rectangle {
+  width: 2px;
+  height: 24px;
+  background: $hr_grey;
+  border-radius: 100px;
+  margin: auto;
+  margin-right: 12px;
+}
+
 .btn-login-mobile,
 .nav_bar_headshot_mobile,
 .nav_bar_search_mobile {
@@ -226,6 +235,11 @@
     line-height: 40px;
     align-items: center;
     margin-right: 12px;
+    .searchContentIcon {
+      width: 14px;
+      height: 14px;
+      background-size: 14px;
+    }
   }
 
   .search-context {
@@ -237,8 +251,11 @@
     margin-right: 12px;
     background: $light_light_light_grey;
     border-radius: 8px;
-    img {
+    .searchContentIcon {
       margin-left: 16px;
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
     }
   }
 
@@ -382,10 +399,23 @@
   }
 
   .nav_bar_search_mobile {
-    height: 20px;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    right: 82px;
+    right: 72px;
     display: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .searchContentIcon {
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
+    }
+  }
+  .nav_bar_search_mobile.active {
+    background: $light_light_blue;
+    border-radius: 100px;
   }
 
   .DKSH-icon {
@@ -499,8 +529,12 @@
       line-height: 40px;
       align-items: center;
       padding-top: 8px;
-      .search_icon_mobile {
+      .searchContentIcon {
         margin-left: 16px;
+        width: 20px;
+        height: 18px;
+        background-size: 20px 18px;
+        flex: 0 0 18px;
       }
       .search_cancelicon_mobile {
         margin-right: 16px;
