@@ -320,6 +320,33 @@ body swiper.video_swiper .swiper-wrapper .swiper-slide {
   background-image: url(../assets/icon/paper.svg);
 }
 
+.categoryIcon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/icon/category.svg);
+  &.active {
+    background-color: $red;
+  }
+}
+
+.activityIcon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/icon/activity.svg);
+  &.active {
+    background-color: $red;
+  }
+}
+
+.downloadPageIcon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/icon/download_page.svg);
+  &.active {
+    background-color: $red;
+  }
+}
+
 // modal style
 .modal_max_width {
   max-width: 416px;
@@ -524,6 +551,15 @@ body .feature_video_detail_box_video #handstick iframe {
 body a.dropdown-item:active {
   color: $black;
   background-color: $hr_grey;
+}
+
+body .dropdown-item {
+  color: $light_grey;
+}
+
+body .dropdown-item:hover, .dropdown-item:focus {
+  color: $black;
+  background-color: $light_light_light_grey;
 }
 
 // dropdown focus
