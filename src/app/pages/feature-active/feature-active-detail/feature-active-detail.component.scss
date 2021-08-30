@@ -10,7 +10,7 @@
 .feature_active_detail_box_img {
   max-width: 928px;
   max-height: 500px;
-  margin: 32px 0px;
+  margin: 20px 0px;
 }
 
 .feature_active_detail_box_header_tags_item {
@@ -27,14 +27,15 @@
 .feature_active_detail_box_header_messages {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 36px;
+  // margin-top: 36px;
   margin-bottom: 12px;
 }
 
 .feature_active_detail_box_header_messages_item {
   display: flex;
-  width: 340px;
+  max-width: 340px;
   align-items: center;
+  margin-top: 16px;
 }
 
 .feature_active_detail_box_header_messages_item_content {
@@ -59,7 +60,7 @@
 
 .feature_active_detail_box_header_messages_button {
   flex: 1;
-  text-align: right;
+  margin-top: 16px;
 }
 
 .feature_active_detail_box_header_title {
@@ -87,7 +88,8 @@
   height: 24px;
   background: $hr_grey;
   border-radius: 100px;
-  margin: 15px 20px;
+  margin: 0 20px;
+  margin-top: 30px;
 }
 
 @include media-breakpoint-down(xl) {
@@ -104,5 +106,6 @@
   }
   .btn_blue_bg {
     width: 100%;
+    height: 40px;
   }
 }
